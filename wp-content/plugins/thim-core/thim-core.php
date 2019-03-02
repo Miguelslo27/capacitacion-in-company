@@ -5,7 +5,7 @@
  * Plugin Name:       Thim Core
  * Plugin URI:        https://thimpresswp.github.io/thim-core/
  * Description:       The Ultimate Core Processor of all WordPress themes by ThimPress - Manage your website easier with Thim Core.
- * Version:           1.9.2
+ * Version:           1.9.2.1
  * Author:            ThimPress
  * Author URI:        https://thimpress.com
  * Text Domain:       thim-core

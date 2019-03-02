@@ -61,6 +61,8 @@ $writable = Thim_Plugins_Manager::get_permission();
 				} elseif ( $is_wporg ) {
 					$plugin_icon = 'https://ps.w.org/' . $plugin->get_slug() . '/assets/icon-128x128.png';
 				}
+				$plugin_icon = apply_filters( 'thim_core_plugin_icon_install', $plugin_icon, $plugin );
+
 
 				$plugin_classes = $plugin->is_required() ? 'required' : 'recommended';
 				if ( $plugin->is_add_on() ) {

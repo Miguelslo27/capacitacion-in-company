@@ -101,13 +101,6 @@ if ( ! class_exists( 'Thim_Layout_Builder' ) ) {
 		public static function render_content( $content, $builder, $fake_post_id ) {
 			if ( $builder == 'so' ) {
 				if ( ! function_exists( 'siteorigin_panels_render' ) ) {
-				    if(is_plugin_active( 'elementor/elementor.php' )){
-				        $related_id = self::thim_get_post_id_by_meta_key_and_value( 'tc_extra', str_replace( 'tc-megamenu-', '', $fake_post_id ) );
-				        update_post_meta( $related_id, 'panels_data', '' );
-					    $real_content = self::get_content($related_id);
-
-					    return do_shortcode( $real_content );
-                    }
 					return "<pre class='notification-error'>"
 					       . sprintf( __( 'Please install <a href="%s" target="_blank">SiteOrigin Page Builder</a>', 'thim-core' ), 'https://siteorigin.com/page-builder/' )
 					       . '</pre>';
@@ -149,7 +142,7 @@ if ( ! class_exists( 'Thim_Layout_Builder' ) ) {
 			}
 
 			$site_origin = get_post_meta( $post_ID, 'panels_data', true );
-			if ( ! empty( $site_origin ) && function_exists( 'siteorigin_panels_render' ) ) {
+			if ( ! empty( $site_origin ) ) {
 				return 'so';
 			}
 
@@ -544,27 +537,6 @@ if ( ! class_exists( 'Thim_Layout_Builder' ) ) {
 		 */
 		public function register_widget() {
 			register_widget( 'Thim_Widget_Layout_Builder' );
-		}
-
-		/**
-		 * Get post id from meta key and value
-		 * @param string $key
-		 * @param mixed $value
-		 * @return int|bool
-		 * @author David M&aring;rtensson <david.martensson@gmail.com>
-		 */
-		public static function thim_get_post_id_by_meta_key_and_value($key, $value) {
-			global $wpdb;
-			$meta = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM `".$wpdb->postmeta."` WHERE meta_key=%s AND meta_value=%s", $key, $value ) );
-			if ( is_array($meta) && !empty($meta) && isset($meta[0]) ) {
-				$meta = $meta[0];
-			}
-			if (is_object($meta)) {
-				return $meta->post_id;
-			}
-			else {
-				return false;
-			}
 		}
 	}
 }
