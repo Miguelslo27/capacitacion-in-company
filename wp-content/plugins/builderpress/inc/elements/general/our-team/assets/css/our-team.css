@@ -1,0 +1,445 @@
+.bp-element-our-team .our-team {
+  margin-right: -15px;
+  margin-left: -15px; }
+  .bp-element-our-team .our-team .item {
+    margin-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    .bp-element-our-team .our-team .item .item-inner {
+      transition: all 0.2s ease-in-out 0s; }
+    .bp-element-our-team .our-team .item .avatar-contact img {
+      width: 100%;
+      max-width: 100%; }
+    .bp-element-our-team .our-team .item .information {
+      text-align: center;
+      padding: 32px 0; }
+      .bp-element-our-team .our-team .item .information .name {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.2em;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        margin-bottom: 3px; }
+      .bp-element-our-team .our-team .item .information .job {
+        font-size: 20px;
+        line-height: 1.2em;
+        letter-spacing: 0.6px; }
+    .bp-element-our-team .our-team .item .contact {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 17px; }
+      .bp-element-our-team .our-team .item .contact a {
+        font-size: 16px;
+        padding: 3px 10px;
+        display: inline-block;
+        line-height: 1.4em;
+        color: #8e8e8e; }
+
+.bp-element-our-team.layout-1 .our-team .item:hover .information .contact a {
+  color: #ffffff; }
+
+.bp-element-our-team.layout-1 .our-team .item:hover .information .name a {
+  color: #ffffff; }
+
+.bp-element-our-team.layout-1 .our-team .item:hover .information .job {
+  color: #ffffff; }
+
+.bp-element-our-team.layout-1 .our-team .item:hover .item-inner {
+  box-shadow: 0 15px 14px 0 rgba(0, 0, 0, 0.2); }
+
+.bp-element-our-team.layout-2 .item .item-inner .avatar-contact {
+  position: relative; }
+  .bp-element-our-team.layout-2 .item .item-inner .avatar-contact:before {
+    content: '';
+    position: absolute;
+    background: #e9f7fe;
+    width: 100%;
+    height: 89%;
+    z-index: -1;
+    bottom: 0; }
+  .bp-element-our-team.layout-2 .item .item-inner .avatar-contact .contact {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s; }
+    .bp-element-our-team.layout-2 .item .item-inner .avatar-contact .contact > a {
+      font-size: 16px;
+      color: #fff;
+      width: 38px;
+      height: 38px;
+      line-height: 35px;
+      text-align: center;
+      border-radius: 50%;
+      margin-right: 12px;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      background: #43ddbc;
+      background: linear-gradient(to left, #24d7b2, #25c0d9);
+      background: linear-gradient(to left, #24d7b2, #25c0d9);
+      background: linear-gradient(to left, #24d7b2, #25c0d9);
+      background: linear-gradient(to left, #24d7b2, #25c0d9);
+      transition: all 0.3s; }
+  .bp-element-our-team.layout-2 .item .item-inner .avatar-contact .avatar img {
+    width: auto;
+    margin: auto; }
+
+.bp-element-our-team.layout-2 .item .item-inner .information .name a {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1d1d1d;
+  line-height: 24px; }
+
+.bp-element-our-team.layout-2 .item .item-inner .information .job {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+  color: #26aef7; }
+
+.bp-element-our-team.layout-2 .item .item-inner .information .description {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: inherit;
+  color: #7c7c7c; }
+
+.bp-element-our-team.layout-2 .item .item-inner:hover .avatar-contact .contact {
+  bottom: 25px;
+  visibility: visible;
+  opacity: 1; }
+
+.bp-element-our-team.layout-3 .item .item-inner .avatar-contact {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 281px;
+  max-width: 100%;
+  max-height: max-content;
+  margin: auto;
+  box-shadow: 9.6px 11.5px 14px 0 rgba(0, 0, 0, 0.1);
+  transition: all .3s; }
+  .bp-element-our-team.layout-3 .item .item-inner .avatar-contact:before {
+    visibility: hidden;
+    content: '';
+    position: absolute;
+    background: #f95259;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    bottom: 0;
+    opacity: 0;
+    transition: all .5s; }
+  .bp-element-our-team.layout-3 .item .item-inner .avatar-contact .contact {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s;
+    z-index: 2; }
+    .bp-element-our-team.layout-3 .item .item-inner .avatar-contact .contact > a {
+      font-size: 16px;
+      color: #fff;
+      z-index: 2; }
+  .bp-element-our-team.layout-3 .item .item-inner .avatar-contact .avatar img {
+    width: auto;
+    margin: auto; }
+  .bp-element-our-team.layout-3 .item .item-inner .avatar-contact:hover {
+    box-shadow: 0 8px 18px 0 rgba(0, 0, 0, 0.08); }
+
+.bp-element-our-team.layout-3 .item .item-inner .information .name a {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1d1d1d;
+  line-height: 24px; }
+
+.bp-element-our-team.layout-3 .item .item-inner .information .job {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+  color: #f95259; }
+
+.bp-element-our-team.layout-3 .item .item-inner .information .description {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: inherit;
+  color: #7c7c7c; }
+
+.bp-element-our-team.layout-3 .item .item-inner:hover .avatar-contact .contact {
+  bottom: 25px;
+  visibility: visible;
+  opacity: 1; }
+
+.bp-element-our-team.layout-3 .item .item-inner:hover .avatar-contact:before {
+  visibility: visible;
+  opacity: 0.3; }
+
+.bp-element-our-team .owl-theme img {
+  -webkit-transform-style: unset; }
+
+.bp-element-our-team .owl-theme .owl-nav {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 100%;
+  top: 50%; }
+  .bp-element-our-team .owl-theme .owl-nav .owl-next, .bp-element-our-team .owl-theme .owl-nav .owl-prev {
+    font-size: 50px;
+    background: transparent;
+    position: absolute;
+    transition: 0.3s;
+    margin: 0; }
+  .bp-element-our-team .owl-theme .owl-nav .owl-next {
+    right: -35px; }
+  .bp-element-our-team .owl-theme .owl-nav .owl-prev {
+    left: -35px; }
+  .bp-element-our-team .owl-theme .owl-nav.disabled {
+    display: none !important; }
+
+.bp-element-our-team.layout-4 .our-team .item {
+  cursor: default;
+  margin-bottom: 80px; }
+  .bp-element-our-team.layout-4 .our-team .item:nth-last-child(1), .bp-element-our-team.layout-4 .our-team .item:nth-last-child(2), .bp-element-our-team.layout-4 .our-team .item:nth-last-child(3) {
+    margin-bottom: 0; }
+  .bp-element-our-team.layout-4 .our-team .item .item-inner .avatar-contact img {
+    cursor: -webkit-grabbing; }
+  .bp-element-our-team.layout-4 .our-team .item .item-inner .information {
+    padding: 34px 30px 32px;
+    border-bottom: solid 1px rgba(204, 204, 204, 0.5);
+    border-left: solid 1px rgba(204, 204, 204, 0.5);
+    border-right: solid 1px rgba(204, 204, 204, 0.5);
+    transition: all .5s;
+    text-align: center; }
+    .bp-element-our-team.layout-4 .our-team .item .item-inner .information .name {
+      font-size: 20px;
+      font-weight: 600;
+      font-style: normal;
+      letter-spacing: 0.6px;
+      margin-bottom: 5px; }
+    .bp-element-our-team.layout-4 .our-team .item .item-inner .information .job {
+      font-size: 16px;
+      font-weight: normal;
+      color: #e9003f;
+      transition: all .3s; }
+    .bp-element-our-team.layout-4 .our-team .item .item-inner .information .contact a {
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      letter-spacing: normal;
+      color: #8e8e8e; }
+  .bp-element-our-team.layout-4 .our-team .item .item-inner:hover {
+    box-shadow: 5.7px 8.2px 20px 0 rgba(0, 0, 0, 0.1); }
+    .bp-element-our-team.layout-4 .our-team .item .item-inner:hover .information {
+      background-color: #e9003f;
+      border-color: #e9003f; }
+      .bp-element-our-team.layout-4 .our-team .item .item-inner:hover .information * {
+        color: #fff; }
+
+.bp-element-our-team.layout-5 .wrap-element .author-item {
+  text-align: center;
+  margin-bottom: 10px; }
+  .bp-element-our-team.layout-5 .wrap-element .author-item .pic-author {
+    overflow: hidden;
+    position: relative; }
+    .bp-element-our-team.layout-5 .wrap-element .author-item .pic-author .overlay-author {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.2);
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.8));
+      background: -o-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.8));
+      background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.8));
+      background: linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.8));
+      opacity: 0;
+      transition: all .3s; }
+      .bp-element-our-team.layout-5 .wrap-element .author-item .pic-author .overlay-author::before {
+        content: '\f386';
+        font-family: Ionicons;
+        font-size: 40px;
+        line-height: 1;
+        color: #fff;
+        transform: scale(0);
+        transition: all .3s; }
+    .bp-element-our-team.layout-5 .wrap-element .author-item .pic-author img {
+      width: 100%; }
+    .bp-element-our-team.layout-5 .wrap-element .author-item .pic-author:hover .overlay-author {
+      opacity: 1; }
+      .bp-element-our-team.layout-5 .wrap-element .author-item .pic-author:hover .overlay-author::before {
+        transform: scale(1); }
+  .bp-element-our-team.layout-5 .wrap-element .author-item .text-author {
+    padding: 24px 0; }
+    .bp-element-our-team.layout-5 .wrap-element .author-item .text-author .name-author {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.333333;
+      color: #111111;
+      word-break: break-word;
+      margin-bottom: 4px; }
+      .bp-element-our-team.layout-5 .wrap-element .author-item .text-author .name-author a {
+        color: #111111; }
+        .bp-element-our-team.layout-5 .wrap-element .author-item .text-author .name-author a:hover {
+          color: #e40914; }
+    .bp-element-our-team.layout-5 .wrap-element .author-item .text-author .info-author {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #6e6e6e;
+      word-break: break-word; }
+
+.bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .slide-teacher {
+  position: relative; }
+  .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .slide-teacher .slide-slick {
+    overflow: hidden; }
+    .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .slide-teacher .slide-slick .slick-list {
+      margin-right: -20px;
+      margin-left: -20px; }
+    .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .slide-teacher .slide-slick .item-slick {
+      padding: 0 20px 0 20px; }
+  .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .slide-teacher .wrap-arrow-slick {
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; }
+    .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .slide-teacher .wrap-arrow-slick .arow-slick {
+      pointer-events: auto;
+      cursor: pointer;
+      font-size: 30px;
+      line-height: 1;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: rgba(17, 17, 17, 0.4);
+      transition: all .2s; }
+      .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .slide-teacher .wrap-arrow-slick .arow-slick.next-slick {
+        margin-right: -23px; }
+      .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .slide-teacher .wrap-arrow-slick .arow-slick.prev-slick {
+        margin-left: -23px; }
+      .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .slide-teacher .wrap-arrow-slick .arow-slick:hover {
+        background: #ff5f2e; }
+      .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .slide-teacher .wrap-arrow-slick .arow-slick.slick-arrow.slick-hidden {
+        display: none; }
+      .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .slide-teacher .wrap-arrow-slick .arow-slick[aria-disabled="true"] {
+        visibility: hidden; }
+
+.bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-media {
+  width: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 22px;
+  position: relative; }
+  .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-media img {
+    width: 100%;
+    border-radius: 50%; }
+  .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-media .socials {
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    border-radius: 50%;
+    background: rgba(255, 102, 130, 0.3);
+    padding: 31px 34px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    transition: all .3s;
+    opacity: 0; }
+    .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-media .socials .social-item {
+      font-size: 14px;
+      line-height: 1;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 0;
+      margin: 6px;
+      transition: all .3s;
+      transform: scale(0); }
+      .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-media .socials .social-item .icon-background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-media .socials .social-item .icon-background .flower {
+          width: 21px;
+          height: 21px;
+          border-radius: 50%;
+          position: relative;
+          background-color: #fff; }
+          .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-media .socials .social-item .icon-background .flower .petal {
+            height: 36px;
+            width: 10px;
+            position: absolute;
+            top: calc(50% - 18px);
+            left: calc(50% - 5px);
+            background-color: inherit;
+            border-radius: 5px; }
+            .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-media .socials .social-item .icon-background .flower .petal:nth-child(2) {
+              transform: rotateZ(36deg); }
+            .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-media .socials .social-item .icon-background .flower .petal:nth-child(3) {
+              transform: rotateZ(72deg); }
+            .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-media .socials .social-item .icon-background .flower .petal:nth-child(4) {
+              transform: rotateZ(108deg); }
+            .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-media .socials .social-item .icon-background .flower .petal:nth-child(5) {
+              transform: rotateZ(144deg); }
+        .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-media .socials .social-item .icon-background img {
+          width: 100%;
+          height: 100%; }
+      .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-media .socials .social-item img {
+        max-width: 100%; }
+      .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-media .socials .social-item:hover {
+        color: #fff !important; }
+        .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-media .socials .social-item:hover .icon-background .flower {
+          background-color: #ff5f2e; }
+  .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-media:hover .socials {
+    opacity: 1; }
+    .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-media:hover .socials .social-item {
+      transform: scale(1); }
+
+.bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-text {
+  text-align: center; }
+  .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-text .name {
+    font-family: Sniglet;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.3;
+    color: #56509f;
+    word-break: break-word; }
+    .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-text .name a {
+      color: #56509f; }
+      .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-text .name a:hover {
+        color: #ff5f2e; }
+  .bp-element-our-team.kindergarten-layout-slider-1 .wrap-element .teacher-item .teacher-text .info {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #797979;
+    word-break: break-word; }

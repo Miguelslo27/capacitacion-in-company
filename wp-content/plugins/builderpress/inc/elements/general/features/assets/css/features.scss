@@ -1,0 +1,26 @@
+.bp-element-features {
+    &.layout-1 {
+        .item {
+            position: relative;
+            i {
+                font-size: 20px;
+                line-height: 1;
+                color: #f8b944;
+                position: absolute;
+                top: 2px;
+                left: 0;
+            }
+            .content {
+                .title {
+                    font-weight: 300;
+                    font-size: 18px;
+                    line-height: 1.555555;
+                    color: #c6c6c6;
+                    padding-left: 38px;
+                    position: relative;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}
