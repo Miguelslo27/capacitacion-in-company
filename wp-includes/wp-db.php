@@ -787,7 +787,7 @@ class wpdb {
 	 *
 	 * @since 3.1.0
 	 *
-	 * @param resource $dbh     The resource given by mysqli_connect
+	 * @param resource $dbh     The resource given by mysql_connect
 	 * @param string   $charset Optional. The character set. Default null.
 	 * @param string   $collate Optional. The collation. Default null.
 	 */
@@ -1629,7 +1629,7 @@ class wpdb {
 					$attempt_fallback = false;
 				} elseif ( defined( 'WP_USE_EXT_MYSQL' ) && ! WP_USE_EXT_MYSQL ) {
 					$attempt_fallback = false;
-				} elseif ( ! function_exists( 'mysqli_connect' ) ) {
+				} elseif ( ! function_exists( 'mysql_connect' ) ) {
 					$attempt_fallback = false;
 				}
 
@@ -1640,9 +1640,9 @@ class wpdb {
 			}
 		} else {
 			if ( WP_DEBUG ) {
-				$this->dbh = mysqli_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new_link, $client_flags );
+				$this->dbh = mysql_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new_link, $client_flags );
 			} else {
-				$this->dbh = @mysqli_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new_link, $client_flags );
+				$this->dbh = @mysql_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new_link, $client_flags );
 			}
 		}
 
@@ -1702,7 +1702,7 @@ class wpdb {
 	 * Parse the DB_HOST setting to interpret it for mysqli_real_connect.
 	 *
 	 * mysqli_real_connect doesn't support the host param including a port or
-	 * socket like mysqli_connect does. This duplicates how mysqli_connect detects
+	 * socket like mysql_connect does. This duplicates how mysql_connect detects
 	 * a port and/or socket file.
 	 *
 	 * @since 4.9.0
