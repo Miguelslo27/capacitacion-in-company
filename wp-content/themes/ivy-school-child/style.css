@@ -9,3 +9,7 @@ header#masthead.site-header.affix.custom-sticky {
 .admin-bar header#masthead.site-header.affix.custom-sticky {
     top: 32px !important;
 }
+
+footer.site-footer .footer .container .footer-sidebars.row > div {
+    text-align: center;
+}
