@@ -2,10 +2,6 @@
     display: none;
 }
 
-header#masthead.site-header.affix.custom-sticky {
-    background-color: rgba(225, 42, 45, 0.75) !important;
-}
-
 .admin-bar header#masthead.site-header.affix.custom-sticky {
     top: 32px !important;
 }
@@ -17,6 +13,7 @@ header#masthead.site-header.affix.custom-sticky {
 .bp-element-brands.layout-grid.sized-logo-companies .wrap-content .item img {
     max-height: 100%;
     max-width: 200px;
+    width: auto;
 }
 
 footer.site-footer .footer .container .footer-sidebars.row > div {
