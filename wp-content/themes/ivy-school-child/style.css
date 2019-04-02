@@ -6,6 +6,14 @@
     top: 32px !important;
 }
 
+body.home .page-title {
+    display: none;
+}
+
+body.home .site-content {
+    padding-top: 0;
+}
+
 .bp-element-brands.layout-grid.sized-logo-companies .wrap-content .item {
     width: calc(100% / 4);
 }
