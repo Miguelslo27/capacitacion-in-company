@@ -168,7 +168,7 @@ if ( ! function_exists( 'thim_social_share' ) ) {
 		if ( isset( $thim_options['group_sharing'] ) ) {
 			$socials = get_theme_mod( 'group_sharing' );
 		} else {
-			$socials = array( 'facebook', 'twitter', 'pinterest', 'google', 'fancy' );
+			$socials = array( 'google' );
 		}
 
 		foreach ( $socials as $social ) {
