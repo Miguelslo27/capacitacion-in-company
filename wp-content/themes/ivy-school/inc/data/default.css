@@ -264,7 +264,9 @@ header.header_v3 .header-wrapper .search-bar .widget_search .search-form .search
 }
 
 .main-top {
-    height: 450px
+    height: 450px;
+    background-size: 100%;
+    background-repeat: no-repeat
 }
 
 .main-top .content {
