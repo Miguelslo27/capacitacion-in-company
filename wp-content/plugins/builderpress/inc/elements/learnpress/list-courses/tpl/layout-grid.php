@@ -43,14 +43,6 @@ $num_ratings = 0;
             </div>
 
             <div class="text">
-                <div class="teacher">
-                    <div class="ava">
-                        <?php echo $course->get_instructor()->get_profile_picture( '', 68 ); ?>
-                    </div>
-
-                    <?php echo $course->get_instructor_html(); ?>
-                </div>
-
                 <h3 class="title-course">
                     <a href="<?php the_permalink(); ?>">
                         <?php the_title(); ?>
