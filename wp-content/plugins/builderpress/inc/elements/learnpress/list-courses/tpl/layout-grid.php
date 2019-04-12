@@ -50,10 +50,6 @@ $num_ratings = 0;
                 </h3>
 
                 <div class="info-course">
-                    <span>
-                        <i class="ion ion-android-person"></i>
-                        <?php echo intval( $course->count_students() ); ?>
-                    </span>
                     <?php
                         $courses_tag = get_the_terms($course->get_id(),'course_tag');
 

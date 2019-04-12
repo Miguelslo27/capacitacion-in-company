@@ -20,10 +20,6 @@ if( thim_plugin_active( 'learnpress-course-review' ) ) {
             if($layout_courses === "left_courses") {
         ?>
                 <div class="info-course">
-                    <span>
-                        <i class="ion ion-android-person"></i>
-                        <?php echo intval($course->count_students());?>
-                    </span>
                     <?php $courses_tag = get_the_terms($course->get_id(),'course_tag');?>
                     <?php if($courses_tag) {?>
                         <a href="<?php echo get_term_link($courses_tag[0]->term_id) ?>">
@@ -52,10 +48,6 @@ if( thim_plugin_active( 'learnpress-course-review' ) ) {
                     </div>
 
                     <div class="numbers">
-                        <span class="contact">
-                            <i class="ion ion-android-contacts"></i>
-                            <?php echo intval($course->count_students());?>
-                        </span>
                         <?php
                             if( thim_plugin_active( 'learnpress-course-review' ) ) {
                                 ?>
