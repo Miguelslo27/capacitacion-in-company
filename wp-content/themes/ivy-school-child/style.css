@@ -1,10 +1,29 @@
-/*
- Theme Name:   Ivy School Child
- Theme URI:    http://ivy-school.thimpress.com/
- Description:  Ivy School Child Theme
- Author:       ThimPress
- Author URI:   http://thimpress.com
- Template:     ivy-school
- Version:      1.0.0
- Text Domain:  ivy-school-child
-*/
+.menu-right {
+    display: none;
+}
+
+.admin-bar header#masthead.site-header.affix.custom-sticky {
+    top: 32px !important;
+}
+
+body.home .page-title {
+    display: none;
+}
+
+body.home .site-content {
+    padding-top: 0;
+}
+
+.bp-element-brands.layout-grid.sized-logo-companies .wrap-content .item {
+    width: calc(100% / 4);
+}
+
+.bp-element-brands.layout-grid.sized-logo-companies .wrap-content .item img {
+    max-height: 100%;
+    max-width: 200px;
+    width: auto;
+}
+
+footer.site-footer .footer .container .footer-sidebars.row > div {
+    text-align: center;
+}
