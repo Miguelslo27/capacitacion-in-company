@@ -72,7 +72,6 @@
                 <span><?php echo esc_html__( 'Share', 'ivy-school' ); ?>:</span>
                 <a href="#" style="background: #3a589a"><i class="ion ion-social-facebook"></i></a>
                 <a href="#" style="background: #21ccff"><i class="ion ion-social-twitter"></i></a>
-                <a href="#" style="background: #df4a38"><i class="ion ion-social-googleplus"></i></a>
                 <a href="#" style="background: #89ba16"><i class="ion ion-android-share-alt"></i></a>
             </div>
         </div>
