@@ -30,10 +30,6 @@ defined( 'ABSPATH' ) || exit;
                     </div>
 
                     <div class="content">
-                        <div class="ava">
-							<?php echo $course->get_instructor()->get_profile_picture( '', 68 ); ?>
-                        </div>
-
                         <div class="name">
 							<?php echo $course->get_instructor_html(); ?>
                         </div>
