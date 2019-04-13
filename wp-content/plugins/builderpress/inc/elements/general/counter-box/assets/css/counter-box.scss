@@ -1,0 +1,220 @@
+
+.bp-element-counter-box {
+    &.style-horizontal {
+        .counter-boxes {
+            .counter-box {
+                display: flex;
+                align-items: flex-end;
+            }
+        }
+    }
+    &.layout-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .item {
+            flex-grow: 1;
+            position: relative;
+
+            .number {
+
+                font-weight: 600;
+                font-size: 60px;
+                line-height: 1;
+                color: #fff;
+                text-transform: uppercase;
+            }
+
+            .text {
+
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 1.444444;
+                color: #fff;
+            }
+            .title {
+                line-height: 100%;
+            }
+        }
+
+        &.align-left {
+            .item {
+                .number,
+                .text {
+                    text-align: left;
+                }
+            }
+        }
+
+        &.align-center {
+            .item {
+                .number,
+                .text {
+                    text-align: center;
+                }
+            }
+        }
+
+        &.align-right {
+            .item {
+                .number,
+                .text {
+                    text-align: right;
+                }
+            }
+        }
+
+        &.show-line {
+            .item {
+
+                &:before {
+                    content: '';
+                    display: block;
+                    width: 2px;
+                    height: 86px;
+                    background: rgba(149, 149, 149, .25);
+                    transform: rotateZ(28deg);
+                    position: absolute;
+                    top: 10px;
+                    right: 0;
+                }
+
+            }
+        }
+
+    }
+    &.layout-2 {
+        .counter-boxes {
+            .item {
+                .counter-box {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 auto;
+                    .number {
+                        font-family: Playfair Display;
+                        font-weight: 700;
+                        font-size: 60px;
+                        line-height: 1.1;
+                        padding-bottom: 25px;
+                        position: relative;
+                        white-space: nowrap;
+                        .number_counter {
+                            &:after {
+                                content: '';
+                                display: inline-block;
+                                width: 1px;
+                                height: 42px;
+                                background-color: rgba(225,225,225,0.15);
+                                transform: rotateZ(20deg);
+                                position: relative;
+                                top: 8px;
+                                margin-left: 20px;
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.kindergarten-layout-1 {
+        .counter-boxes {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 127px;
+            height: 127px;
+            z-index: 0;
+            .counter-background {
+                .flower {
+                    background-color: #f9c00c;
+                    width: 83px;
+                    height: 83px;
+                    border-radius: 50%;
+                    position: relative;
+                    .petal {
+                        height: 127px;
+                        width: 44px;
+                        position: absolute;
+                        top: calc(50% - 73px);
+                        left: calc(50% - 22px);
+                        background-color: inherit;
+                        border-radius: 22px;
+
+                        &:nth-child(2) {
+                            transform: rotateZ(36deg);
+                        }
+
+                        &:nth-child(3) {
+                            transform: rotateZ(72deg);
+                        }
+
+                        &:nth-child(4) {
+                            transform: rotateZ(108deg);
+                        }
+
+                        &:nth-child(5) {
+                            transform: rotateZ(144deg);
+                        }
+                    }
+                }
+            }
+            .item {
+                position: absolute;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .bp-element-counter-box.layout-1 {
+        .item {
+            & + .item::before {
+                height: 66px;
+            }
+
+            .number {
+                font-size: 50px;
+            }
+
+            .text {
+                font-size: 15px;
+            }
+        }
+
+    }
+}
+
+@media (max-width: 767px) {
+    .bp-element-counter-box.layout-1 {
+        .item {
+            & + .item::before {
+                height: 50px;
+            }
+
+            .number {
+                font-size: 30px;
+            }
+
+            .text {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .bp-element-counter-box.layout-1 {
+        flex-wrap: wrap;
+
+        .item {
+            & + .item::before {
+                display: none;
+            }
+        }
+
+    }
+}
