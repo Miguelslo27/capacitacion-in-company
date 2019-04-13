@@ -921,7 +921,7 @@ function thim_course_instructor() {
 
 function thim_course_rate() {
     echo '<div class="landing-review">';
-    echo '<h3 class="title-rating">' . esc_html__( 'Reviews', 'ivy-school' ) . '</h3>';
+    echo '<h3 class="title-rating">' . esc_html__( 'Reseñas', 'ivy-school' ) . '</h3>';
     learn_press_course_review_template( 'course-rate.php' );
     learn_press_course_review_template( 'course-review.php' );
     echo '</div>';
