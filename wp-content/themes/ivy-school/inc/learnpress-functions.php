@@ -654,10 +654,6 @@ if ( ! function_exists( 'thim_related_courses' ) ) {
                                     </div>
 
                                     <div class="content">
-                                        <div class="name">
-                                            <?php echo ent2ncr($course->get_instructor_html()); ?>
-                                        </div>
-
                                         <?php
                                         if ( class_exists( 'LP_Addon_Course_Review' ) ) {
                                             $num_ratings = learn_press_get_course_rate_total( get_the_ID() ) ? learn_press_get_course_rate_total( get_the_ID() ) : 0;

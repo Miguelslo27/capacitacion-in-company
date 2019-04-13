@@ -30,9 +30,6 @@ defined( 'ABSPATH' ) || exit;
                     </div>
 
                     <div class="content">
-                        <div class="name">
-							<?php echo $course->get_instructor_html(); ?>
-                        </div>
 
 						<?php
                         if( is_plugin_active( 'learnpress-course-review/learnpress-course-review.php' ) ) {
