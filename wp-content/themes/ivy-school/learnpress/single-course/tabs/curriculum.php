@@ -68,7 +68,7 @@ $curriculum_heading = apply_filters( 'learn_press_curriculum_heading', esc_html_
 
             if ( ! empty( $course_duration[0] ) && $course_duration[0] != '0' ) {
                 ?>
-                <span class="courses-time"><?php esc_html_e( 'Time: ', 'ivy-school' ); ?>
+                <span class="courses-time"><?php esc_html_e( 'Duración: ', 'ivy-school' ); ?>
                     <span class="text"><?php echo esc_html( $course_duration_text ); ?></span></span>
                 <?php
             }

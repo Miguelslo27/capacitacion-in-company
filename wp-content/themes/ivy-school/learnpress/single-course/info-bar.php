@@ -23,7 +23,7 @@ $course = LP_Global::course();
 
 	<?php if ( function_exists( 'learn_press_course_price' ) && $course->get_price_html() ) { ?>
         <div class="price-box">
-            <?php echo esc_html__( 'Price', 'ivy-school' ); ?>
+            <?php echo esc_html__( 'Precio', 'ivy-school' ); ?>
 			<?php learn_press_course_price(); ?>
         </div>
 	<?php } ?>
