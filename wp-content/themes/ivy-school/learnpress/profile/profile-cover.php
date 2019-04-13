@@ -46,12 +46,6 @@ $lp_info = get_the_author_meta( 'lp_info', $user->get_id() );
                         </a>
                     <?php endif; ?>
 
-                    <?php if ( isset( $lp_info['google'] ) && $lp_info['google'] ) : ?>
-                        <a href="<?php echo esc_url($lp_info['google']);?>" class="item">
-                            <i class="fa fa-google-plus"></i>
-                        </a>
-                    <?php endif; ?>
-
                     <?php if ( isset( $lp_info['instagram'] ) && $lp_info['instagram'] ) : ?>
                         <a href="<?php echo esc_url($lp_info['instagram']);?>" class="item">
                             <i class="fa fa-instagram"></i>
