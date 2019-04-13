@@ -36,6 +36,13 @@ $img = $params['background'] ? wp_get_attachment_image_url( $params['background'
                         </div>
 
                         <div class="author">
+                            <div class="ava">
+                                <?php
+                                $thumbnail_id = (int) $testimonial['image'];
+                                $size         = apply_filters( 'builder-press/testimonial/image-size', '40x40' );
+                                builder_press_get_attachment_image( $thumbnail_id, $size );
+                                ?>
+                            </div>
                             <div class="info">
                                 <?php if ( isset( $testimonial['website'] ) ) { ?>
                                     <a href="<?php echo esc_attr( $testimonial['website'] ) ?>"
