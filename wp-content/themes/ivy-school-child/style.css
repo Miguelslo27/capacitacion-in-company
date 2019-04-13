@@ -37,3 +37,7 @@ footer.site-footer .footer .container .footer-sidebars.row > div {
 body.left_courses .wrapper-item-course .item-course .text {
     padding: 20px 30px;
 }
+
+.related-archive .course-item .content {
+    padding: 15px 23px;
+}
