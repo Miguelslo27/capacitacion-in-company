@@ -33,3 +33,7 @@ footer.site-footer .footer .container .footer-sidebars.row > div {
     background-size: 100%;
     background-repeat: no-repeat
 }
+
+body.left_courses .wrapper-item-course .item-course .text {
+    padding: 20px 30px;
+}
