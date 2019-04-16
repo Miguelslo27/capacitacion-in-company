@@ -10,12 +10,11 @@
 ?><!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" <?php language_attributes(); ?>>
 <head>
+	<title><?php bloginfo( 'name' ); ?></title>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php wp_head(); ?>
-
-	<title><?php bloginfo( 'name' ); ?></title>
 </head>
 <body <?php body_class(); ?>>
 <?php do_action( 'thim_before_body' ); ?>
