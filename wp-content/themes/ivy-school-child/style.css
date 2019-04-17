@@ -24,6 +24,10 @@ body.home .site-content {
     width: auto;
 }
 
+.site-footer.footer_home_3 .footer, .site-footer.footer_home_4 .footer {
+    background-image: url(assets/images/bg-footer-01.png);
+}
+
 footer.site-footer .footer .container .footer-sidebars.row > div {
     text-align: center;
 }
