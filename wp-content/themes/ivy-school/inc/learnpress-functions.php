@@ -691,6 +691,7 @@ if ( ! function_exists( 'thim_related_courses' ) ) {
                                             <?php if ( $course->has_sale_price() ) { ?>
                                                 <span class="old-price"> <?php echo esc_html($course->get_origin_price_html()); ?></span>
                                             <?php } ?>
+                                            <span>+ IVA 23</span>
                                         </div>
 
                                         <div class="numbers">

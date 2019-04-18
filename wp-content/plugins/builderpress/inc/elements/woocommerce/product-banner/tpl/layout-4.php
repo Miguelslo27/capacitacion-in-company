@@ -62,6 +62,7 @@ defined( 'ABSPATH' ) || exit;
                 </span>
                 <?php if ( $s['bn_price'] ) { ?>
                     <span class="price"><?php echo ent2ncr($s['bn_price']) ?></span>
+                    <span>+ IVA 3</span>
                 <?php }?>
             </div>
             <?php endif; ?>

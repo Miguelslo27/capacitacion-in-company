@@ -37,6 +37,7 @@ global $post;
 
                                 <div class="price">
                                     <?php echo( $product->get_price_html() ); ?>
+                                    <span>+ IVA 16</span>
                                 </div>
                             </div>
 

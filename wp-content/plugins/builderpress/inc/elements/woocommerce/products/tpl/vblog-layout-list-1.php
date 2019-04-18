@@ -45,6 +45,7 @@ defined( 'ABSPATH' ) || exit;
 
                         <div class="price">
                             <?php echo( $product->get_price_html() ); ?>
+                            <span>+ IVA 15</span>
                         </div>
                     </div>
                 </div>

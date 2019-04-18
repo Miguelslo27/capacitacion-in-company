@@ -48,7 +48,10 @@ $classes = 'col-xs-6 col-md-' . $column_product . ' col-sm-6';
                         <?php } ?>
 
                         <?php if ( $params['price'] ) { ?>
-                            <div class="price"><?php echo( $product->get_price_html() ); ?></div>
+                            <div class="price">
+                                <?php echo( $product->get_price_html() ); ?>
+                                <span>+ IVA 10</span>
+                            </div>
                         <?php } ?>
 
                         <?php if ( $params['add_cart'] ) {

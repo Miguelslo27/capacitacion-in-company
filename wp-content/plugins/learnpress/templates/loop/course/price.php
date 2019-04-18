@@ -29,7 +29,8 @@ $course = LP_Global::course();
 
 		<?php } ?>
 
-        <span class="price"><?php echo $price_html; ?></span>
+				<span class="price"><?php echo $price_html; ?></span>
+				<span>+ IVA 17</span>
 
 	<?php } ?>
 
