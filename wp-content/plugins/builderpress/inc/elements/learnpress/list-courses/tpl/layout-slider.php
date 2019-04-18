@@ -68,7 +68,8 @@ defined( 'ABSPATH' ) || exit;
 							<?php echo esc_html( $course->get_price_html() ); ?>
 							<?php if ( $course->has_sale_price() ) { ?>
                                 <span class="old-price"> <?php echo esc_html( $course->get_origin_price_html() ); ?></span>
-							<?php } ?>
+                            <?php } ?>
+                            <span>+ IVA 3</span>
                         </div>
 
                         <div class="numbers">
