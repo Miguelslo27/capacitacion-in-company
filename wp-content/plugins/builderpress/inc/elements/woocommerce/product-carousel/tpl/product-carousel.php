@@ -120,10 +120,7 @@ $i        = 1;
                                 <div class="ratings"><?php echo wc_get_rating_html( $product->get_average_rating() ); ?></div>
                             <?php } ?>
 
-                            <div class="price">
-								<?php echo( $product->get_price_html() ); ?>
-								<span>+ IVA 8</span>
-							</div>
+                            <div class="price"><?php echo( $product->get_price_html() ); ?></div>
 
                             <?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
 

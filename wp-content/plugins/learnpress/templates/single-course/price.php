@@ -30,8 +30,7 @@ if ( ! $price = $course->get_price_html() ) {
 
 	<?php } ?>
 
-		<span class="price"><?php echo $price; ?></span>
-		<span>+ IVA 18</span>
+    <span class="price"><?php echo $price; ?></span>
 
 </div>
 

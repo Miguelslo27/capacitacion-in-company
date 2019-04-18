@@ -23,7 +23,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 
 ?>
-<p class="price">
-	<?php echo $product->get_price_html(); ?>
-	<span>+ IVA 22</span>
-</p>
+<p class="price"><?php echo $product->get_price_html(); ?></p>

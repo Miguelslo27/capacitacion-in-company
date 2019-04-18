@@ -69,7 +69,7 @@ defined( 'ABSPATH' ) || exit;
 							<?php if ( $course->has_sale_price() ) { ?>
                                 <span class="old-price"> <?php echo esc_html( $course->get_origin_price_html() ); ?></span>
                             <?php } ?>
-                            <span>+ IVA 3</span> <!-- NOT FOUND -->
+                            <span>+ IVA 3</span>
                         </div>
 
                         <div class="numbers">

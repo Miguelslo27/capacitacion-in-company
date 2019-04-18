@@ -73,7 +73,6 @@ if ( $params['overlay'] ) {
                                     <span class="sale-price"><?php echo esc_attr( $image['price_sale'] ) ?></span>
                                 <?php } ?>
                                 <span class="price"><?php echo esc_attr( $image['price'] ) ?></span>
-                                <span>+ IVA 6</span>
                             </div>
                         <?php } ?>
 
