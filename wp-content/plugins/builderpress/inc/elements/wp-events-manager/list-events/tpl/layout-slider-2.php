@@ -58,6 +58,10 @@ defined( 'ABSPATH' ) || exit;
                         </h3>
 
                         <div class="author">
+                            <div class="ava">
+                                <img src="<?php echo esc_url( $event['author_avata'] );?>" alt="IMG">
+                            </div>
+
                             <div class="info">
                                 <div class="address">
                                     <?php echo ent2ncr( $event['location'] ); ?>

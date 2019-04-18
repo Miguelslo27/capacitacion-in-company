@@ -10,6 +10,10 @@ $avatar = get_avatar( $event->post->post_author, 87, '', '', array( 'gravatar' =
 ?>
 
 <div class="bl-author-event">
+    <div class="ava">
+        <?php echo ent2ncr($avatar);?>
+    </div>
+
     <div class="text">
 
         <p class="content">
