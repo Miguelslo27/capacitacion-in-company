@@ -120,7 +120,11 @@ $i        = 1;
                                 <div class="ratings"><?php echo wc_get_rating_html( $product->get_average_rating() ); ?></div>
                             <?php } ?>
 
-                            <div class="price"><?php echo( $product->get_price_html() ); ?></div>
+                            <div class="price">
+								<?php echo( $product->get_price_html() ); ?>
+								<!-- wp-content\plugins\builderpress\inc\elements\woocommerce\product-carousel\tpl\product-carousel.php -->
+								<span>+ IVA</span>
+							</div>
 
                             <?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
 

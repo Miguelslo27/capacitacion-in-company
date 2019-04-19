@@ -37,6 +37,8 @@ global $post;
 
                                 <div class="price">
                                     <?php echo( $product->get_price_html() ); ?>
+                                    <!-- wp-content\plugins\builderpress\inc\elements\woocommerce\products\tpl\vblog-layout-slider-1.php -->
+                                    <span>+ IVA</span>
                                 </div>
                             </div>
 

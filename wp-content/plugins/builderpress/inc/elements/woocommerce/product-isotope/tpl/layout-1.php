@@ -56,7 +56,11 @@ $classes = 'col-xs-6 col-md-' . $column_product . ' col-sm-6';
                     <?php } ?>
 
                     <?php if ( $price ) { ?>
-                        <div class="price"><?php echo( $product->get_price_html() ); ?></div>
+                        <div class="price">
+                            <?php echo( $product->get_price_html() ); ?>
+                            <!-- wp-content\plugins\builderpress\inc\elements\woocommerce\product-isotope\tpl\layout-1.php -->
+                            <span>+ IVA</span>
+                        </div>
                     <?php } ?>
 
                 </div>
