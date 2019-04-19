@@ -30,7 +30,9 @@ if ( ! $price = $course->get_price_html() ) {
 
 	<?php } ?>
 
-    <span class="price"><?php echo $price; ?></span>
+		<span class="price"><?php echo $price; ?></span>
+		<!-- wp-content\plugins\learnpress\templates\single-course\price.php -->
+		<span>+ IVA</span>
 
 </div>
 

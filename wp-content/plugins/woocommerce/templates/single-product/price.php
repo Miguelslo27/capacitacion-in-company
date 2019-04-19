@@ -23,4 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 
 ?>
-<p class="price"><?php echo $product->get_price_html(); ?></p>
+<p class="price">
+	<?php echo $product->get_price_html(); ?>
+	<!-- wp-content\plugins\woocommerce\templates\single-product\price.php -->
+	<span>+ IVA</span>
+</p>

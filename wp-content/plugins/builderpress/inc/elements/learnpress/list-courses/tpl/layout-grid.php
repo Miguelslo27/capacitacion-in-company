@@ -38,6 +38,8 @@ $num_ratings = 0;
                         <?php if ( $course->has_sale_price() ) { ?>
                             <span class="old-price"> <?php echo esc_html( $course->get_origin_price_html() ); ?></span>
                         <?php } ?>
+                        <!-- wp-content\plugins\builderpress\inc\elements\learnpress\list-courses\tpl\layout-grid.php -->
+                        <span>+ IVA</span>
                     </div>
                 <?php }?>
             </div>

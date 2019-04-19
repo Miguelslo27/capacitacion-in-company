@@ -29,7 +29,9 @@ $course = LP_Global::course();
 
 		<?php } ?>
 
-        <span class="price"><?php echo $price_html; ?></span>
+				<span class="price"><?php echo $price_html; ?></span>
+				<!-- wp-content\plugins\learnpress\templates\loop\course\price.php -->
+				<span>+ IVA</span>
 
 	<?php } ?>
 

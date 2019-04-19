@@ -691,6 +691,8 @@ if ( ! function_exists( 'thim_related_courses' ) ) {
                                             <?php if ( $course->has_sale_price() ) { ?>
                                                 <span class="old-price"> <?php echo esc_html($course->get_origin_price_html()); ?></span>
                                             <?php } ?>
+                                            <!-- wp-content\themes\ivy-school\inc\learnpress-functions.php -->
+                                            <span>+ IVA</span>
                                         </div>
 
                                         <div class="numbers">

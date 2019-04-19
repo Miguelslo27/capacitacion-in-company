@@ -64,6 +64,8 @@ defined( 'ABSPATH' ) || exit;
                                 <?php if ( $course->has_sale_price() ) { ?>
                                     <span class="old-price"> <?php echo esc_html( $course->get_origin_price_html() ); ?></span>
                                 <?php } ?>
+                                <!-- wp-content\plugins\builderpress\inc\elements\learnpress\list-courses\tpl\layout-slider-2.php -->
+                                <span>+ IVA</span>
                             </span>
                             <span class="line">/</span>monthly
                         </div>

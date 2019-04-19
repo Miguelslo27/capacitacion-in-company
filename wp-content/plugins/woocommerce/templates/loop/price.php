@@ -25,4 +25,6 @@ global $product;
 
 <?php if ( $price_html = $product->get_price_html() ) : ?>
 	<span class="price"><?php echo $price_html; ?></span>
+	<!-- wp-content\plugins\woocommerce\templates\loop\price.php -->
+	<span>+ IVA</span>
 <?php endif; ?>
