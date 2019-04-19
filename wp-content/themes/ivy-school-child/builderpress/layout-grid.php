@@ -38,7 +38,7 @@ $num_ratings = 0;
                         <?php if ( $course->has_sale_price() ) { ?>
                             <span class="old-price"> <?php echo esc_html( $course->get_origin_price_html() ); ?></span>
                         <?php } ?>
-                        <span>+ IVA</span> <!-- IN HOME COURSES GRID LAYOUT -->
+                        <span>+ IVA</span> <!-- IN HOME COURSES GRID LAYOUT: BUILDERPRESS FOLDER -->
                     </div>
                 <?php }?>
             </div>
