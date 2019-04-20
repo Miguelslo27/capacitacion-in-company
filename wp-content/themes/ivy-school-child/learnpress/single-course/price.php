@@ -29,9 +29,9 @@ if ( $price = $course->get_price_html() ) {
 	$origin_price = $course->get_origin_price_html();
 
 	$free_course = ( $price === 'Free' ) ? ' free' : '';
-	echo '<span class="course-price' . $free_course . '">' . $price . ' + IVA</span>';
+	echo '<span class="course-price' . $free_course . '">' . $price . ' <span class="price-tax">+ iva</span></span>';
 
     if ( $course->has_sale_price() ) {
-        echo '<span class="course-origin-price">' . $origin_price . ' + IVA</span>';
+        echo '<span class="course-origin-price">' . $origin_price . ' <span class="price-tax">+ iva</span></span>';
     }
 }
