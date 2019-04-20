@@ -42,8 +42,12 @@ if( thim_plugin_active( 'learnpress-course-review' ) ) {
                 <div class="info">
                     <div class="price<?php if($course->is_free()) echo ' free';?>">
                         <?php echo esc_html($course->get_price_html()); ?>
+                        <!-- wp-content\themes\ivy-school\learnpress\loop\course\info.php -->
+                        <span>+ IVA</span>
                         <?php if ( $course->has_sale_price() ) { ?>
                             <span class="old-price"> <?php echo esc_html($course->get_origin_price_html()); ?></span>
+                            <!-- wp-content\themes\ivy-school\learnpress\loop\course\info.php -->
+                            <span>+ IVA</span>
                         <?php } ?>
                     </div>
 

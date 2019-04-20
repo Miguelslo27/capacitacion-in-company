@@ -77,14 +77,22 @@ $class = 12 / $number_columns;
             <div class="package-footer">
                 <?php if ( ! empty( $package['price'] ) ) { ?>
                     <div class="price">
-                        <span class="current-price"><?php echo ent2ncr( $package['price'] ); ?></span>
+                        <span class="current-price">
+                            <?php echo ent2ncr( $package['price'] ); ?>
+                            <!-- wp-content\plugins\builderpress\inc\elements\general\pricing-table\tpl\layout-1.php -->
+                            <span>+ IVA</span>
+                        </span>
 
                         <?php if ( ! empty( $package['unit'] ) ) { ?>
                             <span class="package-unit"><?php echo ent2ncr( $package['unit'] ); ?></span>
                         <?php } ?>
 
                         <?php if ( ! empty( $package['original_price'] ) ) { ?>
-                            <span class="original-price"><?php echo ent2ncr( $package['original_price'] ); ?></span>
+                            <span class="original-price">
+                                <?php echo ent2ncr( $package['original_price'] ); ?>
+                                <!-- wp-content\plugins\builderpress\inc\elements\general\pricing-table\tpl\layout-1.php -->
+                                <span>+ IVA</span>
+                            </span>
                         <?php } ?>
                     </div>
                 <?php } ?>

@@ -61,7 +61,11 @@ defined( 'ABSPATH' ) || exit;
                     <?php }?>
                 </span>
                 <?php if ( $s['bn_price'] ) { ?>
-                    <span class="price"><?php echo ent2ncr($s['bn_price']) ?></span>
+                    <span class="price">
+                        <?php echo ent2ncr($s['bn_price']) ?>
+                        <!-- wp-content\plugins\builderpress\inc\elements\woocommerce\product-banner\tpl\layout-4.php -->
+                        <span>+ IVA</span>
+                    </span>
                 <?php }?>
             </div>
             <?php endif; ?>

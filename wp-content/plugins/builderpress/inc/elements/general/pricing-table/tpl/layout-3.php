@@ -40,6 +40,8 @@ $class = 12 / $number_columns;
                     <?php if ( ! empty( $package['price'] ) ) { ?>
                         <div class="price">
                             <span class="number"><?php echo ent2ncr( $package['price'] ); ?>/</span><?php echo ent2ncr( $package['unit'] ); ?>
+                            <!-- wp-content\plugins\builderpress\inc\elements\general\pricing-table\tpl\layout-3.php -->
+                            <span>+ IVA</span>
                         </div>
                     <?php } ?>
                     <?php if ( ! empty( $package['description'] ) ) { ?>

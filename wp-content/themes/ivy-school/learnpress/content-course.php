@@ -36,8 +36,12 @@ $i=0;
                    <?php do_action('thim-courses-loop-item-thumbnail'); ?>
                    <div class="price<?php if($course->is_free()) echo ' free';?>">
                        <?php echo esc_html($course->get_price_html()); ?>
+                       <!-- wp-content\themes\ivy-school\learnpress\content-course.php -->
+                       <span>+ IVA</span>
                        <?php if ( $course->has_sale_price() ) { ?>
                            <span class="old-price"> <?php echo esc_html($course->get_origin_price_html()); ?></span>
+                           <!-- wp-content\themes\ivy-school\learnpress\content-course.php -->
+                           <span>+ IVA</span>
                        <?php } ?>
                    </div>
                </div>

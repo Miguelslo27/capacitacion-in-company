@@ -72,7 +72,11 @@ if ( $params['overlay'] ) {
                                 <?php if ( isset($image['price_sale']) ) { ?>
                                     <span class="sale-price"><?php echo esc_attr( $image['price_sale'] ) ?></span>
                                 <?php } ?>
-                                <span class="price"><?php echo esc_attr( $image['price'] ) ?></span>
+                                <span class="price">
+                                    <?php echo esc_attr( $image['price'] ) ?>
+                                    <!-- wp-content\plugins\builderpress\inc\elements\woocommerce\product-banner\tpl\layout-3.php -->
+                                    <span>+ IVA</span>
+                                </span>
                             </div>
                         <?php } ?>
 
