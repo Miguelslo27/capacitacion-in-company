@@ -50,6 +50,16 @@ body.left_courses .wrapper-item-course .item-course .text .teacher .ava {
     margin-top: -42px;
 }
 
+.bp-element-testimonials.layout-slider-4 .slide-testimonial .testimonial-item .author .ava {
+    width: 60px;
+    height: 60px;
+}
+
+.bp-element-testimonials.layout-slider-4 .slide-testimonial .testimonial-item .author .info {
+    width: calc(100% - 60px - 18px);
+    justify-content: center;
+}
+
 .related-archive .course-item .content {
     padding: 15px 23px;
 }
