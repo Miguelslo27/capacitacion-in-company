@@ -23,6 +23,7 @@ $i=0;
     $course = LP_Global::course();
 ?>
 
+<!-- wp-content\themes\ivy-school-child\learnpress\content-course.php -->
 <div id="post-<?php the_ID(); ?>" class="col-md-4 wrapper-item-course">
     <?php
         if($layout_courses === "left_courses"){
@@ -33,22 +34,28 @@ $i=0;
                    do_action('learn-press/before-courses-loop-item');
                ?>
                <div class="pic">
-                   <?php do_action('thim-courses-loop-item-thumbnail'); ?>
-                   <div class="price<?php if($course->is_free()) echo ' free';?>">
-                       <?php echo esc_html($course->get_price_html()); ?>
-                       <span class="price-tax">+ iva</span>
-                       <?php if ( $course->has_sale_price() ) { ?>
-                           <span class="old-price"> <?php echo esc_html($course->get_origin_price_html()); ?></span>
-                           <span class="price-tax">+ iva</span>
-                       <?php } ?>
-                   </div>
+                   <a href="<?php the_permalink(); ?>">
+                        <?php $size = apply_filters( 'builder-press/list-courses/layout-grid/image-size', '450x300' );
+                            builder_press_get_attachment_image( get_post_thumbnail_id( get_the_ID() ), $size ); ?>
+
+                        <div class="price<?php if($course->is_free()) echo ' free';?>">
+                            <?php echo esc_html($course->get_price_html()); ?>
+                            <span class="price-tax">+ iva</span>
+                            <?php if ( $course->has_sale_price() ) { ?>
+                                <span class="old-price"> <?php echo esc_html($course->get_origin_price_html()); ?></span>
+                                <span class="price-tax">+ iva</span>
+                            <?php } ?>
+                        </div>
+                    </a>
                </div>
                <div class="text">
                    <div class="teacher">
-                       <div class="ava">
-                           <?php echo ent2ncr($course->get_instructor()->get_profile_picture( '', 68 )); ?>
-                       </div>
-                       <?php echo ent2ncr($course->get_instructor_html()); ?>
+                       <a href="<?php the_permalink(); ?>">
+                            <div class="ava">
+                                <?php echo ent2ncr($course->get_instructor()->get_profile_picture( '', 68 )); ?>
+                            </div>
+                            <?php echo ent2ncr($course->get_author_display_name()); ?>
+                       </a>
                     </div>
                    <h3 class="title-course">
                        <a href="<?php the_permalink(); ?>">

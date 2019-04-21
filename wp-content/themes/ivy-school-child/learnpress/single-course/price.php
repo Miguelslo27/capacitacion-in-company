@@ -27,8 +27,9 @@ if ( learn_press_is_enrolled_course() || ( $is_buy_through_membership && $is_cou
 if ( $price = $course->get_price_html() ) {
 
 	$origin_price = $course->get_origin_price_html();
-
 	$free_course = ( $price === 'Free' ) ? ' free' : '';
+
+	echo '<!-- wp-content\themes\ivy-school-child\learnpress\single-course\price.php -->';
 	echo '<span class="course-price' . $free_course . '">' . $price . ' <span class="price-tax">+ iva</span></span>';
 
     if ( $course->has_sale_price() ) {
