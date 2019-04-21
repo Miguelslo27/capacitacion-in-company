@@ -17,6 +17,7 @@ defined( 'ABSPATH' ) || exit;
 $i=0;
 $num_ratings = 0;
 ?>
+<!-- wp-content\themes\ivy-school-child\builderpress\list-courses\layout-grid.php -->
 <div class="row">
     <?php while ( $courses->have_posts() ) : $courses->the_post(); $i++; ?>
     <?php
@@ -29,27 +30,31 @@ $num_ratings = 0;
     <div class="custom-col col-sm-6 col-md-6 col-lg-3 wrapper-item-course">
         <div class="item-course <?php echo ($i%2==0) ? 'color-1' : 'color-2';?>">
             <div class="pic">
-                <?php $size = apply_filters( 'builder-press/list-courses/layout-grid/image-size', '450x300' );
-                builder_press_get_attachment_image( get_post_thumbnail_id( get_the_ID() ), $size ); ?>
+                <a href="<?php the_permalink(); ?>">
+                    <?php $size = apply_filters( 'builder-press/list-courses/layout-grid/image-size', '450x300' );
+                    builder_press_get_attachment_image( get_post_thumbnail_id( get_the_ID() ), $size ); ?>
 
-                <?php if( $course->get_price_html() ) {?>
-                    <div class="price">
-                        <?php echo esc_html( $course->get_price_html() ); ?>
-                        <?php if ( $course->has_sale_price() ) { ?>
-                            <span class="old-price"> <?php echo esc_html( $course->get_origin_price_html() ); ?></span>
-                        <?php } ?>
-                        <span class="price-tax">+ iva</span>
-                    </div>
-                <?php }?>
+                    <?php if( $course->get_price_html() ) {?>
+                        <div class="price">
+                            <?php echo esc_html( $course->get_price_html() ); ?>
+                            <?php if ( $course->has_sale_price() ) { ?>
+                                <span class="old-price"> <?php echo esc_html( $course->get_origin_price_html() ); ?></span>
+                            <?php } ?>
+                            <span class="price-tax">+ iva</span>
+                        </div>
+                    <?php }?>
+                </a>
             </div>
 
             <div class="text">
                 <div class="teacher">
-                    <div class="ava">
-                        <?php echo $course->get_instructor()->get_profile_picture( '', 68 ); ?>
-                    </div>
+                    <a href="<?php the_permalink(); ?>">
+                        <div class="ava">
+                            <?php echo $course->get_instructor()->get_profile_picture( '', 68 ); ?>
+                        </div>
 
-                    <?php echo $course->get_instructor_html(); ?>
+                        <?php echo $course->get_author_display_name(); ?>
+                    </a>
                 </div>
 
                 <h3 class="title-course">

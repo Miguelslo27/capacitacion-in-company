@@ -23,6 +23,7 @@ $i=0;
     $course = LP_Global::course();
 ?>
 
+<!-- wp-content\themes\ivy-school-child\learnpress\content-course.php -->
 <div id="post-<?php the_ID(); ?>" class="col-md-4 wrapper-item-course">
     <?php
         if($layout_courses === "left_courses"){
