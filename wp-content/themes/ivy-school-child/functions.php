@@ -44,7 +44,9 @@ if ( ! function_exists( 'thim_related_courses' ) ) {
 																		</div>
 
 																		<div class="name">
-																				<?php echo ent2ncr($course->get_instructor_html()); ?>
+																				<a href="<?php the_permalink(); ?>">
+																						<?php echo ent2ncr($course->get_author_display_name()); ?>
+																				</a>
 																		</div>
 
 																		<?php
