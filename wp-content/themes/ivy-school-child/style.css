@@ -28,14 +28,16 @@ body.home .site-content {
     background-image: url(assets/images/bg-footer-01.png);
 }
 
-footer.site-footer .footer .container .footer-sidebars.row > div {
-    text-align: center;
-}
-
 .main-top {
     height: 450px;
     background-size: 100%;
     background-repeat: no-repeat
+}
+
+#primaryMenu > .menu-item:last-child a {
+    border: 1px solid #FFF;
+    border-radius: 30px;
+    padding: 10px 30px;
 }
 
 body.left_courses .wrapper-item-course .item-course .text {
@@ -58,4 +60,8 @@ body.left_courses .wrapper-item-course .item-course .text .teacher .ava {
 
 .single-lp_course .info-bar .price-box .course-price {
     font-size: 26px;
+}
+
+footer.site-footer .footer .container .footer-sidebars.row > div {
+    text-align: center;
 }
