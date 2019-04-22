@@ -16,7 +16,7 @@ $course = LP_Global::course();
 $user   = LP_Global::user();
 
 
-$curriculum_heading = apply_filters( 'learn_press_curriculum_heading', esc_html__( 'Contenido del curso', 'ivy-school' ) );
+$curriculum_heading = apply_filters( 'learn_press_curriculum_heading', esc_html__( 'Course Content', 'ivy-school' ) );
 ?>
 <?php if ( ! learn_press_is_learning_course() ): ?>
 	<div id="tab-curriculum" style="height: 68px;"></div>

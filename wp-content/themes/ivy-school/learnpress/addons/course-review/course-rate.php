@@ -41,7 +41,7 @@ $total           = $course_rate_res['total'];
 				<div class="course-rate">
 
 					<span class="number-star">
-                        <?php echo esc_html($item['rated']) . ' ' . esc_html__('estrellas','ivy-school');?>
+                        <?php echo esc_html($item['rated']) . ' ' . esc_html__('star','ivy-school');?>
                     </span>
 					<div class="review-bar">
 						<div class="rating" style="width:<?php echo esc_attr( $percent ); ?>% "></div>
