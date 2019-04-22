@@ -33,6 +33,8 @@ foreach ( $reviews as $key => $review ) { ?>
 				<?php } ?>
             </div>
 
+            <div class="name"><?php echo $review->user_login; ?></div>
+
             <p class="content"><?php echo $review->content; ?></p>
         </div>
     </div>
