@@ -22,21 +22,6 @@ $guest_checkout = ( LP()->checkout()->is_enable_guest_checkout() ) ? 'allow_gues
 
 <?php do_action( 'learn-press/before-purchase-form' ); ?>
     <!-- wp-content\themes\ivy-school-child\learnpress\single-course\buttons\purchase.php -->
-    <form name="purchase-course" class="purchase-course <?php echo esc_attr( $guest_checkout );?>" method="post" enctype="multipart/form-data">
-
-		<?php do_action( 'learn-press/before-purchase-button' ); ?>
-
-        <input type="hidden" name="purchase-course" value="<?php echo esc_attr( $course->get_id() ); ?>"/>
-        <input type="hidden" name="purchase-course-nonce"
-               value="<?php echo esc_attr( LP_Nonce_Helper::create_course( 'purchase' ) ); ?>"/>
-
-        <button class="button-purchase-course btn-buy-course btn-normal shape-round">
-			<?php echo esc_html( apply_filters( 'learn-press/purchase-course-button-text', esc_html__( 'Buy this course', 'ivy-school' ) ) ); ?>
-        </button>
-        <input type="hidden" name="redirect_to" value="">
-
-		<?php do_action( 'learn-press/after-purchase-button' ); ?>
-
-    </form>
+    <a href="/contact-us/" class="request-course-info">Solicite el curso</a>
 
 <?php do_action( 'learn-press/after-purchase-form' ); ?>
