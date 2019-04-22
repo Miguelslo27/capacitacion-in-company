@@ -16,4 +16,11 @@ defined( 'ABSPATH' ) || exit();
 
 $course = LP_Global::course();
 ?>
-
+<div class="instructor">
+    <div class="ava">
+        <?php echo ent2ncr($course->get_instructor()->get_profile_picture('',68)); ?>
+    </div>
+    <div class="name">
+        <?php echo ent2ncr($course->get_instructor_html()); ?>
+    </div>
+</div>
