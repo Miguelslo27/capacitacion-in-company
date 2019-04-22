@@ -72,6 +72,10 @@ defined( 'ABSPATH' ) || exit;
                         </div>
 
                         <div class="numbers">
+                            <span class="contact">
+                                <i class="ion ion-android-contacts"></i>
+	                            <?php echo intval( $course->count_students() ); ?>
+                            </span>
                             <?php //if( !empty($num_ratings) ) {?>
                             <span class="chat">
                                 <i class="ion ion-chatbubbles"></i>

@@ -694,6 +694,10 @@ if ( ! function_exists( 'thim_related_courses' ) ) {
                                         </div>
 
                                         <div class="numbers">
+                                            <span class="contact">
+                                                <i class="ion ion-android-contacts"></i>
+                                                <?php echo intval($course->count_students());?>
+                                            </span>
                                             <?php if ( class_exists( 'LP_Addon_Course_Review' ) ) {?>
                                             <span class="chat">
                                                 <i class="ion ion-chatbubbles"></i>
