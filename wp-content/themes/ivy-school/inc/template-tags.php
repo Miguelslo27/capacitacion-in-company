@@ -211,6 +211,12 @@ function thim_render_social_link( $social_name ) {
             ';
             break;
 
+		case 'google':
+			echo '<li class="google-plus">
+						<a href="https://plus.google.com/share?url=' . $url . '" class="icon-social"><i class="ion ion-social-googleplus"></i></a>
+					</li>';
+			break;
+
 		default:
 			break;
 	}
@@ -633,6 +639,11 @@ function thim_get_author_social_link() {
 			</li>
 		<?php } ?>
 
+        <?php if ( ! empty( $link_googleplus ) ) { ?>
+            <li>
+                <a href="<?php echo esc_url( $link_googleplus ); ?>" target="_blank" class="googleplus"><i class="ion ion-social-googleplus"></i></a>
+            </li>
+        <?php } ?>
 	</ul>
 <?php }
 
