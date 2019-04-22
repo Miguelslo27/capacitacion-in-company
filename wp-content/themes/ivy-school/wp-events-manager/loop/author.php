@@ -15,6 +15,11 @@ $avatar = get_avatar( $event->post->post_author, 87, '', '', array( 'gravatar' =
     </div>
 
     <div class="text">
+        <div class="name">
+            <a href="#">
+                <?php echo esc_html($user->data->user_nicename);?>
+            </a>
+        </div>
 
         <p class="content">
             <?php echo esc_html($user_meta['description'][0]); ?>

@@ -19,6 +19,7 @@ defined( 'ABSPATH' ) || exit;
  * @var $reviews
  */
 foreach ( $reviews as $key => $review ) { ?>
+    <!-- wp-content\themes\ivy-school-child\builderpress\course-reviews\layout-list.php -->
     <div class="bl-comment">
         <div class="comment-item">
 			<?php $course_rate = $review->rate;
@@ -32,8 +33,6 @@ foreach ( $reviews as $key => $review ) { ?>
                     <i class="fa fa-star-o"></i>
 				<?php } ?>
             </div>
-
-            <div class="name"><?php echo $review->user_login; ?></div>
 
             <p class="content"><?php echo $review->content; ?></p>
         </div>

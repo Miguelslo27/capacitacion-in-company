@@ -629,7 +629,7 @@ if ( ! function_exists( 'thim_related_courses' ) ) {
         if ( $related_courses ) {
             ?>
             <div class="related-archive">
-                <h3 class="related-title"><?php esc_html_e( 'Cursos relacionados', 'ivy-school' ); ?></h3>
+                <h3 class="related-title"><?php esc_html_e( 'Related Courses', 'ivy-school' ); ?></h3>
 
                 <div class="slide-course js-call-slick-col" data-numofslide="3" data-numofscroll="1" data-loopslide="1" data-autoscroll="0" data-speedauto="6000" data-respon="[3, 1], [3, 1], [2, 1], [2, 1], [1, 1]">
                     <div class="slide-slick">
@@ -929,7 +929,7 @@ function thim_course_instructor() {
 
 function thim_course_rate() {
     echo '<div class="landing-review">';
-    echo '<h3 class="title-rating">' . esc_html__( 'Reseñas', 'ivy-school' ) . '</h3>';
+    echo '<h3 class="title-rating">' . esc_html__( 'Reviews', 'ivy-school' ) . '</h3>';
     learn_press_course_review_template( 'course-rate.php' );
     learn_press_course_review_template( 'course-review.php' );
     echo '</div>';
