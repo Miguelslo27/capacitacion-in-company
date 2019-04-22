@@ -18,12 +18,12 @@ $course_info_button = get_post_meta( get_the_ID(), 'thim_course_info_button', tr
 $course_includes    = get_post_meta( get_the_ID(), 'thim_course_includes', true );
 $course = LP_Global::course();
 ?>
-
+<!-- wp-content\themes\ivy-school-child\learnpress\single-course\info-bar.php -->
 <aside class="info-bar sidebar sticky-sidebar">
 
 	<?php if ( function_exists( 'learn_press_course_price' ) && $course->get_price_html() ) { ?>
         <div class="price-box">
-            <?php echo esc_html__( 'Price', 'ivy-school' ); ?>
+            <?php echo esc_html__( 'Precio', 'ivy-school' ); ?>
 			<?php learn_press_course_price(); ?>
         </div>
 	<?php } ?>

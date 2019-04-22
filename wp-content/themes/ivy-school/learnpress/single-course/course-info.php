@@ -20,6 +20,15 @@ $cat = !empty($terms) ? '<a href="' . get_term_link( $terms[0], 'course_category
 ?>
 <div class="entry-button-meta">
 	<div class="entry-meta">
+		<div class="list-inline-item item-author">
+			<div class="author vcard">
+                <?php echo get_avatar( get_post_field( 'post_author', get_the_ID() ), 60 ); ?>
+                <div class="info_author">
+                    <label><?php esc_html_e( 'Teacher', 'ivy-school' ); ?></label>
+                    <span class="name_author"><?php echo esc_html($author->get_data( 'display_name' )); ?></span>
+                </div>
+            </div>
+		</div>
         <?php if ( $cat ) { ?>
 		<div class="list-inline-item entry-categoy">
 			<label><?php esc_html_e( 'Categories', 'ivy-school' ); ?></label>

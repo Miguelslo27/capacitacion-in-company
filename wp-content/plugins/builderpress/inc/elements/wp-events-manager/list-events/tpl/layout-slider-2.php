@@ -63,6 +63,10 @@ defined( 'ABSPATH' ) || exit;
                             </div>
 
                             <div class="info">
+                                <div class="name">
+                                    By <a href="<?php echo esc_url( $event['author_link'] );?>"><?php echo esc_html( $event['author_name'] );?></a>
+                                </div>
+
                                 <div class="address">
                                     <?php echo ent2ncr( $event['location'] ); ?>
                                 </div>

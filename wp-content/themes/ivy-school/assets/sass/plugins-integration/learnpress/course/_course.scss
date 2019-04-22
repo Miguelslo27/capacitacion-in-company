@@ -797,15 +797,17 @@
       font-size: 16px;
       line-height: 1.5;
       color: #7c7c7c;
+      text-align: center;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 31px;
 
       .course-price {
         font-weight: 700;
         font-size: 44px;
         line-height: 1;
         color: #292929;
-        margin-left: 10px;
+        margin-right: 8px;
+        margin-left: 8px;
       }
 
       .course-origin-price {
