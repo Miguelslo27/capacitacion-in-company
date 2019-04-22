@@ -21,7 +21,7 @@ $guest_checkout = ( LP()->checkout()->is_enable_guest_checkout() ) ? 'allow_gues
 ?>
 
 <?php do_action( 'learn-press/before-purchase-form' ); ?>
-
+    <!-- wp-content\themes\ivy-school-child\learnpress\single-course\buttons\purchase.php -->
     <form name="purchase-course" class="purchase-course <?php echo esc_attr( $guest_checkout );?>" method="post" enctype="multipart/form-data">
 
 		<?php do_action( 'learn-press/before-purchase-button' ); ?>
