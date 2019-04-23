@@ -39,7 +39,6 @@ $cat = !empty($terms) ? '<a href="' . get_term_link( $terms[0], 'course_category
         // get course bbpress forum
         $forum_id = get_post_meta( $course->get_id(), '_lp_course_forum', true );
         if ( $forum_id && class_exists( 'LP_Addon_bbPress' ) && class_exists( 'bbPress' ) ) { ?>
-            <!-- wp-content\themes\ivy-school\learnpress\single-course\course-info.php -->
             <div class="list-inline-item entry-forum">
                 <label><?php esc_html_e( 'Visit Forum: ', 'ivy-school' ); ?></label>
                 <?php LP_Addon_bbPress::instance()->forum_link(); ?>

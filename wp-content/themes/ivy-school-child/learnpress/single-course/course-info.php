@@ -46,7 +46,7 @@ $cat = !empty($terms) ? '<a href="' . get_term_link($terms[0], 'course_category'
       ?>
       <!-- wp-content\themes\ivy-school-child\learnpress\single-course\course-info.php -->
       <div class="list-inline-item item-review">
-        <label><?php esc_html_e('Review', 'ivy-school'); ?></label>
+        <label><?php esc_html_e('Reseña', 'ivy-school'); ?></label>
         <div class="rating">
           <?php
           // rating
@@ -54,12 +54,12 @@ $cat = !empty($terms) ? '<a href="' . get_term_link($terms[0], 'course_category'
           if (is_single()) {
             $total = intval($total);
             if ($total > 0) {
-              $text = sprintf(_n('(%s Review)', '(%s Reviews)', $total, 'ivy-school'), $total);
+              $text = sprintf(_n('(%s Reseña)', '(%s Reseñas)', $total, 'ivy-school'), $total);
             } else {
-              $text = sprintf('(%s Review)', $total);
+              $text = sprintf('(%s Reseña)', $total);
             }
           } else {
-            $text = sprintf(_n('( %s Rating )', '( %s Ratings )', $total, 'ivy-school'), $total);
+            $text = sprintf(_n('( %s Reseña )', '( %s Reseñas )', $total, 'ivy-school'), $total);
           }
           ?>
           <span><?php echo ent2ncr($text); ?></span>
