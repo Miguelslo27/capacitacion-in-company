@@ -22,6 +22,7 @@ $author_meta = array_map( 'thim_get_user_meta', $author_meta );
 	<div id="tab-instructor" style="height: 40px"></div>
 <?php endif; ?>
 
+<!-- wp-content\themes\ivy-school\learnpress\single-course\instructor.php -->
 <div class="instructor">
 
 	<h3 class="instructor-title"><?php echo esc_html__( 'Instructor', 'ivy-school' ); ?></h3>
