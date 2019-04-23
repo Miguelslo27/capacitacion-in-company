@@ -19,7 +19,7 @@ $author_meta = get_user_meta($author->get_id());
 $author_meta = array_map('thim_get_user_meta', $author_meta);
 ?>
 <?php if (!learn_press_is_learning_course()) : ?>
-  <div id="tab-instructor" style="height: 40px"></div>
+  <!-- <div id="tab-instructor" style="height: 40px"></div> -->
 <?php endif; ?>
 
 <!-- wp-content\themes\ivy-school-child\learnpress\single-course\instructor.php -->
