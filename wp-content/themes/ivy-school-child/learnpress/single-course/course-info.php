@@ -44,6 +44,7 @@ $cat = !empty($terms) ? '<a href="' . get_term_link($terms[0], 'course_category'
       $course_rate = $course_rate_res['rated'];
       $total = $course_rate_res['total'];
       ?>
+      <!-- wp-content\themes\ivy-school-child\learnpress\single-course\course-info.php -->
       <div class="list-inline-item item-review">
         <label><?php esc_html_e('Review', 'ivy-school'); ?></label>
         <div class="rating">
