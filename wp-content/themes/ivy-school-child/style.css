@@ -97,6 +97,10 @@ body.left_courses .wrapper-item-course .item-course .text .teacher .ava {
     transition: all .2s;
 }
 
+.breadcrumbs-wrapper .container { 
+    min-width: 1330px;
+}
+
 footer.site-footer .footer .container .footer-sidebars.row > div {
     text-align: center;
 }
