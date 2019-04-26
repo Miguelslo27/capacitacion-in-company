@@ -72,6 +72,11 @@ body.left_courses .wrapper-item-course .item-course .text .teacher .ava {
     font-size: 26px;
 }
 
+/*  */
+.item-course .pic img {
+    width: 100%;
+}
+
 .request-course-info {
     display: flex;
     justify-content: center;
