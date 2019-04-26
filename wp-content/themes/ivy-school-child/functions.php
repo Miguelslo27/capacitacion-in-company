@@ -142,7 +142,7 @@ if ( ! function_exists( 'thim_breadcrumbs' ) ) {
                 }
             }
             if ( get_post_type() == "lp_collection" ) {
-                echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_post_type_archive_link( 'lp_collection' ) ) . '" title="' . esc_attr__( 'Colecciones', 'ivy-school' ) . '"><span itemprop="name">' . esc_html__( 'Colecciones', 'ivy-school' ) . '</span></a></li>';
+                echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_post_type_archive_link( 'lp_collection' ) ) . '" title="' . esc_attr__( 'Colecciones', 'ivy-school' ) . '"><span itemprop="name">' . esc_html__( 'Colecciones', 'ivy-school' ) . '</span></a><span class="breadcrum-icon">' . ent2ncr( $icon ) . '</span></li>';
             }
             if ( isset( $categories[0] ) ) {
                 echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '" title="' . esc_attr( $categories[0]->cat_name ) . '"><span itemprop="name">' . esc_html( $categories[0]->cat_name ) . '</span></a><span class="breadcrum-icon">' . ent2ncr( $icon ) . '</span></li>';
