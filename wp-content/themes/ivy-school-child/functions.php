@@ -107,4 +107,106 @@ if ( ! function_exists( 'thim_related_courses' ) ) {
 	}
 }
 
+/**
+ * Get content breadcrumbs
+ *
+ * @return string
+ */
+if ( ! function_exists( 'thim_breadcrumbs' ) ) {
+	function thim_breadcrumbs() {
+		global $post;
+		if ( is_front_page() ) { // Do not display on the homepage
+			return;
+		}
+		$categories   = get_the_category();
+		$thim_options = get_theme_mods();
+		$icon         = '/';
+		if ( isset( $thim_options['breadcrumb_icon'] ) ) {
+			$icon = html_entity_decode( get_theme_mod( 'breadcrumb_icon' ) );
+		}
+		// Build the breadcrums
+		echo '<ul itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList" id="breadcrumbs" class="breadcrumbs">';
+		echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr__( 'Inicio', 'ivy-school' ) . '"><span itemprop="name">' . esc_html__( 'Home', 'ivy-school' ) . '</span></a><span class="breadcrum-icon">' . ent2ncr( $icon ) . '</span></li>';
+		if ( is_single() ) { // Single post (Only display the first category)
+            if ( get_post_type() == 'tp_event' ) {
+                echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_post_type_archive_link( 'tp_event' ) ) . '" title="' . esc_attr__( 'Eventos', 'ivy-school' ) . '"><span itemprop="name">' . esc_html__( 'Events', 'ivy-school' ) . '</span></a><span class="breadcrum-icon">' . ent2ncr( $icon ) . '</span></li>';
+            }
+            if ( get_post_type() == 'our_team' ) {
+                echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_post_type_archive_link( 'our_team' ) ) . '" title="' . esc_attr__( 'Nuestro equipo', 'ivy-school' ) . '"><span itemprop="name">' . esc_html__( 'Our Team', 'ivy-school' ) . '</span></a><span class="breadcrum-icon">' . ent2ncr( $icon ) . '</span></li>';
+            }
+            if ( get_post_type() == "lpr_course" || get_post_type() == "lpr_quiz" || get_post_type() == "lp_course" || get_post_type() == "lp_quiz" || thim_check_is_course() || thim_check_is_course_taxonomy() ) {
+                echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_post_type_archive_link( 'lp_course' ) ) . '" title="' . esc_attr__( 'Cursos', 'ivy-school' ) . '"><span itemprop="name">' . esc_html__( 'Courses', 'ivy-school' ) . '</span></a><span class="breadcrum-icon">' . ent2ncr( $icon ) . '</span></li>';
+                $term_course   = get_the_terms($post,'course_category');
+                if ( isset( $term_course[0] ) ) {
+                    echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_term_link( $term_course[0],'course_category' ) ) . '" title="' . esc_attr( $term_course[0]->name ) . '"><span itemprop="name">' . esc_html( $term_course[0]->name ) . '</span></a><span class="breadcrum-icon">' . ent2ncr( $icon ) . '</span></li>';
+                }
+            }
+            if ( get_post_type() == "lp_collection" ) {
+                echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_post_type_archive_link( 'lp_collection' ) ) . '" title="' . esc_attr__( 'Colecciones', 'ivy-school' ) . '"><span itemprop="name">' . esc_html__( 'Colecciones', 'ivy-school' ) . '</span></a><span class="breadcrum-icon">' . ent2ncr( $icon ) . '</span></li>';
+            }
+            if ( isset( $categories[0] ) ) {
+                echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '" title="' . esc_attr( $categories[0]->cat_name ) . '"><span itemprop="name">' . esc_html( $categories[0]->cat_name ) . '</span></a><span class="breadcrum-icon">' . ent2ncr( $icon ) . '</span></li>';
+            }
+            echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name" title="' . esc_attr( get_the_title() ) . '">' . esc_html( get_the_title() ) . '</span></li>';
+		} else if ( is_page() ) {
+			// Standard page
+			if ( $post->post_parent ) {
+				$anc = get_post_ancestors( $post->ID );
+				$anc = array_reverse( $anc );
+				// Parent page loop
+				foreach ( $anc as $ancestor ) {
+					echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_permalink( $ancestor ) ) . '" title="' . esc_attr( get_the_title( $ancestor ) ) . '"><span itemprop="name">' . esc_html( get_the_title( $ancestor ) ) . '</span></a><span class="breadcrum-icon">' . ent2ncr( $icon ) . '</span></li>';
+				}
+			}
+			// Current page
+			echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name" title="' . esc_attr( get_the_title() ) . '"> ' . esc_html( get_the_title() ) . '</span></li>';
+		} elseif ( is_day() ) {// Day archive
+			// Year link
+			echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_year_link( get_the_time( 'Y' ) ) ) . '" title="' . esc_attr( get_the_time( 'Y' ) ) . '"><span itemprop="name">' . esc_html( get_the_time( 'Y' ) ) . ' ' . esc_html__( 'Archivo', 'ivy-school' ) . '</span></a><span class="breadcrum-icon">' . ent2ncr( $icon ) . '</span></li>';
+			// Month link
+			echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) ) . '" title="' . esc_attr( get_the_time( 'M' ) ) . '"><span itemprop="name">' . esc_html( get_the_time( 'M' ) ) . ' ' . esc_html__( 'Archivo', 'ivy-school' ) . '</span></a><span class="breadcrum-icon">' . ent2ncr( $icon ) . '</span></li>';
+			// Day display
+			echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name" title="' . esc_attr( get_the_time( 'jS' ) ) . '"> ' . esc_html( get_the_time( 'jS' ) ) . ' ' . esc_html( get_the_time( 'M' ) ) . ' ' . esc_html__( 'Archivo', 'ivy-school' ) . '</span></li>';
+
+		} else if ( is_month() ) {
+			// Year link
+			echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_year_link( get_the_time( 'Y' ) ) ) . '" title="' . esc_attr( get_the_time( 'Y' ) ) . '"><span itemprop="name">' . esc_html( get_the_time( 'Y' ) ) . ' ' . esc_html__( 'Archivo', 'ivy-school' ) . '</span></a><span class="breadcrum-icon">' . ent2ncr( $icon ) . '</span></li>';
+			echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name" title="' . esc_attr( get_the_time( 'M' ) ) . '">' . esc_html( get_the_time( 'M' ) ) . ' ' . esc_html__( 'Archivo', 'ivy-school' ) . '</span></li>';
+		} elseif ( is_archive() ) {
+            if ( get_post_type() == "tp_event" ) {
+                if ( get_query_var( 'taxonomy' ) ) {
+                    echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . esc_html( get_queried_object()->name ) . '</span></li>';
+                } else {
+                    echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name" title="' . esc_attr__( 'Eventos', 'ivy-school' ) . '">' . esc_html__( 'Eventos', 'ivy-school' ) . '</span></li>';
+                }
+
+            }
+            if ( get_post_type() == "lp_collection" ) {
+                if ( get_query_var( 'taxonomy' ) ) {
+                    echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . esc_html( get_queried_object()->name ) . '</span></li>';
+                } else {
+                    echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name" title="' . esc_attr__( 'Colecciones', 'ivy-school' ) . '">' . esc_html__( 'Colecciones', 'ivy-school' ) . '</span></li>';
+                }
+
+            }
+            if ( get_post_type() == "lpr_course" || get_post_type() == "lpr_quiz" || get_post_type() == "lp_course" || get_post_type() == "lp_quiz" || thim_check_is_course() || thim_check_is_course_taxonomy() ) {
+                if ( get_query_var( 'taxonomy' ) ) {
+                    echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . esc_html( get_queried_object()->name ) . '</span></li>';
+                } else {
+                    echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name" title="' . esc_attr__( 'Cursos', 'ivy-school' ) . '">' . esc_html__( 'Courses', 'ivy-school' ) . '</span></li>';
+                }
+
+            }
+            if ( get_post_type() == "testimonials" ) {
+                echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name" title="' . esc_attr__( 'Testimonios', 'ivy-school' ) . '">' . esc_html__( 'Testimonios', 'ivy-school' ) . '</span></li>';
+            }
+            if ( get_post_type() == "our_team" ) {
+                echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name" title="' . esc_attr__( 'Nuestro equipo', 'ivy-school' ) . '">' . esc_html__( 'Nuestro equipo', 'ivy-school' ) . '</span></li>';
+            }
+        }
+		thim_get_breadcrumb_items_other();
+		echo '</ul>';
+	}
+}
+
 add_action( 'wp_enqueue_scripts', 'thim_child_enqueue_styles', 100 );
