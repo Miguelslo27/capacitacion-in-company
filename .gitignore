@@ -1,5 +1,7 @@
 /dev
+/aula
 *.log
+error_log
 wp-config.php
 readme.html
 license.txt
