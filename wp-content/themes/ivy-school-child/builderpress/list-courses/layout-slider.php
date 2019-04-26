@@ -15,6 +15,7 @@
  */
 defined( 'ABSPATH' ) || exit;
 ?>
+<!-- wp-content\themes\ivy-school-child\builderpress\list-courses\layout-slider.php -->
 <div class="slide-course js-call-slick-col" data-numofslide="4" data-numofscroll="1" data-loopslide="1"
      data-autoscroll="0" data-speedauto="6000" data-respon="[4, 1], [3, 1], [2, 1], [2, 1], [1, 1]">
     <div class="slide-slick">
@@ -30,14 +31,6 @@ defined( 'ABSPATH' ) || exit;
                     </div>
 
                     <div class="content">
-                        <div class="ava">
-							<?php echo $course->get_instructor()->get_profile_picture( '', 68 ); ?>
-                        </div>
-
-                        <div class="name">
-							<?php echo $course->get_instructor_html(); ?>
-                        </div>
-
 						<?php
                         if( is_plugin_active( 'learnpress-course-review/learnpress-course-review.php' ) ) {
                             $num_ratings = learn_press_get_course_rate_total( get_the_ID() ) ? learn_press_get_course_rate_total( get_the_ID() ) : 0;
@@ -72,10 +65,6 @@ defined( 'ABSPATH' ) || exit;
                         </div>
 
                         <div class="numbers">
-                            <span class="contact">
-                                <i class="ion ion-android-contacts"></i>
-	                            <?php echo intval( $course->count_students() ); ?>
-                            </span>
                             <?php //if( !empty($num_ratings) ) {?>
                             <span class="chat">
                                 <i class="ion ion-chatbubbles"></i>

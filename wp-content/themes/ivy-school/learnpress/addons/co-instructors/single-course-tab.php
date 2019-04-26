@@ -39,6 +39,12 @@ if ( $instructors ) {
                             </a>
                         <?php endif; ?>
 
+                        <?php if ( isset( $lp_info['google'] ) && $lp_info['google'] ) : ?>
+                            <a href="<?php echo esc_url($lp_info['google']);?>">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        <?php endif; ?>
+
                         <?php if ( isset( $lp_info['instagram'] ) && $lp_info['instagram'] ) : ?>
                             <a href="<?php echo esc_url($lp_info['instagram']);?>">
                                 <i class="fa fa-instagram"></i>

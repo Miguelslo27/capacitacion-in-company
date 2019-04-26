@@ -16,12 +16,12 @@ $course = LP_Global::course();
 $user   = LP_Global::user();
 
 
-$curriculum_heading = apply_filters( 'learn_press_curriculum_heading', esc_html__( 'Course Content', 'ivy-school' ) );
+$curriculum_heading = apply_filters( 'learn_press_curriculum_heading', esc_html__( 'Contenido del curso', 'ivy-school' ) );
 ?>
 <?php if ( ! learn_press_is_learning_course() ): ?>
 	<div id="tab-curriculum" style="height: 68px;"></div>
 <?php endif; ?>
-
+<!-- wp-content\themes\ivy-school-child\learnpress\single-course\tabs\curriculum.php -->
 <div class="course-curriculum" id="learn-press-course-curriculum">
 	<div class="curriculum-heading">
 		<?php if ( $curriculum_heading ) { ?>
@@ -68,7 +68,7 @@ $curriculum_heading = apply_filters( 'learn_press_curriculum_heading', esc_html_
 
             if ( ! empty( $course_duration[0] ) && $course_duration[0] != '0' ) {
                 ?>
-                <span class="courses-time"><?php esc_html_e( 'Time: ', 'ivy-school' ); ?>
+                <span class="courses-time"><?php esc_html_e( 'Duración: ', 'ivy-school' ); ?>
                     <span class="text"><?php echo esc_html( $course_duration_text ); ?></span></span>
                 <?php
             }
