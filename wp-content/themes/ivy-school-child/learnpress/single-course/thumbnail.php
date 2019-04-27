@@ -54,24 +54,11 @@ $height           = !empty($thim_course_page['height']) ? $thim_course_page['hei
     </a>
   <?php } ?>
   <div class="time">
-    <!-- <div class="date-start"><?php echo get_the_date('d'); ?></div>
-    <div class="month-start"><?php echo get_the_date('M, Y'); ?></div> -->
     <?php
     $course_duration_meta = get_post_meta(get_the_ID(), '_lp_duration', true);
     $course_duration_arr  = array_pad(explode(' ', $course_duration_meta, 2), 2, 'minute');
 
     list($number, $time) = $course_duration_arr;
-
-    ?>
-    <!-- 
-    <?php
-    echo $course_duration_meta."\n";
-    echo $course_duration_arr."\n";
-    echo $number."\n";
-    echo $time."\n";
-    ?>
-    -->
-    <?php
 
     switch ($time) {
       case 'week':
