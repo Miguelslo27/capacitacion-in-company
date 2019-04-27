@@ -209,4 +209,61 @@ if ( ! function_exists( 'thim_breadcrumbs' ) ) {
 	}
 }
 
+/**
+ * Get course, lesson, ... duration in hours
+ *
+ * @param $id
+ *
+ * @param $post_type
+ *
+ * @return string
+ */
+
+if ( ! function_exists( 'thim_duration_time_calculator' ) ) {
+    function thim_duration_time_calculator( $id, $post_type = 'lp_course' ) {
+        if ( $post_type == 'lp_course' ) {
+            $course_duration_meta = get_post_meta( $id, '_lp_duration', true );
+            $course_duration_arr  = array_pad( explode( ' ', $course_duration_meta, 2 ), 2, 'minute' );
+
+            list( $number, $time ) = $course_duration_arr;
+
+            switch ( $time ) {
+                case 'week':
+                    $course_duration_text = sprintf( _n( "%s semana", "%s semanas", $number, 'ivy-school' ), $number );
+                    break;
+                case 'day':
+                    $course_duration_text = sprintf( _n( "%s día", "%s días", $number, 'ivy-school' ), $number );
+                    break;
+                case 'hour':
+                    $course_duration_text = sprintf( _n( "%s hora", "%s horas", $number, 'ivy-school' ), $number );
+                    break;
+                default:
+                    $course_duration_text = sprintf( _n( "%s minuto", "%s minutos", $number, 'ivy-school' ), $number );
+            }
+
+            return $course_duration_text;
+        } else { // lesson, quiz duration
+            $duration = get_post_meta( $id, '_lp_duration', true );
+
+            if ( ! $duration ) {
+                return '';
+            }
+            $duration = ( strtotime( $duration ) - time() ) / 60;
+            $hour     = floor( $duration / 60 );
+            $minute   = $duration % 60;
+
+            if ( $hour && $minute ) {
+                $time = $hour . esc_html__( 'h', 'ivy-school' ) . ' ' . $minute . esc_html__( 'm', 'ivy-school' );
+            } elseif ( ! $hour && $minute ) {
+                $time = $minute . esc_html__( 'm', 'ivy-school' );
+            } elseif ( ! $minute && $hour ) {
+                $time = $hour . esc_html__( 'h', 'ivy-school' );
+            } else {
+                $time = '';
+            }
+            return $time;
+        }
+    }
+}
+
 add_action( 'wp_enqueue_scripts', 'thim_child_enqueue_styles', 100 );
