@@ -112,7 +112,7 @@ $curriculum_heading = apply_filters( 'learn_press_curriculum_heading', esc_html_
 			} ?>
 		</div>
 	<?php } else { ?>
-        <p class="curriculum-empty"><?php echo apply_filters( 'learn_press_course_curriculum_empty', esc_attr__( 'Curriculum is empty', 'ivy-school' ) ); ?></p>
+        <p class="curriculum-empty"><?php echo apply_filters( 'learn_press_course_curriculum_empty', esc_attr__( 'El currículum está vacío', 'ivy-school' ) ); ?></p>
 	<?php } ?>
 
 	<?php
