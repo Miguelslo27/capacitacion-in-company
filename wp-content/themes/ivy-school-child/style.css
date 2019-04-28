@@ -1,3 +1,8 @@
+a:visited, a:focus, a:active {
+    color: #bd1b1d;
+    text-decoration: none;
+}
+
 .menu-right {
     display: none;
 }
@@ -103,6 +108,38 @@ body.left_courses .wrapper-item-course .item-course .text .teacher .ava {
 
 .breadcrumbs-wrapper .container { 
     min-width: 100%;
+}
+
+.elementor-tab-title {}
+.elementor-tab-title.elementor-tab-desktop-title {}
+.elementor-tab-title.elementor-tab-desktop-title:before {
+    content: "· " !important;
+    position: relative !important;
+    display: inline !important;
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 32px;
+    line-height: 24px;
+    top: 5px !important;
+}
+.elementor-tab-title.elementor-tab-desktop-title.elementor-active {
+    color: #000;
+    text-decoration: none;
+}
+
+.elementor-tab-title.elementor-tab-desktop-title.elementor-active a:visited,
+.elementor-tab-title.elementor-tab-desktop-title.elementor-active a:active,
+.elementor-tab-title.elementor-tab-desktop-title.elementor-active a:focus {
+    color: #000;
+}
+
+.elementor-tab-title.elementor-tab-desktop-title.elementor-active:before {
+    content: "· "
+}
+
+.about-us-custom-list {}
+.about-us-custom-list li {
+    list-style: initial;
 }
 
 footer.site-footer .footer .container .footer-sidebars.row > div {
