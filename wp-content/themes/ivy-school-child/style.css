@@ -110,34 +110,33 @@ body.left_courses .wrapper-item-course .item-course .text .teacher .ava {
     min-width: 100%;
 }
 
-.elementor-tab-title {}
-.elementor-tab-title.elementor-tab-desktop-title {}
+.elementor-tab-title.elementor-tab-desktop-title,
+.elementor-tab-title.elementor-tab-desktop-title a {
+    color: #000;
+}
 .elementor-tab-title.elementor-tab-desktop-title:before {
     content: "· " !important;
     position: relative !important;
     display: inline !important;
-    width: 30px !important;
-    height: 30px !important;
     font-size: 32px;
     line-height: 24px;
     top: 5px !important;
 }
 .elementor-tab-title.elementor-tab-desktop-title.elementor-active {
-    color: #000;
+    color: #bd1b1d;
     text-decoration: none;
 }
 
 .elementor-tab-title.elementor-tab-desktop-title.elementor-active a:visited,
 .elementor-tab-title.elementor-tab-desktop-title.elementor-active a:active,
 .elementor-tab-title.elementor-tab-desktop-title.elementor-active a:focus {
-    color: #000;
+    color: #bd1b1d;
 }
 
 .elementor-tab-title.elementor-tab-desktop-title.elementor-active:before {
     content: "· "
 }
 
-.about-us-custom-list {}
 .about-us-custom-list li {
     list-style: initial;
 }
