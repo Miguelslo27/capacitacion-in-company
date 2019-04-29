@@ -39,6 +39,7 @@ if ( ! function_exists( 'thim_related_courses' ) ) {
 																</div>
 
 																<div class="content">
+																		<!-- wp-content\themes\ivy-school-child\functions.php -->
 																		<div class="ava">
 																				<?php echo ent2ncr($course->get_instructor()->get_profile_picture('',68)) ?>
 																		</div>

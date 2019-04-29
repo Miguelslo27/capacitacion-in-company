@@ -69,12 +69,12 @@ body.left_courses .wrapper-item-course .item-course .text .teacher .ava {
 }
 
 .bp-element-testimonials.layout-slider-4 .slide-testimonial .testimonial-item .author .ava {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
 }
 
 .bp-element-testimonials.layout-slider-4 .slide-testimonial .testimonial-item .author .info {
-    width: calc(100% - 60px - 18px);
+    width: calc(100% - 80px - 18px);
     justify-content: center;
 }
 

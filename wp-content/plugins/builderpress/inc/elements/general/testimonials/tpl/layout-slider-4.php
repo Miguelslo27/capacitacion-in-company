@@ -36,6 +36,7 @@ $img = $params['background'] ? wp_get_attachment_image_url( $params['background'
                         </div>
 
                         <div class="author">
+                            <!-- wp-content\plugins\builderpress\inc\elements\general\testimonials\tpl\layout-slider-4.php -->
                             <div class="ava">
                                 <?php
                                 $thumbnail_id = (int) $testimonial['image'];
