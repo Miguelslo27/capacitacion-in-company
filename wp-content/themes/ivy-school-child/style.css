@@ -23,6 +23,24 @@ body.home .site-content {
     width: calc(100% / 4);
 }
 
+@media (max-width: 1000px) {
+    .bp-element-brands.layout-grid.sized-logo-companies .wrap-content .item {
+        width: calc(100% / 3);
+    }
+}
+
+@media (max-width: 768px) {
+    .bp-element-brands.layout-grid.sized-logo-companies .wrap-content .item {
+        width: calc(100% / 2);
+    }
+}
+
+@media (max-width: 480px) {
+    .bp-element-brands.layout-grid.sized-logo-companies .wrap-content .item {
+        width: 100%;
+    }
+}
+
 .bp-element-brands.layout-grid.sized-logo-companies .wrap-content .item img {
     max-height: 100%;
     max-width: 200px;
@@ -135,6 +153,19 @@ body.left_courses .wrapper-item-course .item-course .text .teacher .ava {
 
 .elementor-tab-title.elementor-tab-desktop-title.elementor-active:before {
     content: "· "
+}
+
+.bp-element-testimonials .img-testimonial {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .bp-element-testimonials .img-testimonial {
+        text-align: center;
+    }
+    .bp-element-testimonials .slide-testimonial {
+        margin: auto;
+    }
 }
 
 .about-us-custom-list li {
