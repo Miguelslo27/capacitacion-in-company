@@ -36,10 +36,11 @@ $img = $params['background'] ? wp_get_attachment_image_url( $params['background'
                         </div>
 
                         <div class="author">
+                            <!-- wp-content\themes\ivy-school-child\builderpress\testimonials\layout-slider-4.php -->
                             <div class="ava">
                                 <?php
                                 $thumbnail_id = (int) $testimonial['image'];
-                                $size         = apply_filters( 'builder-press/testimonial/image-size', '40x40' );
+                                $size         = apply_filters( 'builder-press/testimonial/image-size', '80x80' );
                                 builder_press_get_attachment_image( $thumbnail_id, $size );
                                 ?>
                             </div>
