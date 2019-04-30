@@ -126,7 +126,7 @@ if ( ! function_exists( 'thim_breadcrumbs' ) ) {
 		}
 		// Build the breadcrums
 		echo '<ul itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList" id="breadcrumbs" class="breadcrumbs">';
-		echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr__( 'Inicio', 'ivy-school' ) . '"><span itemprop="name">' . esc_html__( 'Home', 'ivy-school' ) . '</span></a><span class="breadcrum-icon">' . ent2ncr( $icon ) . '</span></li>';
+		echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr__( 'Inicio', 'ivy-school' ) . '"><span itemprop="name">' . esc_html__( 'Inicio', 'ivy-school' ) . '</span></a><span class="breadcrum-icon">' . ent2ncr( $icon ) . '</span></li>';
 		if ( is_single() ) { // Single post (Only display the first category)
             if ( get_post_type() == 'tp_event' ) {
                 echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . esc_url( get_post_type_archive_link( 'tp_event' ) ) . '" title="' . esc_attr__( 'Eventos', 'ivy-school' ) . '"><span itemprop="name">' . esc_html__( 'Events', 'ivy-school' ) . '</span></a><span class="breadcrum-icon">' . ent2ncr( $icon ) . '</span></li>';
