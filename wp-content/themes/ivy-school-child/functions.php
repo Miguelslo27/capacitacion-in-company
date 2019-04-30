@@ -276,4 +276,30 @@ if (!function_exists('thim_course_rate')) {
     }
 }
 
+/**
+ * Footer Widgets
+ *
+ * @return bool
+ * @return string
+ */
+if ( ! function_exists( 'thim_footer_widgets' ) ) {
+	function thim_footer_widgets() {
+		if ( get_theme_mod( 'footer_widgets', true ) ) : ?>
+			<!-- wp-content\themes\ivy-school-child\functions.php -->
+			<div class="footer-sidebars columns-<?php echo get_theme_mod( 'footer_columns', 4 );?> row">
+				<?php
+				$col = 12 / get_theme_mod( 'footer_columns', 4 );
+				if ( get_theme_mod( 'footer_columns' ) == 5 ) {
+					$col = '';
+				}
+				for ( $i = 1; $i <= get_theme_mod( 'footer_columns', 4 ); $i ++ ): ?>
+					<div class="col-xs-12 col-sm-6 col-md-<?php echo esc_attr( $col ); ?>">
+						<?php dynamic_sidebar( 'footer-sidebar-' . $i ); ?>
+					</div>
+				<?php endfor; ?>
+			</div>
+		<?php endif;
+	}
+}
+
 add_action( 'wp_enqueue_scripts', 'thim_child_enqueue_styles', 100 );
