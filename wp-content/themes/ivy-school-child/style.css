@@ -175,3 +175,49 @@ body.left_courses .wrapper-item-course .item-course .text .teacher .ava {
 footer.site-footer .footer .container .footer-sidebars.row > div {
     text-align: center;
 }
+footer.site-footer .footer .container .footer-sidebars.row .col-md-6 {
+    flex: inherit;
+}
+footer.site-footer .footer .container .footer-sidebars.row .col-md-6:first-child {
+    width: 30%;
+    max-width: 30%;
+}
+footer.site-footer .footer .container .footer-sidebars.row .col-md-6:last-child {
+    width: 70%;
+    max-width: 70%;
+}
+footer.site-footer .footer .container .footer-sidebars.row .widget_nav_menu .menu-main-menu-container ul {
+    text-align: right;
+}
+@media (max-width: 1000px) {
+    footer.site-footer .footer .container .footer-sidebars.row .col-md-6 {
+        flex: inherit;
+    }
+    footer.site-footer .footer .container .footer-sidebars.row .col-md-6:first-child {
+        width: 100%;
+        max-width: 100%;
+    }
+    footer.site-footer .footer .container .footer-sidebars.row .col-md-6:last-child {
+        width: 100%;
+        max-width: 100%;
+    }
+    footer.site-footer .footer .container .footer-sidebars.row .widget_nav_menu .menu-main-menu-container ul {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    footer.site-footer .footer .container .footer-sidebars.row .widget_nav_menu .menu-main-menu-container ul li {
+        width: 70%;
+    }
+}
+
+footer.site-footer .footer .container .footer-sidebars.row .widget_nav_menu .menu-main-menu-container ul li {
+    display: inline-block;
+    padding: 20px 10px
+}
+footer.site-footer .footer .container .footer-sidebars.row .widget_nav_menu .menu-main-menu-container ul li:last-child {
+    border: 1px solid #333;
+    border-radius: 30px;
+    padding: 10px 30px;
+}
