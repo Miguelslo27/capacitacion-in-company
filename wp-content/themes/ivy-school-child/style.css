@@ -3,6 +3,10 @@ a:visited, a:focus, a:active {
     text-decoration: none;
 }
 
+.cap-color {
+    color: #bd1b1d;
+}
+
 .menu-right {
     display: none;
 }
@@ -221,3 +225,13 @@ footer.site-footer .footer .container .footer-sidebars.row .widget_nav_menu .men
     border-radius: 30px;
     padding: 10px 30px;
 }
+
+footer.site-footer .footer .container .footer-sidebars.row .widget {
+    width: 100%;
+}
+footer.site-footer .footer .container .footer-sidebars.row .widget .company-info {
+    text-align: center;
+}
+footer.site-footer .footer .container .footer-sidebars.row .widget .company-info p {}
+footer.site-footer .footer .container .footer-sidebars.row .widget .company-info p strong {}
+footer.site-footer .footer .container .footer-sidebars.row .widget .company-info p a {}

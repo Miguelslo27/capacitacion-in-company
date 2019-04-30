@@ -298,6 +298,9 @@ if ( ! function_exists( 'thim_footer_widgets' ) ) {
 					</div>
 				<?php endfor; ?>
 			</div>
+			<div class="footer-sidebars company-info row">
+				<?php dynamic_sidebar('footer-company-info'); ?>
+			</div>
 		<?php endif;
 	}
 }
