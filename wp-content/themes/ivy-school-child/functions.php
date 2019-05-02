@@ -26,7 +26,7 @@ if ( ! function_exists( 'thim_related_courses' ) ) {
 												if ( class_exists( 'LP_Addon_Course_Review' ) ) {
 														$course_rate              = learn_press_get_course_rate( $course_id );
 														$course_number_vote       = learn_press_get_course_rate_total( $course_id );
-														$html_course_number_votes = $course_number_vote ? sprintf( _n( '(%1$s vote )', ' (%1$s votes)', $course_number_vote, 'ivy-school' ), number_format_i18n( $course_number_vote ) ) : esc_html__( '(0 votos)', 'ivy-school' );
+														$html_course_number_votes = $course_number_vote ? sprintf( _n( '(%1$s voto )', ' (%1$s votos)', $course_number_vote, 'ivy-school' ), number_format_i18n( $course_number_vote ) ) : esc_html__( '(0 votos)', 'ivy-school' );
 												}
 												?>
 												<div class="item-slick">
