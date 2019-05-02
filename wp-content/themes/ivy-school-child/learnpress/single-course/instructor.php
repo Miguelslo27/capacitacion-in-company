@@ -17,13 +17,17 @@ $author = $course->get_instructor();
 $lp_info = get_the_author_meta('lp_info', $author->get_id());
 $author_meta = get_user_meta($author->get_id());
 $author_meta = array_map('thim_get_user_meta', $author_meta);
+
+if (true) {
+  return;
+}
 ?>
 <?php if (!learn_press_is_learning_course()) : ?>
-  <!-- <div id="tab-instructor" style="height: 40px"></div> -->
+  <div id="tab-instructor" style="height: 40px"></div>
 <?php endif; ?>
 
 <!-- wp-content\themes\ivy-school-child\learnpress\single-course\instructor.php -->
-<!-- <div class="instructor">
+<div class="instructor">
 
   <h3 class="instructor-title"><?php echo esc_html__('Instructor', 'ivy-school'); ?></h3>
 
@@ -88,4 +92,4 @@ $author_meta = array_map('thim_get_user_meta', $author_meta);
 
   </div>
 
-</div> -->
+</div>
