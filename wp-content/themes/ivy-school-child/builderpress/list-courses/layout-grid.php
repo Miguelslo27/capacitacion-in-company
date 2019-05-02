@@ -64,9 +64,9 @@ $num_ratings = 0;
                 </h3>
 
                 <div class="info-course">
+                    <!-- wp-content\themes\ivy-school-child\builderpress\list-courses\layout-grid.php -->
                     <?php
                         $courses_tag = get_the_terms($course->get_id(),'course_tag');
-
                     ?>
                     <?php if($courses_tag) {?>
                     <a href="<?php echo get_term_link($courses_tag[0]->term_id) ?>">
