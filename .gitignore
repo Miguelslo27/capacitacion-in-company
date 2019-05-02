@@ -1,5 +1,6 @@
 /dev
 /aula
+/wp-snapshots
 *.log
 error_log
 wp-config.php

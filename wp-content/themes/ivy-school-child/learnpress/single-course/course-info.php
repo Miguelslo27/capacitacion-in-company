@@ -18,12 +18,12 @@ $author = $course->get_author();
 $terms = get_the_terms($course_id, 'course_category');
 $cat = !empty($terms) ? '<a href="' . get_term_link($terms[0], 'course_category') . '">' . $terms[0]->name . '</a>' : '';
 ?>
-<!-- wp-content\themes\ivy-school\learnpress\single-course\course-info.php -->
+<!-- wp-content\themes\ivy-school-child\learnpress\single-course\course-info.php -->
 <div class="entry-button-meta">
   <div class="entry-meta">
     <?php if ($cat) { ?>
       <div class="list-inline-item entry-categoy">
-        <label><?php esc_html_e('Categories', 'ivy-school'); ?></label>
+        <label><?php esc_html_e('Categorías', 'ivy-school'); ?></label>
         <?php printf('<span class="cat-links">%s</span>', $cat); ?>
       </div>
     <?php } ?>
