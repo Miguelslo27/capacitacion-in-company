@@ -17,6 +17,11 @@ $user   = LP_Global::user();
 
 
 $curriculum_heading = apply_filters( 'learn_press_curriculum_heading', esc_html__( 'Contenido del curso', 'ivy-school' ) );
+
+// add_action( 'learn-press/content-landing-summary', 'learn_press_course_overview_tab', 51 );
+remove_action( 'learn-press/content-landing-summary', 'learn_press_course_curriculum_tab', 60 );
+// add_action( 'learn-press/content-landing-summary', 'learn_press_course_instructor', 65 );
+
 ?>
 <?php if ( ! learn_press_is_learning_course() ): ?>
 	<div id="tab-curriculum" style="height: 68px;"></div>
