@@ -18,10 +18,9 @@ $lp_info = get_the_author_meta('lp_info', $author->get_id());
 $author_meta = get_user_meta($author->get_id());
 $author_meta = array_map('thim_get_user_meta', $author_meta);
 
-// add_action( 'learn-press/content-landing-summary', 'learn_press_course_overview_tab', 51 );
-// add_action( 'learn-press/content-landing-summary', 'learn_press_course_curriculum_tab', 60 );
-remove_action( 'learn-press/content-landing-summary', 'learn_press_course_instructor', 65 );
-
+if (true) {
+  return;
+}
 ?>
 <?php if (!learn_press_is_learning_course()) : ?>
   <div id="tab-instructor" style="height: 40px"></div>
