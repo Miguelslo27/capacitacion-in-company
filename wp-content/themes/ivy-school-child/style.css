@@ -227,6 +227,25 @@ footer.site-footer .footer .container .footer-sidebars.row .widget {
 footer.site-footer .footer .container .footer-sidebars.row .widget .company-info {
     text-align: center;
 }
-footer.site-footer .footer .container .footer-sidebars.row .widget .company-info p {}
-footer.site-footer .footer .container .footer-sidebars.row .widget .company-info p strong {}
-footer.site-footer .footer .container .footer-sidebars.row .widget .company-info p a {}
+
+.appsxxi-copy-rights,
+.appsxxi-copy-rights div {
+    width: 100%;
+    text-align: center;
+}
+.appsxxi-copy-rights div a,
+.appsxxi-copy-rights div span {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    margin-right: 15px
+}
+.appsxxi-copy-rights div a img {
+    height: 100%;
+}
+.appsxxi-copy-rights div span {
+    position: relative;
+    top: 7px;
+    color: #fff;
+    font-size: 14px
+}
