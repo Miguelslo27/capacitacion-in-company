@@ -249,3 +249,8 @@ footer.site-footer .footer .container .footer-sidebars.row .widget .company-info
     color: #fff;
     font-size: 14px
 }
+@media (max-width: 768px) {
+    .appsxxi-copy-rights div a {
+        display: block;
+    }
+}
