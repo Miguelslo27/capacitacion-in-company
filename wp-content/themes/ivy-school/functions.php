@@ -8,7 +8,7 @@
 
 define( 'THIM_DIR', trailingslashit( get_template_directory() ) );
 define( 'THIM_URI', trailingslashit( get_template_directory_uri() ) );
-define( 'THIM_VERSION', '1.2.0' );
+define( 'THIM_VERSION', '1.3.1' );
 
 if ( ! function_exists( 'thim_setup' ) ) :
 	/**

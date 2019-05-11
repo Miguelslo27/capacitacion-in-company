@@ -75,12 +75,14 @@ class Thim_Customize_Options {
 		require_once $customize_path . 'nav-menus.php';
 		require_once $customize_path . 'widgets.php';
         require_once $customize_path . 'event.php';
+        require_once $customize_path . 'event-sharing.php';
         require_once $customize_path . 'event-archive.php';
         require_once $customize_path . 'event-single.php';
         require_once $customize_path . 'event-setting.php';
         require_once $customize_path . 'learnpress.php';
         require_once $customize_path . 'learnpress-archive.php';
         require_once $customize_path . 'learnpress-single.php';
+        require_once $customize_path . 'learnpress-sharing.php';
 	}
 }
 

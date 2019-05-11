@@ -3,8 +3,8 @@ Contributors: thimpress, tunnhn, phonglq.foobla, thongta, kendy73, leehld
 Donate link:
 Tags: WordPress LMS, LMS, eLearning, e-Learning, Learning Management System, LMS WordPress, Course, Courses, Quiz, Quizzes, Training, Guru, Sell Courses
 Requires at least: 3.8
-Tested up to: 5.0.2
-Stable tag: 3.2.5.3
+Tested up to: 5.2
+Stable tag: 3.2.5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -199,6 +199,17 @@ https://www.transifex.com/projects/p/learnpress/
 8. Add-ons of LearnPress.  
 
 == Changelog ==
+= 3.2.5.5 =
+~ Fixed guest can not start quiz with no require enroll course option.
+~ Fixed sql to filter orders by user ID.
+~ Fixed issue of sending email when finished course: not correct Grade.
+~ Fixed can not see Actions buttons when adding questions into the quiz.
+~ Fixed changed the logic of Continue button for Course: continue with the next incomplete item.
+~ Fixed wrong code to pick up instructor email.
+
+= 3.2.5.4 =
+~ Fixed load js missing dependencies and only in LP page.
+
 = 3.2.5.3 =
 ~ Changed SQL to read course items by user item ID.
 ~ Improved performance in admin orders page.

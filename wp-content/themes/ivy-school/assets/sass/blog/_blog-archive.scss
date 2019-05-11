@@ -1164,3 +1164,28 @@
         }
     }
 }
+
+.site-content {
+  &.sidebar-right,
+  &.sidebar-left {
+    article {
+      &.column-2 {
+        .entry-header .entry-title a {
+          font-size: 24px;
+        }
+      }
+
+      &.column-3 {
+        .entry-header .entry-title a {
+          font-size: 18px;
+        }
+      }
+
+      &.column-4 {
+        .entry-header .entry-title a {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

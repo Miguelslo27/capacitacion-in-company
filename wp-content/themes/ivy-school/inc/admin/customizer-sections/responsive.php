@@ -75,6 +75,33 @@ thim_customizer()->add_group( array(
 						),
 					),
 				),
+
+                array(
+                    'id'              => 'mobile_menu_hamburger_color',
+                    'type'            => 'color',
+                    'label'           => esc_html__( 'Hamburger icon color', 'ivy-school' ),
+                    'tooltip'         => esc_html__( 'Allows to select color for hamburger menu on mobile device.', 'ivy-school' ),
+                    'section'         => 'responsive_group',
+                    'default'         => '#fff',
+                    'priority'        => 16,
+                    'alpha'           => true,
+                    'transport'       => 'postMessage',
+                    'js_vars'         => array(
+                        array(
+                            'choice'   => 'color',
+                            'element'  => 'body.responsive .menu-mobile-effect.navbar-toggle .icon-wrap i',
+                            'property' => 'color',
+                        )
+                    ),
+                    'active_callback' => array(
+                        array(
+                            'setting'  => 'enable_responsive',
+                            'operator' => '==',
+                            'value'    => true,
+                        ),
+                    ),
+                ),
+
 				array(
 					'id'              => 'mobile_menu_background_color',
 					'type'            => 'color',

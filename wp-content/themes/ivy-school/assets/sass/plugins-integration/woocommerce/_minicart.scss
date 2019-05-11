@@ -1,7 +1,21 @@
 /**
  * Widget shopping cart 333 */
 
+.bp-element-login-popup br {
+  display: none;
+}
+div.bp-element-login-popup .login-links {
+  display: flex;
+}
+
+.elementor-widget-wp-widget-woocommerce_widget_cart {
+  span.text {
+    display: none;
+  }
+}
+.elementor-widget-wp-widget-woocommerce_widget_cart,
 .widget_shopping_cart {
+
   .minicart_hover {
     position: relative;
     text-align: center;

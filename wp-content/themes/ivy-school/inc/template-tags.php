@@ -159,24 +159,21 @@ endif;
  * @return string
  */
 if ( ! function_exists( 'thim_social_share' ) ) {
-	function thim_social_share() {
-		$thim_options = get_theme_mods();
-        echo '<div class="share-click title">' . esc_html__( 'Share', 'ivy-school' );
-        echo '</div>';
-		do_action( 'thim_before_social_list' );
+    function thim_social_share( $prefix = 'blog_single_' ) {
+        $socials = get_theme_mod( $prefix . 'group_sharing' );
 
-		if ( isset( $thim_options['group_sharing'] ) ) {
-			$socials = get_theme_mod( 'group_sharing' );
-		} else {
-			$socials = array( 'facebook', 'twitter', 'pinterest', 'google', 'fancy' );
-		}
+        if ( $socials ) {
+            $html = '<div class="share-click title">' . esc_html__( 'Share', 'ivy-school' ) . '</div>';
+//            $html .= '<ul class="links">';
+            foreach ( $socials as $key => $social ) {
+                $html .= thim_render_social_share_link( $social );
+            }
+//            $html .= '</ul>';
 
-		foreach ( $socials as $social ) {
-			thim_render_social_link( $social );
-		}
-		do_action( 'thim_after_social_list' );
+            echo ent2ncr( $html );
+        }
 
-	}
+    }
 }
 
 add_action( 'thim_social_share', 'thim_social_share' );
@@ -188,39 +185,34 @@ add_action( 'thim_social_share', 'thim_social_share' );
  *
  * @return string
  */
-function thim_render_social_link( $social_name ) {
-    global $wp;
-    $url = home_url( $wp->request );
-
-	switch ( $social_name ) {
-		case 'twitter':
-			echo '<li class="twitter">
-				<a href="https://twitter.com/home?status=' . $url . '" class="icon-social"><i class="ion ion-social-twitter"></i></a>
-			</li>';
-			break;
-
-		case 'facebook':
-			echo '<li class="facebook">
-						<a href="https://www.facebook.com/sharer/sharer.php?u=' . $url . '" class="icon-social"><i class="ion ion-social-facebook"></i></a>
-					</li>';
-			break;
-
-        case 'pinterest':
-            echo '<li class="pinterest">
-                <a href="' . $url . '" class="item-social"><i class="ion ion-social-pinterest"></i></a></li>
-            ';
+function thim_render_social_share_link( $social_name ) {
+    switch ( $social_name ) {
+        case 'facebook':
+            return '<li><a class="icon-social facebook" title="' . esc_html__( 'Facebook', 'ivy-school' ) . '" href="http://www.facebook.com/sharer/sharer.php?u=' . urlencode( get_permalink() ) . '" rel="nofollow" onclick="window.open(this.href,this.title,\'width=600,height=600,top=200px,left=200px\');  return false;" target="_blank"><i class="ion-social-facebook"></i></a></li>';
             break;
 
-		case 'google':
-			echo '<li class="google-plus">
-						<a href="https://plus.google.com/share?url=' . $url . '" class="icon-social"><i class="ion ion-social-googleplus"></i></a>
-					</li>';
-			break;
+        case 'twitter':
+            return '<li><a class="icon-social twitter" title="' . esc_html__( 'Twitter', 'ivy-school' ) . '" href="https://twitter.com/intent/tweet?url=' . urlencode( get_permalink() ) . '&amp;text=' . esc_attr( urlencode( get_the_title() ) ) . '" rel="nofollow" onclick="window.open(this.href,this.title,\'width=600,height=600,top=200px,left=200px\');  return false;" target="_blank"><i class="ion-social-twitter"></i></a></li>';
+            break;
 
-		default:
-			break;
-	}
+        case 'pinterest':
+            global $post;
+            $src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+
+            return '<li><a class="icon-social pinterest" title="' . esc_html__( 'Pinterest', 'ivy-school' ) . '" href="http://pinterest.com/pin/create/button/?url=' . urlencode( get_permalink() ) . '&amp;media=' . ( ! empty( $src[0] ) ? $src[0] : '' ) . '&description=' . esc_attr( urlencode( get_the_title() ) ) . '" onclick="window.open(this.href, \'mywin\',\'left=50,top=50,width=600,height=350,toolbar=0\'); return false;"><i class="ion-social-pinterest" aria-hidden="true"></i></a></li>';
+            break;
+
+
+        case 'google':
+            return '<li><a target="_blank" title="' . esc_html__( 'Google', 'ivy-school' ) . '" class="icon-social google" href="https://plus.google.com/share?url=' . urlencode( get_permalink() ) . '&amp;title=' . rawurlencode( esc_attr( get_the_title() ) ) . '" title="' . esc_attr__( 'Google Plus', 'ivy-school' ) . '" onclick=\'javascript:window.open(this.href, "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600");return false;\'><i class="fa fa-google"></i></a></li>';
+            break;
+
+        default:
+            return '';
+            break;
+    }
 }
+
 
 /**
  * Get pagination

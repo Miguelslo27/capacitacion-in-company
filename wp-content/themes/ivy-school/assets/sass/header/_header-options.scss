@@ -235,6 +235,10 @@ header#masthead {
 
 @media (max-width: 1200px) {
 	body.responsive {
+		.menu-mobile-effect.navbar-toggle .icon-wrap i,
+		header#masthead.header_v4 .header-wrapper .menu-mobile-effect .icon-wrap i {
+			color: $thim_mobile_menu_hamburger_color;
+		}
 		.mobile-menu-container {
 			background-color: $thim_bg_mobile_menu_color;
 			ul {

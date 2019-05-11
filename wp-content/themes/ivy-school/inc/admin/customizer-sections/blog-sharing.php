@@ -31,27 +31,38 @@ thim_customizer()->add_field(
     )
 );
 
-// Sharing Group
-thim_customizer()->add_field(
-    array(
-        'id'       => 'group_sharing',
-        'type'     => 'sortable',
-        'label'    => esc_html__( 'Sortable Buttons Sharing', 'ivy-school' ),
-        'tooltip'  => esc_html__( 'Click on eye icons to show or hide buttons. Use drag and drop to change the position of social share icons..', 'ivy-school' ),
-        'section'  => 'sharing',
-        'priority' => 20,
-        'default'  => array(
-            'facebook',
-            'twitter',
-            'pinterest',
-            'google',
-        ),
-        'choices'  => array(
-            'facebook'  => esc_html__( 'Facebook', 'ivy-school' ),
-            'twitter'   => esc_html__( 'Twitter', 'ivy-school' ),
-            'pinterest' => esc_html__( 'Pinterest', 'ivy-school' ),
-            'google'    => esc_html__( 'Google Plus', 'ivy-school' ),
+thim_customizer()->add_group( array(
+    'id'       => 'blog_share_group',
+    'section'  => 'sharing',
+    'priority' => 10,
+    'groups'   => array(
+        array(
+            'id'     => 'blog_share_group_single',
+            'label'  => esc_html__( 'Single', 'ivy-school' ),
+            'fields' => array(
+                array(
+                    'id'       => 'blog_single_group_sharing',
+                    'type'     => 'sortable',
+                    'label'    => esc_html__( 'Sortable Buttons Sharing', 'ivy-school' ),
+                    'tooltip'  => esc_html__( 'Click on eye icon to show or hide social icon. Drag and drop to change the order of social icons.', 'ivy-school' ),
+                    'section'  => 'sharing',
+                    'priority' => 10,
+                    'default'  => array(
+                        'facebook',
+                        'twitter',
+                        'pinterest',
+                        'google'
+                    ),
+                    'choices'  => array(
+                        'facebook'  => esc_html__( 'Facebook', 'ivy-school' ),
+                        'twitter'   => esc_html__( 'Twitter', 'ivy-school' ),
+                        'pinterest' => esc_html__( 'Pinterest', 'ivy-school' ),
+                        'google'    => esc_html__( 'Google', 'ivy-school' ),
+                    ),
+                )
+            ),
         ),
     )
-);
+) );
+
 

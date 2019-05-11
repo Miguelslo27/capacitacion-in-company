@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ivy School\n"
-"POT-Creation-Date: 2019-02-13 13:41+0700\n"
-"PO-Revision-Date: 2019-02-13 13:41+0700\n"
+"POT-Creation-Date: 2019-03-29 13:41+0700\n"
+"PO-Revision-Date: 2019-03-29 13:41+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -310,9 +310,9 @@ msgstr ""
 
 #: inc/admin/customizer-sections/blog-general.php:46
 #: inc/admin/customizer-sections/blog-general.php:59
-#: inc/admin/customizer-sections/blog-general.php:247
-#: inc/admin/customizer-sections/blog-general.php:260
-#: inc/admin/customizer-sections/blog-general.php:273
+#: inc/admin/customizer-sections/blog-general.php:248
+#: inc/admin/customizer-sections/blog-general.php:261
+#: inc/admin/customizer-sections/blog-general.php:274
 #: inc/admin/customizer-sections/event-archive.php:45
 #: inc/admin/customizer-sections/event-archive.php:62
 #: inc/admin/customizer-sections/event-single.php:45
@@ -341,9 +341,9 @@ msgstr ""
 
 #: inc/admin/customizer-sections/blog-general.php:47
 #: inc/admin/customizer-sections/blog-general.php:60
-#: inc/admin/customizer-sections/blog-general.php:248
-#: inc/admin/customizer-sections/blog-general.php:261
-#: inc/admin/customizer-sections/blog-general.php:274
+#: inc/admin/customizer-sections/blog-general.php:249
+#: inc/admin/customizer-sections/blog-general.php:262
+#: inc/admin/customizer-sections/blog-general.php:275
 #: inc/admin/customizer-sections/event-archive.php:46
 #: inc/admin/customizer-sections/event-archive.php:63
 #: inc/admin/customizer-sections/event-single.php:46
@@ -422,7 +422,7 @@ msgstr ""
 #: inc/admin/customizer-sections/learnpress-archive.php:110
 #: inc/admin/customizer-sections/learnpress-single.php:93
 #: inc/admin/customizer-sections/page-title-styling.php:42
-#: inc/admin/customizer-sections/responsive.php:81
+#: inc/admin/customizer-sections/responsive.php:108
 msgid "Background Color"
 msgstr ""
 
@@ -484,6 +484,7 @@ msgid "1"
 msgstr ""
 
 #: inc/admin/customizer-sections/blog-general.php:143
+#: inc/admin/customizer-sections/blog-general.php:163
 msgid "2"
 msgstr ""
 
@@ -495,100 +496,104 @@ msgstr ""
 msgid "Choose the number of columns for archive masonry."
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:163
+#: inc/admin/customizer-sections/blog-general.php:164
 msgid "3"
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:164
+#: inc/admin/customizer-sections/blog-general.php:165
 msgid "4"
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:178
+#: inc/admin/customizer-sections/blog-general.php:179
 msgid "Show Read More"
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:179
+#: inc/admin/customizer-sections/blog-general.php:180
 msgid "Allows you to show button real more to display at single post page."
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:183
-#: inc/admin/customizer-sections/blog-general.php:218
+#: inc/admin/customizer-sections/blog-general.php:184
+#: inc/admin/customizer-sections/blog-general.php:219
 #: inc/admin/customizer-sections/blog-meta.php:28
 #: inc/admin/customizer-sections/blog-meta.php:45
 #: inc/admin/customizer-sections/blog-meta.php:62
 #: inc/admin/customizer-sections/blog-meta.php:79
 #: inc/admin/customizer-sections/blog-meta.php:96
 #: inc/admin/customizer-sections/blog-sharing.php:28
+#: inc/admin/customizer-sections/event-sharing.php:28
+#: inc/admin/customizer-sections/learnpress-sharing.php:28
 msgid "Show"
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:184
-#: inc/admin/customizer-sections/blog-general.php:219
+#: inc/admin/customizer-sections/blog-general.php:185
+#: inc/admin/customizer-sections/blog-general.php:220
 #: inc/admin/customizer-sections/blog-meta.php:29
 #: inc/admin/customizer-sections/blog-meta.php:46
 #: inc/admin/customizer-sections/blog-meta.php:63
 #: inc/admin/customizer-sections/blog-meta.php:80
 #: inc/admin/customizer-sections/blog-meta.php:97
 #: inc/admin/customizer-sections/blog-sharing.php:29
+#: inc/admin/customizer-sections/event-sharing.php:29
+#: inc/admin/customizer-sections/learnpress-sharing.php:29
 msgid "Hide"
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:199
+#: inc/admin/customizer-sections/blog-general.php:200
 msgid "Excerpt Length"
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:200
+#: inc/admin/customizer-sections/blog-general.php:201
 msgid ""
 "Choose the number of words you want to cut from the content to be the "
 "excerpt of search and archive"
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:213
+#: inc/admin/customizer-sections/blog-general.php:214
 #: inc/admin/customizer-sections/blog-meta.php:73
 msgid "Show Tags"
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:214
+#: inc/admin/customizer-sections/blog-general.php:215
 #: inc/admin/customizer-sections/blog-meta.php:74
 msgid "Allows you to show tags meta tags to display at single post page."
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:236
+#: inc/admin/customizer-sections/blog-general.php:237
 #: inc/admin/customizer-sections/event-single.php:11
 #: inc/admin/customizer-sections/learnpress-single.php:11
 msgid "Single Page"
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:242
+#: inc/admin/customizer-sections/blog-general.php:243
 msgid "Featured Image"
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:243
+#: inc/admin/customizer-sections/blog-general.php:244
 msgid "Turn on to display featured images on single blog posts.."
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:255
+#: inc/admin/customizer-sections/blog-general.php:256
 msgid "Comments Form"
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:256
+#: inc/admin/customizer-sections/blog-general.php:257
 msgid "Turn on to display comments."
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:268
+#: inc/admin/customizer-sections/blog-general.php:269
 #: templates/template-parts/related-single.php:14
 msgid "Related Posts"
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:269
+#: inc/admin/customizer-sections/blog-general.php:270
 msgid "Turn on to display related posts."
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:281
+#: inc/admin/customizer-sections/blog-general.php:282
 msgid "Numbers of Related Post"
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-general.php:301
+#: inc/admin/customizer-sections/blog-general.php:302
 msgid "Columns of Related Post"
 msgstr ""
 
@@ -697,41 +702,69 @@ msgid "Allows you to show comment meta tags to display at single post page."
 msgstr ""
 
 #: inc/admin/customizer-sections/blog-sharing.php:12
+#: inc/admin/customizer-sections/event-sharing.php:12
+#: inc/admin/customizer-sections/learnpress-sharing.php:12
 msgid "Social Share"
 msgstr ""
 
 #: inc/admin/customizer-sections/blog-sharing.php:22
+#: inc/admin/customizer-sections/event-sharing.php:22
+#: inc/admin/customizer-sections/learnpress-sharing.php:22
 msgid "Show Sharing"
 msgstr ""
 
 #: inc/admin/customizer-sections/blog-sharing.php:23
+#: inc/admin/customizer-sections/event-sharing.php:23
+#: inc/admin/customizer-sections/learnpress-sharing.php:23
 msgid "Allows you to show Sharing on single post."
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-sharing.php:39
+#: inc/admin/customizer-sections/blog-sharing.php:41
+#: inc/admin/customizer-sections/event-sharing.php:41
+#: inc/admin/customizer-sections/learnpress-sharing.php:41
+msgid "Single"
+msgstr ""
+
+#: inc/admin/customizer-sections/blog-sharing.php:46
+#: inc/admin/customizer-sections/event-sharing.php:46
+#: inc/admin/customizer-sections/learnpress-sharing.php:46
 msgid "Sortable Buttons Sharing"
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-sharing.php:40
+#: inc/admin/customizer-sections/blog-sharing.php:47
+#: inc/admin/customizer-sections/event-sharing.php:47
+#: inc/admin/customizer-sections/learnpress-sharing.php:47
 msgid ""
-"Click on eye icons to show or hide buttons. Use drag and drop to change the "
-"position of social share icons.."
+"Click on eye icon to show or hide social icon. Drag and drop to change the "
+"order of social icons."
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-sharing.php:50
+#: inc/admin/customizer-sections/blog-sharing.php:57
+#: inc/admin/customizer-sections/event-sharing.php:57
+#: inc/admin/customizer-sections/learnpress-sharing.php:57
+#: inc/template-tags.php:191
 msgid "Facebook"
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-sharing.php:51
+#: inc/admin/customizer-sections/blog-sharing.php:58
+#: inc/admin/customizer-sections/event-sharing.php:58
+#: inc/admin/customizer-sections/learnpress-sharing.php:58
+#: inc/template-tags.php:195
 msgid "Twitter"
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-sharing.php:52
+#: inc/admin/customizer-sections/blog-sharing.php:59
+#: inc/admin/customizer-sections/event-sharing.php:59
+#: inc/admin/customizer-sections/learnpress-sharing.php:59
+#: inc/template-tags.php:202
 msgid "Pinterest"
 msgstr ""
 
-#: inc/admin/customizer-sections/blog-sharing.php:53
-msgid "Google Plus"
+#: inc/admin/customizer-sections/blog-sharing.php:60
+#: inc/admin/customizer-sections/event-sharing.php:60
+#: inc/admin/customizer-sections/learnpress-sharing.php:60
+#: inc/template-tags.php:207
+msgid "Google"
 msgstr ""
 
 #: inc/admin/customizer-sections/blog.php:12 inc/custom-functions.php:229
@@ -1420,7 +1453,7 @@ msgstr ""
 #: inc/admin/customizer-sections/header-mobile-menu.php:41
 #: inc/admin/customizer-sections/header-sticky-menu.php:138
 #: inc/admin/customizer-sections/header-sub-menu.php:44
-#: inc/admin/customizer-sections/responsive.php:106
+#: inc/admin/customizer-sections/responsive.php:133
 msgid "Text Color"
 msgstr ""
 
@@ -1431,7 +1464,7 @@ msgstr ""
 #: inc/admin/customizer-sections/header-mobile-menu.php:74
 #: inc/admin/customizer-sections/header-sticky-menu.php:168
 #: inc/admin/customizer-sections/header-sub-menu.php:67
-#: inc/admin/customizer-sections/responsive.php:132
+#: inc/admin/customizer-sections/responsive.php:159
 msgid "Text Hover Color"
 msgstr ""
 
@@ -1653,15 +1686,23 @@ msgid ""
 msgstr ""
 
 #: inc/admin/customizer-sections/responsive.php:82
+msgid "Hamburger icon color"
+msgstr ""
+
+#: inc/admin/customizer-sections/responsive.php:83
+msgid "Allows to select color for hamburger menu on mobile device."
+msgstr ""
+
+#: inc/admin/customizer-sections/responsive.php:109
 msgid ""
 "Allows you to select a color make background color for header on mobile. "
 msgstr ""
 
-#: inc/admin/customizer-sections/responsive.php:107
+#: inc/admin/customizer-sections/responsive.php:134
 msgid "Allows you to select a color make color of header text on mobile."
 msgstr ""
 
-#: inc/admin/customizer-sections/responsive.php:133
+#: inc/admin/customizer-sections/responsive.php:160
 msgid ""
 "Allows you to select color for text link when hover text link on mobile."
 msgstr ""
@@ -1893,7 +1934,7 @@ msgstr ""
 #: inc/custom-functions.php:276 inc/custom-functions.php:343
 #: inc/custom-functions.php:345 inc/custom-functions.php:347
 #: inc/custom-functions.php:351 inc/custom-functions.php:352
-#: inc/template-tags.php:581
+#: inc/template-tags.php:573
 msgid "Archives"
 msgstr ""
 
@@ -1905,7 +1946,7 @@ msgstr ""
 msgid "Search results for:"
 msgstr ""
 
-#: inc/custom-functions.php:284 inc/template-tags.php:577
+#: inc/custom-functions.php:284 inc/template-tags.php:569
 msgid "404 Page"
 msgstr ""
 
@@ -2202,116 +2243,116 @@ msgstr ""
 msgid "Youtube Account"
 msgstr ""
 
-#: inc/learnpress-functions.php:277 inc/learnpress-functions.php:889
+#: inc/learnpress-functions.php:277 inc/learnpress-functions.php:892
 msgid "Additional Information"
 msgstr ""
 
-#: inc/learnpress-functions.php:371
+#: inc/learnpress-functions.php:373
 msgid "Old password incorrect!"
 msgstr ""
 
-#: inc/learnpress-functions.php:379
+#: inc/learnpress-functions.php:381
 msgid "Confirmation password incorrect!"
 msgstr ""
 
-#: inc/learnpress-functions.php:441
+#: inc/learnpress-functions.php:443
 msgid "Update success!"
 msgstr ""
 
-#: inc/learnpress-functions.php:559
+#: inc/learnpress-functions.php:561
 #, php-format
 msgid "%s week"
 msgid_plural "%s weeks"
 msgstr[0] ""
 
-#: inc/learnpress-functions.php:562
+#: inc/learnpress-functions.php:564
 #, php-format
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
 
-#: inc/learnpress-functions.php:565
+#: inc/learnpress-functions.php:567
 #, php-format
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
 
-#: inc/learnpress-functions.php:568
+#: inc/learnpress-functions.php:570
 #, php-format
 msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] ""
 
-#: inc/learnpress-functions.php:583 inc/learnpress-functions.php:587
+#: inc/learnpress-functions.php:585 inc/learnpress-functions.php:589
 msgid "h"
 msgstr ""
 
-#: inc/learnpress-functions.php:583 inc/learnpress-functions.php:585
+#: inc/learnpress-functions.php:585 inc/learnpress-functions.php:587
 msgid "m"
 msgstr ""
 
-#: inc/learnpress-functions.php:630
+#: inc/learnpress-functions.php:632
 msgid "Related Courses"
 msgstr ""
 
-#: inc/learnpress-functions.php:642
+#: inc/learnpress-functions.php:644
 #, php-format
 msgid "(%1$s vote )"
 msgid_plural " (%1$s votes)"
 msgstr[0] ""
 
-#: inc/learnpress-functions.php:642
+#: inc/learnpress-functions.php:644
 msgid "(0 vote)"
 msgstr ""
 
-#: inc/learnpress-functions.php:863
+#: inc/learnpress-functions.php:866
 msgid "All"
 msgstr ""
 
-#: inc/learnpress-functions.php:864
+#: inc/learnpress-functions.php:867
 msgid "Finished"
 msgstr ""
 
-#: inc/learnpress-functions.php:865
+#: inc/learnpress-functions.php:868
 #: learnpress/single-course/section/item-meta.php:46
 msgid "Passed"
 msgstr ""
 
-#: inc/learnpress-functions.php:866
+#: inc/learnpress-functions.php:869
 #: learnpress/single-course/section/item-meta.php:49
 msgid "Failed"
 msgstr ""
 
-#: inc/learnpress-functions.php:867
+#: inc/learnpress-functions.php:870
 #: learnpress/single-course/section/item-meta.php:54
 msgid "In Progress"
 msgstr ""
 
-#: inc/learnpress-functions.php:934
+#: inc/learnpress-functions.php:937
 msgid "Reviews"
 msgstr ""
 
-#: inc/learnpress-functions.php:1000 inc/learnpress-functions.php:1002
+#: inc/learnpress-functions.php:1006 inc/learnpress-functions.php:1008
 msgid "Last name"
 msgstr ""
 
-#: inc/learnpress-functions.php:1006
+#: inc/learnpress-functions.php:1012
 msgid "Last name *"
 msgstr ""
 
-#: inc/learnpress-functions.php:1007
+#: inc/learnpress-functions.php:1013
 msgid "First name *"
 msgstr ""
 
-#: inc/learnpress-functions.php:1008 inc/template-tags.php:746
+#: inc/learnpress-functions.php:1014 inc/template-tags.php:738
 msgid "Email *"
 msgstr ""
 
-#: inc/learnpress-functions.php:1009
+#: inc/learnpress-functions.php:1015
 msgid "Your phone number *"
 msgstr ""
 
-#: inc/libs/tax-meta-class/Tax-meta-class.php:364 inc/template-tags.php:386
+#: inc/libs/tax-meta-class/Tax-meta-class.php:364 inc/template-tags.php:378
 msgid "Edit"
 msgstr ""
 
@@ -2368,127 +2409,131 @@ msgstr ""
 msgid "Comments are off for this post"
 msgstr ""
 
-#: inc/template-tags.php:164 wp-events-manager/content-single-event.php:72
+#: inc/template-tags.php:166
 msgid "Share"
 msgstr ""
 
-#: inc/template-tags.php:339
+#: inc/template-tags.php:207
+msgid "Google Plus"
+msgstr ""
+
+#: inc/template-tags.php:331
 #: learnpress/profile/tabs/settings/basic-information.php:42
 msgid "Name"
 msgstr ""
 
-#: inc/template-tags.php:340 learnpress/profile/profile-cover.php:138
+#: inc/template-tags.php:332 learnpress/profile/profile-cover.php:138
 #: learnpress/profile/tabs/settings/additional-information.php:35
 msgid "Email"
 msgstr ""
 
-#: inc/template-tags.php:341
+#: inc/template-tags.php:333
 msgid "Website"
 msgstr ""
 
-#: inc/template-tags.php:377 learnpress/addons/course-review/loop-review.php:29
+#: inc/template-tags.php:369 learnpress/addons/course-review/loop-review.php:29
 msgid " at "
 msgstr ""
 
-#: inc/template-tags.php:390
+#: inc/template-tags.php:382
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:541 inc/template-tags.php:543
-#: inc/template-tags.php:545 inc/template-tags.php:571
+#: inc/template-tags.php:533 inc/template-tags.php:535
+#: inc/template-tags.php:537 inc/template-tags.php:563
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: inc/template-tags.php:547
+#: inc/template-tags.php:539
 #, php-format
 msgid "Year: %s"
 msgstr ""
 
-#: inc/template-tags.php:547
+#: inc/template-tags.php:539
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/template-tags.php:549
+#: inc/template-tags.php:541
 #, php-format
 msgid "Month: %s"
 msgstr ""
 
-#: inc/template-tags.php:549
+#: inc/template-tags.php:541
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: inc/template-tags.php:551
+#: inc/template-tags.php:543
 #, php-format
 msgid "Day: %s"
 msgstr ""
 
-#: inc/template-tags.php:551
+#: inc/template-tags.php:543
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-#: inc/template-tags.php:553
+#: inc/template-tags.php:545
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr ""
 
-#: inc/template-tags.php:555
+#: inc/template-tags.php:547
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr ""
 
-#: inc/template-tags.php:557
+#: inc/template-tags.php:549
 msgctxt "post format archive title"
 msgid "Images"
 msgstr ""
 
-#: inc/template-tags.php:559
+#: inc/template-tags.php:551
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr ""
 
-#: inc/template-tags.php:561
+#: inc/template-tags.php:553
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr ""
 
-#: inc/template-tags.php:563
+#: inc/template-tags.php:555
 msgctxt "post format archive title"
 msgid "Links"
 msgstr ""
 
-#: inc/template-tags.php:565
+#: inc/template-tags.php:557
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr ""
 
-#: inc/template-tags.php:567
+#: inc/template-tags.php:559
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr ""
 
-#: inc/template-tags.php:569
+#: inc/template-tags.php:561
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr ""
 
-#: inc/template-tags.php:575
+#: inc/template-tags.php:567
 #, php-format
 msgid "%1$s: %2$s"
 msgstr ""
 
-#: inc/template-tags.php:579
+#: inc/template-tags.php:571
 msgid "Search Results Page"
 msgstr ""
 
-#: inc/template-tags.php:597
+#: inc/template-tags.php:589
 msgid "Google plus"
 msgstr ""
 
-#: inc/template-tags.php:743
+#: inc/template-tags.php:735
 msgid "Your Name *"
 msgstr ""
 
@@ -3036,8 +3081,7 @@ msgstr[0] ""
 msgid "Price"
 msgstr ""
 
-#: learnpress/single-course/info-bar.php:53
-#: wp-events-manager/content-single-event.php:64
+#: learnpress/single-course/info-bar.php:59
 msgid "Tags"
 msgstr ""
 

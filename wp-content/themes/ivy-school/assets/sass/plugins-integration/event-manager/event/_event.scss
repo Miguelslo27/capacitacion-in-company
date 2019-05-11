@@ -161,61 +161,58 @@
     }
   }
 
-  .tags-and-share {
+  .share {
+
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #7c7c7c;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
+    padding: 10px 0;
 
-    .tags {
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 1.5;
-      color: #7c7c7c;
-      padding: 10px 0;
-      margin-right: 30px;
-
-      a {
-        font-weight: 400;
-        color: #292929;
-        text-transform: uppercase;
-        transition: all .2s;
-
-        &:hover {
-          color: #f8b944;
-        }
-      }
-
-      span {
-        margin-right: 5px;
-      }
+    .title {
+      text-transform: uppercase;
+      margin-right: 8px;
     }
 
-    .share {
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 1.5;
-      color: #7c7c7c;
+    li {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    a {
+      font-size: 17px;
+      color: #fff;
       display: flex;
-      flex-wrap: wrap;
+      justify-content: center;
       align-items: center;
-      padding: 10px 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      margin: 4px;
 
-      a {
-        font-size: 17px;
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        margin: 4px;
+      &.facebook {
+        background: #3a589a;
       }
 
-      span {
-        margin-right: 5px;
+      &.twitter {
+        background: #21ccff;
       }
+
+      &.pinterest {
+        background: #df4a38;
+      }
+
+      &.google {
+        background: #df4a38;
+      }
+
+    }
+
+    span {
+      margin-right: 5px;
     }
   }
 }

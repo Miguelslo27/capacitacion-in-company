@@ -53,9 +53,9 @@ if(!has_post_thumbnail( $post->ID )){
             </div>
             <div class="entry-content">
                 <div class="share-text">
-                    <?php if ( get_theme_mod( 'show_sharing', false ) ) :?>
+                    <?php if ( get_theme_mod( 'show_sharing') == true ) :?>
                         <div class="entry-tag-share icon-share sticky-sidebar">
-                            <?php do_action( 'thim_social_share' ); ?>
+                            <?php thim_social_share( 'blog_single_' ); ?>
                         </div>
                     <?php endif;?>
                     <div class="entry-description <?php if ( get_theme_mod( 'show_sharing', false ) ) echo 'text';?>">
