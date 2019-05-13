@@ -308,3 +308,139 @@ if (!function_exists('thim_footer_widgets')) {
 }
 
 add_action('wp_enqueue_scripts', 'thim_child_enqueue_styles', 100);
+
+/**
+ * Ajax Login popup
+ */
+remove_action( 'wp_ajax_nopriv_builderpress_login_popup_ajax', 'login_ajax' );
+remove_action( 'wp_ajax_builderpress_login_popup_ajax', 'login_ajax' );
+
+add_action( 'wp_ajax_nopriv_builderpress_login_popup_ajax', 'login_ajax_custom' );
+add_action( 'wp_ajax_builderpress_login_popup_ajax', 'login_ajax_custom' );
+
+function login_ajax_custom() {
+    global $wpdb;
+
+    //We shall SQL prepare all inputs to avoid sql injection.
+    $username = $wpdb->prepare( $_REQUEST['username'], array() );
+    $password = $_REQUEST['password'];
+    $redirect_to = $_REQUEST['redirect_to'];
+    $remember = $wpdb->prepare( $_REQUEST['remember'], array() );
+
+    if ( $remember ) {
+        $remember = "true";
+    } else {
+        $remember = "false";
+    }
+
+    $login_data                  = array();
+    $login_data['user_login']    = $username;
+    $login_data['user_password'] = $password;
+    $login_data['redirect_to']   = $redirect_to;
+    $login_data['remember']      = $remember;
+    $user_verify                 = wp_signon( $login_data, false );
+
+    $code = 1;
+
+    if ( is_wp_error( $user_verify ) ) {
+        $message = '<p class="message message-error">' . esc_html__( 'Nombre de usuario o contraseña incorrecta.', 'builderpress' ) . '</p>';
+        $code    = - 1;
+    } else {
+        $message = '<p class="message message-success">' . esc_html__( 'Ingreso exitoso, redirigiendo...', 'builderpress' ) . '</p>';
+    }
+    $response_data = array(
+        'code'    => $code,
+        'message' => $message
+    );
+    if ( ! empty( $login_data['redirect_to'] ) ) {
+        $response_data['redirect'] = $login_data['redirect_to'];
+    }
+
+    echo json_encode( $response_data );
+    die(); // this is required to return a proper result
+}
+
+/**
+ * Ajax Register popup
+ */
+remove_action( 'wp_ajax_nopriv_builderpress_register_ajax', 'register_ajax' );
+remove_action( 'wp_ajax_builderpress_register_ajax', 'register_ajax' );
+
+add_action('wp_ajax_nopriv_builderpress_register_ajax', 'register_ajax_custom');
+add_action('wp_ajax_builderpress_register_ajax', 'register_ajax_custom');
+
+function register_ajax_custom()
+{
+  // First check the nonce, if it fails the function will break
+  $secure = check_ajax_referer('ajax_register_nonce', 'register_security', false);
+
+  if (!$secure) {
+    $response_data = array(
+      'message' => '<p class="message message-error">' . esc_html__('Algo salió mal, por favor intenta de nuevo.', 'builderpress') . '</p>'
+    );
+
+    wp_send_json_error($response_data);
+  }
+
+  parse_str($_POST['data'], $data);
+  $info = array();
+
+  $info['user_login'] = sanitize_user($data['user_login']);
+  $info['user_email'] = sanitize_email($data['user_email']);
+  $info['user_pass']  = sanitize_text_field($data['password']);
+
+  $confirm_password = sanitize_text_field($data['repeat_password']);
+
+  if ($info['user_pass'] !== $confirm_password) {
+    $response_data = array(
+      'message' => '<p class="message message-error">' . esc_html__('Esas contraseñas no coinciden. Intenta de nuevo.', 'builderpress') . '</p>'
+    );
+
+    wp_send_json_error($response_data);
+  }
+
+  // Register the user
+  $user_register = wp_insert_user($info);
+
+  if (is_wp_error($user_register)) {
+    $error = $user_register->get_error_codes();
+
+    if (in_array('empty_user_login', $error)) {
+      $response_data = array(
+        'message' => '<p class="message message-error">' . esc_html__('El usuario es requerido.', 'builderpress') . '</p>'
+      );
+    } elseif (in_array('existing_user_login', $error)) {
+      $response_data = array(
+        'message' => '<p class="message message-error">' . esc_html__('Este nombre de usuario ya se encuentra registrado.', 'builderpress') . '</p>'
+      );
+    } elseif (in_array('existing_user_email', $error)) {
+      $response_data = array(
+        'message' => '<p class="message message-error">' . esc_html__('Este correo electrónico ya se encuentra registrado.', 'builderpress') . '</p>'
+      );
+    }
+
+    wp_send_json_error($response_data);
+  } else {
+    $creds                  = array();
+    $creds['user_login']    = $info['user_login'];
+    $creds['user_password'] = $info['user_pass'];
+
+    $user_signon = wp_signon($creds, false);
+    if (is_wp_error($user_signon)) {
+      $response_data = array(
+        'message' => '<p class="message message-error">' . esc_html__('Nombre de usuario o contraseña incorrecta.', 'builderpress') . '</p>'
+      );
+
+      wp_send_json_error($response_data);
+    } else {
+      wp_set_current_user($user_signon->ID);
+      wp_set_auth_cookie($user_signon->ID);
+
+      $response_data = array(
+        'message' => '<p class="message message-success">' . esc_html__('Registro exitoso, redirigiendo...', 'builderpress') . '</p>'
+      );
+
+      wp_send_json_success($response_data);
+    }
+  }
+}
