@@ -27,7 +27,7 @@ $popup_image   = $image[0];
 
 <!-- wp-content\themes\ivy-school-child\builderpress\login-popup\register.php -->
 <div class="login-popup box-register">
-  <div class="media-content" style="background-image: url(<?php echo ($popup_image); ?>)">
+  <div class="media-content" style="background-image: url(/wp-content/uploads/2019/04/annie-spratt-608001-unsplash.jpg)">
   </div>
 
   <div class="inner-login">
