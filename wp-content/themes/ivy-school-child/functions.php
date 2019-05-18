@@ -312,59 +312,60 @@ add_action('wp_enqueue_scripts', 'thim_child_enqueue_styles', 100);
 /**
  * Ajax Login popup
  */
-remove_action( 'wp_ajax_nopriv_builderpress_login_popup_ajax', 'login_ajax' );
-remove_action( 'wp_ajax_builderpress_login_popup_ajax', 'login_ajax' );
+remove_action('wp_ajax_nopriv_builderpress_login_popup_ajax', 'login_ajax');
+remove_action('wp_ajax_builderpress_login_popup_ajax', 'login_ajax');
 
-add_action( 'wp_ajax_nopriv_builderpress_login_popup_ajax', 'login_ajax_custom' );
-add_action( 'wp_ajax_builderpress_login_popup_ajax', 'login_ajax_custom' );
+add_action('wp_ajax_nopriv_builderpress_login_popup_ajax', 'login_ajax_custom');
+add_action('wp_ajax_builderpress_login_popup_ajax', 'login_ajax_custom');
 
-function login_ajax_custom() {
-    global $wpdb;
+function login_ajax_custom()
+{
+  global $wpdb;
 
-    //We shall SQL prepare all inputs to avoid sql injection.
-    $username = $wpdb->prepare( $_REQUEST['username'], array() );
-    $password = $_REQUEST['password'];
-    $redirect_to = $_REQUEST['redirect_to'];
-    $remember = $wpdb->prepare( $_REQUEST['remember'], array() );
+  //We shall SQL prepare all inputs to avoid sql injection.
+  $username = $wpdb->prepare($_REQUEST['username'], array());
+  $password = $_REQUEST['password'];
+  $redirect_to = $_REQUEST['redirect_to'];
+  $remember = $wpdb->prepare($_REQUEST['remember'], array());
 
-    if ( $remember ) {
-        $remember = "true";
-    } else {
-        $remember = "false";
-    }
+  if ($remember) {
+    $remember = "true";
+  } else {
+    $remember = "false";
+  }
 
-    $login_data                  = array();
-    $login_data['user_login']    = $username;
-    $login_data['user_password'] = $password;
-    $login_data['redirect_to']   = $redirect_to;
-    $login_data['remember']      = $remember;
-    $user_verify                 = wp_signon( $login_data, false );
+  $login_data                  = array();
+  $login_data['user_login']    = $username;
+  $login_data['user_password'] = $password;
+  $login_data['redirect_to']   = $redirect_to;
+  $login_data['remember']      = $remember;
+  $user_verify                 = wp_signon($login_data, false);
 
-    $code = 1;
+  $code = 1;
 
-    if ( is_wp_error( $user_verify ) ) {
-        $message = '<p class="message message-error">' . esc_html__( 'Nombre de usuario o contraseña incorrecta.', 'builderpress' ) . '</p>';
-        $code    = - 1;
-    } else {
-        $message = '<p class="message message-success">' . esc_html__( 'Ingreso exitoso, redirigiendo...', 'builderpress' ) . '</p>';
-    }
-    $response_data = array(
-        'code'    => $code,
-        'message' => $message
-    );
-    if ( ! empty( $login_data['redirect_to'] ) ) {
-        $response_data['redirect'] = $login_data['redirect_to'];
-    }
+  if (is_wp_error($user_verify)) {
+    $message = '<p class="message message-error">' . esc_html__('Nombre de usuario o contraseña incorrecta.', 'builderpress') . '</p>';
+    $code    = -1;
+  } else {
+    $message = '<p class="message message-success">' . esc_html__('Ingreso exitoso, redirigiendo...', 'builderpress') . '</p>';
+  }
+  $response_data = array(
+    'code'    => $code,
+    'message' => $message
+  );
+  if (!empty($login_data['redirect_to'])) {
+    $response_data['redirect'] = $login_data['redirect_to'];
+  }
 
-    echo json_encode( $response_data );
-    die(); // this is required to return a proper result
+  echo json_encode($response_data);
+  die(); // this is required to return a proper result
 }
 
 /**
  * Ajax Register popup
  */
-remove_action( 'wp_ajax_nopriv_builderpress_register_ajax', 'register_ajax' );
-remove_action( 'wp_ajax_builderpress_register_ajax', 'register_ajax' );
+remove_action('wp_ajax_nopriv_builderpress_register_ajax', 'register_ajax');
+remove_action('wp_ajax_builderpress_register_ajax', 'register_ajax');
 
 add_action('wp_ajax_nopriv_builderpress_register_ajax', 'register_ajax_custom');
 add_action('wp_ajax_builderpress_register_ajax', 'register_ajax_custom');
@@ -444,3 +445,80 @@ function register_ajax_custom()
     }
   }
 }
+
+/**
+ * Get archive title
+ *
+ * Display the archive title based on the queried object.
+ *
+ * @return string
+ */
+if (!function_exists('thim_archive_title')) :
+  function thim_archive_title($before = '', $after = '')
+  {
+    if (is_category()) {
+      $title = sprintf(esc_html__('%s', 'ivy-school'), single_cat_title('', false));
+    } elseif (is_tag()) {
+      $title = sprintf(esc_html__('%s', 'ivy-school'), single_tag_title('', false));
+    } elseif (is_author()) {
+      $title = sprintf(esc_html__('%s', 'ivy-school'), '<span class="vcard">' . get_the_author() . '</span>');
+    } elseif (is_year()) {
+      $title = sprintf(esc_html__('Year: %s', 'ivy-school'), get_the_date(_x('Y', 'yearly archives date format', 'ivy-school')));
+    } elseif (is_month()) {
+      $title = sprintf(esc_html__('Month: %s', 'ivy-school'), get_the_date(_x('F Y', 'monthly archives date format', 'ivy-school')));
+    } elseif (is_day()) {
+      $title = sprintf(esc_html__('Day: %s', 'ivy-school'), get_the_date(_x('F j, Y', 'daily archives date format', 'ivy-school')));
+    } elseif (is_tax('post_format', 'post-format-aside')) {
+      $title = _x('Asides', 'post format archive title', 'ivy-school');
+    } elseif (is_tax('post_format', 'post-format-gallery')) {
+      $title = _x('Galleries', 'post format archive title', 'ivy-school');
+    } elseif (is_tax('post_format', 'post-format-image')) {
+      $title = _x('Images', 'post format archive title', 'ivy-school');
+    } elseif (is_tax('post_format', 'post-format-video')) {
+      $title = _x('Videos', 'post format archive title', 'ivy-school');
+    } elseif (is_tax('post_format', 'post-format-quote')) {
+      $title = _x('Quotes', 'post format archive title', 'ivy-school');
+    } elseif (is_tax('post_format', 'post-format-link')) {
+      $title = _x('Links', 'post format archive title', 'ivy-school');
+    } elseif (is_tax('post_format', 'post-format-status')) {
+      $title = _x('Statuses', 'post format archive title', 'ivy-school');
+    } elseif (is_tax('post_format', 'post-format-audio')) {
+      $title = _x('Audio', 'post format archive title', 'ivy-school');
+    } elseif (is_tax('post_format', 'post-format-chat')) {
+      $title = _x('Chats', 'post format archive title', 'ivy-school');
+    } elseif (is_post_type_archive()) {
+      // TODO / Change Collection for Coleccion
+      $title = sprintf(esc_html__('%s', 'ivy-school'), post_type_archive_title('', false));
+      switch (strtolower($title)) {
+        default:
+          $title = $title;
+          break;
+        case 'collection':
+          $title = 'Colección';
+          break;
+        case 'collections':
+          $title = 'Colecciones';
+          break;
+      }
+    } elseif (is_tax()) {
+      $tax = get_taxonomy(get_queried_object()->taxonomy);
+      /* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
+      $title = sprintf(esc_html__('%1$s: %2$s', 'ivy-school'), $tax->labels->singular_name, single_term_title('', false));
+    } elseif (is_404()) {
+      $title = esc_html__('404 Page', 'ivy-school');
+    } elseif (is_search()) {
+      $title = esc_html__('Search Results Page', 'ivy-school');
+    } else {
+      $title = esc_html__('Archives', 'ivy-school');
+    }
+
+    /**
+     * Filter the archive title.
+     *
+     * @param string $title Archive title to be displayed.
+     */
+    if (!empty($title)) {
+      echo ent2ncr($before . $title . $after);
+    }
+  }
+endif;
