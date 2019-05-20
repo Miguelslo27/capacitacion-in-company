@@ -256,3 +256,12 @@ footer.site-footer .footer .container .footer-sidebars.row .widget .company-info
         display: block;
     }
 }
+@media (max-width: 480px) {
+    .slick-track {
+        width: 100% !important;
+    }
+    .slick-track .item-slick {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+}
