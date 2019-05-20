@@ -34,15 +34,25 @@ $num_ratings = 0;
                     <?php $size = apply_filters( 'builder-press/list-courses/layout-grid/image-size', '450x300' );
                     builder_press_get_attachment_image( get_post_thumbnail_id( get_the_ID() ), $size ); ?>
 
-                    <?php if( $course->get_price_html() ) {?>
-                        <div class="price">
-                            <?php echo esc_html( $course->get_price_html() ); ?>
-                            <?php if ( $course->has_sale_price() ) { ?>
-                                <span class="old-price"> <?php echo esc_html( $course->get_origin_price_html() ); ?></span>
-                            <?php } ?>
-                            <span class="price-tax">+ iva</span>
-                        </div>
-                    <?php }?>
+                    <?php
+                    if( $price = $course->get_price_html() ) :
+                        $origin_price = $course->get_origin_price_html();
+	                    $free_course = ( $price === 'Gratis' ) ? ' free' : '';
+                    ?>
+                        
+                    <div class="price">
+                        <?php
+                        if ($price === 'Gratis') {
+                            echo '<span class="course-price">Consulte</span>';
+                        } else {
+                            echo '<span class="course-price">' . $price . ' <span class="price-tax">+ iva</span></span>';
+                        }
+                        ?>
+                    </div>
+
+                    <?php
+                    endif;
+                    ?>
                 </a>
             </div>
 

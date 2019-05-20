@@ -75,16 +75,30 @@ if (!function_exists('thim_related_courses')) {
                   </div>
 
                   <div class="info">
+                    <?php
+                    if( $price = $course->get_price_html() ) :
+                        $origin_price = $course->get_origin_price_html();
+                      $free_course = ( $price === 'Gratis' ) ? ' free' : '';
+                    ?>
+                        
                     <div class="price">
-                      <?php echo esc_html($course->get_price_html()); ?>
-                      <!-- wp-content\themes\ivy-school-child\inc\learnpress-functions.php -->
-                      <span class="price-tax">+ iva</span>
-                      <?php if ($course->has_sale_price()) { ?>
-                        <span class="old-price"> <?php echo esc_html($course->get_origin_price_html()); ?></span>
-                        <!-- wp-content\themes\ivy-school-child\inc\learnpress-functions.php -->
-                        <span class="price-tax">+ iva</span>
-                      <?php } ?>
+                        <?php
+                        if ($price === 'Gratis') {
+                            echo '<span class="course-price">Consulte</span>';
+                        } else {
+                            echo '<span class="course-price">' . $price . ' <span class="price-tax">+ iva</span></span>';
+                        }
+                        ?>
+                        <?php if ($course->has_sale_price()) { ?>
+                          <span class="old-price"> <?php echo esc_html($course->get_origin_price_html()); ?></span>
+                          <!-- wp-content\themes\ivy-school-child\functions.php -->
+                          <span class="price-tax">+ iva</span>
+                        <?php } ?>
                     </div>
+
+                    <?php
+                    endif;
+                    ?>
 
                     <div class="numbers">
                       <?php if (class_exists('LP_Addon_Course_Review')) { ?>
