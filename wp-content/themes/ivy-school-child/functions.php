@@ -284,7 +284,9 @@ if (!function_exists('thim_course_rate')) {
   function thim_course_rate()
   {
     echo '<div class="landing-review">';
-    echo '<h3 class="title-rating">' . esc_html__('Reseñas', 'ivy-school') . '</h3>';
+    echo '<h3 class="title-rating">' . esc_html__('Reseñas', 'ivy-school');
+    learn_press_course_review_template('review-form.php');
+    echo '</h3>';
     learn_press_course_review_template('course-rate.php');
     learn_press_course_review_template('course-review.php');
     echo '</div>';
