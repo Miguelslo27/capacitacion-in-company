@@ -285,7 +285,13 @@ if (!function_exists('thim_course_rate')) {
   {
     echo '<div class="landing-review">';
     echo '<h3 class="title-rating">' . esc_html__('Reseñas', 'ivy-school');
-    learn_press_course_review_template('review-form.php');
+
+    if ( is_user_logged_in() ) {
+      learn_press_course_review_template('review-form.php');
+    } else {
+      echo '<a title="Ingresá para dejar tu reseña" href="#bp-popup-login" class="cant-review-message">Ingresá para dejar tu reseña</a>';
+    }
+
     echo '</h3>';
     learn_press_course_review_template('course-rate.php');
     learn_press_course_review_template('course-review.php');
