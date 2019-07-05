@@ -277,6 +277,7 @@ footer.site-footer .footer .container .footer-sidebars.row .widget .company-info
 @media (max-width: 480px) {
     .slick-track {
         width: 100% !important;
+        transform: none !important;
     }
     .slick-track .item-slick {
         opacity: 1 !important;
