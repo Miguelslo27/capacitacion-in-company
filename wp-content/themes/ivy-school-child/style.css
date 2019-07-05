@@ -48,8 +48,16 @@ body.home .site-content {
 
 .main-top {
     height: 450px;
-    background-size: 100%;
-    background-repeat: no-repeat
+    background-size: cover;
+    background-position: center top 0 !important;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 600px) {
+    .main-top {
+        background-position: right -150px bottom 0 !important;
+        background-repeat: no-repeat;
+    }
 }
 
 body.left_courses .wrapper-item-course .item-course .text {
