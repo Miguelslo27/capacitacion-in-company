@@ -25,7 +25,6 @@ foreach ( $errors as $error => $message ) {
         <p class="message message-error"><?php echo $message; ?></p>
 	<?php }
 } ?>
-
 <div class="login-form-wrap">
     <h4 class="subtitle"><?php esc_html_e( 'Lost password', 'builderpress' ); ?></h4>
     <h2 class="title"><?php esc_html_e( 'Lost your password?', 'builderpress' ); ?></h2>
