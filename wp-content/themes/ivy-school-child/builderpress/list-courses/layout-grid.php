@@ -74,7 +74,6 @@ $num_ratings = 0;
                 </h3>
 
                 <div class="info-course">
-                    <!-- wp-content\themes\ivy-school-child\builderpress\list-courses\layout-grid.php -->
                     <?php
                         $courses_tag = get_the_terms($course->get_id(),'course_tag');
                     ?>
@@ -90,6 +89,10 @@ $num_ratings = 0;
                     <span class="star">
                         <i class="ion ion-android-star"></i>
                         <?php echo intval( $course_rate );?>
+                    </span>
+                    <span class="chat">
+                        <i class="ion ion-chatbubbles"></i>
+                        <?php echo intval($num_ratings); ?>
                     </span>
                     <?php }?>
                 </div>

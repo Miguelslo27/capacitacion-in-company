@@ -11,6 +11,7 @@ global $layout_courses, $num_ratings;
 $course = LP_Global::course();
 if( thim_plugin_active( 'learnpress-course-review' ) ) {
     $num_ratings = learn_press_get_course_rate_total($course->get_id()) ? learn_press_get_course_rate_total($course->get_id()) : 0;
+    $course_rate = learn_press_get_course_rate( get_the_ID() );
 }
 ?>
 <?php
@@ -20,19 +21,24 @@ if( thim_plugin_active( 'learnpress-course-review' ) ) {
             if($layout_courses === "left_courses") {
         ?>
                 <div class="info-course">
-                    <!-- wp-content\themes\ivy-school-child\learnpress\loop\course\info.php -->
-                    <?php $courses_tag = get_the_terms($course->get_id(),'course_tag');?>
+                    <?php
+                        $courses_tag = get_the_terms($course->get_id(),'course_tag');
+                    ?>
                     <?php if($courses_tag) {?>
-                        <a href="<?php echo get_term_link($courses_tag[0]->term_id) ?>">
-                            <i class="ion ion-ios-pricetags-outline"></i>
-                            <?php
-                            echo esc_html($courses_tag[0]-> name);
-                            ?>
-                        </a>
+                    <a href="<?php echo get_term_link($courses_tag[0]->term_id) ?>">
+                        <i class="ion ion-ios-pricetags-outline"></i>
+                        <?php
+                        echo $courses_tag[0]-> name;
+                        ?>
+                    </a>
                     <?php }?>
-                    <?php if( thim_plugin_active( 'learnpress-course-review' ) ) {?>
+                    <?php if( is_plugin_active( 'learnpress-course-review/learnpress-course-review.php' ) ) {?>
                     <span class="star">
                         <i class="ion ion-android-star"></i>
+                        <?php echo intval( $course_rate );?>
+                    </span>
+                    <span class="chat">
+                        <i class="ion ion-chatbubbles"></i>
                         <?php echo intval($num_ratings); ?>
                     </span>
                     <?php }?>
