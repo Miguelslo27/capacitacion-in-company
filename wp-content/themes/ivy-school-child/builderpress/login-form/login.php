@@ -24,7 +24,7 @@ $theme_options_data = get_theme_mods();
 
 <div class="login-form-wrap">
     <h4 class="subtitle"><?php esc_html_e( 'Iniciar Sesión', 'builderpress' ); ?></h4>
-    <h2 class="title"><?php esc_html_e( 'Inicie sesión con su cuenta', 'builderpress' ); ?></h2>
+    <h2 class="title"><?php esc_html_e( 'Inicia sesión con tu cuenta', 'builderpress' ); ?></h2>
 
 	<?php $login_redirect = get_theme_mod( 'theme_feature_login_redirect', false );
 	if ( empty( $login_redirect ) ) {
@@ -50,7 +50,7 @@ $theme_options_data = get_theme_mods();
 
         <p class="forgetmenot login-remember">
             <label for="rememberme"><input name="rememberme" type="checkbox" id="rememberme"
-                                           value="forever"/> <?php esc_html_e( 'Recuerdame', 'builderpress' ); ?>
+                                           value="forever"/> <?php esc_html_e( 'Recuérdame', 'builderpress' ); ?>
             </label>
         </p>
 
@@ -61,7 +61,7 @@ $theme_options_data = get_theme_mods();
                 <input type="hidden" name="redirect_to" value="<?php echo esc_attr( $redirect ); ?>"/>
                 <input type="hidden" name="testcookie" value="1"/>
             </p>
-			<?php echo '<a class="lost-pass-link" href="' . thim_get_lost_password_url() . '" title="' . esc_attr__( 'Lost Password', 'builderpress' ) . '">' . esc_html__( '¿Olvidastes tu contraseña?', 'builderpress' ) . '</a>'; ?>
+			<?php echo '<a class="lost-pass-link" href="' . thim_get_lost_password_url() . '" title="' . esc_attr__( 'Lost Password', 'builderpress' ) . '">' . esc_html__( '¿Olvidaste tu contraseña?', 'builderpress' ) . '</a>'; ?>
         </div>
 
 
@@ -76,7 +76,7 @@ $theme_options_data = get_theme_mods();
     <?php
     // action failed notice
     if ( isset( $_GET['result'] ) && $_GET['result'] == 'failed' ) { ?>        
-        <p class="message message-error"><?php esc_html_e( 'Usuario o contraseña incorrectos. Por favor, intente nuevamente!', 'builderpress' ); ?></p>
+        <p class="message message-error"><?php esc_html_e( 'Usuario o contraseña incorrectos. Por favor, intenta nuevamente!', 'builderpress' ); ?></p>
     <?php }
     ?>
 </div>
