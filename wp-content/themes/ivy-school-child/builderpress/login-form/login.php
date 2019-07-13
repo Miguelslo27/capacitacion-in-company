@@ -23,8 +23,8 @@ $theme_options_data = get_theme_mods();
 ?>
 
 <div class="login-form-wrap">
-    <h4 class="subtitle"><?php esc_html_e( 'Login', 'builderpress' ); ?></h4>
-    <h2 class="title"><?php esc_html_e( 'Login with your site account', 'builderpress' ); ?></h2>
+    <h4 class="subtitle"><?php esc_html_e( 'Iniciar Sesión', 'builderpress' ); ?></h4>
+    <h2 class="title"><?php esc_html_e( 'Inicia sesión con tu cuenta', 'builderpress' ); ?></h2>
 
 	<?php $login_redirect = get_theme_mod( 'theme_feature_login_redirect', false );
 	if ( empty( $login_redirect ) ) {
@@ -36,12 +36,12 @@ $theme_options_data = get_theme_mods();
           method="post" novalidate="novalidate">
         <p class="login-username">
             <input required type="text" name="log"
-                   placeholder="<?php esc_html_e( 'Username or email *', 'builderpress' ); ?>" id="user_login"
+                   placeholder="<?php esc_html_e( 'Usuario o Correo Electrónico *', 'builderpress' ); ?>" id="user_login"
                    class="input" value="" size="20"/>
         </p>
         <p class="login-password">
             <input required type="password" name="pwd"
-                   placeholder="<?php esc_html_e( 'Password *', 'builderpress' ); ?>" id="user_pass" class="input"
+                   placeholder="<?php esc_html_e( 'Contraseña *', 'builderpress' ); ?>" id="user_pass" class="input"
                    value="" size="20"/>
             <span id="show_pass"><i class="fa fa-eye"></i></span>
         </p>
@@ -50,18 +50,18 @@ $theme_options_data = get_theme_mods();
 
         <p class="forgetmenot login-remember">
             <label for="rememberme"><input name="rememberme" type="checkbox" id="rememberme"
-                                           value="forever"/> <?php esc_html_e( 'Remember Me', 'builderpress' ); ?>
+                                           value="forever"/> <?php esc_html_e( 'Recuérdame', 'builderpress' ); ?>
             </label>
         </p>
 
         <div class="wrap-fields">
             <p class="submit login-submit">
                 <input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large"
-                       value="<?php esc_attr_e( 'Login', 'builderpress' ); ?>"/>
+                       value="<?php esc_attr_e( 'Iniciar Sesión', 'builderpress' ); ?>"/>
                 <input type="hidden" name="redirect_to" value="<?php echo esc_attr( $redirect ); ?>"/>
                 <input type="hidden" name="testcookie" value="1"/>
             </p>
-			<?php echo '<a class="lost-pass-link" href="' . thim_get_lost_password_url() . '" title="' . esc_attr__( 'Lost Password', 'builderpress' ) . '">' . esc_html__( 'Lost your password?', 'builderpress' ) . '</a>'; ?>
+			<?php echo '<a class="lost-pass-link" href="' . thim_get_lost_password_url() . '" title="' . esc_attr__( 'Lost Password', 'builderpress' ) . '">' . esc_html__( '¿Olvidaste tu contraseña?', 'builderpress' ) . '</a>'; ?>
         </div>
 
 
@@ -70,13 +70,13 @@ $theme_options_data = get_theme_mods();
 
 	<?php $registration_enabled = get_option( 'users_can_register' );
 	if ( $registration_enabled ) {
-		echo '<p class="link-bottom">' . esc_html__( 'Not a member yet? ', 'builderpress' ) . '<a href="' . esc_url( thim_get_register_url() ) . '">' . esc_html__( 'Register now', 'builderpress' ) . '</a></p>';
+		echo '<p class="link-bottom">' . esc_html__( '¿Aún no eres miembro?  ', 'builderpress' ) . '<a href="' . esc_url( thim_get_register_url() ) . '">' . esc_html__( 'Regístrate Ahora', 'builderpress' ) . '</a></p>';
 	} ?>
 
     <?php
     // action failed notice
     if ( isset( $_GET['result'] ) && $_GET['result'] == 'failed' ) { ?>        
-        <p class="message message-error"><?php esc_html_e( 'Invalid username or password. Please try again!', 'builderpress' ); ?></p>
+        <p class="message message-error"><?php esc_html_e( 'Usuario o contraseña incorrectos. Por favor, intenta nuevamente!', 'builderpress' ); ?></p>
     <?php }
     ?>
 </div>
