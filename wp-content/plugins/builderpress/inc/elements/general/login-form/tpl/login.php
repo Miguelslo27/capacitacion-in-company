@@ -75,7 +75,7 @@ $theme_options_data = get_theme_mods();
 
     <?php
     // action failed notice
-    if ( isset( $_GET['result'] ) && $_GET['result'] == 'failed' ) { ?>
+    if ( isset( $_GET['result'] ) && $_GET['result'] == 'failed' ) { ?>        
         <p class="message message-error"><?php esc_html_e( 'Invalid username or password. Please try again!', 'builderpress' ); ?></p>
     <?php }
     ?>
