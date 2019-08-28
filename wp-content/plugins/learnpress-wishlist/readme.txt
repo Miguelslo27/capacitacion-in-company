@@ -3,8 +3,8 @@ Contributors: thimpress, tunnhn, kendy73
 Donate link:  
 Tags: lms, elearning, e-learning, learning management system, education, course, courses, quiz, quizzes, questions, training, guru, sell courses  
 Requires at least: 3.8  
-Tested up to: 4.9.4
-Stable tag: 3.0.1
+Tested up to: 5.2.2
+Stable tag: 3.0.2
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -54,6 +54,9 @@ Check out <a href="http://docs.thimpress.com/learnpress" target="_blank">LearnPr
 1. LearnPress Prerequisite screenshot.  
 
 == Changelog ==
+
+= 3.0.2 =
++ Fixed js error when click Wishlist button.
 
 = 3.0.1 =
 + Fix bug not display Wishlist tab in profile page.

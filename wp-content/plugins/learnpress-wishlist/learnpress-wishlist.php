@@ -4,7 +4,7 @@ Plugin Name: LearnPress - Course Wishlist
 Plugin URI: http://thimpress.com/learnpress
 Description: Wishlist feature.
 Author: ThimPress
-Version: 3.0.1
+Version: 3.0.2
 Author URI: http://thimpress.com
 Tags: learnpress
 Text Domain: learnpress-wishlist
@@ -17,7 +17,7 @@ Domain Path: /languages/
 defined( 'ABSPATH' ) || exit();
 
 define( 'LP_ADDON_WISHLIST_FILE', __FILE__ );
-define( 'LP_ADDON_WISHLIST_VER', '3.0.1' );
+define( 'LP_ADDON_WISHLIST_VER', '3.0.2' );
 define( 'LP_ADDON_WISHLIST_REQUIRE_VER', '3.0.0' );
 
 /**

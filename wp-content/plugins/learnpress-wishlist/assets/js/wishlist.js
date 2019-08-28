@@ -24,7 +24,7 @@
 					nonce    : nonce
 				},
 				success : function (response) {
-					response = LearnPress.parseJSON(response);
+					response = LP.parseJSON(response);
 					var $b = $('.learn-press-course-wishlist-button-' + response.course_id),
 						$p = $b.closest('[data-context="tab-wishlist"]');
 					if ($p.length) {
