@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Debugging
-if ( ! empty( $_REQUEST['debug'] ) || ( defined( 'LP_DEBUG_DEV' ) && LP_DEBUG_DEV ) ) {
+if ( ! empty( $_REQUEST['debug'] ) || ( defined( 'LP_DEBUG' ) && LP_DEBUG ) ) {
 	require_once( 'debug.php' );
 }
 
@@ -89,7 +89,33 @@ function learn_press_quick_tip( $tip, $echo = true, $options = array() ) {
  * @return bool
  */
 function learn_press_is_debug() {
-	return defined( 'LP_DEBUG_DEV' ) && LP_DEBUG_DEV;
+
+	/**
+	 * Priority #1
+	 */
+	if ( isset( $_REQUEST['LP_DEBUG'] ) && $_REQUEST['LP_DEBUG'] === 'true' && learn_press_get_current_user()->is_admin() ) {
+		return true;
+	}
+
+	if ( isset( $_REQUEST['LP_DEBUG'] ) && $_REQUEST['LP_DEBUG'] === 'false' ) {
+		return false;
+	}
+
+	/**
+	 * Priority #2
+	 */
+	if ( defined( 'LP_DEBUG' ) ) {
+		return LP_DEBUG;
+	}
+
+	/**
+	 * Priority #3
+	 */
+	$is_debug = LP()->settings->get( 'debug' ) == 'yes';
+
+	define( 'LP_DEBUG', $is_debug );
+
+	return LP_DEBUG;
 }
 
 /**
@@ -100,7 +126,7 @@ function learn_press_is_debug() {
 function learn_press_get_post() {
 	global $post;
 	$post_id = learn_press_get_request( 'post' );
-	if(!$post_id){
+	if ( ! $post_id ) {
 		$post_id = ! empty( $post ) ? $post->ID : 0;
 	}
 	if ( empty( $post_id ) ) {
@@ -538,7 +564,7 @@ function learn_press_setup_pages() {
 		}
 
 		$query = $wpdb->prepare( "
-			SELECT ID, post_title, post_name, post_content, post_parent, post_type
+			SELECT ID, post_title, post_name, post_date, post_date_gmt, post_modified, post_modified_gmt, post_content, post_parent, post_type
 			FROM {$wpdb->posts}
 			WHERE %d AND ID IN(" . join( ',', $page_ids ) . ")
 			AND post_status <> %s
@@ -636,9 +662,10 @@ if ( ! function_exists( 'learn_press_is_ajax' ) ) {
  */
 function learn_press_get_page_id( $name ) {
 	$page_id = LP_Settings::instance()->get( "{$name}_page_id", false );
-	if(function_exists('icl_object_id')){
-		$page_id = icl_object_id($page_id,'page', false,ICL_LANGUAGE_CODE);
+	if ( function_exists( 'icl_object_id' ) ) {
+		$page_id = icl_object_id( $page_id, 'page', false, ICL_LANGUAGE_CODE );
 	}
+
 	return apply_filters( 'learn_press_get_page_id', $page_id, $name );
 }
 
@@ -1316,7 +1343,7 @@ function learn_press_currency_symbols() {
 		'RON' => '&#108;&#101;&#105;',
 		'RSD' => '&#1044;&#1080;&#1085;&#46;',
 		'RUB' => '&#1088;&#1091;&#1073;',
-		'RWF' => '&#1585;.&#1587;',
+		'RWF' => 'R₣',
 		'SAR' => '&#65020;',
 		'SBD' => '&#36;',
 		'SCR' => '&#8360;',
@@ -1541,7 +1568,7 @@ function learn_press_user_maybe_is_a_teacher( $user = null ) {
 function learn_press_get_become_a_teacher_form_fields() {
 	$user   = learn_press_get_current_user();
 	$fields = array(
-		'bat_name'  => array(
+		'bat_name'    => array(
 			'title'       => __( 'Name', 'learnpress' ),
 			'type'        => 'text',
 			'placeholder' => __( 'Your name', 'learnpress' ),
@@ -1549,7 +1576,7 @@ function learn_press_get_become_a_teacher_form_fields() {
 			'id'          => 'bat_name',
 			'required'    => true
 		),
-		'bat_email' => array(
+		'bat_email'   => array(
 			'title'       => __( 'Email', 'learnpress' ),
 			'type'        => 'email',
 			'placeholder' => __( 'Your email address', 'learnpress' ),
@@ -1557,18 +1584,18 @@ function learn_press_get_become_a_teacher_form_fields() {
 			'id'          => 'bat_email',
 			'required'    => true
 		),
-		'bat_phone' => array(
+		'bat_phone'   => array(
 			'title'       => __( 'Phone', 'learnpress' ),
 			'type'        => 'text',
 			'placeholder' => __( 'Your phone number', 'learnpress' ),
 			'id'          => 'bat_phone'
 		),
-        'bat_message' => array(
-            'title'       => __( 'Message', 'learnpress' ),
-            'type'        => 'textarea',
-            'placeholder' => __( 'Your message', 'learnpress' ),
-            'id'          => 'bat_message'
-        )
+		'bat_message' => array(
+			'title'       => __( 'Message', 'learnpress' ),
+			'type'        => 'textarea',
+			'placeholder' => __( 'Your message', 'learnpress' ),
+			'id'          => 'bat_message'
+		)
 	);
 	$fields = apply_filters( 'learn_press_become_teacher_form_fields', $fields );
 
@@ -1587,9 +1614,9 @@ function learn_press_process_become_a_teacher_form( $args = null ) {
 		$args = wp_parse_args(
 			$args,
 			array(
-				'name'  => null,
-				'email' => null,
-				'phone' => null,
+				'name'    => null,
+				'email'   => null,
+				'phone'   => null,
 				'message' => null,
 			)
 		);
@@ -2028,7 +2055,7 @@ function learn_press_get_register_url() {
  * @return mixed
  */
 function learn_press_add_notice( $message, $type = 'updated' ) {
-	LP_Admin_Notice::add( $message, $type );
+	LP_Admin_Notice::instance()->add( $message, $type );
 }
 
 /**
@@ -2424,8 +2451,8 @@ function learn_press_auto_enroll_user_to_courses( $order_id ) {
 	if ( LP()->settings->get( 'auto_enroll' ) == 'no' ) {
 		return false;
 	}
-	wp_cache_delete('order-' . $order_id , 'lp-order-items');
-	LP_Object_Cache::delete( 'order-' . $order_id , 'lp-order-items' );
+	wp_cache_delete( 'order-' . $order_id, 'lp-order-items' );
+	LP_Object_Cache::delete( 'order-' . $order_id, 'lp-order-items' );
 	if ( ! $order = learn_press_get_order( $order_id ) ) {
 		return false;
 	}
@@ -2600,12 +2627,7 @@ if ( defined( 'LP_ENABLE_CART' ) && LP_ENABLE_CART ) {
  * @return boolean
  */
 function learn_press_debug_enable() {
-	if ( defined( 'LP_DEBUG' ) ) {
-		return LP_DEBUG;
-	}
-	define( 'LP_DEBUG', LP()->settings->get( 'debug' ) == 'yes' ? true : false );
-
-	return learn_press_debug_enable();
+	return learn_press_is_debug();
 }
 
 /**
@@ -2860,7 +2882,7 @@ function learn_press_comment_reply_link( $link, $args = array(), $comment = null
 add_filter( 'comment_reply_link', 'learn_press_comment_reply_link', 10, 4 );
 
 function learn_press_deprecated_function( $function, $version, $replacement = null ) {
-	if ( defined( 'LP_DEBUG' ) && LP_DEBUG === true ) {
+	if ( learn_press_is_debug() ) {
 		_deprecated_function( $function, $version, $replacement );
 	}
 }
@@ -3343,4 +3365,27 @@ function learn_press_show_log() {
 	if ( trim( LP_Request::get( 'show_log' ) ) === md5( AUTH_KEY ) ) {
 		call_user_func_array( 'learn_press_debug', func_get_args() );
 	}
+}
+
+/**
+ * @since 3.2.6
+ *
+ * @return array
+ */
+function learn_press_global_script_params() {
+	$js = array(
+		'ajax'        => admin_url( 'admin-ajax.php' ),
+		'plugin_url'  => LP()->plugin_url(),
+		'siteurl'     => home_url(),
+		'current_url' => learn_press_get_current_url(),
+		'theme'       => get_stylesheet(),
+		'localize'    => array(
+			'button_ok'     => __( 'OK', 'learnpress' ),
+			'button_cancel' => __( 'Cancel', 'learnpress' ),
+			'button_yes'    => __( 'Yes', 'learnpress' ),
+			'button_no'     => __( 'No', 'learnpress' )
+		)
+	);
+
+	return $js;
 }
