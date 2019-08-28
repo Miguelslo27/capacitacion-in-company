@@ -4,7 +4,7 @@ Plugin Name: LearnPress - Paid Membership Pro Integration
 Plugin URI: http://thimpress.com/learnpress
 Description: Paid Membership Pro add-on for LearnPress.
 Author: ThimPress
-Version: 3.1.8
+Version: 3.1.9
 Author URI: http://thimpress.com
 Tags: learnpress, lms
 Text Domain: learnpress-paid-membership-pro

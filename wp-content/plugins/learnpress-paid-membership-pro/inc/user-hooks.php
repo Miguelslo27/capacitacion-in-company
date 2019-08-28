@@ -73,13 +73,16 @@ class LP_PMPro_User_Hooks
 	}
 	
 	public function has_purchased_course_callback( $has_purchased, $course_id, $user_id ) {
-		$user = learn_press_get_user( $user_id );
-		$orders = $user->get_orders(false);
-		if( isset( $orders[ $course_id ] ) ) {
-			$course_order = $orders[ $course_id ];
+		if( $has_purchased ){
+			$user = learn_press_get_user( $user_id );
+			$course_status = $user->get_course_status( $course_id );
+			if($course_status === 'canceled'){
+				$has_purchased = false;
+			} elseif($course_status ==='finished'&& !$user->can_retake_course($course_id)){
+				$has_purchased = false;
+			}
 		}
-		$has_purchased = !empty($course_order);
- 		return $has_purchased;
+		return $has_purchased;
 	}
 }
 

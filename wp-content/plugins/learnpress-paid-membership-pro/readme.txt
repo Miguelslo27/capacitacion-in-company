@@ -3,8 +3,8 @@ Contributors: thimpress, phonglq, tunnhn, tutv95
 Donate link:
 Tags: lms, elearning, e-learning, learning management system, education, course, courses, quiz, quizzes, questions, training, guru, sell courses
 Requires at least: 4.5
-Tested up to: 4.9.1
-Stable tag: 3.1.8
+Tested up to: 5.1.1
+Stable tag: 3.1.9
 License: Split License
 License URI: https://help.market.envato.com/hc/en-us/articles/202501064-What-is-Split-Licensing-and-the-GPL-
 
@@ -27,6 +27,9 @@ Yes, you can. Please find the documentation for writing an add-on for LearnPress
 == Screenshots ==
 
 == Changelog ==
+= 3.1.9 =
+~ Fixed bug: "Add to cart" button show not show after cancell membership.
+
 = 3.1.8 =
 ~ Fixed bug: "Buy Membership" button show not show.
 
