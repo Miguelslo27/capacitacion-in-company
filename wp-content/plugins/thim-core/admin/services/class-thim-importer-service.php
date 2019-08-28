@@ -162,7 +162,8 @@ class Thim_Importer_Service {
 				$slider   = new RevSlider();
 				$response = $slider->importSliderFromPost( true, true );
 				if ( ! $response['success'] ) {
-					throw Thim_Error::create( 'Import slider failed.', 0, '' );
+					return true;
+					//throw Thim_Error::create( 'Import slider failed.', 0, '' );
 				}
 			}
 		}

@@ -108,7 +108,7 @@ if ( ! class_exists( 'Thim_Notification' ) ) {
                     <div class="content"><?php echo $notification['content']; ?></div>
 
 					<?php if ( $notification['dismissible'] ): ?>
-                        <button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button>
+                        <button type="button" class="thimcore-notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button>
 					<?php endif; ?>
                 </div>
 				<?php
@@ -143,7 +143,7 @@ if ( ! class_exists( 'Thim_Notification' ) ) {
                     <div class="content"><?php echo $notification['content']; ?></div>
 
 					<?php if ( $notification['dismissible'] ): ?>
-                        <button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button>
+                        <button type="button" class="thimcore-notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button>
 					<?php endif; ?>
                 </div>
 				<?php

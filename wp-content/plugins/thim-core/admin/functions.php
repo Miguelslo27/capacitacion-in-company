@@ -294,3 +294,26 @@ if ( ! function_exists( 'thim_core_page_builder' ) ) {
 		die();
 	}
 }
+
+/**
+ * Do other tasks before import demo data
+ */
+add_action( 'thim_core_importer_start_import_demo', 'thim_core_before_start_import_demo', 10, 1 );
+if ( ! function_exists( 'thim_core_before_start_import_demo' ) ) {
+	function thim_core_before_start_import_demo( $demo ) {
+		if ( isset( $demo['child_theme_required'] ) ) {
+			$child_themes = Thim_Child_Themes::child_themes();
+			foreach ( $child_themes as $theme ) {
+				$theme_slug   = $theme->get( 'slug' );
+				$theme_status = $theme->get_status();
+				if ( $demo['child_theme_required'] == $theme_slug ) {
+					if ( $theme_status == 'not_installed' ) {
+						$result_install = $theme->install();
+					}
+					$result_activate = $theme->activate();
+					break;
+				}
+			}
+		}
+	}
+}

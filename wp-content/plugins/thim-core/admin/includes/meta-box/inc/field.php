@@ -413,6 +413,8 @@ abstract class RWMB_Field {
 
 			if ( is_array( $value ) ) {
 				$value = wp_json_encode( $value );
+			} else {
+				$value = str_replace( '"', "&quot;", $value );
 			}
 
 			$output .= sprintf( true === $value ? ' %s' : ' %s="%s"', $key, esc_attr( $value ) );

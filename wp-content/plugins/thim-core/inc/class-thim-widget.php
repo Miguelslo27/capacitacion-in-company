@@ -124,7 +124,7 @@ if ( !class_exists( 'Thim_Widget' ) ) {
 			}
 
 			echo ent2ncr( $args['before_widget'] );
-			echo '<div class="thim-widget-' . $this->id_base . ' thim-widget-' . $css_name . '">';
+			echo '<div class="thim-widget-' . $this->id_base . ' thim-widget-' . $css_name . ' template-' . $this->get_template_name($instance) . '">';
 			@ include $widget_template;
 			echo '</div>';
 			echo ent2ncr( $args['after_widget'] );

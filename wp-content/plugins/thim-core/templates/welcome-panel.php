@@ -115,7 +115,7 @@ $data  = $args['data'];
 		<?php if ( ! empty( $data['posts'] ) && is_array( $data['posts'] ) ) : ?>
             <div class="welcome-panel-column welcome-panel-last">
                 <h3><?php _e( 'Best WordPress, Marketing Tips', 'thim-core' ); ?></h3>
-                <div class="sub-description"><?php printf( __( 'Check all of it from <a href="%1$s" target="_blank">%2$s</a>', 'thim-core' ), 'https://thewpcourse.com/', 'thewpcourse.com' ); ?></div>
+                <div class="sub-description"><?php printf( __( 'Check all of it from <a href="%1$s" target="_blank">%2$s</a>', 'thim-core' ), 'https://preview.thimpress.com/thewpcourse/', 'preview.thimpress.com' ); ?></div>
 
                 <div class="posts">
 					<?php foreach ( $data['posts'] as $index => $post ) : ?>

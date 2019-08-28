@@ -3,7 +3,7 @@
 		el: '#wpwrap',
 
 		events: {
-			'click .notice-dismiss': 'onDismiss'
+			'click .thimcore-notice-dismiss': 'onDismiss'
 		},
 
 		/**
