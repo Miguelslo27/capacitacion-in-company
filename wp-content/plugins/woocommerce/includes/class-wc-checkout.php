@@ -557,6 +557,7 @@ class WC_Checkout {
 						'rate_code'          => WC_Tax::get_rate_code( $tax_rate_id ),
 						'label'              => WC_Tax::get_rate_label( $tax_rate_id ),
 						'compound'           => WC_Tax::is_compound( $tax_rate_id ),
+						'rate_percent'       => WC_Tax::get_rate_percent_value( $tax_rate_id ),
 					)
 				);
 
@@ -1176,7 +1177,7 @@ class WC_Checkout {
 		if ( is_user_logged_in() ) {
 			// Load customer object, but keep it cached to avoid reloading it multiple times.
 			if ( is_null( $this->logged_in_customer ) ) {
-				$this->logged_in_customer = new WC_Customer( get_current_user_id() );
+				$this->logged_in_customer = new WC_Customer( get_current_user_id(), true );
 			}
 			$customer_object = $this->logged_in_customer;
 		}
