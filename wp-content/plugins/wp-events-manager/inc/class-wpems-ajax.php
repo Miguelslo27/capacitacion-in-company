@@ -137,6 +137,10 @@ class WPEMS_Ajax {
 				throw new Exception( __( 'You are registered this event.', 'wp-events-manager' ) );
 			}
 
+			if ( $event->booked_quantity() >= get_post_meta( $event_id, 'tp_event_qty', true ) ) {
+				throw new Exception( __( 'There is not any slots now. Please try with next future events!', 'wp-events-manager' ) );
+			}
+
 			$payment_methods = wpems_payment_gateways();
 
 			$payment = isset( $_POST['payment_method'] ) ? sanitize_text_field( $_POST['payment_method'] ) : false;

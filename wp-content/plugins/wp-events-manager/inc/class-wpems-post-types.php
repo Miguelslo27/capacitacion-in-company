@@ -82,7 +82,7 @@ class WPEMS_Custom_Post_Types {
 			'show_ui'            => true,
 			'show_in_menu'       => 'tp-event-setting',
 			'query_var'          => true,
-			'rewrite'            => array( 'slug' => _x( 'events', 'URL slug', 'wp-events-manager' ) ),
+			'rewrite'            => array( 'slug' => _x( 'events', 'URL slug', 'wp-events-manager' ), 'with_front' => false ),
 			'taxonomies'         => array( 'tp_event_category' ),
 			'capability_type'    => 'post',
 			'map_meta_cap'       => true,

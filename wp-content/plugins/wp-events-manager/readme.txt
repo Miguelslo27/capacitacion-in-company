@@ -3,8 +3,8 @@ Contributors: thimpress, leehld, phamtungpth
 Donate link: https://thimpress.com/
 Tags: event, event management, events, registration, bookings, tickets, locations, google maps
 Requires at least: 4.6
-Tested up to: 4.9.8
-Stable tag: 2.1.7.5
+Tested up to: 5.2.1
+Stable tag: 2.1.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -162,6 +162,9 @@ To stay in touch and update about FundPress's future releases and features, you 
 
 = 2.1.7.7 =
 - Fixed issue makes site die when saving events with start date equals with end date.
+
+= 2.1.8 =
+- Fixed bug of being able to book even when the slots are full.
 
 == Upgrade Notice ==
 

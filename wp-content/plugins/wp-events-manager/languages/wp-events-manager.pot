@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-23 17:18+0700\n"
+"POT-Creation-Date: 2019-06-10 15:37+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,22 +58,26 @@ msgstr ""
 msgid "You are registered this event."
 msgstr ""
 
-#: inc/class-wpems-ajax.php:158
+#: inc/class-wpems-ajax.php:141
+msgid "There is not any slots now. Please try with next future events!"
+msgstr ""
+
+#: inc/class-wpems-ajax.php:162
 msgid "is not ready. Please contact administrator to setup payment gateways"
 msgstr ""
 
-#: inc/class-wpems-ajax.php:181
+#: inc/class-wpems-ajax.php:185
 #, php-format
 msgid ""
 "Book ID <strong>%s</strong> completed! We'll send mail to <strong>%s</"
 "strong> when it is approve."
 msgstr ""
 
-#: inc/class-wpems-ajax.php:196
+#: inc/class-wpems-ajax.php:200
 msgid "Payment method is not available"
 msgstr ""
 
-#: inc/class-wpems-ajax.php:221
+#: inc/class-wpems-ajax.php:225
 #, php-format
 msgid "You Must <a href=\"%s\">Login</a>"
 msgstr ""
