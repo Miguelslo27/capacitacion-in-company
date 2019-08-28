@@ -48,6 +48,7 @@ if ( ! class_exists( 'BuilderPress_Config_Brands' ) ) {
                             'layout-slider'   => self::$assets_url . 'images/layouts/layout-slider.jpg',
                             'layout-grid'   => self::$assets_url . 'images/layouts/layout-grid.jpg',
                             'layout-slider-title'   => self::$assets_url . 'images/layouts/layout-slider-title.jpg',
+                            'marketing-layout-1'   => self::$assets_url . 'images/layouts/marketing-layout-1.jpg',
                         ),
                         'std'         => 'layout-slider',
                         'description' => __( 'Select type of style.', 'builderpress' )
@@ -70,7 +71,7 @@ if ( ! class_exists( 'BuilderPress_Config_Brands' ) ) {
 						),
                         'dependency' => array(
                             'element' => 'layout',
-                            'value'   => array('layout-slider', 'layout-grid'),
+                            'value'   => array('layout-slider', 'layout-grid','marketing-layout-1'),
                         ),
 					),
 
@@ -106,6 +107,17 @@ if ( ! class_exists( 'BuilderPress_Config_Brands' ) ) {
                             'element' => 'layout',
                             'value'   => array('layout-slider', 'layout-slider-title'),
                         ),
+                    ),
+
+                    array(
+                        'type'             => 'dropdown',
+                        'heading'          => __( 'Style Layout', 'builderpress' ),
+                        'param_name'       => 'style_layout',
+                        'value'            => array(
+                            __( 'Style Default', 'builderpress' )   => '',
+                        ),
+                        'std'              => '',
+                        'edit_field_class' => 'vc_col-sm-6'
                     ),
 
                     array(

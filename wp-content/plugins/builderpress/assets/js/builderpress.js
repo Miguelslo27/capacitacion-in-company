@@ -198,7 +198,38 @@
                         }
                     });
 
+                //Show dot number
+                if($(wrapSlick).hasClass('show-dot-number')) {
+                    var $wrapDotNumber = $(wrapSlick).find('.wrap-dot-slick');
+                    var $dotItem = $wrapDotNumber.find('.dots-slick > li');
 
+                    $wrapDotNumber.append('<span class="num-active">0</span><span class="div-num">/</span><span class="num-total">0</span>');
+
+                    var $numActive = $wrapDotNumber.find('.num-active');
+                    var $numTotal = $wrapDotNumber.find('.num-total');
+
+                    $(slideSlick).on('setPosition', function(event, slick, currentSlide){
+                        $dotItem = $wrapDotNumber.find('.dots-slick > li');
+                        $dotItem.length < 10 ? $numTotal.html('0' + $dotItem.length + '') : $numTotal.html($dotItem.length + '');
+                    });
+
+                    $(slideSlick).on('afterChange setPosition', function(event, slick, currentSlide){
+                        for(var i=0; i<$dotItem.length; i++) {
+                            if($($dotItem[i]).hasClass('slick-active')) {
+                                (i + 1) < 10 ? $numActive.html('0' + (i + 1) + '') : $numActive.html(i + 1 + '');
+                                break;
+                            }
+                        }
+                    });
+                }
+
+                //Show dot process
+                if($(wrapSlick).hasClass('dot-has-process')) {
+                    $(slideSlick).on('afterChange breakpoint', function () {
+                        $(wrapSlick).find('.wrap-dot-slick .dots-slick li').removeClass('process-dot');
+                        $(wrapSlick).find('.wrap-dot-slick .dots-slick li.slick-active').addClass('process-dot');
+                    });
+                }
             });
         },
 

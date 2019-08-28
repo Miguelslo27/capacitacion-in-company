@@ -47,6 +47,8 @@ if ( ! class_exists( 'BuilderPress_Config_Products' ) ) {
                     'options'    => array(
                         'vblog-layout-list-1' => self::$assets_url . 'images/layouts/vblog-layout-list-1.jpg',
                         'vblog-layout-slider-1' => self::$assets_url . 'images/layouts/vblog-layout-slider-1.png',
+                        'tee-layout-list-1' => self::$assets_url . 'images/layouts/tee-layout-list-1.jpg',
+                        'tee-layout-list-2' => self::$assets_url . 'images/layouts/tee-layout-list-2.jpg',
                     ),
                     'std'        => 'vblog-layout-list-1'
                 ),
@@ -64,11 +66,75 @@ if ( ! class_exists( 'BuilderPress_Config_Products' ) ) {
                     'value'       => $this->_post_type_categories( 'product_cat' ),
                     'description' => esc_attr__( 'Select product category.', 'builderpress' )
                 ),
+
+                array(
+                    'type' => 'dropdown',
+                    'heading' => __( 'Product Popular',  'builderpress' ),
+                    'param_name' => 'product_popular',
+                    'value' => array(
+                        __( 'Default','builderpress'  )      => '',
+                        __( 'Featured','builderpress'  )     => 'featured',
+                        __( 'Sale Price','builderpress'  )   => '_sale_price',
+                        __( 'Average Rating','builderpress') => '_wc_average_rating',
+                    ),
+                    'description' => __( 'Choose Product Popular', 'builderpress' ),
+                    'edit_field_class' => 'vc_col-xs-6'
+                ),
+
                 array(
                     'type'             => 'number',
                     'heading'          => esc_html__( 'Number items', 'builderpress' ),
                     'param_name'       => 'number_items',
                     'value'            => '3',
+                ),
+                array(
+                    'type'             => 'number',
+                    'heading'          => esc_html__( 'Number items on mobile', 'builderpress' ),
+                    'param_name'       => 'number_items_mobile',
+                    'value'            => '3',
+                ),
+
+                array(
+                    'type' => 'dropdown',
+                    'heading' => __( 'Sort',  'builderpress' ),
+                    'param_name' => 'sort_product',
+                    'value' => array(
+                        __( 'Date',    'builderpress'  ) => 'date',
+                        __( 'Random',  'builderpress'  ) => 'rand',
+                        __( 'Title',   'builderpress'  ) => 'title',
+                    ),
+                    'description' => __( 'Choose Sort', 'builderpress' ),
+                    'edit_field_class' => 'vc_col-xs-6'
+                ),
+
+                array(
+                    'type' => 'dropdown',
+                    'heading' => __( 'Order By',  'builderpress' ),
+                    'param_name' => 'order_product',
+                    'value' => array(
+                        __( 'DESC', 'builderpress'  )    => 'desc',
+                        __( 'ASC',  'builderpress'  )    => 'asc',
+                    ),
+                    'description' => __( 'Choose Order By', 'builderpress' ),
+                    'dependency'  => array(
+                        'element' => 'sort_product',
+                        'value'   => array(
+                            'date',
+                            'title'
+                        )
+                    ),
+                    'edit_field_class' => 'vc_col-xs-4'
+                ),
+
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
                 ),
 
                 array(

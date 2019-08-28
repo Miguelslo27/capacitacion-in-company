@@ -51,6 +51,8 @@ if ( ! class_exists( 'BuilderPress_Config_Social_Links' ) ) {
                         'vblog-layout-footer-2' => self::$assets_url . 'images/layout/vblog-layout-footer-2.jpg',
                         'vblog-layout-sidebar' => self::$assets_url . 'images/layout/vblog-layout-sidebar.png',
                         'kindergarten-layout-footer-1' => self::$assets_url . 'images/layout/kindergarten-layout-footer-1.jpg',
+                        'kindergarten-layout-footer-2' => self::$assets_url . 'images/layout/kindergarten-layout-footer-2.jpg',
+                        'kindergarten-layout-footer-3' => self::$assets_url . 'images/layout/kindergarten-layout-footer-3.jpg',
                     ),
                     'std'         => 'default',
                     'admin_label' => true,
@@ -88,7 +90,16 @@ if ( ! class_exists( 'BuilderPress_Config_Social_Links' ) ) {
 						)
 					)
 				),
-
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
                 array(
                     'type' => 'css_editor',
                     'heading' => __( 'CSS Shortcode', 'js_composer' ),

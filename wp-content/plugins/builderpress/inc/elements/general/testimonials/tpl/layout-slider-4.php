@@ -14,18 +14,17 @@
  * Prevent loading this file directly
  */
 defined( 'ABSPATH' ) || exit;
-$img = $params['background'] ? wp_get_attachment_image_url( $params['background'], 'full' ) : '';
-//$img_url = $img ? '<img src="' . esc_url($img) . '" alt="">' : '';
+$img = !empty($params['background']) ? wp_get_attachment_image_url( $params['background'], 'full' ) : '';
 ?>
 
 <div class="row">
-    <div class="col-md-5">
-        <div class="img-testimonial">
-            <?php if($img) {?>
-            <img src="<?php echo esc_url($img);?>" alt="">
-            <?php }?>
+    <?php if($img) {?>
+        <div class="col-md-5">
+            <div class="img-testimonial">
+                <img src="<?php echo esc_url($img);?>" alt="">
+            </div>
         </div>
-    </div>
+    <?php }?>
     <div class="col-md-7">
         <div class="slide-testimonial js-call-slick-col" data-numofslide="1" data-numofscroll="1" data-loopslide="1" data-autoscroll="0" data-speedauto="6000" data-customdot="0" data-respon="[1, 1], [1, 1], [1, 1], [1, 1], [1, 1]">
             <div class="slide-slick">
@@ -39,10 +38,11 @@ $img = $params['background'] ? wp_get_attachment_image_url( $params['background'
                             <div class="ava">
                                 <?php
                                 $thumbnail_id = (int) $testimonial['image'];
-                                $size         = apply_filters( 'builder-press/testimonial/image-size', '40x40' );
+                                $size         = apply_filters( 'builder-press/testimonial/layout-slider-4/image-size', '40x40' );
                                 builder_press_get_attachment_image( $thumbnail_id, $size );
                                 ?>
                             </div>
+
                             <div class="info">
                                 <?php if ( isset( $testimonial['website'] ) ) { ?>
                                     <a href="<?php echo esc_attr( $testimonial['website'] ) ?>"

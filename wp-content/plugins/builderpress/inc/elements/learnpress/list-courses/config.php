@@ -50,6 +50,11 @@ if ( ! class_exists( 'BuilderPress_Config_List_Courses' ) ) {
 						'layout-slider' => self::$assets_url . 'images/layouts/layout-slider.jpg',
                         'layout-slider-2' => self::$assets_url . 'images/layouts/layout-slider-2.png',
                         'kindergarten-layout-grid-1' => self::$assets_url . 'images/layouts/kindergarten-layout-grid-1.png',
+                        'kindergarten-layout-slider-1' => self::$assets_url . 'images/layouts/kindergarten-layout-slider-1.jpg',
+                        'kindergarten-layout-grid-2' => self::$assets_url . 'images/layouts/kindergarten-layout-grid-2.jpg',
+                        'coach-life-layout-slider-1' => self::$assets_url . 'images/layouts/coach-life-layout-slider-1.png',
+                        'coach-life-layout-grid-1' => self::$assets_url . 'images/layouts/coach-life-layout-grid-1.png',
+                        'coach-life-layout-slider-2' => self::$assets_url . 'images/layouts/coach-life-layout-slider-2.png',
 					),
 					'std'         => 'layout-list',
 					'description' => __( 'Select type of style.', 'builderpress' )
@@ -91,10 +96,25 @@ if ( ! class_exists( 'BuilderPress_Config_List_Courses' ) ) {
 					'value'      => 8
 				),
 
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
+
 				array(
 					'type'       => 'vc_link',
 					'heading'    => esc_html__( 'Button', 'builderpress' ),
-					'param_name' => 'button'
+					'param_name' => 'button',
+                    'dependency'       => array(
+                        'element' => 'layout',
+                        'value'   => array( 'coach-life-layout-slider-1' )
+                    )
 				),
                 array(
                     'type' => 'css_editor',

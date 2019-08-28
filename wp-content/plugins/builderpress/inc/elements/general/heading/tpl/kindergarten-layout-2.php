@@ -47,4 +47,7 @@ $allow_html_tags = apply_filters( 'builder-press/heading/allow-html-tags', array
     <div class="line" <?php echo ent2ncr( $line_css ); ?>></div>
 <?php } ?>
 
+<?php if ( $description ) { ?>
+    <div class="description" <?php echo ent2ncr( $des_css ); ?>><?php echo wp_kses( $description, $allow_html_tags ); ?></div>
+<?php } ?>
 

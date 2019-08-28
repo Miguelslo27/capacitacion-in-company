@@ -39,7 +39,6 @@
             });
         },
 
-
         counter: function () {
             var a = $;
             a.fn.countTo = function (g) {

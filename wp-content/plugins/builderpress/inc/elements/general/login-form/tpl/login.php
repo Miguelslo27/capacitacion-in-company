@@ -23,7 +23,15 @@ $theme_options_data = get_theme_mods();
 ?>
 
 <div class="login-form-wrap">
+<?php
+        // reset password message
+        if ( ! empty( $_GET['result'] ) && $_GET['result'] == 'reset' ) { ?>
+            <p class="message message-success"><?php esc_html_e( 'Check your email to get a link to create a new password.', 'builderpress' ); ?></p>
+            <?php return;
+        }
+        ?>
     <h4 class="subtitle"><?php esc_html_e( 'Login', 'builderpress' ); ?></h4>
+    <div class="line"></div>
     <h2 class="title"><?php esc_html_e( 'Login with your site account', 'builderpress' ); ?></h2>
 
 	<?php $login_redirect = get_theme_mod( 'theme_feature_login_redirect', false );
@@ -59,7 +67,7 @@ $theme_options_data = get_theme_mods();
                 <input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large"
                        value="<?php esc_attr_e( 'Login', 'builderpress' ); ?>"/>
                 <input type="hidden" name="redirect_to" value="<?php echo esc_attr( $redirect ); ?>"/>
-                <input type="hidden" name="testcookie" value="1"/>
+                <!--<input type="hidden" name="testcookie" value="1"/>-->
             </p>
 			<?php echo '<a class="lost-pass-link" href="' . thim_get_lost_password_url() . '" title="' . esc_attr__( 'Lost Password', 'builderpress' ) . '">' . esc_html__( 'Lost your password?', 'builderpress' ) . '</a>'; ?>
         </div>

@@ -98,6 +98,8 @@
     .bp-element-search.layout-1 .list-search li a {
       color: rgba(255, 255, 255, 0.8);
       transition: all 0.3s; }
+      .bp-element-search.layout-1 .list-search li a:hover {
+        color: #ffffff; }
 
 .bp-element-search.layout-2 .thim-search-box {
   display: inline-block; }

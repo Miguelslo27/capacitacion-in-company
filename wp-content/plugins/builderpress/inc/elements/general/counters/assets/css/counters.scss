@@ -1,4 +1,3 @@
-
 .bp-element-counters{
     &.layout-1 {
         .counter-boxes{
@@ -95,6 +94,16 @@
               }
             }
       }
+
+        &.color-2 {
+            .counter-boxes {
+                .item {
+                    &:before {
+                        background: #7cf9c5;
+                    }
+                }
+            }
+        }
     }
 }
 // responsive
@@ -125,6 +134,7 @@
                         width: 50%;
                         margin-bottom: 25px;
                         margin-top: 25px;
+
                         &::before {
                             display: none;
                         }

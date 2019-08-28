@@ -44,9 +44,10 @@ if ( ! class_exists( 'BuilderPress_Config_Pricing_Table' ) ) {
                     'heading'     => __( 'Layout', 'builderpress' ),
                     'param_name'  => 'layout',
                     'options'     => array(
-                        'layout-1'   => self::$assets_url . 'images/layout-1.png',
-                        'layout-2'   => self::$assets_url . 'images/layout-2.png',
-                        'layout-3'   => self::$assets_url . 'images/layout-3.png',
+                        'layout-1'   => self::$assets_url . 'images/layouts/layout-1.png',
+                        'layout-2'   => self::$assets_url . 'images/layouts/layout-2.png',
+                        'layout-3'   => self::$assets_url . 'images/layouts/layout-3.png',
+                        'marketing-layout-1'   => self::$assets_url . 'images/layouts/marketing-layout-1.jpg',
                     ),
                     'std'         => 'layout-1',
                     'description' => __( 'Select type of style.', 'builderpress' )
@@ -182,6 +183,16 @@ if ( ! class_exists( 'BuilderPress_Config_Pricing_Table' ) ) {
                         )
                     ),
                     'std'              => 'background-default',
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
                     'edit_field_class' => 'vc_col-sm-6'
                 ),
                 array(

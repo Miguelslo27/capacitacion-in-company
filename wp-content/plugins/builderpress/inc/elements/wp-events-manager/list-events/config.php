@@ -49,7 +49,9 @@ if ( ! class_exists( 'BuilderPress_Config_List_Events' ) ) {
                         'layout-list-2'     => self::$assets_url . 'images/layouts/layout-list-2.png',
 						'layout-slider'   => self::$assets_url . 'images/layouts/layout-slider.jpg',
 						'layout-slider-2' => self::$assets_url . 'images/layouts/layout-slider-2.jpg',
-						'layout-slider-3' => self::$assets_url . 'images/layouts/layout-slider-3.jpg'
+						'layout-slider-3' => self::$assets_url . 'images/layouts/layout-slider-3.jpg',
+						'stocklab-layout-slider-4' => self::$assets_url . 'images/layouts/stocklab-layout-slider-4.png',
+                        'coach-life-layout-1' => self::$assets_url . 'images/layouts/coach-life-layout-1.png'
 					),
 					'std'         => 'layout-list',
 					'description' => __( 'Select type of style.', 'builderpress' )
@@ -91,6 +93,18 @@ if ( ! class_exists( 'BuilderPress_Config_List_Events' ) ) {
                         'value'   => array( 'layout-list-2' ),
                     ),
                 ),
+
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
+
                 array(
                     'type'             => 'attach_image',
                     'heading'          => __( 'Image', 'builderpress' ),

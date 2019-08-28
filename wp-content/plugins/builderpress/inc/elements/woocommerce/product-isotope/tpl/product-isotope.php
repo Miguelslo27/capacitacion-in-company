@@ -30,6 +30,7 @@ $description = $params['description'];
 $img_size    = $params['img_size'];
 $el_class    = $params['el_class'];
 $el_id       = $params['el_id'];
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 
 $arg = array(
     'post_type'           => 'product',
@@ -50,7 +51,7 @@ $query = new WP_Query( apply_filters( 'builder-press/product-isotope-query', $ar
 
     ?>
 
-    <div class="bp-element bp-element-product-isotope woocommerce <?php echo esc_attr( $layout ); ?> <?php echo esc_attr( $el_class ); ?>" data-max-page="<?php echo esc_attr( $query->max_num_pages ); ?>" data-params='<?php echo json_encode( $params ); ?>' data-number="<?php echo esc_attr( $number ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
+    <div class="bp-element bp-element-product-isotope woocommerce <?php echo esc_attr( $layout ); ?> <?php echo esc_attr($style_layout); ?> <?php echo esc_attr( $el_class ); ?>" data-max-page="<?php echo esc_attr( $query->max_num_pages ); ?>" data-params='<?php echo json_encode( $params ); ?>' data-number="<?php echo esc_attr( $number ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
 
 
         <?php

@@ -45,16 +45,23 @@ if ( ! class_exists( 'BuilderPress_Config_Icon_Box' ) ) {
                         'heading'     => __( 'Layout', 'builderpress' ),
                         'param_name'  => 'layout',
                         'options'     => array(
-                            'layout-1'   => self::$assets_url . 'images/layout-1.png',
-                            'layout-2'   => self::$assets_url . 'images/layout-2.png',
-                            'layout-3'   => self::$assets_url . 'images/layout-3.png',
-                            'layout-4'   => self::$assets_url . 'images/layout-4.png',
-                            'layout-5'   => self::$assets_url . 'images/layout-5.png',
-                            'layout-6'   => self::$assets_url . 'images/layout-6.png',
-                            'kindergarten-layout-1'   => self::$assets_url . 'images/kindergarten-layout-1.png',
-                            'kindergarten-layout-2'   => self::$assets_url . 'images/kindergarten-layout-2.png',
-                            'kindergarten-layout-8 button-top'   => self::$assets_url . 'images/kindergarten-layout-8.png',
-                            'kindergarten-layout-4'   => self::$assets_url . 'images/kindergarten-layout-4.png',
+                            'layout-1'   => self::$assets_url . 'images/layouts/layout-1.png',
+                            'layout-2'   => self::$assets_url . 'images/layouts/layout-2.png',
+                            'layout-3'   => self::$assets_url . 'images/layouts/layout-3.png',
+                            'layout-4'   => self::$assets_url . 'images/layouts/layout-4.png',
+                            'layout-5'   => self::$assets_url . 'images/layouts/layout-5.png',
+                            'layout-6'   => self::$assets_url . 'images/layouts/layout-6.png',
+                            'kindergarten-layout-1'   => self::$assets_url . 'images/layouts/kindergarten-layout-1.png',
+                            'kindergarten-layout-2'   => self::$assets_url . 'images/layouts/kindergarten-layout-2.png',
+                            'kindergarten-layout-8 button-top'   => self::$assets_url . 'images/layouts/kindergarten-layout-8.png',
+                            'kindergarten-layout-4'   => self::$assets_url . 'images/layouts/kindergarten-layout-4.png',
+                            'kindergarten-layout-5'   => self::$assets_url . 'images/layouts/kindergarten-layout-5.jpg',
+                            'kindergarten-layout-6'   => self::$assets_url . 'images/layouts/kindergarten-layout-6.jpg',
+                            'kindergarten-layout-7'   => self::$assets_url . 'images/layouts/kindergarten-layout-7.jpg',
+                            'kindergarten-layout-10'   => self::$assets_url . 'images/layouts/kindergarten-layout-10.jpg',
+                            'marketing-layout-1'   => self::$assets_url . 'images/layouts/marketing-layout-1.jpg',
+                            'marketing-layout-2'   => self::$assets_url . 'images/layouts/marketing-layout-2.jpg',
+                            'marketing-layout-3'   => self::$assets_url . 'images/layouts/marketing-layout-3.jpg',
                         ),
                         'std'         => 'layout-1',
                         'description' => __( 'Select type of style.', 'builderpress' ),
@@ -62,6 +69,18 @@ if ( ! class_exists( 'BuilderPress_Config_Icon_Box' ) ) {
                 ),
 				$this->_icon_options(),
 				array(
+                    array(
+                        'type'             => 'attach_image',
+                        'heading'          => __( 'Image hover', 'builderpress' ),
+                        'param_name'       => 'image',
+                        'dependency'  => array(
+                            'element' => 'layout',
+                            'value'   => array(
+                                'marketing-layout-2'
+                            )
+                        ),
+                        'edit_field_class' => 'vc_col-sm-6',
+                    ),
 					// Icon shape
 					array(
 						'type'             => 'dropdown',
@@ -91,6 +110,28 @@ if ( ! class_exists( 'BuilderPress_Config_Icon_Box' ) ) {
 						),
 						'edit_field_class' => 'vc_col-sm-6'
 					),
+
+					// style layout icon-box
+                    array(
+                        'type'             => 'dropdown',
+                        'admin_label'      => false,
+                        'heading'          => esc_html__( 'Icon style', 'builderpress' ),
+                        'param_name'       => 'icon_style',
+                        'value'            => array(
+                            esc_html__( 'Left rotating square', 'builderpress')    => 'style-1',
+                            esc_html__( 'Right rotating square', 'builderpress' )   => 'style-2',
+                            esc_html__( 'Circle', 'builderpress' )   => 'style-3',
+                            esc_html__( 'Triangular', 'builderpress' )   => 'style-4',
+                        ),
+                        'dependency' => array(
+                            'element' => 'layout',
+                            'value'   => array(
+                                'kindergarten-layout-7',
+                            )
+                        ),
+                        'edit_field_class' => 'vc_col-sm-6'
+                    ),
+
 					// link for icon
 					array(
 						'type'       => 'vc_link',
@@ -116,14 +157,16 @@ if ( ! class_exists( 'BuilderPress_Config_Icon_Box' ) ) {
 						'admin_label' => false,
 					),
 
-					// Button
-					array(
-						'type'        => 'vc_link',
-						'heading'     => esc_html__( 'Button', 'builderpress' ),
-						'description' => __( 'Button in bottom of the box', 'builderpress' ),
-						'param_name'  => 'button',
-						'value'       => ''
-					),
+                    array(
+                        'type'             => 'dropdown',
+                        'heading'          => __( 'Style Layout', 'builderpress' ),
+                        'param_name'       => 'style_layout',
+                        'value'            => array(
+                            __( 'Style Default', 'builderpress' )   => '',
+                        ),
+                        'std'              => '',
+                        'edit_field_class' => 'vc_col-sm-6'
+                    ),
 
 					// Custom box icon width
 					array(
@@ -140,6 +183,25 @@ if ( ! class_exists( 'BuilderPress_Config_Icon_Box' ) ) {
 						'std'         => '',
                         'edit_field_class' => 'vc_col-xs-6'
 					),
+
+                    // Size icon-box
+                    array(
+                        'type' => 'dropdown',
+                        'heading' => __( 'Size',  'builderpress' ),
+                        'param_name' => 'icon_size',
+                        'value' => array(
+                            __( 'Normal',  'builderpress'  ) => 'normal',
+                            __( 'Larger',   'builderpress'  ) => 'larger',
+                        ),
+                        'dependency' => array(
+                            'element' => 'layout',
+                            'value'   => array(
+                                'kindergarten-layout-2',
+                            ),
+                        ),
+                        'description' => __( 'Choose Size', 'builderpress' ),
+                        'edit_field_class' => 'vc_col-xs-6'
+                    ),
 
                     // show line
                     array(
@@ -361,16 +423,6 @@ if ( ! class_exists( 'BuilderPress_Config_Icon_Box' ) ) {
 						'admin_label'      => false,
 						'heading'          => esc_html__( 'Button color', 'builderpress' ),
 						'param_name'       => 'button_text_color',
-						'group'            => esc_html__( 'Color', 'builderpress' ),
-						'edit_field_class' => 'vc_col-sm-4'
-					),
-
-					// Button hover color
-					array(
-						'type'             => 'colorpicker',
-						'admin_label'      => false,
-						'heading'          => esc_html__( 'Button hover color', 'builderpress' ),
-						'param_name'       => 'button_text_hover_color',
 						'group'            => esc_html__( 'Color', 'builderpress' ),
 						'edit_field_class' => 'vc_col-sm-4'
 					),

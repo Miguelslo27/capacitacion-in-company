@@ -73,8 +73,6 @@ if ( ! class_exists( 'BuilderPress_Config_Product_Carousel' ) ) {
 					'value'            => '1',
 					'edit_field_class' => 'vc_col-sm-6'
 				),
-
-
 				array(
 					'type'             => 'checkbox',
 					'heading'          => esc_html__( 'Show label', 'builderpress' ),
@@ -92,7 +90,6 @@ if ( ! class_exists( 'BuilderPress_Config_Product_Carousel' ) ) {
 					'admin_label'      => true,
 					'edit_field_class' => 'vc_col-xs-4'
 				),
-
 				array(
 					'type'             => 'checkbox',
 					'heading'          => esc_html__( 'Show pagination', 'builderpress' ),
@@ -101,7 +98,6 @@ if ( ! class_exists( 'BuilderPress_Config_Product_Carousel' ) ) {
 					'admin_label'      => true,
 					'edit_field_class' => 'vc_col-xs-4'
 				),
-
                 array(
                     'type'        => 'textfield',
                     'heading'     => __( 'Image Size', 'builderpress' ),
@@ -110,6 +106,17 @@ if ( ! class_exists( 'BuilderPress_Config_Product_Carousel' ) ) {
                     'admin_label' => true,
                     'std'         => 'full',
                 ),
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
+
 			),
 				// config slider number items
 				$this->_number_items_options( array( 'items_visible' => 3 ) )

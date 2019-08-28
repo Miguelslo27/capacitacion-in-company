@@ -19,10 +19,15 @@ $el_class      = $params['el_class'];
 $el_id         = $params['el_id'];
 $box_link      = $params['box_link'];
 $layout        = isset( $params['layout'] ) ? $params['layout'] : 'layout-gradient';
+$style_layout  = !empty($params['style_layout']) ? $params['style_layout'] : '';
+$style_image   = isset($params['style_image']) ? $params['style_image'] : '';
+$image_alignment = isset($params['image_alignment']) ? 'image-'.$params['image_alignment'] : '';
+$background_color = isset($params['background-color']) ? $params['background-color'] : '';
 $bp_css        = $params['bp_css'];
 ?>
 
-<div class="bp-element bp-element-image-box <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $params['style_image'] ); ?> image-<?php echo esc_attr( $params['image_alignment'] ); ?> <?php echo esc_attr( $params['background-color'] );?> <?php echo esc_attr( $layout ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
+<div class="bp-element bp-element-image-box  <?php echo $style_layout; ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?>
+<?php echo esc_attr( $style_image ); ?> <?php echo esc_attr($image_alignment); ?> <?php echo esc_attr( $background_color );?> <?php echo esc_attr( $layout ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
     <?php builder_press_get_template( $layout,
         array(
             'params'       => $params,

@@ -190,6 +190,50 @@
     .bp-element-social-links.kindergarten-layout-footer-1 .wrap-element .social-item:hover {
       background: #ff5f2e; }
 
+.bp-element-social-links.kindergarten-layout-footer-2 .wrap-element {
+  text-align: inherit;
+  margin: -5px; }
+  .bp-element-social-links.kindergarten-layout-footer-2 .wrap-element .social-item {
+    font-size: 14px;
+    line-height: 1;
+    color: inherit;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    background: #fff;
+    margin: 5px;
+    transition: all .2s; }
+    .bp-element-social-links.kindergarten-layout-footer-2 .wrap-element .social-item:first-child {
+      color: #3b5999; }
+    .bp-element-social-links.kindergarten-layout-footer-2 .wrap-element .social-item:nth-child(2) {
+      color: #4ac6ff; }
+    .bp-element-social-links.kindergarten-layout-footer-2 .wrap-element .social-item:nth-child(3) {
+      color: #ed175e; }
+    .bp-element-social-links.kindergarten-layout-footer-2 .wrap-element .social-item:nth-child(4) {
+      color: #3b5999; }
+    .bp-element-social-links.kindergarten-layout-footer-2 .wrap-element .social-item:nth-child(5) {
+      color: #ed175d; }
+    .bp-element-social-links.kindergarten-layout-footer-2 .wrap-element .social-item:hover {
+      background: #ff5562;
+      color: #fff !important; }
+
+.bp-element-social-links.kindergarten-layout-footer-3 .wrap-element {
+  text-align: inherit;
+  margin: 0px -14px; }
+  .bp-element-social-links.kindergarten-layout-footer-3 .wrap-element .social-item {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #f86a9a;
+    display: inline-block;
+    padding: 5px;
+    margin: 0 9px;
+    transition: all .2s; }
+    .bp-element-social-links.kindergarten-layout-footer-3 .wrap-element .social-item:hover {
+      color: #43cd66; }
+
 /*---------------------------------------------*/
 @media (max-width: 575px) {
   .bp-element-social-links.vblog-layout-footer .wrap-element .social-item {

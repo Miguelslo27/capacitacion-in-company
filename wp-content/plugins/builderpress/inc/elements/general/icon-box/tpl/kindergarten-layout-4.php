@@ -24,7 +24,7 @@ defined('ABSPATH') || exit;
 
 <div class="icon-box" <?php echo ( $icon_type == 'icon_ionicon' || $icon_type == 'icon_fontawesome' ) ? ' type-icon' : ''; ?>>
     <?php if ( isset($link['url']) ){ ?>
-        <div class="icon-image" <?php echo esc_attr( $icon_shape ); ?>" <?php echo ent2ncr( $box_icon_css ); ?>>
+        <div class="icon-image <?php echo esc_attr( $icon_shape ); ?>" <?php echo ent2ncr( $box_icon_css ); ?>>
             <a href="<?php echo esc_url( $link['url'] ); ?>">
             <?php if ( $icon_type == 'icon_fontawesome' && $params['icon_fontawesome'] ) { ?>
                 <i class="<?php echo esc_attr( $params['icon_fontawesome'] ); ?>" <?php echo ent2ncr( $icon_css ); ?>></i>
@@ -35,12 +35,24 @@ defined('ABSPATH') || exit;
             } ?>
             </a>
         </div>
+    <?php }else{?>
+        <div class="icon-image" <?php echo esc_attr( $icon_shape ); ?>" <?php echo ent2ncr( $box_icon_css ); ?>>
+            <?php if ( $icon_type == 'icon_fontawesome' && $params['icon_fontawesome'] ) { ?>
+                <i class="<?php echo esc_attr( $params['icon_fontawesome'] ); ?>" <?php echo ent2ncr( $icon_css ); ?>></i>
+            <?php } else if ( $icon_type == 'icon_ionicon' && $params['icon_ionicon'] ) { ?>
+                <i class="ionicons <?php echo esc_attr( $params['icon_ionicon'] ); ?>" <?php echo ent2ncr( $icon_css ); ?>"></i>
+            <?php } else if ( $icon_type == 'icon_upload' && $params['icon_upload'] ) {
+                echo wp_get_attachment_image( $params['icon_upload'], 'full' );
+            } ?>
+
+        </div>
+
     <?php } ?>
 
     <div class="content">
-        <?php if ( $title ) { ?>
-        <<?php echo $title_tag; ?> class="title" <?php echo ent2ncr( $title_css ); ?>> <?php echo esc_html( $title ); ?> </<?php echo $title_tag; ?>>
-        <?php } ?>
+            <?php if ( $title ) { ?>
+                <<?php echo $title_tag; ?> class="title" <?php echo ent2ncr( $title_css ); ?>> <?php echo esc_html( $title ); ?> </<?php echo $title_tag; ?>>
+            <?php } ?>
 
         <?php if ( $show_line ) { ?>
             <div class="line" <?php echo ent2ncr( $line_css ); ?>></div>

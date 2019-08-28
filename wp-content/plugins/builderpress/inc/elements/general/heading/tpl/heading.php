@@ -25,6 +25,7 @@ $template_path = $params['template_path'];
 $layout = isset($params['layout']) ? $params['layout'] : 'layout-1';
 $align = $params['align'];
 $el_class = $params['el_class'];
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 $el_id = $params['el_id'];
 $bp_css = $params['bp_css'];
 $bp_css_tablet = $params['bp_css_tablet'];
@@ -73,7 +74,7 @@ $des_css .= $params['desc_margin'] ? 'margin:' . $params['desc_margin'] . '; ' :
 $des_css = $des_css ? ' style="' . $des_css . '"' : '';
 ?>
 
-<div class="bp-element bp-element-heading <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr($align); ?> <?php echo esc_attr($layout); ?> <?php echo esc_attr($el_class); ?>" <?php echo $el_id ? "id='" . esc_attr($el_id) . "'" : '' ?><?php echo $data_tablet;?><?php echo $data_mobile;?>>
+<div class="bp-element bp-element-heading <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr($align); ?> <?php echo esc_attr($layout); ?> <?php echo esc_attr($style_layout); ?> <?php echo esc_attr($el_class); ?>" <?php echo $el_id ? "id='" . esc_attr($el_id) . "'" : '' ?><?php echo $data_tablet;?><?php echo $data_mobile;?>>
     <?php builder_press_get_template($layout,
         array(
             'params' => $params,

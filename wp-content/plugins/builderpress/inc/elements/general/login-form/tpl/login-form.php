@@ -17,13 +17,13 @@ defined( 'ABSPATH' ) || exit;
 
 // global params
 $template_path = $params['template_path'];
-
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 $el_class = $params['el_class'];
 $el_id    = $params['el_id'];
 $bp_css   = $params['bp_css'];
 ?>
 
-<div class="bp-element bp-element-login-form <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
+<div class="bp-element bp-element-login-form <?php echo esc_attr($style_layout); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
 
 	<?php if ( is_user_logged_in() ) { ?>
         <div class="user-logged-in">

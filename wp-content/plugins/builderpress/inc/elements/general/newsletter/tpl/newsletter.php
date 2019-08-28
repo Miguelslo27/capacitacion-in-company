@@ -19,6 +19,7 @@ defined( 'ABSPATH' ) || exit;
 $template_path = $params['template_path'];
 $title       = $params['title'];
 $shortcode     = $params['shortcode'];
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 $el_class    = $params['el_class'];
 $el_id       = $params['el_id'];
 $bp_css      = $params['bp_css'];
@@ -28,7 +29,7 @@ $data_tablet = $bp_css_tablet ? 'data-class-tablet="' . bp_custom_css_class_shor
 $data_mobile = $bp_css_mobile ? 'data-class-mobile="' . bp_custom_css_class_shortcode($bp_css_mobile) . '"' : '';
 ?>
 
-<div class="bp-element bp-element-newsletter-popup vblog-layout-popup-1 <?php echo esc_attr( $el_class ); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?>" <?php echo $el_id ? " id='" . esc_attr( $el_id ) . "'" : '' ?> <?php echo $data_tablet;?> <?php echo $data_mobile;?>>
+<div class="bp-element bp-element-newsletter-popup vblog-layout-popup-1 <?php echo esc_attr($style_layout); ?> <?php echo esc_attr( $el_class ); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?>" <?php echo $el_id ? " id='" . esc_attr( $el_id ) . "'" : '' ?> <?php echo $data_tablet;?> <?php echo $data_mobile;?>>
     <a href="#newsletter1" class="newsletter-open js-popup-form" data-effect="mfp-zoom-in">
         <?php echo $title; ?>
     </a>

@@ -45,7 +45,8 @@ if ( ! class_exists( 'BuilderPress_Config_Tabs' ) ) {
 					'param_name'  => 'layout',
 					'options'     => array(
 						'layout-default' => self::$assets_url . 'images/layouts/layout-default.jpg',
-						'layout-step'    => self::$assets_url . 'images/layouts/layout-step.jpg'
+						'layout-step'    => self::$assets_url . 'images/layouts/layout-step.jpg',
+                        'marketing-layout-slider'    => self::$assets_url . 'images/layouts/marketing-layout-slider.jpg'
 					),
 					'std'         => 'layout-default',
 					'description' => __( 'Select type of style.', 'builderpress' )
@@ -83,6 +84,16 @@ if ( ! class_exists( 'BuilderPress_Config_Tabs' ) ) {
 						'value'   => array( 'layout-default' )
 					),
 				),
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
                 array(
                     'type' => 'css_editor',
                     'heading' => __( 'CSS Shortcode', 'js_composer' ),

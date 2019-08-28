@@ -50,11 +50,13 @@ if ( ! class_exists( 'BuilderPress_Config_Our_Team' ) ) {
 							'layout-4' => self::$assets_url . 'images/layout-4.png',
                             'layout-5' => self::$assets_url . 'images/layout-5.png',
                             'kindergarten-layout-slider-1' => self::$assets_url . 'images/kindergarten-layout-slider-1.png',
+                            'kindergarten-layout-slider-2' => self::$assets_url . 'images/kindergarten-layout-slider-2.jpg',
+                            'kindergarten-layout-slider-3' => self::$assets_url . 'images/kindergarten-layout-slider-3.jpg',
+                            'marketing-layout-1' => self::$assets_url . 'images/marketing-layout-1.jpg',
 						),
 						'std'         => 'layout-1',
 						'description' => __( 'Select type of style.', 'builderpress' )
 					),
-
 					array(
 						'type'       => 'param_group',
 						'heading'    => __( 'Team', 'builderpress' ),
@@ -92,6 +94,20 @@ if ( ! class_exists( 'BuilderPress_Config_Our_Team' ) ) {
 								'std'              => '#',
 								'edit_field_class' => 'vc_col-sm-6'
 							),
+
+							array(
+                                'type'             => 'colorpicker',
+                                'heading'          => __( 'Background', 'builderpress' ),
+                                'param_name'       => 'background',
+                                'edit_field_class' => 'vc_col-sm-6',
+                                'dependency'       => array(
+                                    'element' => 'layout',
+                                    'value'   => array(
+                                        'kindergarten-layout-slider-2',
+                                    )
+                                ),
+                            ),
+
 							array(
 								'type'         => 'param_group',
 								'heading'      => __( 'Contact', 'builderpress' ),
@@ -173,6 +189,16 @@ if ( ! class_exists( 'BuilderPress_Config_Our_Team' ) ) {
 						'std'              => 'background-gradient',
 						'edit_field_class' => 'vc_col-sm-6'
 					),
+                    array(
+                        'type'             => 'dropdown',
+                        'heading'          => __( 'Style Layout', 'builderpress' ),
+                        'param_name'       => 'style_layout',
+                        'value'            => array(
+                            __( 'Style Default', 'builderpress' )   => '',
+                        ),
+                        'std'              => '',
+                        'edit_field_class' => 'vc_col-sm-6'
+                    ),
 					array(
 						'type'       => 'css_editor',
 						'heading'    => __( 'CSS Shortcode', 'js_composer' ),

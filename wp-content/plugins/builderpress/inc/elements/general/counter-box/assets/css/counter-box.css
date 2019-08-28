@@ -67,38 +67,127 @@
       margin-left: 20px;
       margin-right: 20px; }
 
-.bp-element-counter-box.kindergarten-layout-1 .counter-boxes {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 127px;
-  height: 127px;
-  z-index: 0; }
-  .bp-element-counter-box.kindergarten-layout-1 .counter-boxes .counter-background .flower {
-    background-color: #f9c00c;
-    width: 83px;
-    height: 83px;
+.bp-element-counter-box.kindergarten-layout-1.color-1 .line,
+.bp-element-counter-box.kindergarten-layout-1.color-1 .number {
+  color: #ff5562; }
+
+.bp-element-counter-box.kindergarten-layout-1.color-2 .line,
+.bp-element-counter-box.kindergarten-layout-1.color-2 .number {
+  color: #64cadb; }
+
+.bp-element-counter-box.kindergarten-layout-1.color-3 .line,
+.bp-element-counter-box.kindergarten-layout-1.color-3 .number {
+  color: #7cc576; }
+
+.bp-element-counter-box.kindergarten-layout-1.color-4 .line,
+.bp-element-counter-box.kindergarten-layout-1.color-4 .number {
+  color: #ffa0d3; }
+
+.bp-element-counter-box.kindergarten-layout-1.color-5 .line,
+.bp-element-counter-box.kindergarten-layout-1.color-5 .number {
+  color: #a864a8; }
+
+.bp-element-counter-box.kindergarten-layout-1.align-left {
+  text-align: left; }
+
+.bp-element-counter-box.kindergarten-layout-1.align-center {
+  text-align: center; }
+
+.bp-element-counter-box.kindergarten-layout-1.align-right {
+  text-align: right; }
+
+.bp-element-counter-box.kindergarten-layout-1 .wrap-element .number {
+  font-family: Nunito;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.1;
+  word-break: break-word;
+  margin-bottom: 10px; }
+
+.bp-element-counter-box.kindergarten-layout-1 .wrap-element .line {
+  display: inline-block;
+  width: 90px;
+  overflow: hidden;
+  margin-bottom: 12px; }
+  .bp-element-counter-box.kindergarten-layout-1 .wrap-element .line::after {
+    content: '\f401\f401\f401\f401\f401\f401\f401\f401';
+    font-family: Ionicons;
+    font-size: 18px;
+    line-height: 1;
+    color: inherit;
+    letter-spacing: 5px;
+    display: flex;
+    align-items: flex-end;
+    height: 4px;
+    overflow: hidden; }
+  .bp-element-counter-box.kindergarten-layout-1 .wrap-element .line::before {
+    content: '\f401\f401\f401\f401\f401\f401\f401\f401';
+    font-family: Ionicons;
+    font-size: 18px;
+    line-height: 1;
+    color: inherit;
+    letter-spacing: 5px;
+    display: flex;
+    align-items: flex-start;
+    height: 4px;
+    overflow: hidden;
+    transform: translateX(10px); }
+  .bp-element-counter-box.kindergarten-layout-1 .wrap-element .line img {
+    max-width: 100%; }
+
+.bp-element-counter-box.kindergarten-layout-1 .wrap-element .title {
+  font-family: Nunito;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.3;
+  color: #fff;
+  word-break: break-word;
+  margin-bottom: 9px; }
+
+.bp-element-counter-box.kindergarten-layout-1 .wrap-element .description {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.375;
+  color: #dedede;
+  word-break: break-word; }
+
+.bp-element-counter-box.kindergarten-layout-2 .wrap-element {
+  width: 100%;
+  padding-top: 100%;
+  position: relative; }
+  .bp-element-counter-box.kindergarten-layout-2 .wrap-element .content {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
-    position: relative; }
-    .bp-element-counter-box.kindergarten-layout-1 .counter-boxes .counter-background .flower .petal {
-      height: 127px;
-      width: 44px;
-      position: absolute;
-      top: calc(50% - 73px);
-      left: calc(50% - 22px);
-      background-color: inherit;
-      border-radius: 22px; }
-      .bp-element-counter-box.kindergarten-layout-1 .counter-boxes .counter-background .flower .petal:nth-child(2) {
-        transform: rotateZ(36deg); }
-      .bp-element-counter-box.kindergarten-layout-1 .counter-boxes .counter-background .flower .petal:nth-child(3) {
-        transform: rotateZ(72deg); }
-      .bp-element-counter-box.kindergarten-layout-1 .counter-boxes .counter-background .flower .petal:nth-child(4) {
-        transform: rotateZ(108deg); }
-      .bp-element-counter-box.kindergarten-layout-1 .counter-boxes .counter-background .flower .petal:nth-child(5) {
-        transform: rotateZ(144deg); }
-  .bp-element-counter-box.kindergarten-layout-1 .counter-boxes .item {
-    position: absolute; }
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+    padding: 64px 40px 30px; }
+    .bp-element-counter-box.kindergarten-layout-2 .wrap-element .content .icon {
+      height: 50px;
+      margin-bottom: 35px; }
+      .bp-element-counter-box.kindergarten-layout-2 .wrap-element .content .icon img {
+        max-width: 100%;
+        max-height: 100%; }
+    .bp-element-counter-box.kindergarten-layout-2 .wrap-element .content .number {
+      font-family: Sniglet;
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 5px; }
+    .bp-element-counter-box.kindergarten-layout-2 .wrap-element .content .text {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.5;
+      color: #fff;
+      text-transform: uppercase; }
 
 @media (max-width: 991px) {
   .bp-element-counter-box.layout-1 .item + .item::before {

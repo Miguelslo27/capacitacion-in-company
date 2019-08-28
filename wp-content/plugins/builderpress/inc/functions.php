@@ -202,6 +202,7 @@ if ( ! function_exists( 'builder_press_get_attachment_image' ) ) {
 			$height  = $src[2];
 		} else {
 			$image_size = wp_get_attachment_image_src( $attachment_id, $size );
+            $img_src = $image_size[0];
 			$width      = $image_size[1];
 			$height     = $image_size[2];
 		}
@@ -351,6 +352,70 @@ if ( ! function_exists( 'thim_reset_password_failed' ) ) {
 add_action( 'lostpassword_post', 'bp_reset_password_failed', 999 );
 
 /**
+ * Action add menu account
+ */
+add_action('thim_menu_account','builderpress_login_menu_account');
+function builderpress_login_menu_account(){
+    ?>
+    <ul class="user-info">
+        <?php
+        if ( thim_plugin_active( 'learnpress' ) ) :
+            $profile = LP_Profile::instance();
+            ?>
+            <li>
+                <a class="profile" href="<?php echo esc_url( learn_press_user_profile_link() ); ?>"><?php esc_html_e( 'Profile', 'ivy-school' ); ?></a>
+            </li>
+            <li>
+                <a class="courses" href="<?php echo esc_url( $profile->get_tab_link( 'courses', true ) ); ?>"><?php esc_html_e( 'Courses', 'ivy-school' ); ?></a>
+            </li>
+            <li>
+                <a class="orders" href="<?php echo esc_url( $profile->get_tab_link( 'orders', true ) ); ?>"><?php esc_html_e( 'Orders', 'ivy-school' ); ?></a>
+            </li>
+            <li>
+                <a class="become_a_teacher" href="<?php echo learn_press_get_page_link( 'become_a_teacher' ); ?>"><?php esc_html_e( 'Become An Instructor', 'ivy-school' ); ?></a>
+            </li>
+            <li>
+                <a class="settings" href="<?php echo esc_url( $profile->get_tab_link( 'settings', true ) ); ?>"><?php esc_html_e( 'Edit Profile', 'ivy-school' ); ?></a>
+            </li>
+        <?php endif; ?>
+        <li>
+            <a class="logout" title="<?php echo esc_attr__( 'Logout', 'ivy-school' ) ?>"
+               href="<?php echo esc_url( wp_logout_url() ); ?>">
+        <span class="text-logout">
+            <?php echo esc_html__('Logout', 'ivy-school');?>
+        </span>
+
+            </a>
+        </li>
+    </ul>
+
+    <?php
+}
+
+/**
+ * Action add menu account woocommerce
+ */
+add_action('thim_woo_account','builderpress_woo_login_menu_account');
+function builderpress_woo_login_menu_account() {
+    ?>
+        <ul class="user-info">
+            <?php if ( thim_plugin_active( 'woocommerce' ) ) :
+                $wc_account_items = wc_get_account_menu_items();
+                foreach ($wc_account_items as $wc_account_item => $name_label):
+            ?>
+                    <li>
+                        <a href="<?php echo esc_url( wc_get_account_endpoint_url( $wc_account_item ) ); ?>"><?php echo esc_html( $name_label ); ?></a>
+                    </li>
+            <?php
+                endforeach;
+                endif; ?>
+        </ul>
+    <?php
+}
+
+
+
+/**
  * Get url account page
  */
 if( !function_exists('bp_get_login_page_url') ) {
@@ -360,6 +425,22 @@ if( !function_exists('bp_get_login_page_url') ) {
             return ! empty( $redirect_url ) ? add_query_arg( 'redirect_to', urlencode( $redirect_url ), get_permalink( $page[0] ) ) : get_permalink( $page->ID );
         }
         return wp_login_url();
+    }
+}
+
+/**
+ * Detect device
+ */
+if( !function_exists( 'bp_detect_device' ) ) {
+    function bp_detect_device() {
+        $detect = 'desktop';
+        if( wp_is_mobile() ) {
+            $detect = 'mobile';
+            if (strpos($_SERVER['HTTP_USER_AGENT'], 'iPad') !== false) {
+                $detect = 'tablet';
+            }
+        }
+        return $detect;
     }
 }
 
@@ -1176,7 +1257,7 @@ function login_ajax() {
     $login_data['user_password'] = $password;
     $login_data['redirect_to']   = $redirect_to;
     $login_data['remember']      = $remember;
-    $user_verify                 = wp_signon( $login_data, false );
+    $user_verify                 = wp_signon( $login_data, '' );
 
     $code = 1;
 
@@ -1344,7 +1425,6 @@ function open_video_popup_ajax() {
 
     wp_die();
 }
-
 /**
  * Ajax Search video
  */
@@ -1387,6 +1467,46 @@ function search_video_ajax() {
             $newdata[] = array(
                 'id'    => '',
                 'title' => esc_attr__( 'No videos found', 'builderpress' ),
+                'guid'  => '#',
+            );
+        }
+    }
+    wp_send_json_success( $newdata );
+    wp_die();
+}
+
+/**
+ * Ajax Search Products
+ */
+add_action( 'wp_ajax_nopriv_builderpress_product_search_ajax', 'product_search_ajax' );
+add_action( 'wp_ajax_builderpress_product_search_ajax', 'product_search_ajax' );
+function product_search_ajax() {
+    $keyword = $_REQUEST['keyword'];
+    $newdata = array();
+
+    // allow filter to update post types to search
+    $post_types = apply_filters( 'builder-press/post-types-search-courses', array('product'));
+    if ( $keyword ) {
+        $keyword   = strtoupper( $keyword );
+        $arr_query = array(
+            'post_type'           => $post_types,
+            'post_status'         => 'publish',
+            'ignore_sticky_posts' => true,
+            's'                   => $keyword
+        );
+        $search    = new WP_Query( $arr_query );
+        foreach ( $search->posts as $post ) {
+            $newdata[] = array(
+                'id'    => $post->ID,
+                'title' => $post->post_title,
+                'guid'  => get_permalink( $post->ID ),
+            );
+        }
+
+        if ( ! count( $search->posts ) ) {
+            $newdata[] = array(
+                'id'    => '',
+                'title' => esc_attr__( 'No products found', 'builderpress' ),
                 'guid'  => '#',
             );
         }

@@ -102,6 +102,7 @@
     &.layout-2 {
         .sub-title {
             font-family: Playfair Display;
+
         }
     }
 
@@ -109,7 +110,6 @@
         .title {
             font-family: Playfair Display;
             word-break: break-word;
-            text-align: center;
             margin-left: auto;
             margin-right: auto;
         }
@@ -117,20 +117,19 @@
             font-family: Playfair Display;
             font-style: italic;
             word-break: break-word;
-            text-align: center;
             margin-left: auto;
             margin-right: auto;
         }
+        
     }
 
     &.kindergarten-layout-1 {
         .title {
-            font-family: Sniglet;
             font-weight: 400;
             font-size: 40px;
             line-height: 1.1;
             color: #56509f;
-            margin-bottom: 8px;
+            margin-bottom: 0px;
         }
         .line {
             display: inline-block;
@@ -179,7 +178,6 @@
 
     &.kindergarten-layout-2 {
         .sub-title {
-            font-family: Nunito;
             font-weight: 700;
             font-size: 40px;
             line-height: 1.1;
@@ -193,6 +191,7 @@
             height: 8px;
             background-color: unset;
             color:#ff5f2e;
+            margin-bottom: 17px;
             &:after {
                 content: '\f401\f401\f401\f401\f401\f401\f401\f401';
                 font-family: Ionicons;
@@ -229,6 +228,66 @@
             line-height: 1.5;
             color: #797979;
             margin-bottom: 6px;
+            font-family: inherit;
         }
     }
+
+    &.kindergarten-layout-3 {
+        margin-bottom: 55px;
+        .title {
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 1.2;
+            color: #033b62;
+            word-break: break-word;
+            margin-bottom: 13px;
+        }
+        .line {
+            width: 128px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            background: transparent;
+            margin-top: -10px;
+            margin-bottom: 17px;
+            height: auto;
+            &::after,
+            &::before {
+                content: '';
+                display: block;
+                height: 2px;
+                flex-grow: 1;
+                flex-basis: 0;
+                background: rgba(249, 106, 154, .5);
+            }
+
+            .icon-line {
+                display: block;
+                padding: 0px 10px;
+                transform: translateY(-6px);
+            }
+        }
+
+        .sub-title {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 1.625;
+            color: #666;
+            word-break: break-word;
+        }
+
+        &.color-2 {
+            .line::after,
+            .line::before {
+                background: rgba(255, 255, 255, .5);
+            }
+        }
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
 }

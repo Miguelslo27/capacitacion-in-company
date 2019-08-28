@@ -46,6 +46,7 @@ $bp_css_tablet = $params['bp_css_tablet'];
 $bp_css_mobile = $params['bp_css_mobile'];
 $data_tablet = $bp_css_tablet ? 'data-class-tablet="' . bp_custom_css_class_shortcode($bp_css_tablet) . '"' : '';
 $data_mobile = $bp_css_mobile ? 'data-class-mobile="' . bp_custom_css_class_shortcode($bp_css_mobile) . '"' : '';
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 
 $button_css = '';
 $button_css .= $button_margin ? ' margin: ' . $button_margin . ';' : '';
@@ -80,10 +81,12 @@ if ( ! empty( $border_hover_color ) ) {
 
 if(!empty($show_line)) {
     $class_line = 'line-through';
+}else {
+    $class_line = '';
 }
 ?>
 
-<div class="bp-element bp-element-button <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $align ); ?> <?php echo esc_attr( $el_class ) ?> <?php echo esc_attr( $class_line ) ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?> <?php echo ent2ncr( $button_css ); ?> <?php echo $data_tablet;?> <?php echo $data_mobile;?>>
+<div class="bp-element bp-element-button <?php echo esc_attr($style_layout); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $align ); ?> <?php echo esc_attr( $el_class ) ?> <?php echo esc_attr( $class_line ) ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?> <?php echo ent2ncr( $button_css ); ?> <?php echo $data_tablet;?> <?php echo $data_mobile;?>>
 	<?php if ( $link ) {
 		$title = $link['title'] ? $link['title'] : __( 'Button', 'builderpress' );
 		if ( isset ( $params['linktype_title'] ) && $params['linktype_title'] != '' ) {

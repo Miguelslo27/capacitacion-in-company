@@ -48,16 +48,50 @@ if ( ! class_exists( 'BuilderPress_VC' ) ) {
 				return;
 			}
 
-			$row_background_overlay = array(
+			$row_background_overlay = apply_filters( 'buildpress-vc-design-row', array(
 				array(
 					'type'       => 'colorpicker',
 					'heading'    => __( 'Background Overlay', 'builderpress' ),
 					'param_name' => 'overlay_color',
 					'value'      => '',
 					'group'      => 'Design Options',
-				)
-			);
-
+                    'edit_field_class' => 'vc_col-sm-4',
+				),
+                array(
+                    'type'       => 'dropdown',
+                    'heading'    => __( 'Background Position', 'builderpress' ),
+                    'param_name' => 'background_position',
+                    'value' => array(
+                        'Default' => '',
+                        'Left Center' => 'left-center',
+                        'Left Top' => 'left-top',
+                        'Left Bottom' => 'left-bottom',
+                        'Center Center' => 'center-center',
+                        'Center Top' => 'center-top',
+                        'Center Bottom' => 'center-bottom',
+                        'Right Center' => 'right-center',
+                        'Right Top' => 'right-top',
+                        'Right Bottom' => 'right-bottom',
+                    ),
+                    'group'      => 'Design Options',
+                    'edit_field_class' => 'vc_col-sm-4',
+                ),
+                array(
+                    'type'       => 'dropdown',
+                    'heading'    => __( 'Background Size', 'builderpress' ),
+                    'param_name' => 'background_size',
+                    'value' => array(
+                        'Auto' => 'auto',
+                        'Contain' => 'contain',
+                        'Cover' => 'cover',
+                        'Inherit' => 'inherit',
+                        'Initial' => 'initial',
+                        'Unset' => 'unset',
+                    ),
+                    'group'      => 'Design Options',
+                    'edit_field_class' => 'vc_col-sm-4',
+                )
+			) );
             $responsive_atts_row = apply_filters( 'buildpress-responsive-atts-row', array(
                 array(
                     'type' => 'css_editor',

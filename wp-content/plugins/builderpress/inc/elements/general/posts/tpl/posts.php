@@ -32,12 +32,19 @@ $show_number_comments = $params['show_number_comments'];
 $show_excerpt         = $params['show_excerpt'];
 $show_readmore        = $params['show_readmore'];
 $show_number_favorite = $params['show_number_favorite'];
+$style_layout         = !empty($params['style_layout']) ? $params['style_layout'] : '';
 $el_class             = $params['el_class'];
 $el_id                = $params['el_id'];
 $post_link            = $params['post_link'];
-$sort_post            = !empty($params['sort_post']) ? $params['sort_post'] : 'rand';
-$order_post           = !empty($params['order_post']) ? $params['order_post'] : 'ASC';
+$sort_post            = !empty($params['sort_post']) ? $params['sort_post'] : 'date';
+$order_post           = !empty($params['order_post']) ? $params['order_post'] : 'DESC';
 $bp_css   = $params['bp_css'];
+$show_image           = !empty($params['show_image']) ? $params['show_image'] : '';
+if(!$show_image) {
+    $class_image = 'no-image';
+}else {
+    $class_image = '';
+}
 
 $cat = get_category_by_slug($category);
 $cat_id = $cat ? $cat->term_id : 0;
@@ -60,11 +67,7 @@ $query = new WP_Query( apply_filters( 'builder-press/posts-query', $query ) );
 
 <?php if ( $query->have_posts() ) { ?>
 
-    <div class="bp-element bp-element-posts <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $layout ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
-
-        <?php if( isset($params['title']) && $layout  != 'layout-slider' && $layout  != 'vblog-layout-slider-3'&& $layout  != 'vblog-layout-list-sidebar-2') {?>
-            <h3 class="title"><?php echo esc_html( $params['title'] ); ?></h3>
-        <?php }?>
+    <div class="bp-element bp-element-posts <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $layout ); ?> <?php echo esc_attr($style_layout); ?> <?php echo esc_attr($class_image); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
 
 		<?php builder_press_get_template( $layout, array(
 			'query'                => $query,
@@ -77,6 +80,7 @@ $query = new WP_Query( apply_filters( 'builder-press/posts-query', $query ) );
 			'show_excerpt'         => $show_excerpt,
 			'show_readmore'        => $show_readmore,
 			'show_number_favorite' => $show_number_favorite,
+            'show_image'           => $show_image,
 		), $template_path ); ?>
     </div>
 

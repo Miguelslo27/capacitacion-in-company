@@ -85,7 +85,16 @@ if ( ! class_exists( 'BuilderPress_Config_St_list_categories' ) ) {
                         esc_html__( 'Trending', 'builderpress' )    => 'trending',
                     ),
                 ),
-
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
                 array(
                     'type' => 'css_editor',
                     'heading' => __( 'CSS Shortcode', 'js_composer' ),

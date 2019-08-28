@@ -14,11 +14,10 @@
  * Prevent loading this file directly
  */
 defined( 'ABSPATH' ) || exit;
-$img = $params['background'] ? wp_get_attachment_image_url( $params['background'], 'full' ) : '';
-//$img_url = $img ? '<img src="' . esc_url($img) . '" alt="">' : '';
+$img = !empty($params['background']) ? wp_get_attachment_image_url( $params['background'], 'full' ) : '';
 ?>
 
-<div class="slide-testimonial js-call-slick-col" data-numofslide="1" data-numofscroll="1" data-loopslide="1" data-autoscroll="0" data-speedauto="6000" data-customdot="0" data-respon="[1, 1], [1, 1], [1, 1], [1, 1], [1, 1]">
+<div class="slide-testimonial js-call-slick-col" data-numofslide="<?php echo $items_visible;  ?>" data-numofscroll="1" data-loopslide="1" data-autoscroll="0" data-speedauto="6000" data-customdot="0" data-respon="[<?php echo $items_visible;  ?>, 1], [<?php echo $items_visible;  ?>, 1], [<?php echo $items_visible;  ?>, 1], [<?php echo $items_visible;  ?>, 1], [<?php echo $items_mobile;  ?>, 1]">
     <div class="slide-slick">
         <?php foreach ( $testimonials as $testimonial ) { ?>
         <div class="testimonial-item">

@@ -23,16 +23,18 @@ $link        = $params['box_link'];
 $icon_type   = $params['icon_type'];
 $title       = $params['title'];
 $description = $params['description'];
-$button      = $params['button'];
 $el_class    = $params['el_class'];
 $el_id       = $params['el_id'];
 $bp_css = $params['bp_css'];
 $bp_css_tablet = $params['bp_css_tablet'];
 $bp_css_mobile = $params['bp_css_mobile'];
-$data_tablet = $bp_css_tablet ? 'data-class-tablet="' . bp_custom_css_class_shortcode($bp_css_tablet) . '"' : '';
-$data_mobile = $bp_css_mobile ? 'data-class-mobile="' . bp_custom_css_class_shortcode($bp_css_mobile) . '"' : '';
-$show_line   = ( !empty($params['show_line']) ) ? $params['show_line'] : false;
-
+$data_tablet   = $bp_css_tablet ? 'data-class-tablet="' . bp_custom_css_class_shortcode($bp_css_tablet) . '"' : '';
+$data_mobile   = $bp_css_mobile ? 'data-class-mobile="' . bp_custom_css_class_shortcode($bp_css_mobile) . '"' : '';
+$show_line     = ( !empty($params['show_line']) ) ? $params['show_line'] : false;
+$icon_style    = !empty($params['icon_style']) ? $params['icon_style'] : 'style-1';
+$icon_size     = !empty($params['icon_size']) ? $params['icon_size'] : '';
+$image           = !empty($params['image']) ? $params['image'] : '';
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 wp_enqueue_style( 'builderpress-font-font-awesome', 'https://use.fontawesome.com/e8cbfd9eca.css', array(), '4.7.0' );
 
 // title style
@@ -98,6 +100,7 @@ $line_css = $line_css ? ' style="' . $line_css . '"' : '';
 
 //Style hover
 $icon_hover = $link_hover = '';
+
 if ( !empty( $params['icon_hover_background_color'] ) ) {
     $icon_hover .= "background-color: " . $params['icon_hover_background_color'] . ";";
 }
@@ -107,6 +110,7 @@ if ( !empty( $params['icon_hover_border_color'] ) ) {
 if ( !empty( $params['link_hover_color'] ) ) {
     $link_hover .= "color: " . $params['link_hover_color'] . ";";
 }
+
 ?>
 <?php
     if($show_line == true){
@@ -124,7 +128,7 @@ if ( !empty( $params['link_hover_color'] ) ) {
             break;
     }
 ?>
-<div class="bp-element bp-element-icon-box <?php echo esc_attr($class_layout); ?> <?php echo esc_attr($class_line); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $layout ); ?> <?php echo esc_attr( $el_class ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>  <?php echo $data_tablet;?> <?php echo $data_mobile;?>>
+<div class="bp-element bp-element-icon-box <?php echo esc_attr($class_layout); ?> <?php echo esc_attr($icon_size); ?> <?php echo esc_attr($class_line); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $layout ); ?> <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $icon_style ); ?> <?php echo esc_attr($style_layout); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>  <?php echo $data_tablet;?> <?php echo $data_mobile;?>>
 	<?php builder_press_get_template( $layout,
 		array(
 			'icon_shape'   => $icon_shape,
@@ -142,10 +146,11 @@ if ( !empty( $params['link_hover_color'] ) ) {
 			'link_css'     => $link_css,
 			'des_css'      => $des_css,
 			'description'  => $description,
-			'button'       => $button,
 			'button_css'   => $button_css,
             'show_line'    => $show_line,
             'line_css'     => $line_css,
+            'icon_style'   => $icon_style,
+            'image'        => $image
 		), $template_path );
 	?>
 </div>

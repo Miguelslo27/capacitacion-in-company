@@ -23,7 +23,7 @@ $show_label   = $params['show_label'];
 $show_nav     = $params['show_nav'];
 $show_rating  = $params['show_rating'];
 $img_size     = $params['img_size'];
-
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 $items_visible = $params['items_visible'];
 $items_tablet  = $params['items_tablet'];
 $items_mobile  = $params['items_mobile'];
@@ -69,7 +69,7 @@ $products = new WP_Query( apply_filters( 'builder-press/product-carousel-query',
 $i        = 1;
 ?>
 
-<div class="bp-element bp-element-product-carousel woocommerce <?php echo esc_attr( $el_class ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>
+<div class="bp-element bp-element-product-carousel woocommerce <?php echo esc_attr($style_layout); ?> <?php echo esc_attr( $el_class ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>
      data-items="<?php echo esc_attr( $number_items ); ?>"
      data-items-visible="<?php echo esc_attr( $items_visible ); ?>"
      data-items-tablet="<?php echo esc_attr( $items_tablet ); ?>"

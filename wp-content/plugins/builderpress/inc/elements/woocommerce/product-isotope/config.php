@@ -131,6 +131,16 @@ if ( ! class_exists( 'BuilderPress_Config_Product_Isotope' ) ) {
                     'admin_label' => true,
                     'std'         => 'full',
                 ),
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
             );
 		}
 

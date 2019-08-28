@@ -110,7 +110,6 @@ defined( 'ABSPATH' ) || exit;
                         </h4>
 
                         <div class="info">
-                            <span class="item-info"><?php echo esc_html__( 'by', 'builderpress' );?> <?php echo get_the_author();?></span>
                             <span class="item-info"><?php echo get_the_date(); ?></span>
                             <span class="item-info"><?php echo esc_html($cat);?></span>
                         </div>

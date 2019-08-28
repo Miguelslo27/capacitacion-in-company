@@ -53,11 +53,25 @@ if ( ! class_exists( 'BuilderPress_Config_Testimonials' ) ) {
                         'layout-slider-9'   => self::$assets_url . 'images/layouts/layout-9.png',
                         'layout-slider-10'   => self::$assets_url . 'images/layouts/layout-10.png',
                         'vblog-layout-slider-1' => self::$assets_url . 'images/layouts/vblog-layout-slider-1.jpg',
+                        'kindergarten-layout-slider-2' => self::$assets_url . 'images/layouts/kindergarten-layout-slider-2.jpg',
+                        'marketing-layout-1' => self::$assets_url . 'images/layouts/marketing-layout-1.jpg',
+                        'marketing-layout-2' => self::$assets_url . 'images/layouts/marketing-layout-2.jpg',
                     ),
                     'std'         => 'layout-slider-1',
                     'description' => __( 'Select type of style.', 'builderpress' )
                 ),
-				
+                array(
+                    'type'       => 'textfield',
+                    'heading'    => __( 'Title', 'builderpress' ),
+                    'param_name' => 'title',
+                    'admin_label' => true,
+                    'dependency'       => array(
+                        'element' => 'layout',
+                        'value'   => array( 'marketing-layout-2' ),
+                    ),
+                    'edit_field_class' => 'vc_col-sm-6'
+
+                ),
 				array(
 					'type'       => 'param_group',
 					'value'      => '',
@@ -120,6 +134,17 @@ if ( ! class_exists( 'BuilderPress_Config_Testimonials' ) ) {
                         'element' => 'layout',
                         'value'   => array( 'layout-slider-9' ),
                     ),
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
+
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
                     'edit_field_class' => 'vc_col-sm-6'
                 ),
 				array(

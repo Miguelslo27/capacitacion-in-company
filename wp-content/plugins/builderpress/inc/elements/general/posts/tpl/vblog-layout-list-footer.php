@@ -23,6 +23,9 @@ defined( 'ABSPATH' ) || exit;
  * @var $show_number_comments
  */
 ?>
+<?php if( isset($title) ) {?>
+    <h3 class="title"><?php echo esc_html( $title ); ?></h3>
+<?php }?>
 <div class="wrap-element">
     <div class="list-posts">
         <?php while ( $query->have_posts() ) : $query->the_post(); ?>

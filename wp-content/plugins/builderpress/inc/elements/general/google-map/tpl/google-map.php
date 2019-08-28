@@ -30,6 +30,7 @@ $draggable   = $params['draggable'];
 $marker_icon = $params['marker_icon'];
 $map_cover   = $params['map_cover_image'];
 $map_style   = $params['map_style'];
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 $json_style  = $params['json_style'];
 $el_class    = $params['el_class'];
 $el_id       = $params['el_id'];
@@ -39,7 +40,7 @@ $height = ( $params['height'] ? $params['height'] : '480px' ) . 'px';
 ?>
 
 <!--google map element-->
-<div class="bp-element bp-element-google-map <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>
+<div class="bp-element bp-element-google-map <?php echo esc_attr($style_layout); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>
      style="height: <?php echo esc_attr( $height ); ?>" <?php echo $map_cover ? " data-cover='" . $map_cover . "'" : ''; ?>>
 
 	<?php if ( $map_cover ) {

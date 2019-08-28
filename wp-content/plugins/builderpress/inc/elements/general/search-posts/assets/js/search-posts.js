@@ -208,32 +208,25 @@
         },
 
         search_popup: function () {
-            var $search_button = $('.search-button'),
-                $header = $('#masthead.sticky-header'),
-                windoH = $(window).height();
-            $('.bp-element-search').find('.search-form').css('height', windoH);
-            $search_button.live('click', function (event) {
-                $(this).parents('.bp-element-search').find('.search-form').addClass('open');
-                $(document).on('keydown', function (e) {
-                    // ESCAPE key pressed
-                    if (e.keyCode === 27) {
-                        $(this).find('.search-form').removeClass('open');
-                    }
-                });
-            });
-            $(document).on('click', '.close-form', function (e) {
-                e.stopPropagation();
-                $(this).parents('.search-form').removeClass('open');
+            var $search = $('.bp-element-search');
+            var $open_form = $search.find('.search-button');
+            var $close_form = $search.find('.close-form');
+            var $search_form = $search.find('.search-form');
+            var $searchField = $search.find('.search-field');
+
+            $open_form.click(function(){
+                $search_form.addClass('open');
+                setTimeout(function() { $searchField.focus(); }, 800);
             });
 
-            $(window).scroll(function () {
-                var window2 = windoH;
+            $close_form.click(function(){
+                $search_form.removeClass('open');
+            });
 
-                if ($header.hasClass('menu-hidden')) {
-                    window2 = windoH + $header.height() + 40;
-                    $('.bp-element-search.layout-1').find('.search-form').css('height', window2);
+            $(window).keydown(function( event ) {
+                if ( event.which === 27 ) {
+                    $search_form.removeClass('open');
                 }
-
             });
         }
     }

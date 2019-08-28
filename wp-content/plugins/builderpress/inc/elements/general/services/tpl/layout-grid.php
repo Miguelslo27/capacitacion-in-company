@@ -21,12 +21,13 @@ defined( 'ABSPATH' ) || exit;
 $services       = $params['services'];
 $number_columns = $params['number_columns'];
 $button         = $params['view_all'];
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 $el_class       = $params['el_class'];
 $el_id          = $params['el_id'];
 $bp_css         = $params['bp_css'];
 ?>
 
-<div class="bp-element bp-element-services <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?> number-columns-<?php echo esc_attr( $number_columns ); ?> layout-grid" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
+<div class="bp-element bp-element-services <?php echo esc_attr($style_layout); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?> number-columns-<?php echo esc_attr( $number_columns ); ?> layout-grid" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
 
 	<div class="grid">
 		<?php foreach ( $services as $service ) { ?>

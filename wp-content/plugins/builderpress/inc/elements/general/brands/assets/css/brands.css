@@ -42,6 +42,23 @@
   .bp-element-brands .wrap-arrow-slick .slick-arrow.next-slick {
     right: -30px; }
 
+.bp-element-brands.marketing-layout-1 .wrap-element {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+  .bp-element-brands.marketing-layout-1 .wrap-element .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 27px 42px; }
+    .bp-element-brands.marketing-layout-1 .wrap-element .item img {
+      max-width: 100%;
+      max-height: 100%;
+      opacity: .4;
+      transition: all .3s; }
+      .bp-element-brands.marketing-layout-1 .wrap-element .item img:hover {
+        opacity: 1; }
+
 a[data-balloon],
 button[data-balloon] {
   cursor: default;

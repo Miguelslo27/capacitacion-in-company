@@ -33,7 +33,6 @@
                 $( ".js-call-calendar" ).each(function(){
                     var arrayDays = [''];
                     var arrayLinks = [''];
-                    var link = '';
 
                     if ($(this).data('days') != null) {
                         arrayDays = $(this).data('days');
@@ -44,12 +43,15 @@
 
                     $(this).datepicker({
                         firstDay: 1,
-                        dateFormat: 'yy-mm-dd',
+                        dateFormat: 'yy-m-d',
 
                         onSelect: function(dateSelected, obj) {
-                            for (var i=0; i<arrayDays.length; i++) {
-                                if(arrayDays[i] == dateSelected) {
-                                    window.open(arrayLinks[i]);
+                            if(typeof arrayDays === 'object'){
+                                for(var te in arrayDays ){
+                                    if(arrayDays[te] == dateSelected) {
+                                        window.open(arrayLinks[te]);
+                                        break;
+                                    }
                                 }
                             }
                         },
@@ -57,9 +59,12 @@
                         beforeShowDay: function(d) {
                             var date = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
 
-                            for (var i=0; i<arrayDays.length; i++) {
-                                if(arrayDays[i] == date) {
-                                    return [true, "have-event", ""];
+                            if(typeof arrayDays === 'object'){
+                                for(var te in arrayDays ){
+                                    if(arrayDays[te] == date) {
+                                        return [true, "have-event", ""];
+                                        break;
+                                    }
                                 }
                             }
 

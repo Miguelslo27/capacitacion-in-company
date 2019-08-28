@@ -50,7 +50,9 @@ if ( ! class_exists( 'BuilderPress_Config_Video_Box' ) ) {
                         'layout-4' => self::$assets_url . 'images/layouts/layout-4.jpg',
                         'layout-5' => self::$assets_url . 'images/layouts/layout-5.jpg',
                         'layout-6' => self::$assets_url . 'images/layouts/layout-6.png',
-                        'layout-7' => self::$assets_url . 'images/layouts/layout-7.png'
+                        'layout-7' => self::$assets_url . 'images/layouts/layout-7.png',
+                        'kindergarten-layout-1' => self::$assets_url . 'images/layouts/kindergarten-layout-1.jpg',
+                        'marketing-layout-1' => self::$assets_url . 'images/layouts/marketing-layout-1.png'
 					),
 					'std'        => 'layout-1'
 				),
@@ -85,6 +87,28 @@ if ( ! class_exists( 'BuilderPress_Config_Video_Box' ) ) {
 					'heading'    => esc_html__( 'Background Image', 'builderpress' ),
 					'param_name' => 'background_img'
 				),
+
+                array(
+                    'type'       => 'attach_image',
+                    'heading'    => esc_html__( 'Background Image Overlay', 'builderpress' ),
+                    'param_name' => 'background_img_overlay',
+                    'dependency' => array(
+                        'element' => 'layout',
+                        'value'   => 'kindergarten-layout-1'
+                    ),
+                ),
+
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
+
                 array(
                     'type' => 'css_editor',
                     'heading' => __( 'CSS Shortcode', 'js_composer' ),

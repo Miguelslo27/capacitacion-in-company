@@ -39,7 +39,7 @@ $el_id    = $params['el_id'];
 
         <!--        search form-->
         <form role="search" method="get" class="form-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-            <input type="search" class="search-field" value="<?php echo esc_attr( get_search_query() ) ?>" name="s"
+            <input type="search" class="search-field" value="<?php echo esc_attr( get_search_query() ) ?>" name="s" autocomplete="off"
                    required/>
             <span class="search-notice"> <?php esc_html_e( 'Hit enter to search courses or ESC to close', 'builderpress' ); ?></span>
         </form>

@@ -4,10 +4,11 @@ Plugin Name: BuilderPress
 Plugin URI: http://thimpress.com/
 Description: Full of features for page builders: Visual Composer, Site Origin, Elementor
 Author: ThimPress
-Version: 1.2.1.3
+Version: 1.2.1.7
 Text Domain: builderpress
 Author URI: http://thimpress.com
 */
+
 
 /**
  * Prevent loading this file directly
@@ -28,7 +29,7 @@ if ( ! class_exists( 'BuilderPress' ) ) {
 		/**
 		 * @var string
 		 */
-		public $_version = '1.2.1.3';
+		public $_version = '1.2.1.7';
 
 		/**
 		 * BuilderPress constructor.
@@ -146,6 +147,7 @@ if ( ! class_exists( 'BuilderPress' ) ) {
 					'call-to-action',
 					'social-links',
 					'google-map',
+					'google-maps',
 					'video-box',
 					'button',
 					'login-popup',
@@ -161,16 +163,21 @@ if ( ! class_exists( 'BuilderPress' ) ) {
 					'login-form',
                     'test',
 					'image-box',
+                    'images-slide',
 					'slide-image-box',
+					'slide',
 					'gallery-images',
                     'newsletter',
                     'categories',
+                    'banner',
 				),
 				'woocommerce'              => array(
 					'product-carousel',
 					'product-filter',
 					'product-banner',
-                    'products'
+                    'product-search',
+                    'products',
+                    'product-login',
 				),
 				'learnpress'               => array(
 					'course-details',

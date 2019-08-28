@@ -22,10 +22,12 @@ $template_path = $params['template_path'];
  * @var $params array - shortcode params
  */
 $layout         = $params['layout'];
-$title          = $params['title'];
-$sub_title      = $params['subtitle'];
+$title          = isset($params['title']) ? $params['title'] : '';
+$sub_title      = isset($params['subtitle']) ? $params['subtitle'] : '';
 $video_button   = $params['video_button'];
 $background_img = $params['background_img'];
+$background_img_overlay = !empty($params['background_img_overlay']) ? $params['background_img_overlay'] : '';
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 $el_class       = $params['el_class'];
 $el_id          = $params['el_id'];
 $bp_css         = $params['bp_css'];
@@ -48,7 +50,7 @@ if ( ! $video_link ) {
 } ?>
 
 <!--video box element-->
-<div class="bp-element bp-element-video-box <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $layout ); ?> <?php echo esc_attr( $el_class ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
+<div class="bp-element bp-element-video-box <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $layout ); ?> <?php echo esc_attr($style_layout); ?> <?php echo esc_attr( $el_class ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
 
 	<?php builder_press_get_template( $layout, array(
 		'title'        => $title,

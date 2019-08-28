@@ -75,8 +75,17 @@
                 ['rtl', 'bool'],
                 ['navfor', 'string'],
                 ['animate', 'bool'],
-                ['middlearrow', 'string']
-            ]
+                ['middlearrow', 'string'],
+                ['modecenter', 'bool'],
+                ['paddingcenter', 'string'],
+                ['speedslide', 'number'],
+            ];
+
+            if($(this).data('rtl') == '1') {
+                var rightToLeft = true;
+            } else {
+                var rightToLeft = false;
+            }
 
             var parameter = {
                 responsive: [[1, 1], [1, 1], [1, 1], [1, 1], [1, 1]],
@@ -89,10 +98,14 @@
                 speedauto: 5000,
                 verticalslide: false,
                 verticalswipe: false,
-                rtl: false,
+                rtl: rightToLeft,
                 navfor: '',
                 animate: false,
-                middlearrow: null
+                middlearrow: null,
+                modecenter: false,
+                paddingcenter: '50px',
+                speedslide: 500
+
             }
 
             var showDot = false;
@@ -153,6 +166,9 @@
             }
 
             $(slideSlick).slick({
+                centerMode: parameter.modecenter,
+                centerPadding: parameter.paddingcenter,
+                speed: parameter.speedslide,
                 asNavFor: parameter.navfor,
                 rtl: parameter.rtl,
                 vertical: parameter.verticalslide,

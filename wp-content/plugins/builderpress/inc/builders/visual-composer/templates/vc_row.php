@@ -30,9 +30,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * custom $overlay_color
  */
-$bp_css_tablet = $bp_css_mobile = $overlay_color = $el_class = $full_height = $parallax_speed_bg = $parallax_speed_video = $full_width = $equal_height = $flex_row = $columns_placement = $content_placement = $parallax = $parallax_image = $css = $el_id = $video_bg = $video_bg_url = $video_bg_parallax = '';
+$bp_css_tablet = $bp_css_mobile = $overlay_color = $background_position = $background_size = $el_class = $full_height = $parallax_speed_bg = $parallax_speed_video = $full_width = $equal_height = $flex_row = $columns_placement = $content_placement = $parallax = $parallax_image = $css = $el_id = $video_bg = $video_bg_url = $video_bg_parallax = '';
 $disable_element = '';
-$output          = $overlay_html = $after_output = '';
+$output          = $overlay_html = $after_output = $row_inner_html = '';
 $atts            = vc_map_get_attributes( $this->getShortcode(), $atts );
 //var_dump($atts);
 extract( $atts );
@@ -57,6 +57,22 @@ if ( $overlay_color ) {
 	$overlay_html  .= '<div class="overlay" style="background-color: ' . esc_attr( $overlay_color ) . '"></div>';
 }
 
+/**
+ * Add filter custom inner html row
+ */
+$row_inner_html = '';
+$row_inner_html = apply_filters( 'buildpress-inner-row-html', $row_inner_html, $atts );
+if( $row_inner_html ) $overlay_html .= $row_inner_html;
+
+if ( $background_position ) {
+    $css_classes[] = 'bp-background-position-' . $background_position;
+}
+if ( $background_size ) {
+    $css_classes[] = 'bp-background-size-' . $background_size;
+}
+
+
+
 
 if ( 'yes' === $disable_element ) {
 	if ( vc_is_page_editable() ) {
@@ -68,6 +84,10 @@ if ( 'yes' === $disable_element ) {
 
 if ( vc_shortcode_custom_css_has_property( $css, array( 'border', 'background' ) ) || $video_bg || $parallax ) {
 	$css_classes[] = 'vc_row-has-fill';
+}
+
+if ( ! empty( $atts['rtl_reverse'] ) ) {
+    $css_classes[] = 'vc_rtl-columns-reverse';
 }
 
 if ( ! empty( $atts['gap'] ) ) {

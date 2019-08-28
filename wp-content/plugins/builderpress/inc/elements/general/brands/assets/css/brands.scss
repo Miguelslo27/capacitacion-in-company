@@ -1,5 +1,4 @@
 .bp-element-brands {
-
     &.text-center .slick-slide img {
         display: inline-block;
     }
@@ -58,6 +57,29 @@
             }
             &.next-slick {
                 right: -30px;
+            }
+        }
+    }
+
+    &.marketing-layout-1 {
+        .wrap-element {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            .item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 27px 42px;
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                    opacity: .4;
+                    transition: all .3s;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
             }
         }
     }

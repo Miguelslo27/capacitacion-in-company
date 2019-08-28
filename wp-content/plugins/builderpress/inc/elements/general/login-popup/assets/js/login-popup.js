@@ -14,6 +14,32 @@
         },
 
         /**
+         *   click account
+         */
+        infor_user:function(){
+            if($(window).width() <= 1024) {
+                $('.mobile-sidebar .bp-element-login-popup .login-links>a').after('<span class="icon-toggle"><i class="fa fa-angle-down"></i></span>');
+                var thim_log_out = $('.bp-element-login-popup .login-links').find('.logout');
+                thim_log_out.on('click', function () {
+                    $('.user-info').toggleClass('open-user-infor');
+                });
+            }
+
+            // click angle down
+            var user_infor = $('.mobile-sidebar .bp-element-login-popup .login-links').find('.user-info').hide();
+            var angle_down = $('.mobile-sidebar .bp-element-login-popup .login-links').find('.icon-toggle');
+            angle_down.on('click',function () {
+                if(user_infor.is(':hidden') === true){
+                    user_infor.slideDown('normal');
+                    $(this).html('<i class="fa fa-angle-up"></i>');
+                }else{
+                    user_infor.slideUp('normal');
+                    $(this).html('<i class="fa fa-angle-down"></i>');
+                }
+            });
+        },
+
+        /**
          * Register popup
          */
         register_popup: function() {
@@ -61,7 +87,7 @@
 
             $('.login-links .login').magnificPopup({
                 type: 'inline',
-                fixedContentPos: false,
+                fixedContentPos: true,
                 removalDelay: 500, //delay removal by X to allow out-animation
                 callbacks: {
                     beforeOpen: function () {
@@ -77,7 +103,7 @@
             });
             $('.login-links .register').magnificPopup({
                 type: 'inline',
-                fixedContentPos: false,
+                fixedContentPos: true,
                 removalDelay: 500, //delay removal by X to allow out-animation
                 callbacks: {
                     beforeOpen: function () {

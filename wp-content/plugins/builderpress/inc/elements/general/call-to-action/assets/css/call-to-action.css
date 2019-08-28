@@ -366,8 +366,62 @@
           color: #fff;
           text-align: center;
           word-break: break-word; }
+  .bp-element-call-to-action.marketing-layout-1 {
+    text-align: unset; }
+    .bp-element-call-to-action.marketing-layout-1 .wrap-element .content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      border: 3px solid #7cf9c5;
+      border-radius: 60px;
+      padding: 21px 0px; }
+      .bp-element-call-to-action.marketing-layout-1 .wrap-element .content .text {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 1.3;
+        color: #2f2674;
+        word-break: break-word;
+        flex-grow: 1;
+        flex-basis: 300px;
+        margin: 12px 40px; }
+      .bp-element-call-to-action.marketing-layout-1 .wrap-element .content .btn-call {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #2f2674;
+        text-transform: uppercase;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        white-space: nowrap;
+        height: 48px;
+        border-radius: 24px;
+        background: #7cf9c5;
+        padding: 0 41px;
+        transition: all .2s;
+        margin: 12px 40px;
+        box-shadow: 13px 15px 15px 0px rgba(105, 105, 105, 0.08); }
+        .bp-element-call-to-action.marketing-layout-1 .wrap-element .content .btn-call:hover {
+          background: #1af59a; }
 
 /*---------------------------------------------*/
+@media (max-width: 1024px) {
+  .responsive div.bp-element-icon-box.kindergarten-layout-8.icon-left .icon-box {
+    padding-right: 0;
+    padding-left: 0; } }
+
+@media (max-width: 767px) {
+  .responsive div.bp-element-call-to-action.layout-3 .inner-action {
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 20px; }
+  .responsive div.bp-element-call-to-action.marketing-layout-1 .wrap-element .content {
+    text-align: center;
+    justify-content: center; } }
+
 @media (max-width: 575px) {
   .responsive .bp-element-call-to-action.vblog-layout-1 .wrap-element .content {
     justify-content: center;
@@ -379,7 +433,7 @@
       margin-bottom: 30px; } }
 
 @media (max-width: 480px) {
-  .bp-element-call-to-action.layout-4 .inner-action .content-text .description {
+  .responsive .bp-element-call-to-action.layout-4 .inner-action .content-text .description {
     font-size: 24px;
     margin-bottom: 20px;
     line-height: 32px; } }

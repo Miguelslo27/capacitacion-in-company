@@ -51,11 +51,11 @@ defined('ABSPATH') || exit;
             <?php echo ent2ncr( $description ); ?>
         </div>
     </div>
-    <?php if ( $button && $button['url']) { ?>
+    <?php if ( $link && $link['url']) { ?>
         <div class="button" <?php echo ent2ncr( $button_css ); ?>>
-            <a class="btn" href="<?php echo esc_url( $button['url'] ); ?>"
-                <?php echo bp_template_build_link( $button ); ?>>
-                <?php echo esc_html( $button['title'] ) ?>
+            <a class="btn" href="<?php echo esc_url( $link['url'] ); ?>"
+                <?php echo bp_template_build_link( $link ); ?>>
+                <?php echo esc_html( $link['title'] ) ?>
             </a>
         </div>
     <?php } ?>

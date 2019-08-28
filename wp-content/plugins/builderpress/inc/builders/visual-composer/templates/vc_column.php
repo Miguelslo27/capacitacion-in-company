@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Shortcode class
  * @var $this    WPBakeryShortCode_VC_Column
  */
-$bp_css_tablet = $bp_css_mobile = $el_class = $el_id = $width = $parallax_speed_bg = $parallax_speed_video = $parallax = $parallax_image = $video_bg = $video_bg_url = $video_bg_parallax = $css = $offset = $css_animation = $overlay_color = $overlay_html ='';
+$bp_css_tablet = $bp_css_mobile = $background_position = $background_size = $el_class = $el_id = $width = $parallax_speed_bg = $parallax_speed_video = $parallax = $parallax_image = $video_bg = $video_bg_url = $video_bg_parallax = $css = $offset = $css_animation = $overlay_color = $overlay_html ='';
 $output         = '';
 $atts           = vc_map_get_attributes( $this->getShortcode(), $atts );
 extract( $atts );
@@ -40,6 +40,16 @@ $css_classes = array(
 if ( $overlay_color ) {
     $css_classes[] = 'bp-row-background-overlay';
     $overlay_html  .= '<div class="overlay" style="background-color: ' . esc_attr( $overlay_color ) . '"></div>';
+}
+if ( $overlay_color ) {
+    $css_classes[] = 'bp-row-background-overlay';
+    $overlay_html  .= '<div class="overlay" style="background-color: ' . esc_attr( $overlay_color ) . '"></div>';
+}
+if ( $background_position ) {
+    $css_classes[] = 'bp-background-position-' . $background_position;
+}
+if ( $background_size ) {
+    $css_classes[] = 'bp-background-size-' . $background_size;
 }
 
 if ( vc_shortcode_custom_css_has_property( $css, array(

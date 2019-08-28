@@ -477,7 +477,7 @@ if ( ! class_exists( 'BuilderPress_Abstract_Config' ) ) {
                 $category_name
 			) );
 
-			$options = array( esc_html__( 'All Category', 'builderpress' ) => ' ' );
+			$options = array( esc_html__( 'All Category', 'builderpress' ) => '' );
 			foreach ( $categories as $category ) {
 
 				$options[ html_entity_decode( $category->name ) ] = $category->slug;

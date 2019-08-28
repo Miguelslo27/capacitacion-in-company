@@ -27,6 +27,7 @@ $layout               = $params['layout'];
 $number               = $params['number'];
 $show_post_count      = $params['show_post_count'];
 $title                = $params['title'];
+$style_layout         = !empty($params['style_layout']) ? $params['style_layout'] : '';
 $el_class             = $params['el_class'];
 $el_id                = $params['el_id'];
 $bp_css               = $params['bp_css'];
@@ -34,14 +35,14 @@ $cat = get_category_by_slug($category);
 $cat_id = $cat ? $cat->term_id : 0;
 $args = array(
     'type'          => 'post',
-    'hide_empty'    => 1,
+    'hide_empty'    => 0,
     'parent'        => $cat_id,
     'number'        => $number,
 );
 $categories = get_categories($args);
 ?>
 
-<div class="bp-element bp-element-categories <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $layout ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
+<div class="bp-element bp-element-categories <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $layout ); ?> <?php echo esc_attr($style_layout); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
     <?php builder_press_get_template( $layout, array(
         'categories'           => $categories,
         'title'                => $title,

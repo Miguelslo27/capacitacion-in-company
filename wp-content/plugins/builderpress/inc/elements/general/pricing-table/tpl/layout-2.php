@@ -17,8 +17,8 @@ defined( 'ABSPATH' ) || exit;
 
 $class = 12 / $number_columns;
 ?>
-
-<?php foreach ( $packages as $package ) { ?>
+<div class="row">
+    <?php foreach ( $packages as $package ) { ?>
 
     <div class="package-wrap <?php echo 'col-md-' . esc_attr( $class ); ?> <?php echo esc_attr($background_color); ?> <?php echo ( isset( $package['featured'] ) && $package['featured'] ) ? 'featured' : ''; ?>">
         <div class="package">
@@ -107,3 +107,4 @@ $class = 12 / $number_columns;
         </div>
     </div>
 <?php } ?>
+</div>

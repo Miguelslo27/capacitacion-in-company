@@ -37,6 +37,7 @@ $link        = $params['link'];
 $icon_size   = $params['size'];
 $el_class    = $params['el_class'];
 $el_id      .= $params['el_id'];
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 
 $current_page           = max( 1, get_query_var( 'paged' ) );
 $params['current_page'] = $current_page;
@@ -91,7 +92,7 @@ $query = new WP_Query( apply_filters( 'builder-press/product-filter-query', $arg
 
 <?php $sc_id = uniqid( 'thim_' ); ?>
 
-<div class="bp-element bp-element-product-filter woocommerce columns-<?php echo esc_attr( $params['columns'] ); ?> <?php echo esc_attr( $params['layout'] ); ?> <?php echo esc_attr( $params['el_class'] ); ?>"
+<div class="bp-element bp-element-product-filter woocommerce <?php echo esc_attr($style_layout); ?> columns-<?php echo esc_attr( $params['columns'] ); ?> <?php echo esc_attr( $params['layout'] ); ?> <?php echo esc_attr( $params['el_class'] ); ?>"
      data-max-page="<?php echo esc_attr( $query->max_num_pages ); ?>"
      data-params='<?php echo json_encode( $params ); ?>' id="<?php echo esc_attr( $sc_id ); ?>"
 >

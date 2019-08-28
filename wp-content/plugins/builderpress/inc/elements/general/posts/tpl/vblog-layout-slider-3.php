@@ -30,11 +30,9 @@ endwhile;
 
 <div class="wrap-element">
     <div class="heading-post">
-        <h3 class="title">
-            <?php
-            echo ent2ncr($title);
-            ?>
-        </h3>
+        <?php if( $title ) {?>
+            <h3 class="title"><?php echo esc_html( $title ); ?></h3>
+        <?php }?>
 
         <div class="description">
             <?php
@@ -98,7 +96,7 @@ endwhile;
                                     <div class="item">
                                         <div class="pic">
                                             <a href="<?php echo get_the_permalink($group[$i][2]); ?>">
-                                                <?php $size = apply_filters( 'builder-press/posts/image-size', '200x150' );
+                                                <?php $size = apply_filters( 'builder-press/posts/image-size', '450x338' );
                                                 builder_press_get_attachment_image( $group[$i][2], $size, 'post' ); ?>
                                             </a>
                                         </div>
@@ -121,7 +119,7 @@ endwhile;
                                     <div class="item">
                                         <div class="pic">
                                             <a href="<?php echo get_the_permalink($group[$i][2]); ?>">
-                                                <?php $size = apply_filters( 'builder-press/posts/image-size', '200x150' );
+                                                <?php $size = apply_filters( 'builder-press/posts/image-size', '450x338' );
                                                 builder_press_get_attachment_image( $group[$i][3], $size, 'post' ); ?>
                                             </a>
                                         </div>

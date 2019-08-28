@@ -22,6 +22,7 @@ $status       = $params['status'];
 $category     = $params['category'];
 $number_items = $params['number_items'];
 $image        = $params['image'];
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 $el_class     = $params['el_class'];
 $el_id        = $params['el_id'];
 $bp_css       = $params['bp_css'];
@@ -47,10 +48,12 @@ if ( $status ) {
 
 if ( $category ) {
 	$query['tax_query'] = array(
-		'taxonomy' => 'tp_event_category',
-		'field'    => 'slug',
-		'terms'    => $category
-	);
+        array(
+            'taxonomy' => 'tp_event_category',
+            'field'    => 'slug',
+            'terms'    => $category
+        )
+    );
 }
 
 $events = new WP_Query( apply_filters( 'builder-press/list-events-query', $query ) );
@@ -80,7 +83,7 @@ if ( $events->have_posts() ) {
 			'price'      => get_post_meta( get_the_ID(), 'tp_event_price', true ),
 			'url'        => get_permalink( get_the_ID() ),
 			'image_id'   => get_post_thumbnail_id(),
-			'excerpt'    => get_the_excerpt( 18 )
+			'excerpt'    => get_the_excerpt()
 		) );
 	}
 }
@@ -88,7 +91,7 @@ if ( $events->have_posts() ) {
 // sorting list events
 ksort( $list );
 ?>
-    <div class="bp-element bp-element-list-events <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $layout ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
+    <div class="bp-element bp-element-list-events <?php echo esc_attr($style_layout); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $layout ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
 		<?php builder_press_get_template( $layout, array(
 			'params' => $params,
 			'events' => $list,

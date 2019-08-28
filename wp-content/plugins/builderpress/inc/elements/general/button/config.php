@@ -115,6 +115,17 @@ if ( ! class_exists( 'BuilderPress_Config_Button' ) ) {
                         'std'              => 'align-left',
                     ),
 
+                    array(
+                        'type'             => 'dropdown',
+                        'heading'          => __( 'Style Layout', 'builderpress' ),
+                        'param_name'       => 'style_layout',
+                        'value'            => array(
+                            __( 'Style Default', 'builderpress' )   => '',
+                        ),
+                        'std'              => '',
+                        'edit_field_class' => 'vc_col-sm-6'
+                    ),
+
                     /* Typography */
                     // Custom Button font size
                     array(

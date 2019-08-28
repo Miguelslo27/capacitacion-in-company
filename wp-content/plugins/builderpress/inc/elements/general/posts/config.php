@@ -48,11 +48,17 @@ if ( ! class_exists( 'BuilderPress_Config_Posts' ) ) {
 						'layout-list-2'   => self::$assets_url . 'images/layouts/layout-list.jpg',
 						'layout-slider'   => self::$assets_url . 'images/layouts/layout-slider.jpg',
 						'layout-grid'     => self::$assets_url . 'images/layouts/layout-grid.jpg',
-                        'vblog-layout-slider-3' => self::$assets_url . 'images/layouts/vblog-layout-slider-3.jpg',
+                        'vblog-layout-slider-3'    => self::$assets_url . 'images/layouts/vblog-layout-slider-3.jpg',
                         'vblog-layout-list-footer' => self::$assets_url . 'images/layouts/vblog-layout-list-footer.jpg',
-                        'vblog-layout-grid-1' => self::$assets_url . 'images/layouts/vblog-layout-grid-1.jpg',
-                        'vblog-layout-grid-2'     => self::$assets_url . 'images/layouts/vblog-layout-isotope.png',
+                        'vblog-layout-grid-1'      => self::$assets_url . 'images/layouts/vblog-layout-grid-1.jpg',
+                        'vblog-layout-grid-2'      => self::$assets_url . 'images/layouts/vblog-layout-isotope.png',
                         'vblog-layout-list-sidebar-2'     => self::$assets_url . 'images/layouts/vblog-layout-list-sidebar-2.png',
+                        'kindergarten-layout-widget-2'    => self::$assets_url . 'images/layouts/kindergarten-layout-widget-2.jpg',
+                        'kindergarten-layout-grid-1'      => self::$assets_url . 'images/layouts/kindergarten-layout-grid-1.jpg',
+                        'kindergarten-layout-grid-2'      => self::$assets_url . 'images/layouts/kindergarten-layout-grid-2.jpg',
+                        'marketing-layout-grid-1'         => self::$assets_url . 'images/layouts/marketing-layout-grid-1.jpg',
+                        'marketing-layout-grid-2'         => self::$assets_url . 'images/layouts/marketing-layout-grid-2.jpg',
+                        'coach-life-layout-list-1'         => self::$assets_url . 'images/layouts/coach-life-layout-list-1.png',
 					),
 					'std'         => 'layout-list-1',
 					'description' => __( 'Select type of style.', 'builderpress' )
@@ -78,7 +84,13 @@ if ( ! class_exists( 'BuilderPress_Config_Posts' ) ) {
                     'type'        => 'vc_link',
                     'heading'     => esc_html__( 'Link', 'builderpress' ),
                     'param_name'  => 'post_link',
-//                    'std'         => __( 'See all new', 'builderpress' ),
+                    'dependency' => array(
+                        'element' => 'layout',
+                        'value'   => array(
+                            'layout-slider',
+                            'marketing-layout-grid-2',
+                        ),
+                    ),
                 ),
 				array(
 					'type'             => 'dropdown',
@@ -180,20 +192,31 @@ if ( ! class_exists( 'BuilderPress_Config_Posts' ) ) {
                     ),
                     'edit_field_class' => 'vc_col-xs-4'
                 ),
-
+                array(
+                    'type'             => 'checkbox',
+                    'heading'          => esc_html__( 'Show Image', 'builderpress' ),
+                    'param_name'       => 'show_image',
+                    'std'              => false,
+                    'dependency' => array(
+                        'element' => 'layout',
+                        'value'   => array(
+                            'coach-life-layout-list-1',
+                        ),
+                    ),
+                    'edit_field_class' => 'vc_col-xs-4'
+                ),
                 array(
                     'type' => 'dropdown',
                     'heading' => __( 'Sort',  'builderpress' ),
                     'param_name' => 'sort_post',
                     'value' => array(
+                        __( 'Date',    'builderpress'  ) => 'date',
                         __( 'Random',  'builderpress'  ) => 'rand',
                         __( 'Title',   'builderpress'  ) => 'title',
-                        __( 'Date',    'builderpress'  ) => 'date',
                     ),
                     'description' => __( 'Choose Sort', 'builderpress' ),
                     'edit_field_class' => 'vc_col-xs-6'
                 ),
-
                 array(
                     'type' => 'dropdown',
                     'heading' => __( 'Order By',  'builderpress' ),
@@ -205,8 +228,16 @@ if ( ! class_exists( 'BuilderPress_Config_Posts' ) ) {
                     'description' => __( 'Choose Order By', 'builderpress' ),
                     'edit_field_class' => 'vc_col-xs-4'
                 ),
-
-
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
                 array(
                     'type' => 'css_editor',
                     'heading' => __( 'CSS Shortcode', 'js_composer' ),

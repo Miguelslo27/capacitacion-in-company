@@ -50,11 +50,12 @@ if ( ! class_exists( 'BuilderPress_Config_Gallery_Images' ) ) {
                         'layout-4'   => self::$assets_url . 'images/layout-4.jpg',
                         'layout-5'   => self::$assets_url . 'images/layout-3.jpg',
                         'vblog-layout-sidebar'   => self::$assets_url . 'images/vblog-layout-sidebar.png',
+                        'kindergarten-layout-1'   => self::$assets_url . 'images/kindergarten-layout-1.jpg',
+                        'kindergarten-layout-2'   => self::$assets_url . 'images/marketing-layout-grid-1.jpg',
                     ),
                     'std'         => 'layout-1',
                     'description' => __( 'Select type of style.', 'builderpress' )
                 ),
-
                 array(
                     'type'        => 'textfield',
                     'heading'     => __( 'Title', 'builderpress' ),
@@ -80,6 +81,16 @@ if ( ! class_exists( 'BuilderPress_Config_Gallery_Images' ) ) {
                     'description' => esc_html__('Enter image sizes defined by theme). Alternatively enter size in pixels (Example: "607x295,294x295" (Width x Height)).','pizza-hut'),
                     'admin_label' => true,
                     'std'         => '607x295,294x295',
+                ),
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
                 ),
             );
 		}

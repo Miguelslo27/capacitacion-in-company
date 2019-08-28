@@ -27,6 +27,10 @@ defined( 'ABSPATH' ) || exit;
  */
 ?>
 
+<?php if( isset($title) ) {?>
+    <h3 class="title"><?php echo esc_html( $title ); ?></h3>
+<?php }?>
+
 <div class="wrap-element">
     <div class="grid-posts grid-isotope">
         <div class="grid-sizer"></div>

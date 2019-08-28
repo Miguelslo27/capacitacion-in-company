@@ -29,12 +29,16 @@ foreach ( $errors as $error => $message ) {
 
 <div class="login-form-wrap">
     <h4 class="subtitle"><?php esc_html_e( 'Change Password', 'builderpress' ); ?></h4>
+    <div class="line"></div>
     <h2 class="title"><?php esc_html_e( 'Change password your account', 'builderpress' ); ?></h2>
 
 	<?php
 	$errors = new WP_Error();
 	$user   = check_password_reset_key( $_GET['key'], $_GET['login'] );
-
+	$rp_cookie       = 'wp-resetpass-' . COOKIEHASH;
+	list( $rp_path ) = explode( '?', wp_unslash( $_SERVER['REQUEST_URI'] ) );
+	$value = sprintf( '%s:%s', wp_unslash( $_GET['login'] ), wp_unslash( $_GET['key'] ) );
+	setcookie( $rp_cookie, $value, 0, $rp_path, COOKIE_DOMAIN, is_ssl(), true );
 	if ( is_wp_error( $user ) ) {
 		if ( $user->get_error_code() === 'expired_key' ) {
 			$errors->add( 'expiredkey', esc_html__( 'Sorry, that key has expired. Please try again.', 'builderpress' ) );
@@ -50,10 +54,10 @@ foreach ( $errors as $error => $message ) {
 		if ( function_exists( 'wp_nonce_field' ) ) {
 			wp_nonce_field( 'rs_user_reset_password_action', 'rs_user_reset_password_nonce' );
 		} ?>
-
+		<input type="hidden" id="user_login" value="<?php echo isset( $_GET['login'] ) ? esc_attr( $_GET['login'] ) : ''; ?>" autocomplete="off">
         <input type="hidden" id="rp_user" name="rp_user"
                value="<?php echo isset( $_GET['login'] ) ? esc_attr( $_GET['login'] ) : ''; ?>"/>
-        <input type="hidden" id="user_key" name="user_key"
+        <input type="hidden" id="user_key" name="rp_key"
                value="<?php echo isset( $_GET['key'] ) ? esc_attr( $_GET['key'] ) : ''; ?>"/>
 
         <p>

@@ -25,7 +25,7 @@ if ( ! class_exists( 'BuilderPress_Config_Image_Box' ) ) {
 		 */
 		public function __construct() {
 			// info
-			self::$base = 'image-box';
+                self::$base = 'image-box';
 			self::$name = __( 'Image box', 'builderpress' );
 			self::$desc = __( 'Display image box', 'builderpress' );
 
@@ -49,6 +49,10 @@ if ( ! class_exists( 'BuilderPress_Config_Image_Box' ) ) {
                         'vblog-layout-2' => self::$assets_url . 'images/layouts/vblog-layout-2.png',
                         'vblog-layout-4' => self::$assets_url . 'images/layouts/vblog-layout-4.png',
                         'kindergarten-layout-1' => self::$assets_url . 'images/layouts/kindergarten-layout-1.png',
+                        'teeballon-layout-1' => self::$assets_url . 'images/layouts/teeballon-layout-1.png',
+                        'marketing-layout-1' => self::$assets_url . 'images/layouts/marketing-layout-1.png',
+                        'coach-life-layout-1' => self::$assets_url . 'images/layouts/coach-life-layout-1.png',
+                        'coach-life-layout-2' => self::$assets_url . 'images/layouts/coach-life-layout-2.png',
                     ),
                     'std'        => 'layout-default'
                 ),
@@ -62,23 +66,40 @@ if ( ! class_exists( 'BuilderPress_Config_Image_Box' ) ) {
                     'type'             => 'attach_image',
                     'heading'          => esc_html__( 'Icon', 'builderpress' ),
                     'param_name'       => 'img-icon',
-                    'edit_field_class' => 'vc_col-xs-6'
+                    'dependency'       => array(
+                        'element' => 'layout',
+                        'value'   => array( 'layout-default', 'layout-gradient', 'marketing-layout-1' )
+                    ),
+                    'edit_field_class' => 'vc_col-xs-6',
+
                 ),
                 array(
                     'type'       => 'textfield',
                     'heading'    => esc_html__( 'Title', 'builderpress' ),
                     'param_name' => 'title',
+                    'dependency'       => array(
+                        'element' => 'layout',
+                        'value'   => array( 'layout-default', 'layout-gradient', 'vblog-layout-2', 'vblog-layout-4','kindergarten-layout-1', 'teeballon-layout-1', 'marketing-layout-1', 'coach-life-layout-2'),
+                    ),
                 ),
                 array(
                     'type'       => 'textfield',
                     'heading'    => __( 'Description', 'builderpress' ),
                     'param_name' => 'description',
+                    'dependency'       => array(
+                        'element' => 'layout',
+                        'value'   => array( 'layout-default', 'layout-gradient', 'vblog-layout-2', 'vblog-layout-4','kindergarten-layout-1', 'teeballon-layout-1', 'marketing-layout-1', 'coach-life-layout-2'),
+                    ),
                 ),
                 // link
                 array(
                     'type'       => 'vc_link',
                     'heading'    => esc_attr__( 'Link', 'builderpress' ),
-                    'param_name' => 'box_link'
+                    'param_name' => 'box_link',
+                    'dependency'       => array(
+                        'element' => 'layout',
+                        'value'   => array( 'layout-default', 'layout-gradient', 'vblog-layout-2', 'vblog-layout-4','kindergarten-layout-1', 'teeballon-layout-1', 'marketing-layout-1'),
+                    ),
                 ),
                 // Background color
                 array(
@@ -107,7 +128,7 @@ if ( ! class_exists( 'BuilderPress_Config_Image_Box' ) ) {
                     'description'      => esc_html__( 'Select Image alignment.', 'builderpress' ),
                     'dependency'       => array(
                         'element' => 'layout',
-                        'value'   => array( 'layout-default' ),
+                        'value'   => array( 'layout-default', 'marketing-layout-1'),
                     ),
                     'std'              => 'left'
                 ),
@@ -125,6 +146,16 @@ if ( ! class_exists( 'BuilderPress_Config_Image_Box' ) ) {
                         'value'   => array( 'layout-default' ),
                     ),
                     'std'        => 'demo-1'
+                ),
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
                 ),
 
                 array(

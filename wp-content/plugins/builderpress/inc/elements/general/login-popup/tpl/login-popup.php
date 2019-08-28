@@ -23,9 +23,10 @@ $el_class = $params['el_class'];
 $el_id    = $params['el_id'];
 $bp_css   = $params['bp_css'];
 $show_icon = ( isset( $params['show_icon'] ) && $params['show_icon'] != '' ) ? ' show-icon' : '';
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 ?>
 
-<div class="bp-element bp-element-login-popup <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?>  <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $layout ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
+<div class="bp-element bp-element-login-popup <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?>  <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $layout ); ?> <?php echo esc_attr($style_layout); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
     <div class="login-links<?php echo $show_icon;?>">
 
 		<?php builder_press_get_template( $layout, array( 'params' => $params, ), $template_path ); ?>

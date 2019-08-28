@@ -44,10 +44,20 @@ if ( ! class_exists( 'BuilderPress_Config_Features' ) ) {
 					'param_name' => 'layout',
 					'options'    => array(
 						'layout-1' => self::$assets_url . 'images/layouts/layout-1.jpg',
-						'layout-2' => self::$assets_url . 'images/layouts/layout-2.jpg'
+						'layout-2' => self::$assets_url . 'images/layouts/layout-2.jpg',
+                        'marketing-layout-list-2' => self::$assets_url . 'images/layouts/marketing-layout-list-2.png',
 					),
 					'std'        => 'layout-1'
 				),
+                array(
+                    'type'       => 'textfield',
+                    'heading'    => __( 'Title', 'builderpress' ),
+                    'param_name' => 'title',
+                    'dependency' => array(
+                        'element' => 'layout',
+                        'value'   => array( 'marketing-layout-list-2' )
+                    ),
+                ),
 				array(
 					'type'       => 'param_group',
 					'value'      => '',
@@ -59,7 +69,6 @@ if ( ! class_exists( 'BuilderPress_Config_Features' ) ) {
 								'type'       => 'textfield',
 								'heading'    => __( 'Name', 'builderpress' ),
 								'param_name' => 'name',
-								'std'        => __( 'Customer Support', 'builderpress' )
 							),
 							array(
 								'type'       => 'textarea',
@@ -74,6 +83,16 @@ if ( ! class_exists( 'BuilderPress_Config_Features' ) ) {
 						)
 					)
 				),
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
 				// Name size
 				array(
 					'type'        => 'dropdown',
@@ -129,6 +148,16 @@ if ( ! class_exists( 'BuilderPress_Config_Features' ) ) {
 					'edit_field_class' => 'vc_col-sm-6',
 					'group'            => esc_html__( 'Typography', 'builderpress' )
 				),
+
+                array(
+                    'type'             => 'number',
+                    'admin_label'      => false,
+                    'heading'          => esc_html__( 'Icon font size', 'builderpress' ),
+                    'param_name'       => 'icon_font_size',
+                    'description'      => esc_html__( 'Custom icon font size. Unit is pixel', 'builderpress' ),
+                    'std'              => '',
+                    'group'            => esc_html__( 'Typography', 'builderpress' )
+                ),
 
 				// Icon color
 				array(
@@ -203,8 +232,22 @@ if ( ! class_exists( 'BuilderPress_Config_Features' ) ) {
                     'heading' => __( 'CSS Shortcode', 'js_composer' ),
                     'param_name' => 'bp_css',
                     'group' => __( 'Design Options', 'js_composer' ),
-                )
-			);
+                ),
+                array(
+                    'type' => 'css_editor',
+                    'heading' => __( 'CSS on Tablet', 'js_composer' ),
+                    'param_name' => 'bp_css_tablet',
+                    'group' => __( 'Design Options', 'js_composer' ),
+                ),
+
+                array(
+                    'type' => 'css_editor',
+                    'heading' => __( 'CSS on Mobile', 'js_composer' ),
+                    'param_name' => 'bp_css_mobile',
+                    'group' => __( 'Design Options', 'js_composer' ),
+                ),
+
+            );
 		}
 
 		/**

@@ -48,6 +48,7 @@ if ( ! class_exists( 'BuilderPress_Config_Accordion' ) ) {
                         'layout-1'   => self::$assets_url . 'images/layouts/layout-1.png',
                         'layout-3'   => self::$assets_url . 'images/layouts/layout-3.png',
                         'layout-tab' => self::$assets_url . 'images/layouts/layout-tab.png',
+                        'kindergarten-layout-1' => self::$assets_url . 'images/layouts/kindergarten-layout-1.jpg',
                     ),
                     'std'         => 'layout-1',
                     'description' => __( 'Select type of style.', 'builderpress' )
@@ -57,23 +58,53 @@ if ( ! class_exists( 'BuilderPress_Config_Accordion' ) ) {
 					'type'       => 'param_group',
 					'heading'    => __( 'Accordion', 'builderpress' ),
 					'param_name' => 'accordion',
-					'params'     => array(
+					'params'     => array_merge(
+                        $this->_icon_options(),
 						array(
-							'type'       => 'textfield',
-							'heading'    => esc_html__( 'Title', 'builderpress' ),
-							'param_name' => 'title'
-						),
-						array(
-							'type'       => 'textarea',
-							'heading'    => esc_html__( 'Content', 'builderpress' ),
-							'param_name' => 'content'
-						)
+                            array(
+                                'type'       => 'textfield',
+                                'heading'    => esc_html__( 'Title', 'builderpress' ),
+                                'param_name' => 'title'
+                            ),
+                            array(
+                                'type'       => 'textarea',
+                                'heading'    => esc_html__( 'Content', 'builderpress' ),
+                                'param_name' => 'content'
+                            ),
+                            array(
+                                'type'             => 'checkbox',
+                                'heading'          => esc_html__( 'Hidden icon', 'builderpress' ),
+                                'description'      => __( 'Hidden icon', 'builderpress' ),
+                                'param_name'       => 'hidden_icon',
+                                'std'              => false,
+                                'admin_label'      => true,
+                                'edit_field_class' => 'vc_col-xs-6'
+                            ),
+                            array(
+                                'type'       => 'colorpicker',
+                                'heading'    => esc_html__('Color Border and Icon', 'builderpress'),
+                                'param_name' => 'color',
+                                'description'=> __('Display color of border and color of icon'),
+                                'edit_field_class' => 'vc_col-xs-6'
+                            )
+                        )
 					),
                     'dependency' => array(
                         'element' => 'layout',
-                        'value'   => array('layout-1', 'layout-3'),
+                        'value'   => array('layout-1', 'layout-3', 'kindergarten-layout-1'),
                     ),
 				),
+
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
 
                 array(
                     'type'       => 'param_group',
@@ -85,7 +116,6 @@ if ( ! class_exists( 'BuilderPress_Config_Accordion' ) ) {
                             'heading'    => esc_html__( 'Tab Title', 'builderpress' ),
                             'param_name' => 'tab_title'
                         ),
-
                         array(
                             'type'       => 'param_group',
                             'heading'    => __( 'Accordion', 'builderpress' ),
@@ -103,6 +133,7 @@ if ( ! class_exists( 'BuilderPress_Config_Accordion' ) ) {
                                 )
                             )
                         ),
+
                     ),
                     'dependency' => array(
                         'element' => 'layout',

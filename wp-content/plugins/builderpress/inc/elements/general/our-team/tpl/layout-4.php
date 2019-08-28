@@ -56,7 +56,7 @@ defined( 'ABSPATH' ) || exit;
                     <?php } ?>
 
                     <!--                        contact-->
-                    <?php if ( ! empty( $member['contacts'] ) ) { ?>
+
                         <div class="contact">
                             <?php if ( ! empty( $member['contacts'] ) ) {
                                 $contacts = $member['contacts'];
@@ -100,7 +100,7 @@ defined( 'ABSPATH' ) || exit;
                             } ?>
 
                         </div>
-                    <?php } ?>
+
 
                     <?php if( ! empty($member['description'] ) ){?>
                         <div class="description">

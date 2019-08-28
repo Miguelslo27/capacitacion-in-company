@@ -46,6 +46,8 @@ if ( ! class_exists( 'BuilderPress_Config_Counter_Box' ) ) {
                     'options'    => array(
                         'layout-1' => self::$assets_url . 'images/layout-1.png',
                         'layout-2' => self::$assets_url . 'images/layout-2.png',
+                        'kindergarten-layout-1' => self::$assets_url . 'images/kindergarten-layout-1.jpg',
+                        'kindergarten-layout-2' => self::$assets_url . 'images/kindergarten-layout-2.jpg',
                     ),
                     'std'        => 'layout-1'
                 ),
@@ -53,7 +55,7 @@ if ( ! class_exists( 'BuilderPress_Config_Counter_Box' ) ) {
 					'type'             => 'number',
 					'heading'          => __( 'Quantity', 'builderpress' ),
 					'param_name'       => 'number',
-					'std'              => '1000',
+					'std'              => '',
 					'description'      => __( 'Choose number', 'builderpress' ),
 					'edit_field_class' => 'vc_col-sm-4'
 				),
@@ -100,6 +102,17 @@ if ( ! class_exists( 'BuilderPress_Config_Counter_Box' ) ) {
                     ),
                     'description'      => esc_html__( 'Select style.', 'builderpress' ),
                     'std'              => 'vertical'
+                ),
+
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
                 ),
 
                 /* Icon Group */
@@ -193,7 +206,7 @@ if ( ! class_exists( 'BuilderPress_Config_Counter_Box' ) ) {
 					'admin_label'      => false,
 					'heading'          => esc_html__( 'Title font size', 'builderpress' ),
 					'param_name'       => 'title_font_size',
-					'std'              => '14',
+					'std'              => '',
 					'description'      => esc_html__( 'Custom title font size. Unit is pixel', 'builderpress' ),
 					'edit_field_class' => 'vc_col-sm-6',
 					'group'            => esc_html__( 'Typography', 'builderpress' )
@@ -216,7 +229,7 @@ if ( ! class_exists( 'BuilderPress_Config_Counter_Box' ) ) {
 					'admin_label'      => false,
 					'heading'          => esc_html__( 'Number font size', 'builderpress' ),
 					'param_name'       => 'number_font_size',
-					'std'              => '14',
+					'std'              => '',
 					'description'      => esc_html__( 'Custom title font size. Unit is pixel', 'builderpress' ),
 					'edit_field_class' => 'vc_col-sm-6',
 					'group'            => esc_html__( 'Typography', 'builderpress' )
@@ -251,7 +264,7 @@ if ( ! class_exists( 'BuilderPress_Config_Counter_Box' ) ) {
 					'heading'          => esc_html__( 'Description font size', 'builderpress' ),
 					'param_name'       => 'desc_font_size',
 					'description'      => esc_html__( 'Custom description font size. Unit is pixel', 'builderpress' ),
-					'std'              => '14',
+					'std'              => '',
 					'edit_field_class' => 'vc_col-sm-6',
 					'group'            => esc_html__( 'Typography', 'builderpress' )
 				),
@@ -274,7 +287,7 @@ if ( ! class_exists( 'BuilderPress_Config_Counter_Box' ) ) {
                     'heading'          => esc_html__( 'Icon font size', 'builderpress' ),
                     'param_name'       => 'icon_font_size',
                     'description'      => esc_html__( 'Custom icon font size. Unit is pixel', 'builderpress' ),
-                    'std'              => '14',
+                    'std'              => '',
                     'edit_field_class' => 'vc_col-sm-6',
                     'group'            => esc_html__( 'Typography', 'builderpress' )
                 ),
@@ -285,7 +298,7 @@ if ( ! class_exists( 'BuilderPress_Config_Counter_Box' ) ) {
 					'type'             => 'colorpicker',
 					'heading'          => __( 'Color Number', 'builderpress' ),
 					'param_name'       => 'color_number',
-					'std'              => '#999',
+					'std'              => '',
 					'edit_field_class' => 'vc_col-sm-4',
 					'group'            => esc_html__( 'Color', 'builderpress' )
 				),
@@ -294,7 +307,7 @@ if ( ! class_exists( 'BuilderPress_Config_Counter_Box' ) ) {
 					'type'             => 'colorpicker',
 					'heading'          => __( 'Color Title', 'builderpress' ),
 					'param_name'       => 'color_title',
-					'std'              => '#999',
+					'std'              => '',
 					'edit_field_class' => 'vc_col-sm-4',
 					'group'            => esc_html__( 'Color', 'builderpress' )
 				),
@@ -302,7 +315,7 @@ if ( ! class_exists( 'BuilderPress_Config_Counter_Box' ) ) {
                     'type'             => 'colorpicker',
                     'heading'          => __( 'Color Icon', 'builderpress' ),
                     'param_name'       => 'color_icon',
-                    'std'              => '#999',
+                    'std'              => '',
                     'edit_field_class' => 'vc_col-sm-4',
                     'group'            => esc_html__( 'Color', 'builderpress' )
                 ),
@@ -311,11 +324,25 @@ if ( ! class_exists( 'BuilderPress_Config_Counter_Box' ) ) {
 					'type'             => 'colorpicker',
 					'heading'          => __( 'Color Description', 'builderpress' ),
 					'param_name'       => 'desc_color',
-					'std'              => '#999',
+					'std'              => '',
 					'edit_field_class' => 'vc_col-sm-4',
 					'group'            => esc_html__( 'Color', 'builderpress' )
 				),
-
+                // Line Color
+                array(
+                    'type'             => 'colorpicker',
+                    'heading'          => __( 'Color Line', 'builderpress' ),
+                    'param_name'       => 'line_color',
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-4',
+                    'group'            => esc_html__( 'Color', 'builderpress' ),
+                    'dependency' => array(
+                        'element' => 'layout',
+                        'value'   => array(
+                            'kindergarten-layout-1',
+                        )
+                    ),
+                ),
 				/* Spacing Group */
                 array(
                     'type'        => 'dropdown',
@@ -336,7 +363,7 @@ if ( ! class_exists( 'BuilderPress_Config_Counter_Box' ) ) {
 					'type'        => 'textfield',
 					'heading'     => __( 'Title Margin', 'builderpress' ),
 					'param_name'  => 'title_margin',
-					'std'         => '0px',
+					'std'         => '',
 					'admin_label' => false,
 					'description' => esc_html__( '0px 0px 0px 0px', 'builderpress' ),
                     'group'       => esc_html__( 'Spacing & Align', 'builderpress' )
@@ -346,7 +373,7 @@ if ( ! class_exists( 'BuilderPress_Config_Counter_Box' ) ) {
 					'type'        => 'textfield',
 					'heading'     => __( 'Number Margin', 'builderpress' ),
 					'param_name'  => 'number_margin',
-					'std'         => '0px',
+					'std'         => '',
 					'admin_label' => false,
 					'description' => esc_html__( '0px 0px 0px 0px', 'builderpress' ),
                     'group'       => esc_html__( 'Spacing & Align', 'builderpress' )
@@ -356,7 +383,7 @@ if ( ! class_exists( 'BuilderPress_Config_Counter_Box' ) ) {
                     'type'        => 'textfield',
                     'heading'     => __( 'Icon Margin', 'builderpress' ),
                     'param_name'  => 'icon_margin',
-                    'std'         => '0px',
+                    'std'         => '',
                     'admin_label' => false,
                     'description' => esc_html__( '0px 0px 0px 0px', 'builderpress' ),
                     'group'       => esc_html__( 'Spacing & Align', 'builderpress' )
@@ -366,7 +393,7 @@ if ( ! class_exists( 'BuilderPress_Config_Counter_Box' ) ) {
 					'type'        => 'textfield',
 					'heading'     => __( 'Description Margin', 'builderpress' ),
 					'param_name'  => 'desc_margin',
-					'std'         => '0px',
+					'std'         => '',
 					'admin_label' => false,
 					'description' => esc_html__( '0px 0px 0px 0px', 'builderpress' ),
 					'group'       => esc_html__( 'Spacing & Align', 'builderpress' )

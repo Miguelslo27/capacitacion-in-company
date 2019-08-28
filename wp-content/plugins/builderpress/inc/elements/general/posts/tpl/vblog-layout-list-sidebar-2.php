@@ -18,11 +18,9 @@ defined( 'ABSPATH' ) || exit;
 ?>
 
 <div class="wrap-element">
-    <h3 class="title-post">
-        <?php
-            echo ent2ncr($title);
-        ?>
-    </h3>
+    <?php if( isset($title) ) {?>
+        <h3 class="title-post"><?php echo esc_html( $title ); ?></h3>
+    <?php }?>
 
     <div class="list-posts">
         <?php while ( $query->have_posts() ) : $query->the_post(); ?>

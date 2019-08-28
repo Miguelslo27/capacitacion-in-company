@@ -36,6 +36,19 @@ if ( ! class_exists( 'BuilderPress_Config_Course_Collections' ) ) {
 		 * @return array
 		 */
 		public function get_options() {
+			// get collections
+			$thim_collections     = get_posts( array(
+				'posts_per_page' => - 1,
+				'post_type'      => 'lp_collection'
+			) );
+			$thim_collections_arr = array();
+			foreach ( $thim_collections as $collection ) {
+				$thim_collections_arr[] = array(
+					'value' => $collection->ID,
+					'label' => $collection->post_title,
+				);
+			}
+
 			// options
 			return array_merge( array(
 
@@ -47,6 +60,7 @@ if ( ! class_exists( 'BuilderPress_Config_Course_Collections' ) ) {
                         'layout-slider'   => self::$assets_url . 'images/layouts/layout-slider-1.jpg',
                         'layout-slider-2' => self::$assets_url . 'images/layouts/layout-slider-2.jpg',
                         'layout-grid'     => self::$assets_url . 'images/layouts/layout-grid.png',
+                        'stocklab-layout-slider-3' => self::$assets_url . 'images/layouts/stocklab-layout-slider-3.png',
                     ),
                     'std'         => 'layout-slider',
                     'description' => __( 'Select type of style.', 'builderpress' )
@@ -64,12 +78,59 @@ if ( ! class_exists( 'BuilderPress_Config_Course_Collections' ) ) {
                     'admin_label' => true
                 ),
 				array(
+					'type'        => 'dropdown',
+					'heading'     => esc_html__( 'Type Get Collections', 'builderpress' ),
+					'param_name'  => 'type_get',
+					'save_always' => true,
+					'value'       => array(
+						esc_html__( 'default', 'builderpress' ) => 'default',
+						esc_html__( 'Custom', 'builderpress' )  => 'custom',
+					),
+					'std'         => 'default',
+				),
+
+				array(
+					'type'        => 'autocomplete',
+					'heading'     => esc_html__( 'Input Collection Name', 'builderpress' ),
+					'param_name'  => 'collections_id',
+					'admin_label' => true,
+					'description' => __( 'Add Post by title.', 'builderpress' ),
+					'settings'    => array(
+						'multiple' => true,
+						'sortable' => true,
+						'groups'   => true,
+						'values'   => $thim_collections_arr
+					),
+					'dependency'  => array(
+						'element' => 'type_get',
+						'value'   => array(
+							'custom',
+						),
+					),
+				),
+				array(
 					'type'       => 'number',
 					'heading'    => esc_html__( 'Number Items', 'builderpress' ),
 					'param_name' => 'number_items',
 					'value'      => 8,
-                    'edit_field_class' => 'vc_col-sm-6'
+                    'edit_field_class' => 'vc_col-sm-6',
+					'dependency'  => array(
+						'element' => 'type_get',
+						'value'   => array(
+							'default',
+						),
+					),
 				),
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
                 array(
                     'type' => 'css_editor',
                     'heading' => __( 'CSS Shortcode', 'js_composer' ),

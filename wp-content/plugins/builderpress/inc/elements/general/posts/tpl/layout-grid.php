@@ -27,6 +27,10 @@ defined( 'ABSPATH' ) || exit;
  */
 ?>
 
+<?php if( isset($title) ) {?>
+    <h3 class="title"><?php echo esc_html( $title ); ?></h3>
+<?php }?>
+
 <div class="grid-posts row">
 	<?php while ( $query->have_posts() ) : $query->the_post(); ?>
         <div class="item col-sm-4">

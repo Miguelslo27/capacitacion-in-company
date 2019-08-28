@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
 global $post;
 ?>
 <div class="wrap-element">
-    <div class="slide-products js-call-slick-colss" data-numofshow="4" data-numofscroll="4" data-loopslide="1" data-autoscroll="0" data-speedauto="6000" data-responsive="[4, 4], [4, 4], [3, 3], [2, 2], [1, 1]">
+    <div class="slide-products js-call-slick-col" data-numofslide="4" data-numofscroll="4" data-loopslide="1" data-autoscroll="0" data-speedauto="6000" data-respon="[4, 4], [4, 4], [3, 3], [2, 2], [1, 1]">
         <?php if ( $products->have_posts() ) { ?>
             <div class="slide-slick">
                 <?php while ( $products->have_posts() ) :

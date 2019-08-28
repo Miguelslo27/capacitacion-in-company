@@ -27,9 +27,7 @@ defined( 'ABSPATH' ) || exit;
 		$description = isset( $feature['description'] ) ? $feature['description'] : '';
 		$link        = isset( $feature['link'] ) ? $feature['link'] : array();
 		?>
-		<?php if ( $name ) { ?>
             <div class="item">
-
 				<?php if ( $icon_type == 'icon_upload' ) {
 					$image = $feature['icon_upload'];
 					if ( isset( $image ) ) { ?>
@@ -39,35 +37,32 @@ defined( 'ABSPATH' ) || exit;
 					<?php }
 				} else if ( $icon_type == 'icon_ionicon' && $feature['icon_ionicon'] ) { ?>
                     <i class="media-icon ionicons <?php echo esc_attr( $feature['icon_ionicon'] ); ?>"
-                       aria-hidden="true"></i>
+                       aria-hidden="true" <?php echo ent2ncr( $icon_css ); ?>></i>
 				<?php } else if ( $icon_type == 'icon_fontawesome' && $feature['icon_fontawesome'] ) { ?>
                     <i class="media-icon <?php echo esc_attr( $feature['icon_fontawesome'] ); ?>"
-                       aria-hidden="true"></i>
+                       aria-hidden="true" <?php echo ent2ncr( $icon_css ); ?>></i>
 				<?php } ?>
 
-				<?php if ( $name || $description ) { ?>
                     <div class="content">
-
 						<?php if ( $name ) { ?>
-                            <h4 class="title">
+                            <<?php echo $title_tag ?> class="title" <?php echo ent2ncr($title_css);  ?>>
 								<?php if ( $link && $link['url'] ) { ?>
-                                <a href="<?php echo esc_url( $link['url'] ); ?>"
-									<?php echo bp_template_build_link( $link ); ?>>
-									<?php } ?>
-									<?php echo esc_html( $name ); ?>
-									<?php if ( $link ) { ?>
-                                </a>
-							<?php } ?>
-                            </h4>
+                                    <a href="<?php echo esc_url( $link['url'] ); ?>"
+                                        <?php echo bp_template_build_link( $link ); ?>>
+                                        <?php } ?>
+                                        <?php echo esc_html( $name ); ?>
+                                        <?php if ( $link ) { ?>
+                                    </a>
+							    <?php } ?>
+                            </<?php echo $title_tag  ?>>
+
 						<?php } ?>
 
 						<?php if ( $description ) { ?>
-                            <div class="description"><?php echo esc_html( $description ); ?></div>
+                            <div class="description" <?php echo ent2ncr($des_css); ?> ><?php echo esc_html( $description ); ?></div>
 						<?php }
 						?>
                     </div>
-				<?php } ?>
             </div>
-		<?php } ?>
 	<?php } ?>
 </div>

@@ -1,13 +1,17 @@
 .bp-element-steps.layout-1 .nav {
   margin: 0 0 60px; }
-  .bp-element-steps.layout-1 .nav .nav-item {
+  .bp-element-steps.layout-1 .nav gulp
+.nav-item {
     position: relative;
     margin-right: 94px; }
-    .bp-element-steps.layout-1 .nav .nav-item:last-child {
+    .bp-element-steps.layout-1 .nav gulp
+.nav-item:last-child {
       margin-right: 0; }
-      .bp-element-steps.layout-1 .nav .nav-item:last-child:after {
+      .bp-element-steps.layout-1 .nav gulp
+.nav-item:last-child:after {
         display: none; }
-    .bp-element-steps.layout-1 .nav .nav-item:after {
+    .bp-element-steps.layout-1 .nav gulp
+.nav-item:after {
       width: 58px;
       height: 8px;
       background-image: radial-gradient(circle 5px, rgba(102, 102, 102, 0.7) 12%, transparent 16%);
@@ -17,7 +21,8 @@
       top: 30px;
       border-bottom: none;
       position: absolute; }
-    .bp-element-steps.layout-1 .nav .nav-item .nav-link {
+    .bp-element-steps.layout-1 .nav gulp
+.nav-item .nav-link {
       width: 64px;
       height: 64px;
       color: #d6161c;
@@ -31,14 +36,17 @@
       flex-direction: column;
       text-align: center;
       line-height: 120%; }
-      .bp-element-steps.layout-1 .nav .nav-item .nav-link .text {
+      .bp-element-steps.layout-1 .nav gulp
+.nav-item .nav-link .text {
         display: block;
         font-size: 12px;
         letter-spacing: .2px;
         font-weight: 400;
         margin-top: -1px;
         line-height: normal; }
-      .bp-element-steps.layout-1 .nav .nav-item .nav-link.active, .bp-element-steps.layout-1 .nav .nav-item .nav-link:hover {
+      .bp-element-steps.layout-1 .nav gulp
+.nav-item .nav-link.active, .bp-element-steps.layout-1 .nav gulp
+.nav-item .nav-link:hover {
         background-color: #d6161c;
         color: #fff;
         box-shadow: 5.7px 8.2px 20px 0 rgba(0, 0, 0, 0.2); }

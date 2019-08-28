@@ -24,7 +24,9 @@ defined( 'ABSPATH' ) || exit;
  */
 ?>
 
-<h3 class="title"><?php echo esc_html( $title ); ?></h3>
+<?php if( isset($title) ) {?>
+    <h3 class="title"><?php echo esc_html( $title ); ?></h3>
+<?php }?>
 
 <ul class="list-post">
 	<?php while ( $query->have_posts() ) : $query->the_post(); ?>

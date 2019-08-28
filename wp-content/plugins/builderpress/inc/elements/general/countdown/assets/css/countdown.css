@@ -46,7 +46,10 @@
 .bp-element-countdown.kindergarten-layout-1 .wrap-element .tp_event_counter {
   background-color: transparent;
   border: none;
-  padding: 0; }
+  padding: 0;
+  max-width: 660px;
+  margin-right: auto;
+  margin-left: auto; }
   .bp-element-countdown.kindergarten-layout-1 .wrap-element .tp_event_counter .countdown-row {
     display: flex;
     flex-wrap: wrap;
@@ -87,3 +90,7 @@
         font-size: 16px;
         line-height: 1;
         color: #fff; }
+
+@media (max-width: 991px) {
+  .bp-element-countdown.kindergarten-layout-1 .wrap-element .tp_event_counter .countdown-row {
+    margin: 0; } }

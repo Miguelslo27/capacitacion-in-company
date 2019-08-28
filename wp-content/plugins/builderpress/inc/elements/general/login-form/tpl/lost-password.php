@@ -19,15 +19,11 @@ $errors = apply_filters( 'builder-press/login-form/lost-password-errors', array(
 	'empty'          => esc_html__( 'Please enter a username or email!', 'builderpress' ),
 	'user_not_exist' => esc_html__( 'The user does not exist. Please try again!', 'builderpress' )
 ) );
-
-foreach ( $errors as $error => $message ) {
-	if ( ! empty( $_GET[ $error ] ) ) { ?>
-        <p class="message message-error"><?php echo $message; ?></p>
-	<?php }
-} ?>
+?>
 
 <div class="login-form-wrap">
     <h4 class="subtitle"><?php esc_html_e( 'Lost password', 'builderpress' ); ?></h4>
+    <div class="line"></div>
     <h2 class="title"><?php esc_html_e( 'Lost your password?', 'builderpress' ); ?></h2>
 
     <form name="lostpasswordform" id="lostpasswordform"
@@ -52,6 +48,13 @@ foreach ( $errors as $error => $message ) {
 
         </div>
 
+        <?php
+        foreach ( $errors as $error => $message ) {
+            if ( ! empty( $_GET[ $error ] ) ) { ?>
+                <p class="message message-error"><?php echo $message; ?></p>
+            <?php }
+        }
+        ?>
 
 		<?php do_action( 'lostpassword_form' ); ?>
     </form>

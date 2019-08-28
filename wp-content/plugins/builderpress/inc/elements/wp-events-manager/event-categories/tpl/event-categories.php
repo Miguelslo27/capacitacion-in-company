@@ -20,7 +20,7 @@ $show_hierarchy = $params['show_hierarchy'] ? 1 : 0;
 $el_class       = $params['el_class'];
 $el_id          = $params['el_id'];
 $bp_css         = $params['bp_css'];
-
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 $query = array(
 	'taxonomy'   => 'tp_event_category',
 	'orderby'    => 'name',
@@ -32,7 +32,7 @@ $query = array(
 $categories = get_categories( apply_filters( 'builder-press/event-categories-query', $query ) );
 ?>
 
-<div class="bp-element bp-element-event-categories <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
+<div class="bp-element bp-element-event-categories <?php echo esc_attr($style_layout); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
 
     <?php if( isset($params['title']) ) {?>
         <h3 class="title"><?php echo esc_html( $params['title'] ); ?></h3>

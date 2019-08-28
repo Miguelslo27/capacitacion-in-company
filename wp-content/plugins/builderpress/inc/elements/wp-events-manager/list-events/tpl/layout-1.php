@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 <?php foreach ( $events as $event ) { ?>
     <div class="item">
 		<?php $size = apply_filters( 'builder-press/wp-events-manager/layout-1/image-size', '423x481' );
-		builder_press_get_attachment_image( get_post_thumbnail_id( get_the_ID() ), $size ); ?>
+		builder_press_get_attachment_image( get_post_thumbnail_id( $event['ID'] ), $size ); ?>
 
         <div class="date">
             <span><?php echo esc_html( $event['date_show'] ); ?></span>

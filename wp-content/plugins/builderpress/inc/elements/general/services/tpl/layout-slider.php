@@ -23,12 +23,13 @@ $items_visible = $params['items_visible'];
 $items_tablet  = $params['items_tablet'];
 $items_mobile  = $params['items_mobile'];
 $button        = $params['view_all'];
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 $el_class      = $params['el_class'];
 $el_id         = $params['el_id'];
 $bp_css        = $params['bp_css'];
 ?>
 
-<div class="bp-element bp-element-services <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?> layout-slider" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>
+<div class="bp-element bp-element-services <?php echo esc_attr($style_layout); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?> layout-slider" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>
      data-items-visible="<?php echo esc_attr( $items_visible ); ?>"
      data-items-tablet="<?php echo esc_attr( $items_tablet ); ?>"
      data-items-mobile="<?php echo esc_attr( $items_mobile ); ?>">

@@ -17,6 +17,10 @@ defined( 'ABSPATH' ) || exit;
 global $post_id;
 
 ?>
+
+<?php if( isset($title) ) {?>
+    <h3 class="title"><?php echo esc_html( $title ); ?></h3>
+<?php }?>
 <div class="wrap-element">
     <div class="grid-posts grid-isotope">
         <div class="grid-sizer"></div>
@@ -59,7 +63,7 @@ global $post_id;
                     <div class="media-item">
                         <?php
                         if ( class_exists( 'TP' ) ) {
-                            do_action( 'thim_entry_top', 'full' );
+                            thim_entry_top_archive();
                         } else {
                             if ( has_post_thumbnail() ) {
                                 ?>

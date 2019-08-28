@@ -46,7 +46,6 @@ if ( ! class_exists( 'BuilderPress_Config_Categories' ) ) {
                         'vblog-layout-sidebar'   => self::$assets_url . 'images/layouts/vblog-layout-sidebar.png',
                         'layout-list-1'   => self::$assets_url . 'images/layouts/vblog-layout-footer-1.png',
                     ),
-                    'std'         => 'layout-list-1',
                     'description' => __( 'Select type of style.', 'builderpress' )
                 ),
 
@@ -84,6 +83,17 @@ if ( ! class_exists( 'BuilderPress_Config_Categories' ) ) {
                         ),
                     ),
                     'edit_field_class' => 'vc_col-xs-6'
+                ),
+
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
                 ),
 
                 array(

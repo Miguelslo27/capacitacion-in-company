@@ -22,9 +22,9 @@ defined('ABSPATH') || exit;
 
 <!-- shortcode icon-box -->
 
-    <div class="icon-box" <?php echo ( $icon_type == 'icon_ionicon' || $icon_type == 'icon_fontawesome' ) ? ' type-icon' : ''; ?>>
+    <div class="icon-box<?php echo ( $icon_type == 'icon_ionicon' || $icon_type == 'icon_fontawesome' ) ? ' type-icon' : ''; ?>">
         <?php if ( isset($link['url']) ){ ?>
-            <a href="<?php echo esc_url( $link['url'] ); ?>" class="icon-image" <?php echo esc_attr( $icon_shape ); ?>" <?php echo ent2ncr( $box_icon_css ); ?>>
+            <a href="<?php echo esc_url( $link['url'] ); ?>" class="icon-image <?php echo esc_attr( $icon_shape ); ?>" <?php echo ent2ncr( $box_icon_css ); ?>>
                 <?php if ( $icon_type == 'icon_fontawesome' && $params['icon_fontawesome'] ) { ?>
                     <i class="<?php echo esc_attr( $params['icon_fontawesome'] ); ?>" <?php echo ent2ncr( $icon_css ); ?>></i>
                 <?php } else if ( $icon_type == 'icon_ionicon' && $params['icon_ionicon'] ) { ?>

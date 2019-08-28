@@ -41,11 +41,11 @@ defined('ABSPATH') || exit;
 
     <div class="content <?php echo ent2ncr( $content_css ); ?>">
         <?php if ( $title ) { ?>
-        <<?php echo $title_tag; ?> class="title" <?php echo ent2ncr( $title_css ); ?>>
+        <<?php echo $title_tag; ?> class="title" <?php echo ent2ncr( $title_css ); ?> >
         <?php if ( isset($link['url']) ){ ?>
-        <a class="bp-element-hover" href="<?php echo esc_url( $link['url'] ); ?>"
+        <a class="bp-element-hover" href="<?php echo esc_url( $link['url'] ); ?>" <?php echo ent2ncr( $link_css ); ?>
            data-hover="<?php echo ent2ncr( $link_hover ); ?>"
-            <?php echo bp_template_build_link( $link ); ?> <?php echo ent2ncr( $link_css ); ?>>
+            <?php echo bp_template_build_link( $link ); ?>>
             <?php } ?>
 
             <?php echo esc_html( $title ); ?>
@@ -62,11 +62,11 @@ defined('ABSPATH') || exit;
             <?php echo ent2ncr( $description ); ?>
         </div>
     </div>
-    <?php if ( $button && $button['url']) { ?>
+    <?php if ( $link && $link['url']) { ?>
         <div class="button" <?php echo ent2ncr( $button_css ); ?>>
-            <a class="link" href="<?php echo esc_url( $button['url'] ); ?>"
-                <?php echo bp_template_build_link( $button ); ?>>
-                <?php echo esc_html( $button['title'] ) ?>
+            <a class="link" href="<?php echo esc_url( $link['url'] ); ?>"
+                <?php echo bp_template_build_link( $link ); ?>>
+                <?php echo esc_html( $link['title'] ) ?>
                 <i class="ion ion-ios-arrow-thin-right"></i>
             </a>
         </div>

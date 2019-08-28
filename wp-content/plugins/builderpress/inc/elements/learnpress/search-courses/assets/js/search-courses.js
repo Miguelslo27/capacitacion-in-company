@@ -142,7 +142,6 @@
                 $sc_wrapper.find(".list-search li").remove();
             });
 
-            this.searchFocus();
         },
 
         livesearch: function (element, waitKey) {
@@ -185,22 +184,16 @@
             });
         },
 
-        searchFocus: function () {
-            var $sc_wrapper = $('.bp-element-search-courses .search-form');
-            $sc_wrapper.each(function (index, form) {
-                $(form).on('hover', 'form', function () {
-                    $(form).find('.search-field').focus();
-                });
-            });
-        },
-
         search_courses_popup: function () {
-            var $search_button = $('.search-button'),
+            var $search = $('.bp-element-search-courses'),
+                $search_button = $search.find('.search-button'),
                 $header = $('#masthead.sticky-header'),
+                $searchField = $search.find('.search-field'),
                 windoH = $(window).height();
             $('.bp-element-search-courses').find('.search-form').css('height', windoH);
             $search_button.live('click', function (event) {
                 $(this).parents('.bp-element-search-courses').find('.search-form').addClass('open');
+                setTimeout(function() { $searchField.focus(); }, 800);
                 $(document).on('keydown', function (e) {
                     // ESCAPE key pressed
                     if (e.keyCode === 27) {

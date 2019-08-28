@@ -36,6 +36,7 @@ defined( 'ABSPATH' ) || exit;
 
     <div class="login-form-wrap">
         <h4 class="subtitle"><?php esc_html_e( 'Register', 'builderpress' ); ?></h4>
+        <div class="line"></div>
         <h2 class="title"><?php esc_html_e( 'Register to start learning', 'builderpress' ); ?></h2>
 
         <form name="registerform" id="register-form"

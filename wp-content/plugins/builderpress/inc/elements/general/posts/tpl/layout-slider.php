@@ -16,11 +16,9 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 <div class="heading-post">
-    <h3 class="title">
-        <?php
-            echo ent2ncr($title);
-        ?>
-    </h3>
+    <?php if( isset($title) ) {?>
+        <h3 class="title"><?php echo esc_html( $title ); ?></h3>
+    <?php }?>
     <?php
         if($post_link):
     ?>

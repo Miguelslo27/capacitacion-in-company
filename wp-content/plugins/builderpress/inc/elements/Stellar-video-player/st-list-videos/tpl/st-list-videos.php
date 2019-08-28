@@ -26,6 +26,7 @@ $number      = $params['number'];
 $category    = $params['category'];
 $type    = (!empty($params['type']) && $params['type'] != ' ') ? $params['type'] : '';
 $filter_categories = $params['filter_categories'];
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 $el_id       = $params['el_id'];
 $bp_css      = $params['bp_css'];
 $bp_css_tablet = $params['bp_css_tablet'];
@@ -66,7 +67,7 @@ if ( $type ) {
 $query = new WP_Query( apply_filters( 'builder-press/st-list-videos-query', $query ) );
 ?>
 <?php if ( $query->have_posts() ) { ?>
-    <div class="bp-element bp-element-st-list-videos <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $layout ); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?>" <?php echo $el_id ? " id='" . esc_attr( $el_id ) . "'" : '' ?> <?php echo $data_tablet;?> <?php echo $data_mobile;?>>
+    <div class="bp-element bp-element-st-list-videos <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $layout ); ?> <?php echo esc_attr($style_layout); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?>" <?php echo $el_id ? " id='" . esc_attr( $el_id ) . "'" : '' ?> <?php echo $data_tablet;?> <?php echo $data_mobile;?>>
         <?php builder_press_get_template( $layout,
             array(
                     'title'       => $title,

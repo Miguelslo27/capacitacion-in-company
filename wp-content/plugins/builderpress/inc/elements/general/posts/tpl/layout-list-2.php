@@ -24,13 +24,17 @@ defined( 'ABSPATH' ) || exit;
  */
 ?>
 
+<?php if( isset($title) ) {?>
+    <h3 class="title"><?php echo esc_html( $title ); ?></h3>
+<?php }?>
+
 <div class="list-post">
     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
         <div class="item">
             <?php if ( has_post_thumbnail() ) { ?>
                 <div class="thumbnail">
                     <?php
-                    $size = apply_filters( 'builder-press/posts/image-size', '176x176' );
+                    $size = apply_filters( 'builder-press/posts/layout-list-2/image-size', '176x176' );
                     builder_press_get_attachment_image( get_the_ID(), $size, 'post' ); ?>
                 </div>
             <?php } else { ?>

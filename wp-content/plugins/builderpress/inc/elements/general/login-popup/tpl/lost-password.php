@@ -48,9 +48,11 @@ $popup_image   = $image[0];
                 <p class="description"><?php esc_html_e( 'Please enter your username or email address. You will receive a link to create a new password via email.', 'builderpress' ); ?></p>
                 <p class="login-username">
                     <input placeholder="<?php esc_attr_e( 'Username or email', 'builderpress' ); ?>"
-                           type="text" name="user_login_lostpass" id="user_login_lostpass"
+                           type="text" name="user_login" id="user_login_lostpass"
                            class="input"/>
                 </p>
+                <input type="hidden" name="redirect_to"
+                       value="<?php echo esc_attr( add_query_arg( 'result', 'reset', bp_get_login_page_url() ) ); ?>"/>
                 <p>
                     <input type="submit" name="wp-submit-lostpass" id="wp-submit-lostpass"
                            class="button button-primary button-large"

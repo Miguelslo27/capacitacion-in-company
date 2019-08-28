@@ -52,6 +52,7 @@ if ( ! class_exists( 'BuilderPress_Config_Call_To_Action' ) ) {
                         'layout-6' => self::$assets_url . 'images/layouts/layout-6.png',
                         'vblog-layout-1' => self::$assets_url . 'images/layouts/vblog-layout-1.jpg',
                         'vblog-layout-2' => self::$assets_url . 'images/layouts/vblog-layout-2.jpg',
+                        'marketing-layout-1' => self::$assets_url . 'images/layouts/marketing-layout-1.jpg',
 					),
 					'std'        => 'layout-1'
 				),
@@ -86,6 +87,7 @@ if ( ! class_exists( 'BuilderPress_Config_Call_To_Action' ) ) {
                             'vblog-layout-1',
                             'vblog-layout-2',
                             'kindergarten-layout-1',
+                            'marketing-layout-1'
                         )
                     )
 				),
@@ -105,6 +107,19 @@ if ( ! class_exists( 'BuilderPress_Config_Call_To_Action' ) ) {
 						)
 					)
 				),
+
+                //style layout
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
+
                 // Fontawesome Picker
                 array(
                     'type'             => 'iconpicker',

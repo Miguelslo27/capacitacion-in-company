@@ -116,6 +116,16 @@ if ( ! class_exists( 'BuilderPress_Config_St_list_videos' ) ) {
                         'value'   => array('vblog-layout-grid-1', 'vblog-layout-grid-2', 'vblog-layout-3', 'vblog-layout-grid-3'),
                     ),
                 ),
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
 
                 array(
                     'type' => 'css_editor',

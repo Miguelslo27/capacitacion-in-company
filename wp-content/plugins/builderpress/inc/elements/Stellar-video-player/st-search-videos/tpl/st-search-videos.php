@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 $template_path = $params['template_path'];
 
 $layout      = isset( $params['layout'] ) ? $params['layout'] : 'vblog-layout-header-1';
-
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 $el_class    = $params['el_class'];
 $el_id       = $params['el_id'];
 $bp_css      = $params['bp_css'];
@@ -29,7 +29,7 @@ $data_tablet = $bp_css_tablet ? 'data-class-tablet="' . bp_custom_css_class_shor
 $data_mobile = $bp_css_mobile ? 'data-class-mobile="' . bp_custom_css_class_shortcode($bp_css_mobile) . '"' : '';
 ?>
 
-<div class="bp-element bp-element-st-search-videos <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $layout ); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?>" <?php echo $el_id ? " id='" . esc_attr( $el_id ) . "'" : '' ?> <?php echo $data_tablet;?> <?php echo $data_mobile;?>>
+<div class="bp-element bp-element-st-search-videos <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $layout ); ?> <?php echo esc_attr($style_layout); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?>" <?php echo $el_id ? " id='" . esc_attr( $el_id ) . "'" : '' ?> <?php echo $data_tablet;?> <?php echo $data_mobile;?>>
     <?php builder_press_get_template( $layout,
         array(
             'params'      => $params,

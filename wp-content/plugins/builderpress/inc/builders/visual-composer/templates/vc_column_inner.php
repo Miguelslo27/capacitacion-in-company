@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Shortcode class
  * @var $this    WPBakeryShortCode_VC_Column_Inner
  */
-$bp_css_tablet = $bp_css_mobile = $el_class = $width = $el_id = $css = $offset = $tablet_padding = $mobile_padding = '';
+$bp_css_tablet = $bp_css_mobile = $overlay_color = $background_position = $background_size = $el_class = $width = $el_id = $css = $offset = $tablet_padding = $mobile_padding = '';
 $output   = '';
 $atts     = vc_map_get_attributes( $this->getShortcode(), $atts );
 extract( $atts );
@@ -36,6 +36,17 @@ if ( vc_shortcode_custom_css_has_property( $css, array(
 	'background',
 ) ) ) {
 	$css_classes[] = 'vc_col-has-fill';
+}
+
+if ( $overlay_color ) {
+    $css_classes[] = 'bp-row-background-overlay';
+    $overlay_html  .= '<div class="overlay" style="background-color: ' . esc_attr( $overlay_color ) . '"></div>';
+}
+if ( $background_position ) {
+    $css_classes[] = 'bp-background-position-' . $background_position;
+}
+if ( $background_size ) {
+    $css_classes[] = 'bp-background-size-' . $background_size;
 }
 
 

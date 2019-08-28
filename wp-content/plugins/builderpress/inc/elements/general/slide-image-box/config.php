@@ -42,6 +42,47 @@ if ( ! class_exists( 'BuilderPress_Config_Slide_Image_Box' ) ) {
 //                $this->_icon_options(),
 			    array(
                     array(
+                        'type'       => 'radio_image',
+                        'heading'    => __( 'Layout', 'builderpress' ),
+                        'param_name' => 'layout',
+                        'options'    => array(
+                            'default'              => self::$assets_url . 'images/layout/default.jpg',
+                            'marketing-layout-1'   => self::$assets_url . 'images/layout/marketing-layout-1.jpg',
+                        ),
+                        'std'        => 'default'
+                    ),
+
+                    array(
+                        'type'        => 'vc_link',
+                        'heading'     => esc_html__( 'Link', 'builderpress' ),
+                        'param_name'  => 'image_box_link',
+                        'dependency' => array(
+                            'element' => 'layout',
+                            'value'   => array(
+                                'marketing-layout-1'
+                            ),
+                        ),
+                    ),
+
+                    array(
+                        'type'             => 'dropdown',
+                        'heading'          => __( 'Style', 'builderpress' ),
+                        'param_name'       => 'style',
+                        'value'            => array(
+                            __( 'Container', 'builderpress' )  => '',
+                            __( 'Full width', 'builderpress' ) => 'style-full-width',
+                        ),
+                        'std'              => '',
+                        'dependency'  => array(
+                            'element' => 'layout',
+                            'value'   => array(
+                                'marketing-layout-1'
+                            )
+                        ),
+                        'edit_field_class' => 'vc_col-sm-6',
+                    ),
+
+                    array(
                         'type'       => 'param_group',
                         'value'      => '',
                         'heading'    => __( 'Slide Image Box', 'builderpress' ),
@@ -82,6 +123,16 @@ if ( ! class_exists( 'BuilderPress_Config_Slide_Image_Box' ) ) {
                                 'edit_field_class' => 'vc_col-sm-6'
                             ),
                         )
+                    ),
+                    array(
+                        'type'             => 'dropdown',
+                        'heading'          => __( 'Style Layout', 'builderpress' ),
+                        'param_name'       => 'style_layout',
+                        'value'            => array(
+                            __( 'Style Default', 'builderpress' )   => '',
+                        ),
+                        'std'              => '',
+                        'edit_field_class' => 'vc_col-sm-6'
                     ),
                     array(
                         'type' => 'css_editor',

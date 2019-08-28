@@ -47,9 +47,57 @@ if ( ! class_exists( 'BuilderPress_Config_Grid_Images' ) ) {
                         'layout-1' => self::$assets_url . 'images/layouts/layout-grid.jpg',
                         'layout-images-slider'   => self::$assets_url . 'images/layouts/layout-slider.jpg',
                         'layout-2' => self::$assets_url . 'images/layouts/layout-2.png',
+                        'coach-life-layout-isotope-1' => self::$assets_url . 'images/layouts/coach-life-layout-isotope-1.png',
                     ),
                     'std'        => 'layout-1'
                 ),
+
+                array(
+                    'type'       => 'textfield',
+                    'heading'    => esc_html__( 'Title', 'builderpress' ),
+                    'param_name' => 'grid_title',
+                    'dependency'  => array(
+                        'element' => 'layout',
+                        'value'   => array(
+                            'coach-life-layout-isotope-1'
+                        )
+                    ),
+                ),
+                array(
+                    'type'       => 'textfield',
+                    'heading'    => esc_html__( 'Sub Title', 'builderpress' ),
+                    'param_name' => 'grid_sub_title',
+                    'dependency'  => array(
+                        'element' => 'layout',
+                        'value'   => array(
+                            'coach-life-layout-isotope-1'
+                        )
+                    ),
+                ),
+                array(
+                    'type'       => 'textarea',
+                    'heading'    => __( 'Description', 'builderpress' ),
+                    'param_name' => 'grid_img_content',
+                    'dependency'  => array(
+                        'element' => 'layout',
+                        'value'   => array(
+                            'coach-life-layout-isotope-1'
+                        )
+                    ),
+                ),
+                array(
+                    'type'       => 'vc_link',
+                    'heading'    => esc_attr__( 'Link', 'builderpress' ),
+                    'param_name' => 'box_link',
+                    'dependency'  => array(
+                        'element' => 'layout',
+                        'value'   => array(
+                            'coach-life-layout-isotope-1'
+                        )
+                    ),
+                ),
+
+
 				array(
 					'type'       => 'param_group',
 					'heading'    => __( 'Images', 'builderpress' ),
@@ -79,6 +127,11 @@ if ( ! class_exists( 'BuilderPress_Config_Grid_Images' ) ) {
 							'param_name' => 'title',
                             'std'        => 'Title',
 						),
+                        array(
+                            'type'       => 'textfield',
+                            'heading'    => esc_html__( 'Sub Title', 'builderpress' ),
+                            'param_name' => 'sub_title',
+                        ),
 					)
 				),
                 array(
@@ -88,6 +141,16 @@ if ( ! class_exists( 'BuilderPress_Config_Grid_Images' ) ) {
                     'std'        => 0
                 ),
 
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
                 array(
                     'type' => 'css_editor',
                     'heading' => __( 'CSS Shortcode', 'js_composer' ),

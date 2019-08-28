@@ -26,7 +26,7 @@ defined( 'ABSPATH' ) || exit;
         <?php echo esc_html($title); ?>
     </h3>
 
-    <div class="list-categories">
+    <ul class="list-categories">
         <?php
         foreach ($categories as $get_list_categories):
             ?>
@@ -43,5 +43,5 @@ defined( 'ABSPATH' ) || exit;
         <?php
         endforeach;
         ?>
-    </div>
+    </ul>
 </div>

@@ -22,6 +22,7 @@ $layout       = $params['layout'];
 $filter_by    = $params['filter_by'];
 $category     = $params['category'];
 $number_items = $params['number_items'];
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 $button       = $params['button'];
 $el_class     = $params['el_class'];
 $el_id        = $params['el_id'];
@@ -68,15 +69,16 @@ if ( ! $courses->post_count ) {
 	return;
 } ?>
 
-    <div class="bp-element bp-element-list-courses <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $layout ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
+    <div class="bp-element bp-element-list-courses <?php echo esc_attr($style_layout); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $layout ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?>>
 
-        <?php if( isset($params['title']) ) {?>
+        <?php if( isset($params['title']) && !empty($params['title']) ) {?>
             <h3 class="title"><?php echo esc_html( $params['title'] ); ?></h3>
         <?php }?>
 
 		<?php builder_press_get_template( $layout, array(
 			'params'  => $params,
-			'courses' => $courses
+			'button'  => $button,
+			'courses' => $courses,
 		), $template_path ); ?>
 
     </div>

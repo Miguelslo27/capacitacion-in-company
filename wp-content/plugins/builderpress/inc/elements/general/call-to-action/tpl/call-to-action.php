@@ -27,6 +27,7 @@ $layout      = isset($params['layout']) ? $params['layout'] : 'layout-1';
 $title       = $params['title'];
 $description = $params['description'];
 $action      = $params['link'];
+$style_layout= !empty($params['style_layout']) ? $params['style_layout'] : '';
 $el_class    = $params['el_class'];
 $el_id       = $params['el_id'];
 
@@ -55,7 +56,7 @@ $des_css .= $params['desc_font_size'] ? 'font-size:' . $params['desc_font_size']
 $des_css = $des_css ? ' style="' . $des_css . '"' : '';
 ?>
 
-<div class="bp-element bp-element-call-to-action <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $layout ); ?> <?php echo esc_attr( $background_color ); ?> <?php echo esc_attr( $el_class ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?> <?php echo $data_tablet;?> <?php echo $data_mobile;?>>
+<div class="bp-element bp-element-call-to-action <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?> <?php echo esc_attr( $layout ); ?> <?php echo esc_attr($style_layout); ?> <?php echo esc_attr( $background_color ); ?> <?php echo esc_attr( $el_class ); ?>" <?php echo $el_id ? "id='" . esc_attr( $el_id ) . "'" : '' ?> <?php echo $data_tablet;?> <?php echo $data_mobile;?>>
 
 	<?php builder_press_get_template( $layout, array(
 		'title'         => $title,

@@ -56,6 +56,9 @@
     top: 10px;
     right: 0; }
 
+.bp-element-counters.layout-1.color-2 .counter-boxes .item:before {
+  background: #7cf9c5; }
+
 /*---------------------------------------------*/
 @media (max-width: 767px) {
   .responsive .bp-element-counters.layout-1 .item .number {

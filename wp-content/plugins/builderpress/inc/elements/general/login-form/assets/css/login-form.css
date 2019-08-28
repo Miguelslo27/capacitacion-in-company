@@ -23,6 +23,7 @@
         border-radius: 5px;
         height: auto;
         padding: 0 20px;
+        margin-bottom: 20px;
         font-weight: 300;
         font-size: 16px;
         line-height: 50px;
@@ -51,6 +52,7 @@
         .bp-element-login-form .login-form-wrap form .wrap-fields .login-submit input[type="submit"] {
           border-radius: 25px;
           padding: 0 40px;
+          margin-bottom: 20px;
           margin-right: 15px;
           font-size: 16px;
           line-height: 50px;

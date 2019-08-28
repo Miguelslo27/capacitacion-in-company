@@ -64,7 +64,7 @@ if ( ! class_exists( 'BuilderPress_Assets' ) ) {
 
 				// magnific popup
 				wp_register_script( 'builder-press-magnific-popup', BUILDER_PRESS_URL . 'assets/libs/magnific-popup/jquery.magnific-popup.min.js', array( 'jquery' ), '1.1.0' );
-                wp_enqueue_style( 'builder-press-magnific-popup', BUILDER_PRESS_URL . 'assets/libs/magnific-popup/magnific-popup.css', '', '1.1.0' );
+                wp_register_style( 'builder-press-magnific-popup', BUILDER_PRESS_URL . 'assets/libs/magnific-popup/magnific-popup.css', '', '1.1.0' );
 
 				// isotope
 				wp_register_script( 'builder-press-isotope', BUILDER_PRESS_URL . 'assets/libs/isotope/isotope.pkgd.min.js', array( 'jquery' ), '3.0.5' );
@@ -78,6 +78,9 @@ if ( ! class_exists( 'BuilderPress_Assets' ) ) {
 				// lazyload
                 wp_register_script( 'builder-press-lazyload', BUILDER_PRESS_URL . 'assets/libs/lazyload/lazyload.min.js', array( 'jquery' ), '1.1.0' );
 
+                //
+                wp_register_script( 'builder-press-jquerymousewheel', BUILDER_PRESS_URL . 'assets/libs/jquerymousewheel/jquery.mousewheel.js', array( 'jquery' ), '3.0.6' );
+                wp_register_script( 'builder-press-dragscroll', BUILDER_PRESS_URL . 'assets/libs/dragscroll/dragscroll.js', array( 'jquery' ), '3.0.6' );
 
                 // frontend script
 				wp_enqueue_style( 'builderpress-fontend', BUILDER_PRESS_URL . 'assets/css/builderpress.css', array(), BUILDER_PRESS_VER );

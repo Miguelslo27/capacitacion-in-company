@@ -1,3 +1,9 @@
+input {
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+  }
+}
+
 .align-center {
   text-align: center;
 }
@@ -49,6 +55,52 @@
     position: relative;
   }
 }
+
+div.bp-background-position-left-center {
+  background-position: left center!important;
+}
+div.bp-background-position-left-top {
+  background-position: left top!important;
+}
+div.bp-background-position-left-bottom {
+  background-position: left bottom!important;
+}
+div.bp-background-position-center-center {
+  background-position: center center!important;
+}
+div.bp-background-position-center-top {
+  background-position: center top!important;
+}
+div.bp-background-position-center-bottom {
+  background-position: center bottom!important;
+}
+div.bp-background-position-right-center {
+  background-position: right center!important;
+}
+div.bp-background-position-right-top {
+  background-position: right top!important;
+}
+div.bp-background-position-right-bottom {
+  background-position: right bottom!important;
+}
+div.bp-background-size-auto {
+  background-size: auto!important;
+}
+div.bp-background-size-contain {
+  background-size: contain!important;
+}
+div.bp-background-size-cover {
+  background-size: cover!important;
+}
+div.bp-background-size-inherit {
+  background-size: inherit!important;
+}
+div.bp-background-size-initial {
+  background-size: initial!important;
+}
+div.bp-background-size-unset {
+  background-size: unset!important;
+}
 .message {
   padding: 8px 12px;
   display: inline-block;
@@ -87,4 +139,7 @@
 .z-index-1 {
   position: relative;
   z-index: 1;
+}
+.not-hidden {
+  visibility: visible;
 }

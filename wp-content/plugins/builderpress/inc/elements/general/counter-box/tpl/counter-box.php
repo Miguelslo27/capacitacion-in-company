@@ -40,7 +40,7 @@ $bp_css_tablet = $params['bp_css_tablet'];
 $bp_css_mobile = $params['bp_css_mobile'];
 $data_tablet = $bp_css_tablet ? 'data-class-tablet="' . bp_custom_css_class_shortcode($bp_css_tablet) . '"' : '';
 $data_mobile = $bp_css_mobile ? 'data-class-mobile="' . bp_custom_css_class_shortcode($bp_css_mobile) . '"' : '';
-
+$style_layout = !empty($params['style_layout']) ? $params['style_layout'] : '';
 // title style
 $title_css = '';
 $title_css .= $params['color_title'] ? 'color:' . $params['color_title'] . '; ' : '';
@@ -73,10 +73,18 @@ $des_css .= $params['desc_font_weight'] ? 'font-weight:' . $params['desc_font_we
 $des_css .= $params['desc_font_size'] ? 'font-size:' . $params['desc_font_size'] . 'px; ' : '';
 $des_css .= $params['desc_margin'] ? 'margin:' . $params['desc_margin'] . '; ' : '';
 $des_css = $des_css ? ' style="' . $des_css . '"' : '';
+
+// line style
+$line_css = '';
+$line_css .= !empty($params['line_color']) ? 'color:' . $params['line_color'] . '; ' : '';
+$line_css = $line_css ? ' style="'  . $line_css . '"' : '';
+
+// style Vertical or Style Horizontal
+$style = isset($params['style']) ? 'style-'.$params['style'] : '';
 ?>
 
 <!--counter box element-->
-<div class="bp-element bp-element-counter-box style-<?php echo esc_attr( $params['style'] ); ?> text-<?php echo esc_attr( $align ); ?> <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $layout ); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?>" <?php echo $el_id ? " id='" . esc_attr( $el_id ) . "'" : '' ?> <?php echo $data_tablet;?> <?php echo $data_mobile;?>>
+<div class="bp-element bp-element-counter-box <?php echo esc_attr( $style ); ?> text-<?php echo esc_attr( $align ); ?> <?php echo esc_attr( $el_class ); ?> <?php echo esc_attr( $layout ); ?>  <?php echo esc_attr($style_layout); ?> <?php echo is_plugin_active('js_composer/js_composer.php') ? vc_shortcode_custom_css_class( $bp_css ) : '';?>" <?php echo $el_id ? " id='" . esc_attr( $el_id ) . "'" : '' ?> <?php echo $data_tablet;?> <?php echo $data_mobile;?>>
     <div class="counter-boxes">
 		<?php builder_press_get_template( $layout,
 			array(
@@ -91,7 +99,8 @@ $des_css = $des_css ? ' style="' . $des_css . '"' : '';
 				'title_css'   => $title_css,
 				'number_css'  => $number_css,
 				'des_css'     => $des_css,
-				'icon_css'    => $icon_css
+				'icon_css'    => $icon_css,
+                'line_css'    => $line_css,
 			),
 			$template_path );
 		?>

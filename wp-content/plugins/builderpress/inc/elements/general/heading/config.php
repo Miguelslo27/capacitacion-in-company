@@ -48,6 +48,7 @@ if ( ! class_exists( 'BuilderPress_Config_Heading' ) ) {
                         'layout-3' => self::$assets_url . 'images/layout/layout-3.png',
                         'kindergarten-layout-1' => self::$assets_url . 'images/layout/kindergarten-layout-1.png',
                         'kindergarten-layout-2' => self::$assets_url . 'images/layout/kindergarten-layout-2.png',
+                        'kindergarten-layout-3' => self::$assets_url . 'images/layout/kindergarten-layout-3.jpg',
                     ),
                     'std'        => 'layout-1'
                 ),
@@ -67,7 +68,6 @@ if ( ! class_exists( 'BuilderPress_Config_Heading' ) ) {
 					'heading'    => __( 'Description', 'builderpress' ),
 					'param_name' => 'content'
 				),
-
 				array(
 					'type'             => 'checkbox',
 					'heading'          => esc_html__( 'Show line', 'builderpress' ),
@@ -77,7 +77,28 @@ if ( ! class_exists( 'BuilderPress_Config_Heading' ) ) {
 					'admin_label'      => true,
 					'edit_field_class' => 'vc_col-xs-6'
 				),
-
+                array(
+                    'type'             => 'attach_image',
+                    'heading'          => __( 'Line Icon', 'builderpress' ),
+                    'param_name'       => 'image',
+                    'dependency'  => array(
+                        'element' => 'layout',
+                        'value'   => array(
+                            'kindergarten-layout-3'
+                        )
+                    ),
+                    'edit_field_class' => 'vc_col-sm-6',
+                ),
+                array(
+                    'type'             => 'dropdown',
+                    'heading'          => __( 'Style Layout', 'builderpress' ),
+                    'param_name'       => 'style_layout',
+                    'value'            => array(
+                        __( 'Style Default', 'builderpress' )   => '',
+                    ),
+                    'std'              => '',
+                    'edit_field_class' => 'vc_col-sm-6'
+                ),
 				//style text title
 				array(
 					'type'             => 'dropdown',

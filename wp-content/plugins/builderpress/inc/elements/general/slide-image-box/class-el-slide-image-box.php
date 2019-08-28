@@ -15,44 +15,46 @@
 defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'BuilderPress_El_Slide_Image_Box' ) ) {
-	/**
-	 * Class BuilderPress_El_Slide_Image_Box
-	 */
-	class BuilderPress_El_Slide_Image_Box extends BuilderPress_El_Widget {
+    /**
+     * Class BuilderPress_El_Slide_Image_Box
+     */
+    class BuilderPress_El_Slide_Image_Box extends BuilderPress_El_Widget {
 
-		/**
-		 * @var string
-		 */
-		protected $config_class = 'BuilderPress_Config_Slide_Image_Box';
+        /**
+         * @var string
+         */
+        protected $config_class = 'BuilderPress_Config_Slide_Image_Box';
 
-		/**
-		 * Register controls.
-		 */
-		protected function _register_controls() {
-			$this->start_controls_section(
-				'el-slide-image-box', [ 'label' => esc_html__( 'Slide Image Box', 'builderpress' ) ]
-			);
-			$config_options = $this->options();
-			$new_params = array();
-			foreach($config_options[0]['params'] as $param){
-				if($param['type'] == 'vc_link'){
-					$new_params[] = array(
-						'type' => 'text',
-						'heading' => __( 'Link Title', 'builderpress' ),
-						'param_name' => 'linktype_title',
-					);
-				}
-				$new_params[] = $param;
-			}
-			$config_options[0]['params'] = $new_params;
+        /**
+         * Register controls.
+         */
+        protected function _register_controls() {
+            $this->start_controls_section(
+                'el-slide-image-box', [ 'label' => esc_html__( 'Slide Image Box', 'builderpress' ) ]
+            );
+            $option = $this->options();
+            for($i=0; $i<count($option);$i++){
+                if($option[$i]["param_name"] == 'slide_image_box') {
+                    $option[$i]["params"] = array_merge(
+                        $option[$i]["params"],
+                        array(
+                            array(
+                                'type' => 'text',
+                                'heading' => __( 'Link Title', 'builderpress' ),
+                                'param_name' => 'linktype_title',
+                            ),
+                        )
+                    );
+                }
+            }
 
-            $controls = \BuilderPress_El_Mapping::mapping( $config_options );
+            $controls = \BuilderPress_El_Mapping::mapping( $option );
 
-			foreach ( $controls as $key => $control ) {
-				$this->add_control( $key, $control );
-			}
+            foreach ( $controls as $key => $control ) {
+                $this->add_control( $key, $control );
+            }
 
-			$this->end_controls_section();
-		}
-	}
+            $this->end_controls_section();
+        }
+    }
 }

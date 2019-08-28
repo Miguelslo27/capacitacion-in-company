@@ -275,6 +275,149 @@
       .bp-element-course-collections.layout-grid .wrap-element .course-item.color-6 .course-text .title:hover {
         background-color: #77abc6; }
 
+.bp-element-course-collections.stocklab-layout-slider-3 .item-slick {
+  padding: 0 15px; }
+
+.bp-element-course-collections.stocklab-layout-slider-3 .image img {
+  width: 100%; }
+
+.bp-element-course-collections.stocklab-layout-slider-3 .course-item {
+  position: relative; }
+  .bp-element-course-collections.stocklab-layout-slider-3 .course-item .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .bp-element-course-collections.stocklab-layout-slider-3 .course-item .content:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-transition: all 0.3s ease 0s;
+      -moz-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s;
+      opacity: 0;
+      visibility: hidden;
+      background: #124fe8;
+      background: -moz-linear-gradient(45deg, #844bed 0%, #844bed 17%, #04cd84 87%, #04cd84 100%);
+      background: -webkit-gradient(left bottom, right top, color-stop(0%, #844bed), color-stop(17%, #844bed), color-stop(87%, #04cd84), color-stop(100%, #04cd84));
+      background: -webkit-linear-gradient(45deg, #844bed 0%, #844bed 17%, #04cd84 87%, #04cd84 100%);
+      background: -o-linear-gradient(45deg, #844bed 0%, #844bed 17%, #04cd84 87%, #04cd84 100%);
+      background: -ms-linear-gradient(45deg, #844bed 0%, #844bed 17%, #04cd84 87%, #04cd84 100%);
+      background: linear-gradient(45deg, #844bed 0%, #844bed 17%, #04cd84 87%, #04cd84 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00d280', endColorstr='#9143fd', GradientType=1); }
+    .bp-element-course-collections.stocklab-layout-slider-3 .course-item .content .title {
+      text-align: center;
+      margin-bottom: 2px;
+      position: relative;
+      z-index: 101;
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translate(0, -20px);
+      -moz-transform: translate(0, -20px);
+      -ms-transform: translate(0, -20px);
+      -o-transform: translate(0, -20px);
+      transform: translate(0, -20px);
+      -webkit-transition: all 0.3s ease 0.2s;
+      -moz-transition: all 0.3s ease 0.2s;
+      -o-transition: all 0.3s ease 0.2s;
+      transition: all 0.3s ease 0.2s; }
+      .bp-element-course-collections.stocklab-layout-slider-3 .course-item .content .title a {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 1.444444;
+        color: #ffffff;
+        text-align: center;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s; }
+    .bp-element-course-collections.stocklab-layout-slider-3 .course-item .content .description {
+      position: relative;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.625;
+      color: #ffffff;
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translate(0, -20px);
+      -moz-transform: translate(0, -20px);
+      -ms-transform: translate(0, -20px);
+      -o-transform: translate(0, -20px);
+      transform: translate(0, -20px);
+      -webkit-transition: all 0.3s ease 0.2s;
+      -moz-transition: all 0.3s ease 0.2s;
+      -o-transition: all 0.3s ease 0.2s;
+      transition: all 0.3s ease 0.2s; }
+  .bp-element-course-collections.stocklab-layout-slider-3 .course-item:hover .content:before {
+    opacity: 0.6;
+    visibility: visible; }
+  .bp-element-course-collections.stocklab-layout-slider-3 .course-item:hover .content .title {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0); }
+  .bp-element-course-collections.stocklab-layout-slider-3 .course-item:hover .content .description {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0); }
+
+.bp-element-course-collections.stocklab-layout-slider-3 .slide-course .slide-slick {
+  padding-right: 100px;
+  overflow: hidden; }
+  .bp-element-course-collections.stocklab-layout-slider-3 .slide-course .slide-slick .slick-list {
+    overflow: visible; }
+
+.bp-element-course-collections.stocklab-layout-slider-3 .slide-course .item-slick {
+  padding: 0 15px; }
+
+.bp-element-course-collections.stocklab-layout-slider-3 .slide-course .wrap-arrow-slick {
+  position: absolute;
+  bottom: 0;
+  left: 0; }
+  .bp-element-course-collections.stocklab-layout-slider-3 .slide-course .wrap-arrow-slick .arow-slick {
+    font-size: 28px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid #b7afff;
+    float: left; }
+    .bp-element-course-collections.stocklab-layout-slider-3 .slide-course .wrap-arrow-slick .arow-slick:after {
+      content: '';
+      display: block;
+      clear: both; }
+    .bp-element-course-collections.stocklab-layout-slider-3 .slide-course .wrap-arrow-slick .arow-slick.prev-slick {
+      margin-right: 9px; }
+    .bp-element-course-collections.stocklab-layout-slider-3 .slide-course .wrap-arrow-slick .arow-slick:hover {
+      background: #04ce83;
+      border-color: #04ce83; }
+
 @media (min-width: 1025px) and (max-width: 1400px) {
   .bp-element-course-collections.layout-slider-2 .slide-category-course .item-slick {
     padding-right: 10px;

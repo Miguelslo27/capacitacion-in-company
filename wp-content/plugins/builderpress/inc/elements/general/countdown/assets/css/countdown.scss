@@ -64,6 +64,9 @@
               background-color: transparent;
               border: none;
               padding: 0;
+              max-width: 660px;
+              margin-right: auto;
+              margin-left: auto;
 
               .countdown-row {
                   display: flex;
@@ -124,4 +127,18 @@
           }
       }
   }
+}
+
+@media (max-width: 991px) {
+    .bp-element-countdown {
+        &.kindergarten-layout-1 {
+            .wrap-element {
+                .tp_event_counter {
+                    .countdown-row {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
 }
