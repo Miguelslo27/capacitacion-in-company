@@ -1,15 +1,31 @@
-# Translation of Plugins - Instagram Feed - Stable (latest release) in Spanish (Spain)
-# This file is distributed under the same license as the Plugins - Instagram Feed - Stable (latest release) package.
+# Translation of Plugins - Custom Feeds for Instagram - Stable (latest release) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - Custom Feeds for Instagram - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-03-05 21:24:08+0000\n"
+"PO-Revision-Date: 2019-07-03 19:28:15+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: es\n"
-"Project-Id-Version: Plugins - Instagram Feed - Stable (latest release)\n"
+"Project-Id-Version: Plugins - Custom Feeds for Instagram - Stable (latest release)\n"
+
+#: instagram-feed-admin.php:1909
+msgid "FAQs"
+msgstr "FAQs"
+
+#: instagram-feed-admin.php:2044
+msgid "Display your feed"
+msgstr "Muestra tu feed"
+
+#: instagram-feed-admin.php:655
+msgid "Click for shortcode option"
+msgstr "Haz clic para la opción de shortcode"
+
+#: instagram-feed-admin.php:655
+msgid "Layout Type"
+msgstr "Tipo de diseño"
 
 #: instagram-feed-admin.php:2053
 msgid "Check out our other free plugins: <a href=\"https://wordpress.org/plugins/custom-facebook-feed/\" target=\"_blank\">Facebook</a> and <a href=\"https://wordpress.org/plugins/custom-twitter-feeds/\" target=\"_blank\">Twitter</a>."
@@ -23,149 +39,185 @@ msgstr "Descubre cómo mostrar <a href=\"?page=sb-instagram-feed&amp;tab=display
 msgid "Copy and paste this shortcode directly into the page, post or widget where you'd like to display the feed:"
 msgstr "Copia y pega este shortcode directamente en la página, publicación o widget donde te gustaría mostrar el feed:"
 
-#: instagram-feed-admin.php:2044
-msgid "Display your feed"
-msgstr "Muestra tu feed"
-
-#: instagram-feed-admin.php:1909
-msgid "FAQs"
-msgstr "FAQs"
-
-#: instagram-feed-admin.php:1828
-msgid "Whether to show the Likes &amp; Comments. Options:"
-msgstr "Si se muestra los me gusta &amp; Comentarios. Opciones:"
-
-#: instagram-feed-admin.php:1806
-msgid "Whether to show the photo caption. Options:"
-msgstr "Si se muestra la leyenda de la foto. Opciones:"
-
-#: instagram-feed-admin.php:1784
-msgid "Whether to show the 'Follow on Instagram' button. Options:"
-msgstr "Si se muestra el botón 'Síguenos en Instagram'. Opciones:"
-
-#: instagram-feed-admin.php:1762
-msgid "Whether to show the 'Load More' button. Options:"
-msgstr "Si se muestra el botón 'Cargar más'. Opciones:"
-
-#: instagram-feed-admin.php:1750
-msgid "Size of the header including small, medium and large. Options:"
-msgstr "Tamaño de la cabecera incluyendo pequeño, mediano y grande. Opciones:"
-
-#: instagram-feed-admin.php:1745
-msgid "Display the bio in the header. Options:"
-msgstr "Muestra la biografía en la cabecera. Opciones:"
-
-#: instagram-feed-admin.php:1740
-msgid "Whether to show the feed Header. Options:"
-msgstr "Si se muestra cabecera del feed. Opciones:"
-
-#: instagram-feed-admin.php:1733
-msgid "The info to display when hovering over the photo such as the user name, post date, Instagram icon, location, caption, and like counts. Options:"
-msgstr "La información que se muestra al pasar el cursor sobre la foto, como el nombre de usuario, la fecha de publicación, el ícono de Instagram, la ubicación, la leyenda y el recuentos de me gustas. Opciones:"
-
-#: instagram-feed-admin.php:1699
-msgid "Disable the mobile layout. Options:"
-msgstr "Desactivar el diseño móvil. Opciones:"
-
-#: instagram-feed-admin.php:1684
-msgid "The resolution/size of the photos including full, medium, thumbnail, and auto (based on size of image on page). Options:"
-msgstr "La resolución/tamaño de las fotos, incluyendo completa, media, miniatura y automática (según el tamaño de la imagen en la página). Opciones:"
+#: instagram-feed-admin.php:1584
+msgid "How posts are arranged visually in the feed. There are four layouts: Grid, Carousel Slider, Masonry Grid, or Highlight Grid.  Options:"
+msgstr "Cómo se organizan las publicaciones visualmente en el feed. Hay cuatro diseños: Cuadrícula, control deslizante de carrusel, cuadrícula irregular o cuadrícula resaltada. Opciones:"
 
 #: instagram-feed-admin.php:1653
 msgid "Choose from 3 different ways of highlighting posts including by pattern, hashtag, post id or. Options:"
 msgstr "Elije entre 3 formas diferentes de resaltar publicaciones, incluyendo por patrón, hashtag o ID de publicación. Opciones:"
 
-#: instagram-feed-admin.php:1584
-msgid "How posts are arranged visually in the feed. There are four layouts: Grid, Carousel Slider, Masonry Grid, or Highlight Grid.  Options:"
-msgstr "Cómo se organizan las publicaciones visualmente en el feed. Hay cuatro diseños: Cuadrícula, control deslizante de carrusel, cuadrícula irregular o cuadrícula resaltada. Opciones:"
+#: instagram-feed-admin.php:1684
+msgid "The resolution/size of the photos including full, medium, thumbnail, and auto (based on size of image on page). Options:"
+msgstr "La resolución/tamaño de las fotos, incluyendo completa, media, miniatura y automática (según el tamaño de la imagen en la página). Opciones:"
 
-#: instagram-feed-admin.php:655
-msgid "Layout Type"
-msgstr "Tipo de diseño"
+#: instagram-feed-admin.php:1699
+msgid "Disable the mobile layout. Options:"
+msgstr "Desactivar el diseño móvil. Opciones:"
 
-#: instagram-feed-admin.php:655
-msgid "Click for shortcode option"
-msgstr "Haz clic para la opción de shortcode"
+#: instagram-feed-admin.php:1733
+msgid "The info to display when hovering over the photo such as the user name, post date, Instagram icon, location, caption, and like counts. Options:"
+msgstr "La información que se muestra al pasar el cursor sobre la foto, como el nombre de usuario, la fecha de publicación, el ícono de Instagram, la ubicación, la leyenda y el recuentos de me gustas. Opciones:"
 
-#: instagram-feed-admin.php:1919
-msgid "<a href=\"https://smashballoon.com/instagram-feed-faq/customization/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">Customizing your Feed</a>"
-msgstr "<a href=\"https://smashballoon.com/instagram-feed-faq/customization/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">Personalizando tu feed</a>"
+#: instagram-feed-admin.php:1740
+msgid "Whether to show the feed Header. Options:"
+msgstr "Si se muestra cabecera del feed. Opciones:"
 
-#: instagram-feed-admin.php:1918
-msgid "<a href=\"https://smashballoon.com/display-multiple-instagram-feeds/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">Displaying multiple feeds</a>"
-msgstr "<a href=\"https://smashballoon.com/display-multiple-instagram-feeds/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">Mostrando múltiples feeds</a>"
+#: instagram-feed-admin.php:1745
+msgid "Display the bio in the header. Options:"
+msgstr "Muestra la biografía en la cabecera. Opciones:"
 
-#: instagram-feed-admin.php:1917
-msgid "<a href=\"https://smashballoon.com/instagram-feed/free?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">Installation and Configuration</a>"
-msgstr "<a href=\"https://smashballoon.com/instagram-feed/free?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">Instalación y configuración</a>"
+#: instagram-feed-admin.php:1750
+msgid "Size of the header including small, medium and large. Options:"
+msgstr "Tamaño de la cabecera incluyendo pequeño, mediano y grande. Opciones:"
 
-#: instagram-feed-admin.php:1916
-msgid "Documentation"
-msgstr "Documentación"
+#: instagram-feed-admin.php:1762
+msgid "Whether to show the 'Load More' button. Options:"
+msgstr "Si se muestra el botón 'Cargar más'. Opciones:"
+
+#: instagram-feed-admin.php:1784
+msgid "Whether to show the 'Follow on Instagram' button. Options:"
+msgstr "Si se muestra el botón 'Síguenos en Instagram'. Opciones:"
+
+#: instagram-feed-admin.php:1806
+msgid "Whether to show the photo caption. Options:"
+msgstr "Si se muestra la leyenda de la foto. Opciones:"
+
+#: instagram-feed-admin.php:1828
+msgid "Whether to show the Likes &amp; Comments. Options:"
+msgstr "Si se muestra los me gusta &amp; Comentarios. Opciones:"
 
 #: instagram-feed-admin.php:1912
 msgid "See All"
 msgstr "Ver todo"
 
-#: instagram-feed-admin.php:1911
-msgid "<a href=\"https://smashballoon.com/my-instagram-access-token-keep-expiring/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">My Access Token Keeps Expiring</a>"
-msgstr "<a href=\"https://smashballoon.com/my-instagram-access-token-keep-expiring/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">Mi token de acceso sigue caducando</a>"
+#: instagram-feed-admin.php:1916
+msgid "Documentation"
+msgstr "Documentación"
 
 #: instagram-feed-admin.php:1910
 msgid "<a href=\"https://smashballoon.com/my-photos-wont-load/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">My Instagram Feed Won't Load</a>"
 msgstr "<a href=\"https://smashballoon.com/my-photos-wont-load/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">Mi feed de Instagram no se carga</a>"
 
+#: instagram-feed-admin.php:1911
+msgid "<a href=\"https://smashballoon.com/my-instagram-access-token-keep-expiring/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">My Access Token Keeps Expiring</a>"
+msgstr "<a href=\"https://smashballoon.com/my-instagram-access-token-keep-expiring/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">Mi token de acceso sigue caducando</a>"
+
+#: instagram-feed-admin.php:1917
+msgid "<a href=\"https://smashballoon.com/instagram-feed/free?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">Installation and Configuration</a>"
+msgstr "<a href=\"https://smashballoon.com/instagram-feed/free?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">Instalación y configuración</a>"
+
+#: instagram-feed-admin.php:1918
+msgid "<a href=\"https://smashballoon.com/display-multiple-instagram-feeds/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">Displaying multiple feeds</a>"
+msgstr "<a href=\"https://smashballoon.com/display-multiple-instagram-feeds/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">Mostrando múltiples feeds</a>"
+
+#: instagram-feed-admin.php:1919
+msgid "<a href=\"https://smashballoon.com/instagram-feed-faq/customization/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">Customizing your Feed</a>"
+msgstr "<a href=\"https://smashballoon.com/instagram-feed-faq/customization/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">Personalizando tu feed</a>"
+
 #: instagram-feed-admin.php:1879
 msgid "Need help?"
 msgstr "¿Necesitas ayuda?"
-
-#: instagram-feed-admin.php:1361
-msgid "Manual"
-msgstr "Manual"
-
-#: instagram-feed-admin.php:1360
-msgid "Visual"
-msgstr "Visual"
-
-#: instagram-feed-admin.php:1350
-msgid "Upgrade to Pro to enable Moderation options"
-msgstr "Actualiza a pro para activar las opciones de moderación"
-
-#: instagram-feed-admin.php:1314 instagram-feed-admin.php:1331
-msgid "One feed"
-msgstr "Un feed"
 
 #: instagram-feed-admin.php:1313 instagram-feed-admin.php:1330
 msgid "All feeds"
 msgstr "Todos los feeds"
 
+#: instagram-feed-admin.php:1314 instagram-feed-admin.php:1331
+msgid "One feed"
+msgstr "Un feed"
+
+#: instagram-feed-admin.php:1360
+msgid "Visual"
+msgstr "Visual"
+
+#: instagram-feed-admin.php:1361
+msgid "Manual"
+msgstr "Manual"
+
 #: instagram-feed-admin.php:1312 instagram-feed-admin.php:1329
 msgid "Apply to:"
 msgstr "Aplicar para:"
-
-#: instagram-feed-admin.php:1300
-msgid "Upgrade to Pro to enable Post Filtering options"
-msgstr "Actualiza a pro para activar las opciones de filtrado de publicaciones"
-
-#: instagram-feed-admin.php:1191
-msgid "Upgrade to Pro to enable Comments"
-msgstr "Actualiza a pro para activar comentarios"
-
-#: instagram-feed-admin.php:1142
-msgid "Upgrade to Pro to enable Likes &amp; Comments"
-msgstr "Actualiza a pro para activar Me gusta &amp; comentarios"
-
-#: instagram-feed-admin.php:1086
-msgid "Upgrade to Pro to enable Photo Captions"
-msgstr "Actualiza a pro para activar las leyendas de fotos"
 
 #: instagram-feed-admin.php:965
 msgid "Upgrade to Pro to enable Carousels"
 msgstr "Actualiza a pro para activar los carruseles"
 
+#: instagram-feed-admin.php:1086
+msgid "Upgrade to Pro to enable Photo Captions"
+msgstr "Actualiza a pro para activar las leyendas de fotos"
+
+#: instagram-feed-admin.php:1142
+msgid "Upgrade to Pro to enable Likes &amp; Comments"
+msgstr "Actualiza a pro para activar Me gusta &amp; comentarios"
+
+#: instagram-feed-admin.php:1191
+msgid "Upgrade to Pro to enable Comments"
+msgstr "Actualiza a pro para activar comentarios"
+
+#: instagram-feed-admin.php:1300
+msgid "Upgrade to Pro to enable Post Filtering options"
+msgstr "Actualiza a pro para activar las opciones de filtrado de publicaciones"
+
 #: instagram-feed-admin.php:904
 msgid "Upgrade to Pro to enable Photo Hover styles"
 msgstr "Actualiza a pro para activar los estilos de foto al pasar el cursor"
+
+#: instagram-feed-admin.php:1350
+msgid "Upgrade to Pro to enable Moderation options"
+msgstr "Actualiza a pro para activar las opciones de moderación"
+
+#: instagram-feed-admin.php:518 instagram-feed-admin.php:665
+msgid "Pro"
+msgstr "Pro"
+
+#: instagram-feed-admin.php:698
+msgid "Rewind"
+msgstr "Rebobinar"
+
+#: instagram-feed-admin.php:682
+msgid "Number of Rows"
+msgstr "Número de filas"
+
+#: instagram-feed-admin.php:693
+msgid "Loop Type"
+msgstr "Tipo bucle"
+
+#: instagram-feed-admin.php:468
+msgid "Connect This Account"
+msgstr "Conectar esta cuenta"
+
+#: instagram-feed-admin.php:501
+msgid "Connect a user account above"
+msgstr "Conecta una cuenta de usuario arriba"
+
+#: instagram-feed-admin.php:699
+msgid "Infinity"
+msgstr "Infinito"
+
+#: instagram-feed-admin.php:734 instagram-feed-admin.php:746
+msgid "Pattern"
+msgstr "Patrón"
+
+#: instagram-feed-admin.php:735
+msgid "Post ID"
+msgstr "ID de publicación"
+
+#: instagram-feed-admin.php:736
+msgid "Hashtag"
+msgstr "Hashtag"
+
+#: instagram-feed-admin.php:749
+msgid "Highlight every"
+msgstr "Resaltar todos"
+
+#: instagram-feed-admin.php:749
+msgid "posts"
+msgstr "publicaciones"
+
+#: instagram-feed-admin.php:730
+msgid "Highlighting Type"
+msgstr "Tipo de resaltado"
 
 #: instagram-feed-admin.php:861 instagram-feed-admin.php:905
 #: instagram-feed-admin.php:966 instagram-feed-admin.php:1051
@@ -175,73 +227,62 @@ msgstr "Actualiza a pro para activar los estilos de foto al pasar el cursor"
 msgid "Show Pro Options"
 msgstr "Mostrar opciones pro"
 
-#: instagram-feed-admin.php:767
-msgid "You can use this setting to highlight posts by their ID. Enable and use \"moderation mode\", check the box to show post IDs underneath posts, then copy and paste IDs into this text box."
-msgstr "Puedes utilizar esta configuración para resaltar las publicaciones por ID. Activa y utiliza el \"modo de moderación\", marca la casilla para mostrar las IDs de las publicaciones debajo de las publicaciones, luego copia y pega las IDs en este cuadro de texto."
-
-#: instagram-feed-admin.php:764
-msgid "Separate IDs using commas"
-msgstr "Separa IDs usando comas"
-
 #: instagram-feed-admin.php:761
 msgid "Highlight Posts by ID"
 msgstr "Resaltar publicaciones por ID"
-
-#: instagram-feed-admin.php:758
-msgid "You can use this setting to highlight posts by a hashtag. Use a specified hashtag in your posts and they will be automatically highlighted in your feed."
-msgstr "Puedes utilizar esta configuración para resaltar las publicaciones por hashtag. Utiliza un hashtag específico en tus publicaciones y se resaltarán automáticamente en tu feed."
 
 #: instagram-feed-admin.php:752
 msgid "Highlight Posts with these Hashtags"
 msgstr "Resalta publicaciones con estos hashtags"
 
-#: instagram-feed-admin.php:749
-msgid "posts"
-msgstr "publicaciones"
+#: instagram-feed-admin.php:764
+msgid "Separate IDs using commas"
+msgstr "Separa IDs usando comas"
 
-#: instagram-feed-admin.php:749
-msgid "Highlight every"
-msgstr "Resaltar todos"
+#: instagram-feed-admin.php:531
+msgid "Please note: this is only available in the <a href=\"https://smashballoon.com/instagram-feed/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">Pro version</a>"
+msgstr "Ten en cuenta: esto solo está disponible en la <a href=\"https://smashballoon.com/instagram-feed/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">versión pro</a>"
 
-#: instagram-feed-admin.php:736
-msgid "Hashtag"
-msgstr "Hashtag"
+#: instagram-feed-admin.php:570 instagram-feed-admin.php:1499
+#: instagram-feed-admin.php:1869
+msgid "Need help setting up the plugin? Check out our <a href=\"https://smashballoon.com/instagram-feed/free/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">setup directions</a>"
+msgstr "¿Necesitas ayuda para configurar el plugin? Echa un vistazo a nuestras <a href=\"https://smashballoon.com/instagram-feed/free/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">instrucciones de configuración</a>"
 
-#: instagram-feed-admin.php:735
-msgid "Post ID"
-msgstr "ID de publicación"
+#: instagram-feed-admin.php:396
+msgid "Use the button above to connect an Instagram account"
+msgstr "Usa el botón de arriba para conectar una cuenta de Instagram"
 
-#: instagram-feed-admin.php:734 instagram-feed-admin.php:746
-msgid "Pattern"
-msgstr "Patrón"
+#: instagram-feed-admin.php:431
+msgid "Show Access Token"
+msgstr "Mostrar token de acceso"
 
-#: instagram-feed-admin.php:730
-msgid "Highlighting Type"
-msgstr "Tipo de resaltado"
+#: instagram-feed-admin.php:437
+msgid "Copy and paste this shortcode into your page or widget area:"
+msgstr "Copia y pega este shortcode en tu página o área de widgets:"
 
-#: instagram-feed-admin.php:727
-msgid "Masonry style, square-cropped, image only (no captions or likes/comments below image). \"Highlighted\" posts are twice as large."
-msgstr "Estilo de cuadrícula irregular, recorte cuadrado, solo imagen (sin títulos ni me gusta/comentarios debajo de la imagen). Las publicaciones «resaltadas» son el doble de grandes."
+#: instagram-feed-admin.php:445
+msgid "To add multiple users in the same feed, simply separate them using commas:"
+msgstr "Para añadir varios usuarios en el mismo feed, simplemente sepáralos con comas:"
 
-#: instagram-feed-admin.php:699
-msgid "Infinity"
-msgstr "Infinito"
+#: instagram-feed-admin.php:452
+msgid "Click on the <a href=\"?page=sb-instagram-feed&tab=display\" target=\"_blank\">Display Your Feed</a> tab to learn more about shortcodes"
+msgstr "Haz clic en la pestaña <a href=\"?page=sb-instagram-feed&tab=display\" target=\"_blank\">Mostrar tu feed</a> para obtener más información sobre los shortcodes"
 
-#: instagram-feed-admin.php:698
-msgid "Rewind"
-msgstr "Rebobinar"
+#: instagram-feed-admin.php:467
+msgid "Enter a valid Instagram Access Token"
+msgstr "Introduce un token de acceso de Instagram válido"
 
-#: instagram-feed-admin.php:693
-msgid "Loop Type"
-msgstr "Tipo bucle"
+#: instagram-feed-admin.php:517
+msgid "Upgrade to the Pro version to display hashtag feeds"
+msgstr "Actualiza a la versión pro para mostrar los feeds de hashtag"
 
-#: instagram-feed-admin.php:685
-msgid "Use the \"Number of Columns\" setting below this section to set how many posts are visible in the carousel at a given time."
-msgstr "Usa la configuración de \"Número de columnas\" debajo de esta sección para establecer cuántas publicaciones son visibles en el carrusel en un momento dado."
+#: instagram-feed-admin.php:664
+msgid "Upgrade to the Pro version to unlock these layouts"
+msgstr "Actualiza a la versión pro para desbloquear estos diseños"
 
-#: instagram-feed-admin.php:682
-msgid "Number of Rows"
-msgstr "Número de filas"
+#: instagram-feed-admin.php:671
+msgid "A uniform grid of square-cropped images."
+msgstr "Una cuadrícula uniforme de imágenes recortadas cuadradas."
 
 #: instagram-feed-admin.php:678
 msgid "Posts are displayed in a slideshow carousel."
@@ -251,62 +292,21 @@ msgstr "Las publicaciones se muestran en un carrusel de diapositivas."
 msgid "Images in their original aspect ratios with no vertical space between posts."
 msgstr "Imágenes con relaciones de aspecto originales sin espacio vertical entre publicaciones."
 
-#: instagram-feed-admin.php:671
-msgid "A uniform grid of square-cropped images."
-msgstr "Una cuadrícula uniforme de imágenes recortadas cuadradas."
+#: instagram-feed-admin.php:685
+msgid "Use the \"Number of Columns\" setting below this section to set how many posts are visible in the carousel at a given time."
+msgstr "Usa la configuración de \"Número de columnas\" debajo de esta sección para establecer cuántas publicaciones son visibles en el carrusel en un momento dado."
 
-#: instagram-feed-admin.php:518 instagram-feed-admin.php:665
-msgid "Pro"
-msgstr "Pro"
+#: instagram-feed-admin.php:727
+msgid "Masonry style, square-cropped, image only (no captions or likes/comments below image). \"Highlighted\" posts are twice as large."
+msgstr "Estilo de cuadrícula irregular, recorte cuadrado, solo imagen (sin títulos ni me gusta/comentarios debajo de la imagen). Las publicaciones «resaltadas» son el doble de grandes."
 
-#: instagram-feed-admin.php:664
-msgid "Upgrade to the Pro version to unlock these layouts"
-msgstr "Actualiza a la versión pro para desbloquear estos diseños"
+#: instagram-feed-admin.php:758
+msgid "You can use this setting to highlight posts by a hashtag. Use a specified hashtag in your posts and they will be automatically highlighted in your feed."
+msgstr "Puedes utilizar esta configuración para resaltar las publicaciones por hashtag. Utiliza un hashtag específico en tus publicaciones y se resaltarán automáticamente en tu feed."
 
-#: instagram-feed-admin.php:570 instagram-feed-admin.php:1499
-#: instagram-feed-admin.php:1869
-msgid "Need help setting up the plugin? Check out our <a href=\"https://smashballoon.com/instagram-feed/free/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">setup directions</a>"
-msgstr "¿Necesitas ayuda para configurar el plugin? Echa un vistazo a nuestras <a href=\"https://smashballoon.com/instagram-feed/free/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">instrucciones de configuración</a>"
-
-#: instagram-feed-admin.php:531
-msgid "Please note: this is only available in the <a href=\"https://smashballoon.com/instagram-feed/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">Pro version</a>"
-msgstr "Ten en cuenta: esto solo está disponible en la <a href=\"https://smashballoon.com/instagram-feed/?utm_source=plugin-free&utm_campaign=sbi\" target=\"_blank\">versión pro</a>"
-
-#: instagram-feed-admin.php:517
-msgid "Upgrade to the Pro version to display hashtag feeds"
-msgstr "Actualiza a la versión pro para mostrar los feeds de hashtag"
-
-#: instagram-feed-admin.php:501
-msgid "Connect a user account above"
-msgstr "Conecta una cuenta de usuario arriba"
-
-#: instagram-feed-admin.php:468
-msgid "Connect This Account"
-msgstr "Conectar esta cuenta"
-
-#: instagram-feed-admin.php:467
-msgid "Enter a valid Instagram Access Token"
-msgstr "Introduce un token de acceso de Instagram válido"
-
-#: instagram-feed-admin.php:452
-msgid "Click on the <a href=\"?page=sb-instagram-feed&tab=display\" target=\"_blank\">Display Your Feed</a> tab to learn more about shortcodes"
-msgstr "Haz clic en la pestaña <a href=\"?page=sb-instagram-feed&tab=display\" target=\"_blank\">Mostrar tu feed</a> para obtener más información sobre los shortcodes"
-
-#: instagram-feed-admin.php:445
-msgid "To add multiple users in the same feed, simply separate them using commas:"
-msgstr "Para añadir varios usuarios en el mismo feed, simplemente sepáralos con comas:"
-
-#: instagram-feed-admin.php:437
-msgid "Copy and paste this shortcode into your page or widget area:"
-msgstr "Copia y pega este shortcode en tu página o área de widgets:"
-
-#: instagram-feed-admin.php:431
-msgid "Show Access Token"
-msgstr "Mostrar token de acceso"
-
-#: instagram-feed-admin.php:396
-msgid "Use the button above to connect an Instagram account"
-msgstr "Usa el botón de arriba para conectar una cuenta de Instagram"
+#: instagram-feed-admin.php:767
+msgid "You can use this setting to highlight posts by their ID. Enable and use \"moderation mode\", check the box to show post IDs underneath posts, then copy and paste IDs into this text box."
+msgstr "Puedes utilizar esta configuración para resaltar las publicaciones por ID. Activa y utiliza el \"modo de moderación\", marca la casilla para mostrar las IDs de las publicaciones debajo de las publicaciones, luego copia y pega las IDs en este cuadro de texto."
 
 #: instagram-feed-admin.php:2175
 msgid ""
@@ -318,25 +318,57 @@ msgstr ""
 "            <div class='sbi_notice sbi_review_notice'>\n"
 "                <img src='"
 
-#: instagram-feed-admin.php:1862
-msgid "Distance before the end of feed or page that triggers the loading of more posts."
-msgstr "Distancia antes del final del feed o página que activa la carga de más publicaciones."
-
-#: instagram-feed-admin.php:1857
-msgid "Load more posts automatically as the user scrolls down the page."
-msgstr "Carga más publicaciones automáticamente a medida que el usuario hace scroll en la página."
-
 #: instagram-feed-admin.php:1854
 msgid "Auto Load More on Scroll"
 msgstr "Cargar más automáticamente al desplazarse"
 
-#: instagram-feed-admin.php:1720
-msgid "Photos Hover Style Options"
-msgstr "Opciones de estilo de fotos al pasar el cursor"
+#: instagram-feed-admin.php:1535
+msgid "Display photos from a User ID (user)<br />Display posts from a Hashtag (hashtag)"
+msgstr "Mostrar fotos desde una ID de usuario<br />Mostrar publicaciones desde un hashtag (hashtag)"
 
-#: instagram-feed-admin.php:1716
-msgid "Number of comments to show starting from the most recent."
-msgstr "Número de comentarios a mostrar a partir de los más recientes."
+#: instagram-feed-admin.php:1581
+msgid "Layout Options"
+msgstr "Opciones de diseño"
+
+#: instagram-feed-admin.php:1594
+msgid "The number of photos to display initially for mobile screens (smaller than 480 pixels)."
+msgstr "La cantidad de fotos que se mostrarán inicialmente para pantallas móviles (inferiores a 480 píxeles)."
+
+#: instagram-feed-admin.php:1604
+msgid "The number of columns in your feed for mobile screens (smaller than 480 pixels)."
+msgstr "El número de columnas en tu feed para pantallas móviles (inferiores a 480 píxeles)."
+
+#: instagram-feed-admin.php:1621
+msgid "Choose 1 or 2 rows of posts in the carousel"
+msgstr "Elige 1 o 2 filas de publicaciones en el carrusel."
+
+#: instagram-feed-admin.php:1626
+msgid "Infinitely loop through posts or rewind"
+msgstr "Recorre infinitamente las publicaciones o rebobina"
+
+#: instagram-feed-admin.php:1650
+msgid "Highlight Options"
+msgstr "Opciones de resaltado"
+
+#: instagram-feed-admin.php:1658
+msgid "How often a post is highlighted."
+msgstr "Con qué frecuencia se resalta una publicación."
+
+#: instagram-feed-admin.php:1663
+msgid "When to start the highlight pattern."
+msgstr "Cuándo iniciar el patrón de resaltado."
+
+#: instagram-feed-admin.php:1668
+msgid "Highlight posts with these hashtags."
+msgstr "Resalta publicaciones con estos hashtags."
+
+#: instagram-feed-admin.php:1689
+msgid "Display all media, only photos, or only videos"
+msgstr "Muestra todos los medios, solo fotos o solo videos"
+
+#: instagram-feed-admin.php:1704
+msgid "Whether to use urls in captions for the photo's link instead of linking to instagram.com."
+msgstr "Si se usan las URL en las leyendas para el enlace de la foto en lugar de enlazar con instagram.com."
 
 #: instagram-feed-admin.php:1711
 msgid "Whether to show comments in the lightbox for this feed."
@@ -346,169 +378,149 @@ msgstr "Si se muestran comentarios en la caja de luz para este feed."
 msgid "Lightbox Comments Options"
 msgstr "Opciones de comentarios en la caja de luz"
 
-#: instagram-feed-admin.php:1704
-msgid "Whether to use urls in captions for the photo's link instead of linking to instagram.com."
-msgstr "Si se usan las URL en las leyendas para el enlace de la foto en lugar de enlazar con instagram.com."
+#: instagram-feed-admin.php:1716
+msgid "Number of comments to show starting from the most recent."
+msgstr "Número de comentarios a mostrar a partir de los más recientes."
 
-#: instagram-feed-admin.php:1689
-msgid "Display all media, only photos, or only videos"
-msgstr "Muestra todos los medios, solo fotos o solo videos"
+#: instagram-feed-admin.php:1720
+msgid "Photos Hover Style Options"
+msgstr "Opciones de estilo de fotos al pasar el cursor"
 
-#: instagram-feed-admin.php:1668
-msgid "Highlight posts with these hashtags."
-msgstr "Resalta publicaciones con estos hashtags."
+#: instagram-feed-admin.php:1857
+msgid "Load more posts automatically as the user scrolls down the page."
+msgstr "Carga más publicaciones automáticamente a medida que el usuario hace scroll en la página."
 
-#: instagram-feed-admin.php:1663
-msgid "When to start the highlight pattern."
-msgstr "Cuándo iniciar el patrón de resaltado."
-
-#: instagram-feed-admin.php:1658
-msgid "How often a post is highlighted."
-msgstr "Con qué frecuencia se resalta una publicación."
-
-#: instagram-feed-admin.php:1650
-msgid "Highlight Options"
-msgstr "Opciones de resaltado"
-
-#: instagram-feed-admin.php:1626
-msgid "Infinitely loop through posts or rewind"
-msgstr "Recorre infinitamente las publicaciones o rebobina"
-
-#: instagram-feed-admin.php:1621
-msgid "Choose 1 or 2 rows of posts in the carousel"
-msgstr "Elige 1 o 2 filas de publicaciones en el carrusel."
-
-#: instagram-feed-admin.php:1604
-msgid "The number of columns in your feed for mobile screens (smaller than 480 pixels)."
-msgstr "El número de columnas en tu feed para pantallas móviles (inferiores a 480 píxeles)."
-
-#: instagram-feed-admin.php:1594
-msgid "The number of photos to display initially for mobile screens (smaller than 480 pixels)."
-msgstr "La cantidad de fotos que se mostrarán inicialmente para pantallas móviles (inferiores a 480 píxeles)."
-
-#: instagram-feed-admin.php:1581
-msgid "Layout Options"
-msgstr "Opciones de diseño"
-
-#: instagram-feed-admin.php:1535
-msgid "Display photos from a User ID (user)<br />Display posts from a Hashtag (hashtag)"
-msgstr "Mostrar fotos desde una ID de usuario<br />Mostrar publicaciones desde un hashtag (hashtag)"
-
-#: instagram-feed-admin.php:1065
-msgid "Centered"
-msgstr "Centrado"
-
-#: instagram-feed-admin.php:1063
-msgid "Standard"
-msgstr "Estándar"
-
-#: instagram-feed-admin.php:1038
-msgid "Only applies for Instagram accounts with bios"
-msgstr "Solo aplica para cuentas de Instagram con bios"
-
-#: instagram-feed-admin.php:1028
-msgid "Large"
-msgstr "Grande"
-
-#: instagram-feed-admin.php:1027
-msgid "Medium"
-msgstr "Medio"
-
-#: instagram-feed-admin.php:1026
-msgid "Small"
-msgstr "Pequeño"
-
-#: instagram-feed-admin.php:1022
-msgid "Header Size"
-msgstr "Tamaño de la cabecera"
-
-#: instagram-feed-admin.php:655
-msgid "Select a layout to see associated<br />options"
-msgstr "Selecciona un diseño para ver las<br />opciones asociadas"
-
-#: instagram-feed-admin.php:645
-msgid "Highlight"
-msgstr "Destacado"
+#: instagram-feed-admin.php:1862
+msgid "Distance before the end of feed or page that triggers the loading of more posts."
+msgstr "Distancia antes del final del feed o página que activa la carga de más publicaciones."
 
 #: instagram-feed-admin.php:644
 msgid "Masonry"
 msgstr "Cuadrícula irregular"
 
+#: instagram-feed-admin.php:529
+msgid "Combine multiple feed types into a single feed"
+msgstr "Combina múltiples tipos de feed en un solo feed"
+
 #: instagram-feed-admin.php:642
 msgid "Grid"
 msgstr "Cuadrícula"
+
+#: instagram-feed-admin.php:645
+msgid "Highlight"
+msgstr "Destacado"
+
+#: instagram-feed-admin.php:655
+msgid "Select a layout to see associated<br />options"
+msgstr "Selecciona un diseño para ver las<br />opciones asociadas"
+
+#: instagram-feed-admin.php:1022
+msgid "Header Size"
+msgstr "Tamaño de la cabecera"
+
+#: instagram-feed-admin.php:1026
+msgid "Small"
+msgstr "Pequeño"
+
+#: instagram-feed-admin.php:1027
+msgid "Medium"
+msgstr "Medio"
+
+#: instagram-feed-admin.php:1028
+msgid "Large"
+msgstr "Grande"
+
+#: instagram-feed-admin.php:1038
+msgid "Only applies for Instagram accounts with bios"
+msgstr "Solo aplica para cuentas de Instagram con bios"
+
+#: instagram-feed-admin.php:1063
+msgid "Standard"
+msgstr "Estándar"
+
+#: instagram-feed-admin.php:1065
+msgid "Centered"
+msgstr "Centrado"
 
 #: instagram-feed-admin.php:532
 msgid "To display multiple feed types in a single feed, use %s in your shortcode and then add each user name or hashtag of each feed into the shortcode, like so: %s. This will combine a user feed and a hashtag feed into the same feed."
 msgstr "Para mostrar múltiples tipos de feed en un solo feed, usa %s en tu shortcode y luego agrega cada nombre de usuario, etiqueta, ubicación o publicación individual de cada feed en el shortcode, así: %s. Esto combinará un feed de usuario y un hashtag en el mismo feed."
 
-#: instagram-feed-admin.php:529
-msgid "Combine multiple feed types into a single feed"
-msgstr "Combina múltiples tipos de feed en un solo feed"
-
 #: instagram-feed-admin.php:505
 msgid "<p><b>Displaying Posts from Your User Account</b><br />Simply connect an account using the button above.</p><p style='padding-top:8px;'><b>Displaying Posts from Other Instagram Accounts</b><br />Due to recent changes in the Instagram API it is no longer possible to display photos from other Instagram accounts which you do not have access to. You can only display the user feed of an account which you connect above. You can connect as many account as you like by logging in using the button above, or manually copy/pasting an Access Token by selecting the 'Manually Connect an Account' option.</p><p style='padding-top:10px;'><b>Multiple Acounts</b><br />It is only possible to display feeds from Instagram accounts which you own. In order to display feeds from multiple accounts, first connect them above and then use the buttons to add the account either to your primary feed or to another feed on your site.</p>"
 msgstr "<p>Para mostrar las publicaciones de una cuenta de usuario, primero conecta una cuenta usando el botón de arriba.</p><p style='padding-top:8px;'><b>Mostrar publicaciones de otras cuentas de Instagram</b><br />Debido a los cambios recientes en la API de Instagram, ya no es posible mostrar fotos de otras cuentas de Instagram a las que no tienes acceso. Solo puedes mostrar el feed de usuario de una cuenta que conectes arriba. Puedes conectar tantas cuentas como desees iniciando sesión con el botón de arriba, o manualmente copiando/pegando un token de acceso seleccionando la opción 'Conectar una cuenta manualmente'.</p><p style='padding-top:10px;'><b>Cuentas múltiples</b><br />Solo es posible mostrar feeds de cuentas de Instagram de tu propiedad. Para mostrar los feeds desde varias cuentas, primero conéctalas arriba y luego usa los botones para agregar la cuenta a tu feed primario o a otro feed en tu sitio.</p>"
-
-#: instagram-feed-admin.php:504
-msgid "How to display User feeds"
-msgstr "Cómo mostrar los feeds de usuario"
-
-#: instagram-feed-admin.php:481
-msgid "User Account:"
-msgstr "Cuenta de usuario:"
-
-#: instagram-feed-admin.php:465
-msgid "Manually Connect an Account"
-msgstr "Conectar una cuenta manualmente"
-
-#: instagram-feed-admin.php:430
-msgid "Add to another Feed"
-msgstr "Añadir a otro feed"
-
-#: instagram-feed-admin.php:428
-msgid "Remove from Primary Feed"
-msgstr "Eliminar del feed primario"
-
-#: instagram-feed-admin.php:426
-msgid "Add to Primary Feed"
-msgstr "Añadir al feed primario"
-
-#: instagram-feed-admin.php:416
-msgid "Remove"
-msgstr "Eliminar"
-
-#: instagram-feed-admin.php:411
-msgid "The Access Token for this account is expired or invalid. Click the button above to attempt to renew it."
-msgstr "El token de acceso para esta cuenta ha caducado o no es válido. Haz clic en el botón de arriba para intentar renovarlo."
-
-#: instagram-feed-admin.php:399
-msgid "No Instagram accounts connected. Click the button above to connect an account."
-msgstr "No hay cuentas de Instagram conectadas. Haz clic en el botón de arriba para conectar una cuenta."
-
-#: instagram-feed-admin.php:396
-msgid "Instagram Accounts"
-msgstr "Cuentas de Instagram"
 
 #: instagram-feed-admin.php:374
 msgid "Connect an Instagram Account"
 msgstr "Conecta una cuenta de Instagram"
 
+#: instagram-feed-admin.php:396
+msgid "Instagram Accounts"
+msgstr "Cuentas de Instagram"
+
+#: instagram-feed-admin.php:399
+msgid "No Instagram accounts connected. Click the button above to connect an account."
+msgstr "No hay cuentas de Instagram conectadas. Haz clic en el botón de arriba para conectar una cuenta."
+
+#: instagram-feed-admin.php:411
+msgid "The Access Token for this account is expired or invalid. Click the button above to attempt to renew it."
+msgstr "El token de acceso para esta cuenta ha caducado o no es válido. Haz clic en el botón de arriba para intentar renovarlo."
+
+#: instagram-feed-admin.php:416
+msgid "Remove"
+msgstr "Eliminar"
+
+#: instagram-feed-admin.php:426
+msgid "Add to Primary Feed"
+msgstr "Añadir al feed primario"
+
+#: instagram-feed-admin.php:428
+msgid "Remove from Primary Feed"
+msgstr "Eliminar del feed primario"
+
+#: instagram-feed-admin.php:430
+msgid "Add to another Feed"
+msgstr "Añadir a otro feed"
+
+#: instagram-feed-admin.php:465
+msgid "Manually Connect an Account"
+msgstr "Conectar una cuenta manualmente"
+
+#: instagram-feed-admin.php:481
+msgid "User Account:"
+msgstr "Cuenta de usuario:"
+
+#: instagram-feed-admin.php:504
+msgid "How to display User feeds"
+msgstr "Cómo mostrar los feeds de usuario"
+
 #: instagram-feed-admin.php:1540
 msgid "Your Instagram User ID. This must be the ID associated with your Access Token."
 msgstr "Tu ID de usuario de Instagram. Este debe ser el ID asociado a tu token de acceso."
 
-#: instagram-feed.php:456
-msgid "There's an issue with the Instagram Access Token that you are using. Please obtain a new Access Token on the plugin's Settings page.<br />If you continue to have an issue with your Access Token then please see <a href=\"https://smashballoon.com/my-instagram-access-token-keep-expiring/\" target=\"_blank\" rel=\"noopener\">this FAQ</a> for more information."
-msgstr "Hay un problema con el token de acceso de Instagram que estás usando. Por favor, obten un nuevo token de acceso en la página de ajustes del plugin.<br />Si continúas teniendo problemas con tu token de acceso, consulta <a href=\"https://smashballoon.com/my-instagram-access-token-keep-expiring/\" target=\"_blank\" rel=\"noopener\">este FAQ</a> para más información."
+#: instagram-feed-admin.php:1462
+msgid "No"
+msgstr "No"
+
+#: instagram-feed-admin.php:1480
+msgid "Icon Method"
+msgstr "Método del icono"
+
+#: instagram-feed-admin.php:1484
+msgid "Font File"
+msgstr "Archivo de fuente"
+
+#: instagram-feed.php:455
+msgid "Feed will not update."
+msgstr "El feed no se actualizará."
 
 #: instagram-feed.php:455
 msgid " This error message is only visible to WordPress admins</span>"
 msgstr " Este mensaje de error solo es visible para los administradores de WordPress</span>"
 
-#: instagram-feed.php:455
-msgid "Feed will not update."
-msgstr "El feed no se actualizará."
+#: instagram-feed-admin.php:1474
+msgid "Disable Icon Font"
+msgstr "Desactivar fuente de icono"
 
 #: instagram-feed.php:455
 msgid "Error: Access Token is not valid or has expired."
@@ -518,33 +530,37 @@ msgstr "Error: el token de acceso no es válido o ha caducado."
 msgid "This plugin uses SVGs for all icons in the feed. Use this setting to switch to font icons."
 msgstr "Este plugin utiliza SVG para todos los iconos en el feed. Usa este ajuste para cambiar a íconos de fuentes."
 
-#: instagram-feed-admin.php:1484
-msgid "Font File"
-msgstr "Archivo de fuente"
-
-#: instagram-feed-admin.php:1480
-msgid "Icon Method"
-msgstr "Método del icono"
-
-#: instagram-feed-admin.php:1474
-msgid "Disable Icon Font"
-msgstr "Desactivar fuente de icono"
-
-#: instagram-feed-admin.php:1466
-msgid "If you're experiencing an issue with the plugin not auto-updating then you can set this to 'Yes' to run a scheduled event behind the scenes which forces the plugin cache to clear on a regular basis and retrieve new data from Instagram."
-msgstr "Si estás experimentando un problema con que el plugin no se auto-actualiza puedes fijar esto a 'Si' para lanzar un evento programado entre bambalinas el que forzará al plugin a limpiar la caché de forma regular y recuperar nuevos datos de Instagram."
-
-#: instagram-feed-admin.php:1462
-msgid "No"
-msgstr "No"
-
 #: instagram-feed-admin.php:1456
 msgid "Force cache to clear on interval"
 msgstr "Forzar caché para vaciar el intervalo"
 
+#: instagram-feed-admin.php:550
+msgid "Check for new posts every"
+msgstr "Buscar nuevas publicaciones cada"
+
+#: instagram-feed-admin.php:554
+msgid "Minutes"
+msgstr "Minutos"
+
+#: instagram-feed-admin.php:555
+msgid "Hours"
+msgstr "Horas"
+
+#: instagram-feed-admin.php:1438
+msgid "Cache error API recheck"
+msgstr "Volver a comprobar la API de error de caché"
+
 #: instagram-feed-admin.php:1451
 msgid "Every feed will save a duplicate version of itself in the database to be used if the normal cache is not available."
 msgstr "Cada feed guardará una versión duplicada de sí mismo en la base de datos que se utilizará si la caché normal no está disponible."
+
+#: instagram-feed-admin.php:1442
+msgid "If your site uses caching, minification, or JavaScript concatenation, this option can help prevent missing cache problems with the feed."
+msgstr "Si tu sitio utiliza el almacenamiento en caché, la minificación o la concatenación de JavaScript, esta opción puede ayudar a prevenir problemas de perdida de caché con el feed."
+
+#: instagram-feed-admin.php:556
+msgid "Days"
+msgstr "Días"
 
 #: instagram-feed-admin.php:1449
 msgid "Clear Backup Cache"
@@ -554,33 +570,17 @@ msgstr "Borrar la caché de copia de seguridad"
 msgid "Enable Backup Caching"
 msgstr "Activar la caché de copia de seguridad"
 
-#: instagram-feed-admin.php:1442
-msgid "If your site uses caching, minification, or JavaScript concatenation, this option can help prevent missing cache problems with the feed."
-msgstr "Si tu sitio utiliza el almacenamiento en caché, la minificación o la concatenación de JavaScript, esta opción puede ayudar a prevenir problemas de perdida de caché con el feed."
-
-#: instagram-feed-admin.php:1438
-msgid "Cache error API recheck"
-msgstr "Volver a comprobar la API de error de caché"
-
 #: instagram-feed-admin.php:559
 msgid "Your Instagram posts are temporarily cached by the plugin in your WordPress database. You can choose how long the posts should be cached for. If you set the time to 1 hour then the plugin will clear the cache after that length of time and check Instagram for posts again."
 msgstr "El plugin cachea temporalmente tus publicaciones de Instagram en la base de datos de WordPress. Puedes elegir cuánto tiempo se deben almacenar las publicaciones. Si estableces el tiempo en 1 hora, el plugin vaciará la caché después de ese período de tiempo y comprobará si hay publicaciones nuevas en Instagram."
 
-#: instagram-feed-admin.php:556
-msgid "Days"
-msgstr "Días"
+#: instagram-feed-admin.php:1466
+msgid "If you're experiencing an issue with the plugin not auto-updating then you can set this to 'Yes' to run a scheduled event behind the scenes which forces the plugin cache to clear on a regular basis and retrieve new data from Instagram."
+msgstr "Si estás experimentando un problema con que el plugin no se auto-actualiza puedes fijar esto a 'Si' para lanzar un evento programado entre bambalinas el que forzará al plugin a limpiar la caché de forma regular y recuperar nuevos datos de Instagram."
 
-#: instagram-feed-admin.php:555
-msgid "Hours"
-msgstr "Horas"
-
-#: instagram-feed-admin.php:554
-msgid "Minutes"
-msgstr "Minutos"
-
-#: instagram-feed-admin.php:550
-msgid "Check for new posts every"
-msgstr "Buscar nuevas publicaciones cada"
+#: instagram-feed.php:456
+msgid "There's an issue with the Instagram Access Token that you are using. Please obtain a new Access Token on the plugin's Settings page.<br />If you continue to have an issue with your Access Token then please see <a href=\"https://smashballoon.com/my-instagram-access-token-keep-expiring/\" target=\"_blank\" rel=\"noopener\">this FAQ</a> for more information."
+msgstr "Hay un problema con el token de acceso de Instagram que estás usando. Por favor, obten un nuevo token de acceso en la página de ajustes del plugin.<br />Si continúas teniendo problemas con tu token de acceso, consulta <a href=\"https://smashballoon.com/my-instagram-access-token-keep-expiring/\" target=\"_blank\" rel=\"noopener\">este FAQ</a> para más información."
 
 #. Author URI of the plugin
 msgid "https://smashballoon.com/"
@@ -629,10 +629,6 @@ msgstr "Mira nuestra amplia biblioteca de FAQs y documentación para ayudarte a 
 #: instagram-feed-admin.php:1902
 msgid "FAQs and Docs"
 msgstr "FAQs y documentación"
-
-#: instagram-feed-admin.php:1892
-msgid "Watch a short video demonstrating how to set up, customize and use the plugin.<br /><b>Please note</b> that the video shows the set up and use of the <b><a href='https://smashballoon.com/instagram-feed/?utm_source=plugin-free&utm_campaign=sbi' target='_blank'>Pro version</a></b> of the plugin, but the process is the same for this free version. The only difference is some of the features available."
-msgstr "Mira un breve video que muestra cómo configurar, personalizar y usar el plugin.<br /><b>Ten en cuenta</b> que el vídeo muestra la configuración y el uso de la <b><a href='https://smashballoon.com/instagram-feed/?utm_source=plugin-free&utm_campaign=sbi' target='_blank'>versión PRO</a></b> del plugin, pero el proceso es el mismo para esta versión gratuita. La única diferencia son algunas de las características disponibles."
 
 #: instagram-feed-admin.php:1891
 msgid "Watch a Video"
@@ -894,10 +890,6 @@ msgstr "Separa nombres de usuario usando comas"
 msgid "Only show posts by these users"
 msgstr "Mostrar sólo las publicaciones de estos usuarios"
 
-#: instagram-feed-admin.php:1363
-msgid "<b>Visual Moderation Mode</b><br />This adds a button to each feed that will allow you to hide posts, block users, and create white lists from the front end using a visual interface. Visit <a href='https://smashballoon.com/guide-to-moderation-mode/?utm_source=plugin-free&utm_campaign=sbi' target='_blank'>this page</a> for details"
-msgstr "<b>Modo de moderación visual</b><br />Esto añade un botón a cada feed que te permitirá ocultar publicaciones, bloquear usuarios y crear listas blancas desde la portada usando una interfaz visual. Visita <a href='https://smashballoon.com/guide-to-moderation-mode/?utm_source=plugin-free&utm_campaign=sbi' target='_blank'>esta página</a> para más detalles"
-
 #: instagram-feed-admin.php:1358
 msgid "Moderation Type"
 msgstr "Tipo de moderación"
@@ -929,10 +921,6 @@ msgstr "Eliminar fotos que contienen estas palabras o hashtags"
 #: instagram-feed-admin.php:1297
 msgid "Post Filtering"
 msgstr "Filtrado de entradas"
-
-#: instagram-feed-admin.php:1265
-msgid "Show the Follow button"
-msgstr "Mostrar el botón «Seguir»"
 
 #: instagram-feed-admin.php:1249 instagram-feed-admin.php:1287
 msgid "Button Text"
@@ -1006,10 +994,6 @@ msgstr "Tamaño del texto"
 msgid "Text Color"
 msgstr "Color de texto"
 
-#: instagram-feed-admin.php:1104
-msgid "The number of characters of text to display in the caption. An elipsis link will be added to allow the user to reveal more text if desired."
-msgstr "El número de caracteres del texto que se mostrará en la leyenda. Se agregará un enlace elipsis «Leer más» para permitir al usuario revelar más texto si lo desea."
-
 #: instagram-feed-admin.php:1100
 msgid "Maximum Text Length"
 msgstr "Longitud máxima del texto"
@@ -1041,10 +1025,6 @@ msgstr "Color del texto de la cabezera"
 #: instagram-feed-admin.php:1033
 msgid "Show Bio Text"
 msgstr "Mostrar texto de la biografía"
-
-#: instagram-feed-admin.php:1015
-msgid "Show Feed Header"
-msgstr "Mostrar la cabecera del feed"
 
 #: instagram-feed-admin.php:721 instagram-feed-admin.php:1001
 msgid "miliseconds"
@@ -1121,10 +1101,6 @@ msgstr "Color de fondo al pasar el cursor"
 #: instagram-feed-admin.php:901
 msgid "Photo Hover Style"
 msgstr "Estilo de foto al pasar el cursor"
-
-#: instagram-feed-admin.php:892
-msgid "Checking this box will change the link for each post to any url included in the caption for that Instagram post. The lightbox will be disabled. Visit <a href='https://smashballoon.com/make-a-shoppable-feed?utm_source=plugin-free&utm_campaign=sbi'>this link</a> to learn how this works."
-msgstr "Al marcar esta casilla se cambiará el enlace de cada publicación a cualquier url incluida en leyenda de esa publicación de Instagram. La mesa de luz se desactivará. Visita <a href='https://smashballoon.com/make-a-shoppable-feed?utm_source=plugin-free&utm_campaign=sbi'>este enlace</a> para saber cómo funciona."
 
 #: instagram-feed-admin.php:891
 msgid "What will this do?"
@@ -1369,10 +1345,6 @@ msgstr "Si"
 msgid "Preserve settings when plugin is removed"
 msgstr "Conservar los ajustes cuando se borre el plugin"
 
-#: instagram-feed-admin.php:755
-msgid "Separate multiple hashtags using commas"
-msgstr "Separa múltiples hashtags usando comas"
-
 #: instagram-feed-admin.php:523
 msgid "Display posts from a specific hashtag instead of from a user"
 msgstr "Mostrar publicaciones de un hashtag específico en lugar de un usuario"
@@ -1393,10 +1365,6 @@ msgstr "Mostrar fotos desde:"
 #: instagram-feed-admin.php:1386
 msgid "What is this?"
 msgstr "¿Que es esto?"
-
-#: instagram-feed-admin.php:456
-msgid "Access Token:"
-msgstr "Token de acceso:"
 
 #: instagram-feed-admin.php:375
 msgid "Button not working?"
@@ -1448,3 +1416,35 @@ msgstr "Ajustes"
 #: instagram-feed-admin.php:350
 msgid "Instagram Feed"
 msgstr "Instagram Feed"
+
+#: instagram-feed-admin.php:1015
+msgid "Show Feed Header"
+msgstr "Mostrar la cabecera del feed"
+
+#: instagram-feed-admin.php:1104
+msgid "The number of characters of text to display in the caption. An elipsis link will be added to allow the user to reveal more text if desired."
+msgstr "El número de caracteres del texto que se mostrará en la leyenda. Se agregará un enlace elipsis «Leer más» para permitir al usuario revelar más texto si lo desea."
+
+#: instagram-feed-admin.php:1265
+msgid "Show the Follow button"
+msgstr "Mostrar el botón «Seguir»"
+
+#: instagram-feed-admin.php:456
+msgid "Access Token:"
+msgstr "Token de acceso:"
+
+#: instagram-feed-admin.php:755
+msgid "Separate multiple hashtags using commas"
+msgstr "Separa múltiples hashtags usando comas"
+
+#: instagram-feed-admin.php:1892
+msgid "Watch a short video demonstrating how to set up, customize and use the plugin.<br /><b>Please note</b> that the video shows the set up and use of the <b><a href='https://smashballoon.com/instagram-feed/?utm_source=plugin-free&utm_campaign=sbi' target='_blank'>Pro version</a></b> of the plugin, but the process is the same for this free version. The only difference is some of the features available."
+msgstr "Mira un breve video que muestra cómo configurar, personalizar y usar el plugin.<br /><b>Ten en cuenta</b> que el vídeo muestra la configuración y el uso de la <b><a href='https://smashballoon.com/instagram-feed/?utm_source=plugin-free&utm_campaign=sbi' target='_blank'>versión PRO</a></b> del plugin, pero el proceso es el mismo para esta versión gratuita. La única diferencia son algunas de las características disponibles."
+
+#: instagram-feed-admin.php:1363
+msgid "<b>Visual Moderation Mode</b><br />This adds a button to each feed that will allow you to hide posts, block users, and create white lists from the front end using a visual interface. Visit <a href='https://smashballoon.com/guide-to-moderation-mode/?utm_source=plugin-free&utm_campaign=sbi' target='_blank'>this page</a> for details"
+msgstr "<b>Modo de moderación visual</b><br />Esto añade un botón a cada feed que te permitirá ocultar publicaciones, bloquear usuarios y crear listas blancas desde la portada usando una interfaz visual. Visita <a href='https://smashballoon.com/guide-to-moderation-mode/?utm_source=plugin-free&utm_campaign=sbi' target='_blank'>esta página</a> para más detalles"
+
+#: instagram-feed-admin.php:892
+msgid "Checking this box will change the link for each post to any url included in the caption for that Instagram post. The lightbox will be disabled. Visit <a href='https://smashballoon.com/make-a-shoppable-feed?utm_source=plugin-free&utm_campaign=sbi'>this link</a> to learn how this works."
+msgstr "Al marcar esta casilla se cambiará el enlace de cada publicación a cualquier url incluida en leyenda de esa publicación de Instagram. La mesa de luz se desactivará. Visita <a href='https://smashballoon.com/make-a-shoppable-feed?utm_source=plugin-free&utm_campaign=sbi'>este enlace</a> para saber cómo funciona."

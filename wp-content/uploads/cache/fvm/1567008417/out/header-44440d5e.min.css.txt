@@ -1,0 +1,3 @@
+PROCESSED on Wed, 28 Aug 2019 16:07:25 +0000
+/wp-content/plugins/paid-memberships-pro/css/print.css
+PROCESSED from http://capacitacion.local/cursos/software-de-oficina/ms-access-avanzado/

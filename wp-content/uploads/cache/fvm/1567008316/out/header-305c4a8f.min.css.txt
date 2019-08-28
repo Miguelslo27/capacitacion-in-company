@@ -1,0 +1,11 @@
+PROCESSED on Wed, 28 Aug 2019 16:05:26 +0000
+/wp-content/plugins/woocommerce/assets/css/woocommerce.css
+/wp-content/plugins/wp-events-manager/inc/libraries/countdown/css/jquery.countdown.css
+/wp-content/plugins/wp-events-manager/inc/libraries/owl-carousel/css/owl.carousel.css
+/wp-content/plugins/wp-events-manager/inc/libraries/magnific-popup/css/magnific-popup.css
+/wp-content/plugins/wp-events-manager/assets/css/frontend/events.min.css
+/wp-content/plugins/builderpress/assets/libs/slick/slick.css
+/wp-content/plugins/learnpress-course-review/assets/css/course-review.css
+/wp-includes/css/dashicons.min.css
+/wp-content/plugins/learnpress-paid-membership-pro/assets/style.css
+PROCESSED from http://capacitacion.local/cursos/software-de-oficina/herramientas-pedagogicas/

@@ -1,0 +1,9 @@
+PROCESSED on Wed, 28 Aug 2019 16:05:27 +0000
+/wp-content/themes/ivy-school/style.css
+/wp-content/plugins/learnpress/assets/css/bundle.min.css
+/wp-content/plugins/learnpress/assets/css/learnpress.css
+/wp-content/themes/ivy-school/assets/css/libs/ionicons/ionicons.css
+/wp-content/themes/ivy-school/assets/css/libs/select2/core.css
+/wp-content/themes/ivy-school/assets/css/libs/bootstrap/bootstrap.css
+/wp-content/themes/ivy-school-child/style.css
+PROCESSED from http://capacitacion.local/cursos/software-de-oficina/herramientas-pedagogicas/
