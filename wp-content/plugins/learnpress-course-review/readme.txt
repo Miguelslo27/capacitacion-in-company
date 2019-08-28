@@ -3,8 +3,8 @@ Contributors: thimpress, tunnhn, kendy73
 Donate link:  
 Tags: lms, elearning, e-learning, learning management system, education, course, courses, quiz, quizzes, questions, training, guru, sell courses  
 Requires at least: 3.8  
-Tested up to: 4.9.6
-Stable tag: 3.0.3
+Tested up to: 5.2.2
+Stable tag: 3.0.5
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -55,6 +55,13 @@ Check out <a href="http://docs.thimpress.com/learnpress" target="_blank">LearnPr
 1. LearnPress Course Review screenshot.  
 
 == Changelog ==
+
+= 3.0.5 =
+~ Fixed an issue when checking if the user rated or not!
+
+= 3.0.4 =
+~ Load select2 in widgets page.
+~ Improve code to implement select2 for widgets.
 
 = 3.0.3 =
 + Fixed displayed name of reviews in Back End Comments page.

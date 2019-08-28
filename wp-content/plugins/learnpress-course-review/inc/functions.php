@@ -162,7 +162,7 @@ function learn_press_get_user_rate( $course_id = null, $user_id = null ) {
 	}
 
 	// Get in cache if it is already get
-	if ( false === ( $comment = wp_cache_get( 'user-' . $user_id . '/' . $course_id, 'lp-user-rate' ) ) ) {
+	if ( ! ( $comment = wp_cache_get( 'user-' . $user_id . '/' . $course_id, 'lp-user-rate' ) ) ) {
 		global $wpdb;
 		$query = $wpdb->prepare( "
 	        SELECT *

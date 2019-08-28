@@ -16,13 +16,15 @@ class LearnPress_Course_Review_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'lpr_course_review',
-			__( 'Course Review', 'learnpress-course-review' ),
+			__( 'LearnPress - Course Review', 'learnpress-course-review' ),
 			array( 'description' => __( 'Display ratings and reviews of course', 'learnpress-course-review' ), )
 		);
 		add_action( 'wp_ajax_learnpress_reviews_search_course', array(
 			__CLASS__,
 			'learnpress_reviews_search_course'
 		) );
+
+		add_action( 'admin_footer', array( $this, 'footer_js' ) );
 	}
 
 	/**
@@ -113,6 +115,8 @@ class LearnPress_Course_Review_Widget extends WP_Widget {
 		}
 		// Reset Post Data
 		wp_reset_postdata();
+		wp_enqueue_script( 'select2' );
+
 		?>
         <p>
             <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'learnpress-course-review' ); ?></label>
@@ -145,48 +149,7 @@ class LearnPress_Course_Review_Widget extends WP_Widget {
                    name="<?php echo $this->get_field_name( 'display_amount' ); ?>" type="number"
                    value="<?php echo esc_attr( $display_amount ); ?>"/>
         </p>
-        <script>
-            ;(function ($) {
-                function _ready() {
-                    $("#<?php echo $this->get_field_id( 'course_id' ); ?>").select2({
-                        placeholder: 'Select a course',
-                        minimumInputLength: 3,
-                        ajax: {
-                            url: ajaxurl,
-                            dataType: 'json',
-                            quietMillis: 250,
-                            data: function (params) {
-                                return {
-                                    q: params.term, // search term
-                                    action: 'learnpress_reviews_search_course'
-                                };
-                            },
-                            processResults: function( data ) {
-                                var options = [];
-                                if ( data ) {
 
-                                    // data is the array of arrays, and each of them contains ID and the Label of the option
-                                    $.each( data, function( index, text ) { // do not forget that "index" is just auto incremented value
-                                        options.push( { id: text[0], text: text[1]  } );
-                                    });
-
-                                }
-                                return {
-                                    results: options
-                                };
-                            },
-                            cache: true
-                        },
-                        language: {
-                            noResults: function (params) {
-                                return "There is no course to select.";
-                            }
-                        }
-                    });
-                }
-                $(document).ready(_ready);
-            })(jQuery);
-        </script>
 		<?php
 	}
 
@@ -200,6 +163,63 @@ class LearnPress_Course_Review_Widget extends WP_Widget {
 		$instance['display_amount'] = ( ! empty( $new_instance['display_amount'] ) ) ? strip_tags( $new_instance['display_amount'] ) : 5;
 
 		return $instance;
+	}
+
+	public function footer_js() {
+		?>
+        <script>
+            jQuery(function ($) {
+                function initWidget(widget) {
+                    $(widget).find('select[id*="course_id"]').select2({
+                        placeholder: '<?php esc_attr_e( 'Select a course', 'learnpress-course-review' );?>',
+                        minimumInputLength: 3,
+                        ajax: {
+                            url: ajaxurl,
+                            dataType: 'json',
+                            quietMillis: 250,
+                            data: function (params) {
+                                return {
+                                    q: params.term, // search term
+                                    action: 'learnpress_reviews_search_course'
+                                };
+                            },
+                            processResults: function (data) {
+                                var options = [];
+                                if (data) {
+
+                                    // data is the array of arrays, and each of them contains ID and the Label of the option
+                                    $.each(data, function (index, text) { // do not forget that "index" is just auto incremented value
+                                        options.push({id: text[0], text: text[1]});
+                                    });
+
+                                }
+                                return {
+                                    results: options
+                                };
+                            },
+                            cache: true
+                        },
+                        language: {
+                            noResults: function (params) {
+                                return '<?php esc_attr_e( 'There is no course to select.', 'learnpress-course-review' );?>';
+                            }
+                        }
+                    });
+                }
+
+                // Init select2 on widgets are existed
+                $('#widgets-right').find('[id*="_lpr_course_review"]').each(function () {
+                    initWidget(this);
+                })
+
+                // Init select2 on new widget after added to sidebar
+                // Or after press Save button
+                $(document).on('widget-updated widget-added', function (e, el) {
+                    initWidget(el);
+                });
+            });
+        </script>
+		<?php
 	}
 
 }

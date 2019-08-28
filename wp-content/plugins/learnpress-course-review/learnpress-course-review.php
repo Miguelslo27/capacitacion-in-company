@@ -4,11 +4,11 @@ Plugin Name: LearnPress - Course Review
 Plugin URI: http://thimpress.com/learnpress
 Description: Adding review for course.
 Author: ThimPress
-Version: 3.0.3
+Version: 3.0.5
 Author URI: http://thimpress.com
 Tags: learnpress
 Requires at least: 3.8
-Tested up to: 4.9.6
+Tested up to: 5.2.2
 Text Domain: learnpress-course-review
 Domain Path: /languages/
 */
@@ -17,7 +17,7 @@ Domain Path: /languages/
 defined( 'ABSPATH' ) || exit;
 
 define( 'LP_ADDON_COURSE_REVIEW_FILE', __FILE__ );
-define( 'LP_ADDON_COURSE_REVIEW_VER', '3.0.3' );
+define( 'LP_ADDON_COURSE_REVIEW_VER', '3.0.5' );
 define( 'LP_ADDON_COURSE_REVIEW_REQUIRE_VER', '3.0.0' );
 
 /**

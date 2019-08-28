@@ -11,16 +11,18 @@
 
 // Prevent loading this file directly
 defined( 'ABSPATH' ) || exit;
+
 ?>
 
 <li>
+<?php #var_dump($review); ?>
     <div class="review-author">
 		<?php echo get_avatar( $review->user_email ) ?>
     </div>
     <div class="review-author-info">
         <h4 class="user-name">
 			<?php do_action( 'learn_press_before_review_username' ); ?>
-			<?php echo $review->user_login; ?>
+			<?php echo $review->display_name; ?>
 			<?php do_action( 'learn_press_after_review_username' ); ?>
         </h4>
 		<?php learn_press_course_review_template( 'rating-stars.php', array( 'rated' => $review->rate ) ); ?>

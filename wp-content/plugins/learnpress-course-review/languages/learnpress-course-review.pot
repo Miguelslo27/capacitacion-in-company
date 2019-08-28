@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-14 15:51+0700\n"
+"POT-Creation-Date: 2019-05-16 11:29+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,39 +75,47 @@ msgid "Reviews"
 msgstr ""
 
 #: inc/widgets.php:19
-msgid "Course Review"
+msgid "LearnPress - Course Review"
 msgstr ""
 
 #: inc/widgets.php:20
 msgid "Display ratings and reviews of course"
 msgstr ""
 
-#: inc/widgets.php:111
+#: inc/widgets.php:104
 msgid "New title"
 msgstr ""
 
-#: inc/widgets.php:121
+#: inc/widgets.php:114
 msgid "Pick up 1 course"
 msgstr ""
 
-#: inc/widgets.php:127
+#: inc/widgets.php:122
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets.php:133
+#: inc/widgets.php:128
 msgid "Course Id:"
 msgstr ""
 
-#: inc/widgets.php:140
+#: inc/widgets.php:135
 msgid "Show Rate:"
 msgstr ""
 
-#: inc/widgets.php:146
+#: inc/widgets.php:141
 msgid "Show Review:"
 msgstr ""
 
-#: inc/widgets.php:152
+#: inc/widgets.php:147
 msgid "Amount Display:"
+msgstr ""
+
+#: inc/widgets.php:174
+msgid "Select a course"
+msgstr ""
+
+#: inc/widgets.php:204
+msgid "There is no course to select."
 msgstr ""
 
 #: templates/course-rate.php:27
