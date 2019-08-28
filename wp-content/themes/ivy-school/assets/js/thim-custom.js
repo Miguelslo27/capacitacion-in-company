@@ -56,9 +56,26 @@
             this.header_menu_mobile();
             this.parallax();
             this.thim_post_gallery();
+            this.thim_miniCartHover();
         },
 
         // CUSTOM FUNCTION IN BELOW
+
+        thim_miniCartHover: function() {
+            jQuery(document).on('mouseenter', '.minicart_hover', function () {
+                jQuery(this).next('.widget_shopping_cart_content').slideDown();
+            }).on('mouseleave', '.minicart_hover', function () {
+                jQuery(this).next('.widget_shopping_cart_content').delay(100).stop(true, false).slideUp();
+            });
+            jQuery(document)
+                .on('mouseenter', '.widget_shopping_cart_content', function () {
+                    jQuery(this).stop(true, false).show();
+                })
+                .on('mouseleave', '.widget_shopping_cart_content', function () {
+                    jQuery(this).delay(100).stop(true, false).slideUp();
+                });
+        },
+
         thim_post_gallery: function() {
             $('article.format-gallery .flexslider').imagesLoaded(function() {
                 $('.flexslider').flexslider({

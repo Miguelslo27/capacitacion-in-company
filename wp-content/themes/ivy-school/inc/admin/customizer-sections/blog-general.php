@@ -160,6 +160,7 @@ thim_customizer()->add_group( array(
                         'priority'        => 11,
                         'multiple'        => 0,
                         'choices'         => array(
+                            '2' => esc_html__( '2', 'ivy-school' ),
                             '3' => esc_html__( '3', 'ivy-school' ),
                             '4' => esc_html__( '4', 'ivy-school' ),
                         ),

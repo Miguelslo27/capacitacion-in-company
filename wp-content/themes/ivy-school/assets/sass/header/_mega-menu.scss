@@ -79,7 +79,9 @@
 			}
 			.menu-right {
 				float: left;
-				> .widget{
+				> .widget,
+				>.elementor-widget {
+
 					.btn-book{
 						&:before{
 							top: -15px;
@@ -89,7 +91,9 @@
 							bottom: -20px;
 						}
 					}
-					&.widget_shopping_cart{
+
+					&.widget_shopping_cart,
+					&.elementor-widget-wp-widget-woocommerce_widget_cart {
 						.widget_shopping_cart_content{
 							top: 57px;
 						}
@@ -123,4 +127,8 @@
 		}
 	}
 	//	End: widget products
+}
+
+header .elementor-widget-thim-login-popup .login-links.show-icon a {
+	display: flex;
 }

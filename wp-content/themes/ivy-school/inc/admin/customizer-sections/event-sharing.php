@@ -7,8 +7,8 @@
 
 thim_customizer()->add_section(
     array(
-        'id'       => 'sharing',
-        'panel'    => 'blog',
+        'id'       => 'event-sharing',
+        'panel'    => 'event',
         'title'    => esc_html__( 'Social Share', 'ivy-school' ),
         'priority' => 21,
     )
@@ -17,11 +17,11 @@ thim_customizer()->add_section(
 // Enable or Disable Author Meta Tags
 thim_customizer()->add_field(
     array(
-        'id'          => 'show_sharing',
+        'id'          => 'event_show_sharing',
         'type'        => 'switch',
         'label'       => esc_html__( 'Show Sharing', 'ivy-school' ),
         'tooltip'     => esc_html__( 'Allows you to show Sharing on single post.', 'ivy-school' ),
-        'section'     => 'sharing',
+        'section'     => 'event-sharing',
         'default'     => false,
         'priority'    => 10,
         'choices'     => array(
@@ -32,20 +32,20 @@ thim_customizer()->add_field(
 );
 
 thim_customizer()->add_group( array(
-    'id'       => 'blog_share_group',
-    'section'  => 'sharing',
+    'id'       => 'event_share_group',
+    'section'  => 'event-sharing',
     'priority' => 10,
     'groups'   => array(
         array(
-            'id'     => 'blog_share_group_single',
+            'id'     => 'event_share_group_single',
             'label'  => esc_html__( 'Single', 'ivy-school' ),
             'fields' => array(
                 array(
-                    'id'       => 'blog_single_group_sharing',
+                    'id'       => 'event_single_group_sharing',
                     'type'     => 'sortable',
                     'label'    => esc_html__( 'Sortable Buttons Sharing', 'ivy-school' ),
                     'tooltip'  => esc_html__( 'Click on eye icon to show or hide social icon. Drag and drop to change the order of social icons.', 'ivy-school' ),
-                    'section'  => 'sharing',
+                    'section'  => 'event-sharing',
                     'priority' => 10,
                     'default'  => array(
                         'facebook',

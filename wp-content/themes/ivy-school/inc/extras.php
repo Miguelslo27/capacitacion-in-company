@@ -326,7 +326,7 @@ function thim_metabox_page_display_settings( ) {
 
     $metabox = array(
         'title'      => esc_attr__( 'Display settings', 'ivy-school' ),
-        'post_types' => array( 'page', 'post' ),
+        'post_types' => array( 'page', 'post', 'lp_course', 'tp_event', 'product' ),
         'tabs'       => array(
             'page_title' => array(
                 'label' => esc_attr__( 'Page Title', 'ivy-school' ),

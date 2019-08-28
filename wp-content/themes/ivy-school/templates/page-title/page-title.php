@@ -312,7 +312,7 @@ $parallax    = get_theme_mod( 'enable_parallax_page_title', true ) ? ' data-stel
                                             $single_title = get_category_parents( $category_id, false, " " );
                                         }
                                         echo '<' . $typography . '>';
-                                        echo esc_html($custom_title != '') ? $custom_title : $single_title;
+                                        echo esc_html($custom_title != '') ? $custom_title : get_the_title();
                                         echo '</' . $typography . '>';
                                     }
 

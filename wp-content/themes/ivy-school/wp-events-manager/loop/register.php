@@ -25,7 +25,7 @@ if ( absint( $event->qty ) == 0) {
             <div class="description">
                 <span>
                     <i class="ion ion-android-alarm-clock"></i>
-                    <?php echo wpems_event_start( 'h a', null, false );?> -  <?php echo wpems_event_end( 'h a', null, false );?>
+                    <?php echo wpems_event_start( 'H:i', null, false );?> -  <?php echo wpems_event_end( 'H:i', null, false );?>
                     </span>
                 <span>
                     <i class="ion ion-android-calendar"></i>

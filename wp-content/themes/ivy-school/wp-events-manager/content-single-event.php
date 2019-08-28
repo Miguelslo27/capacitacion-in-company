@@ -55,27 +55,12 @@
             ?>
         </div>
 
-        <div class="tags-and-share">
-            <?php
-            $tags = get_the_terms( get_the_ID(), 'tp_event_tag');
-            if($tags) {
-            ?>
-            <div class="tags">
-                <span><?php echo esc_html__( 'Tags', 'ivy-school' ); ?>:</span>
-                <?php foreach ($tags as $tag) {?>
-                    <a href="<?php echo esc_url(get_tag_link($tag->term_id));?>"><?php echo esc_html($tag->name);?>,</a>
-                <?php }?>
-            </div>
-            <?php }?>
-
+        <?php if ( get_theme_mod( 'event_show_sharing') == true ) :?>
             <div class="share">
-                <span><?php echo esc_html__( 'Share', 'ivy-school' ); ?>:</span>
-                <a href="#" style="background: #3a589a"><i class="ion ion-social-facebook"></i></a>
-                <a href="#" style="background: #21ccff"><i class="ion ion-social-twitter"></i></a>
-                <a href="#" style="background: #df4a38"><i class="ion ion-social-googleplus"></i></a>
-                <a href="#" style="background: #89ba16"><i class="ion ion-android-share-alt"></i></a>
+                <?php thim_social_share( 'event_single_' ); ?>
             </div>
-        </div>
+        <?php endif;?>
+
     </div>
 
 	<?php

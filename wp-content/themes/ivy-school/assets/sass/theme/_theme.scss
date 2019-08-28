@@ -155,3 +155,16 @@
     padding-bottom: 70px;
   }
 }
+
+rs-fullwidth-wrap {
+	z-index: -1;
+}
+
+.vc_row .overlay{
+  opacity: inherit;
+  z-index: 0;
+}
+
+div.bp-background-size-auto {
+  background-size: cover !important;
+}

@@ -71,4 +71,41 @@ body.course-item-popup #learn-press-course-curriculum {
 .lp-learning .header-course .header-content .course-thumbnail img {
     width: 100%;
 }
+div.bp-element-posts.layout-slider .heading-post {
+    padding-right: 0;
+    padding-left: 100px;
+}
+div.bp-element-posts.layout-slider .heading-post .title {
+    margin-left: 20px;
+    margin-right: 0;
+}
+.slick-list {
+    direction: ltr;
+}
+.bp-element-heading.align-left .title, .bp-element-heading.align-left .description, .bp-element-heading.align-left .content {
+    text-align: right !important;
+}
+footer.site-footer .footer .footer-sidebars aside .widget-title:before {
+    left: auto;
+    right: 0;
+}
 
+.bp-element-list-events.layout-slider .slide-events .slide-slick .item-slick .item-event {
+    flex-direction: row-reverse;
+}
+div.bp-element.bp-element-list-events.layout-slider .slide-events .slide-slick .item-slick .item-event .date-event {
+    margin-right: 0;
+    margin-left: 20px;
+}
+div.bl-why-choose-list li::before {
+    left: auto;
+    right: 0;
+}
+div.bl-why-choose-list li {
+    padding-left: 0;
+    padding-right: 25px;
+}
+div.bl-open-day .info i {
+    margin-right: 0;
+    margin-left: 12px;
+}

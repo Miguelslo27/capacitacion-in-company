@@ -42,7 +42,13 @@ $course = LP_Global::course();
             </div>
 		<?php } ?>
 
-		<div class="social-link"><?php thim_social_share( 'learnpress_single_' ); ?></div>
+        <?php if ( get_theme_mod( 'learnpress_show_sharing') == true ) :?>
+            <div class="social-link">
+                <?php thim_social_share( 'learnpress_single_' ); ?>
+            </div>
+        <?php endif;?>
+
+
     </div>
 
     <?php

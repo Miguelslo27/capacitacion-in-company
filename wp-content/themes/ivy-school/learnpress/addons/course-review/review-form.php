@@ -13,28 +13,28 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<button class="write-a-review btn-normal shape-round btn-primary"><?php _e( 'Escribe una reseña', 'ivy-school' ); ?></button>
+<button class="write-a-review btn-normal shape-round btn-primary"><?php _e( 'Write a review', 'ivy-school' ); ?></button>
 <div class="course-review-wrapper" id="course-review">
     <div class="review-overlay"></div>
     <div class="review-form" id="review-form">
         <div class="form-overlay-review"></div>
         <form>
             <h3>
-				<?php _e( 'Escribe una reseña', 'ivy-school' ); ?>
+				<?php _e( 'Write a review', 'ivy-school' ); ?>
                 <a href="" class="close dashicons dashicons-no-alt"></a>
             </h3>
             <ul class="review-fields">
 				<?php do_action( 'learn_press_before_review_fields' ); ?>
                 <li>
-                    <label><?php _e( 'Título', 'ivy-school' ); ?> <span class="required">*</span></label>
+                    <label><?php _e( 'Title', 'ivy-school' ); ?> <span class="required">*</span></label>
                     <input type="text" name="review_title"/>
                 </li>
                 <li>
-                    <label><?php _e( 'Mensaje', 'ivy-school' ); ?><span class="required">*</span></label>
+                    <label><?php _e( 'Content', 'ivy-school' ); ?><span class="required">*</span></label>
                     <textarea name="review_content"></textarea>
                 </li>
                 <li>
-                    <label><?php _e( 'Valoración', 'ivy-school' ); ?><span class="required">*</span></label>
+                    <label><?php _e( 'Rating', 'ivy-school' ); ?><span class="required">*</span></label>
                     <ul class="review-stars">
 						<?php for ( $i = 1; $i <= 5; $i ++ ) { ?>
                             <li class="review-title" title="<?php echo $i; ?>">
@@ -45,7 +45,7 @@ defined( 'ABSPATH' ) || exit;
 				<?php do_action( 'learn_press_after_review_fields' ); ?>
                 <li class="review-actions">
                     <button type="button" class="submit-review btn-normal shape-round btn-primary"
-                            data-id="<?php the_ID(); ?>"><?php _e( 'Enviar reseña', 'ivy-school' ); ?></button>
+                            data-id="<?php the_ID(); ?>"><?php _e( 'Add review', 'ivy-school' ); ?></button>
                     <span class="ajaxload"></span>
                     <span class="error"></span>
 					<?php wp_nonce_field( 'learn_press_course_review_' . get_the_ID(), 'review-nonce' ); ?>

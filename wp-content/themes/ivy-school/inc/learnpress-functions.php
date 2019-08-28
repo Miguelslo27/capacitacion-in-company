@@ -829,6 +829,7 @@ add_filter( 'learn_press_course_tabs', function ( $tabs ) {
     return $tabs;
 }, 10 );
 
+
 //Remove Wishlist
 if ( thim_plugin_active( 'learnpress-wishlist/learnpress-wishlist.php' ) || class_exists( 'LP_Addon_Wishlist' ) ) {
     $addon_wishlist = LP_Addon_Wishlist::instance();
@@ -931,14 +932,12 @@ function thim_course_instructor() {
     learn_press_get_template( 'single-course/instructor.php' );
 }
 
-if (!function_exists('thim_course_rate')) {
-    function thim_course_rate() {
-        echo '<div class="landing-review">';
-        echo '<h3 class="title-rating">' . esc_html__( 'Reviews', 'ivy-school' ) . '</h3>';
-        learn_press_course_review_template( 'course-rate.php' );
-        learn_press_course_review_template( 'course-review.php' );
-        echo '</div>';
-    }
+function thim_course_rate() {
+    echo '<div class="landing-review">';
+    echo '<h3 class="title-rating">' . esc_html__( 'Reviews', 'ivy-school' ) . '</h3>';
+    learn_press_course_review_template( 'course-rate.php' );
+    learn_press_course_review_template( 'course-review.php' );
+    echo '</div>';
 }
 
 function thim_course_review() {
@@ -972,7 +971,10 @@ if ( ! function_exists( 'thim_lp_modify_password_field' ) ) {
             unset( $fields['reg_password']['desc'] );
         }
 
-        add_filter( 'learn-press/register-validate-field', '__return_false', 999999 );
+        remove_filter( 'learn-press/register-validate-field', array(
+            'LP_Forms_Handler',
+            'register_validate_field'
+        ), 10 );
 
         return $fields;
     }
@@ -1025,3 +1027,19 @@ function _x_process_become_teacher_fields() {
     }
 }
 add_filter( 'init', '_x_process_become_teacher_fields' );
+
+if ( !function_exists( 'thim_content_item_edit_link' ) ) {
+	function thim_content_item_edit_link() {
+		$course      = LP_Global::course();
+		$course_item = LP_Global::course_item();
+		$user        = LP_Global::user();
+		if ( $user->can_edit_item( $course_item->get_id(), $course->get_id() ) ): ?>
+			<p class="edit-course-item-link">
+				<a href="<?php echo get_edit_post_link( $course_item->get_id() ); ?>"><i
+						class="fa fa-pencil-square-o"></i> <?php _e( 'Edit item', 'ivy-school' ); ?>
+				</a>
+			</p>
+		<?php endif;
+	}
+}
+add_action( 'learn-press/after-course-item-content', 'thim_content_item_edit_link', 3 );

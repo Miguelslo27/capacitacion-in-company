@@ -8,7 +8,7 @@
 
 define( 'THIM_DIR', trailingslashit( get_template_directory() ) );
 define( 'THIM_URI', trailingslashit( get_template_directory_uri() ) );
-define( 'THIM_VERSION', '1.2.0' );
+define( 'THIM_VERSION', '1.3.1' );
 
 if ( ! function_exists( 'thim_setup' ) ) :
 	/**
@@ -494,5 +494,16 @@ if ( ! function_exists( 'thim_custom_builder_press_elements' ) ) {
 		$unset = array_merge( $unset, $elements );
 
 		return $unset;
+	}
+}
+
+
+add_filter( 'login_url', 'thim_ivy_custom_login_url', 999, 3 );
+if ( ! function_exists( 'thim_ivy_custom_login_url' ) ) {
+	function thim_ivy_custom_login_url( $login_url, $redirect, $force_reauth ) {
+		if(isset( $_REQUEST['action'] ) && $_REQUEST['action'] == 'resetpass'){
+			$login_url = thim_get_login_page_url();
+		}
+		return $login_url;
 	}
 }

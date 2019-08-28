@@ -17,16 +17,19 @@ if ( ! function_exists( 'thim_wrapper_layout' ) ) :
 		$using_custom_layout = $cat_ID = '';
         $wrapper_layout = 'sidebar-right';
 		$wrapper_class_col = 'col-sm-12 col-lg-9 flex-first';
-		if ( get_post_type() == "post" ) {
-			$prefix = 'blog_';
-        } elseif ( get_post_type() == "tp_event" ) {
+
+		if ( get_post_type() == "tp_event" ) {
             $prefix = 'event_';
         } elseif ( get_post_type() == "product" ) {
             $prefix = 'woo_';
-        } elseif ( get_post_type() == "lpr_course" || get_post_type() == "lpr_quiz" || get_post_type() == "lp_course" || get_post_type() == "lp_quiz" || get_post_type() == "lp_collection" || thim_check_is_course() || thim_check_is_course_taxonomy() ) {
+        } elseif ( get_post_type() == "lpr_course" || get_post_type() == "lpr_quiz" || get_post_type() == "lp_course" || get_post_type() == 'lp_quiz' || get_post_type() == "lp_collection" || thim_check_is_course() || thim_check_is_course_taxonomy() ) {
             $prefix = 'learnpress_';
 		} else {
-			$prefix = '';
+            if ( get_post_type() == "post" ) {
+                $prefix = 'blog_';
+            } else {
+                $prefix = '';
+            }
 		}
 
 		// get id category
@@ -35,6 +38,9 @@ if ( ! function_exists( 'thim_wrapper_layout' ) ) :
 			$cat_ID = $cat_obj->term_id;
 		}
 
+        $using_custom_layout    = get_post_meta( $postid, 'thim_enable_custom_layout', true );
+        $customize_custom_layout = get_post_meta( $postid, 'thim_custom_layout', true );
+
 		//Get layout from customizer
 		if ( is_page() ) {
 			if ( isset( $thim_options['page_layout'] ) ) {
@@ -42,8 +48,7 @@ if ( ! function_exists( 'thim_wrapper_layout' ) ) :
 			}
 
 			// Get custom layout for page options ( metabox).
-			$using_custom_layout = get_post_meta( $postid, 'thim_enable_custom_layout', true );
-			if ( $using_custom_layout ) {
+            if ( $using_custom_layout && $customize_custom_layout ) {
 				$wrapper_layout = get_post_meta( $postid, 'thim_custom_layout', true );
 			}
 
@@ -52,8 +57,7 @@ if ( ! function_exists( 'thim_wrapper_layout' ) ) :
 				$wrapper_layout = get_theme_mod( '' . $prefix . 'single_layout' );
 			}
 			// Get custom layout for single post options ( meta-box).
-			$using_custom_layout = get_post_meta( $postid, 'thim_custom_layout', true );
-			if ( $using_custom_layout ) {
+            if ( $using_custom_layout && $customize_custom_layout ) {
 				$wrapper_layout = get_post_meta( $postid, 'thim_custom_layout', true );
 			}
 
@@ -78,16 +82,16 @@ if ( ! function_exists( 'thim_wrapper_layout' ) ) :
 			$wrapper_layout = trim( $_GET['layout'] );
 		}
 
-        //BLog Masonry
-        if ( get_theme_mod( 'archive_style', 'default' ) == 'masonry' && !is_page() ) {
-            $wrapper_layout = 'no-sidebar';
-        }
-
-        if ( isset( $_GET['blog'] ) ) {
-            if ( $_GET['blog'] == 'masonry' ) {
-                $wrapper_layout = 'no-sidebar';
-            }
-        }
+//        //BLog Masonry
+//        if ( get_theme_mod( 'archive_style', 'default' ) == 'masonry' && !is_page() ) {
+//            $wrapper_layout = 'no-sidebar';
+//        }
+//
+//        if ( isset( $_GET['blog'] ) ) {
+//            if ( $_GET['blog'] == 'masonry' ) {
+//                $wrapper_layout = 'no-sidebar';
+//            }
+//        }
 
         if( is_search() ) $wrapper_layout = 'sidebar-right';
 
@@ -97,7 +101,7 @@ if ( ! function_exists( 'thim_wrapper_layout' ) ) :
         if ( get_theme_mod( 'single_style', 'default' ) == 'style-2' ) {
             $wrapper_layout = 'no-sidebar';
         }
-        if ( isset( $_GET['single'] ) ) {
+        if ( isset( $_GET['single'] ) &&  'post' == get_post_type() ) {
             if ( $_GET['single'] == 'style-2' ) {
                 $wrapper_layout = 'no-sidebar';
             }
@@ -106,6 +110,8 @@ if ( ! function_exists( 'thim_wrapper_layout' ) ) :
 		return $wrapper_layout;
 	}
 endif;
+
+
 
 
 add_action( 'thim_wrapper_loop_start', 'thim_wrapper_loop_start' );
@@ -120,13 +126,19 @@ if ( ! function_exists( 'thim_wrapper_loop_start' ) ) :
         $wrapper_class_col = 'col-sm-12 full-width';
         $wrapper_layout = 'no-sidebar';
 
-		if ( get_post_type() == "post" ) {
-			$prefix = 'blog_';
-        } elseif ( get_post_type() == "tp_event" ) {
+        if ( get_post_type() == "tp_event" ) {
             $prefix = 'event_';
-		} else {
-			$prefix = '';
-		}
+        } elseif ( get_post_type() == "product" ) {
+            $prefix = 'woo_';
+        } elseif ( get_post_type() == "lpr_course" || get_post_type() == "lpr_quiz" || get_post_type() == "lp_course" || get_post_type() == 'lp_quiz' || get_post_type() == "lp_collection" || thim_check_is_course() || thim_check_is_course_taxonomy() ) {
+            $prefix = 'learnpress_';
+        } else {
+            if ( get_post_type() == "post" ) {
+                $prefix = 'blog_';
+            } else {
+                $prefix = '';
+            }
+        }
 
 		if ( is_page() || is_single() ) {
 			$mtb_no_padding = get_post_meta( get_the_ID(), 'thim_no_padding_content', true );
@@ -135,6 +147,7 @@ if ( ! function_exists( 'thim_wrapper_loop_start' ) ) :
 			}
 		}
 
+
         $wrapper_layout = thim_wrapper_layout();
 
         // Get class layout
@@ -142,18 +155,18 @@ if ( ! function_exists( 'thim_wrapper_loop_start' ) ) :
             $wrapper_class_col = "col-sm-12 full-width";
         }
         if ( $wrapper_layout == 'sidebar-left' ) {
-            $wrapper_class_col = "col-lg-9";
+            $wrapper_class_col = "col-lg-9 flex-last";
         }
         if ( $wrapper_layout == 'sidebar-right' ) {
-            $wrapper_class_col = 'col-lg-9';
+            $wrapper_class_col = 'col-lg-9 flex-first';
         }
         if ( $wrapper_layout == 'full-sidebar' ) {
-            $wrapper_class_col = 'col-lg-6';
+            $wrapper_class_col = 'col-lg-6 flex-unordered';
         }
 
 		echo '<div class="container site-content ' . $wrapper_layout . ' ' . $class_no_padding . '"><div class="row">';
 
-		if ( $wrapper_layout == 'sidebar-left' ) {
+		if ( $wrapper_layout == 'full-sidebar' ) {
 			$postid = get_the_ID();
 			if ( is_page() ) {
 				$get_sidebar_left = get_theme_mod( 'page_layout_sidebar_left' );
@@ -176,6 +189,7 @@ if ( ! function_exists( 'thim_wrapper_loop_start' ) ) :
 			dynamic_sidebar( $get_sidebar_left );
 			echo '</aside>';
 		}
+
 		if( $wrapper_layout=='sidebar-right' ) $wrapper_class_col .= ' border-right';
 		echo '<main id="main" class="site-main ' . $wrapper_class_col . '" >';
 	}
@@ -194,13 +208,20 @@ if ( ! function_exists( 'thim_wrapper_loop_end' ) ) :
         $wrapper_class_col = 'col-sm-12 full-width';
         $wrapper_layout = 'sidebar-right';
 
-		if ( get_post_type() == "post" ) {
-			$prefix = 'blog_';
-        } elseif ( get_post_type() == "tp_event" ) {
+        if ( get_post_type() == "tp_event" ) {
             $prefix = 'event_';
-		} else {
-			$prefix = '';
-		}
+        } elseif ( get_post_type() == "product" ) {
+            $prefix = 'woo_';
+        } elseif ( get_post_type() == "lpr_course" || get_post_type() == "lpr_quiz" || get_post_type() == "lp_course" || get_post_type() == 'lp_quiz' || get_post_type() == "lp_collection" || thim_check_is_course() || thim_check_is_course_taxonomy() ) {
+            $prefix = 'learnpress_';
+        } else {
+            if ( get_post_type() == "post" ) {
+                $prefix = 'blog_';
+            } else {
+                $prefix = '';
+            }
+        }
+
         $wrapper_layout = thim_wrapper_layout();
 
         // Get class layout
@@ -208,19 +229,19 @@ if ( ! function_exists( 'thim_wrapper_loop_end' ) ) :
             $wrapper_class_col = "col-sm-12 full-width";
         }
         if ( $wrapper_layout == 'sidebar-left' ) {
-            $wrapper_class_col = "col-lg-9";
+            $wrapper_class_col = "col-lg-9 flex-last";
         }
         if ( $wrapper_layout == 'sidebar-right' ) {
-            $wrapper_class_col = 'col-lg-9';
+            $wrapper_class_col = 'col-lg-9 flex-first';
         }
         if ( $wrapper_layout == 'full-sidebar' ) {
-            $wrapper_class_col = 'col-lg-6';
+            $wrapper_class_col = 'col-lg-6 flex-unordered';
         }
 
 		if ( is_404() ) {
 			$wrapper_class_col = 'col-sm-12 full-width';
 		}
-        if ( is_single() ) {
+        if ( is_singular('post') ) {
             if ( get_theme_mod( 'blog_single_related_post', true ) ) :
                 get_template_part( 'templates/template-parts/related-single' );
             endif;
