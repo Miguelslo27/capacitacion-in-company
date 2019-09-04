@@ -1,1 +1,0 @@
-{"request":{"hurl":"http:\/\/capacitacion.local\/wp-content\/plugins\/paid-memberships-pro\/css\/print.css","inline":"","disable_minification":false,"type":"css","handle":"pmpro_print"},"log":"\/wp-content\/plugins\/paid-memberships-pro\/css\/print.css\r\n","code":"@media print{.pmpro_a-print{display:none;position:absolute;left:-9999px}}","status":true}
