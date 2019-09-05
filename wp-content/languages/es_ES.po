@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.2.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-08-04 20:26:46+0000\n"
+"PO-Revision-Date: 2019-08-29 12:48:48+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -162,7 +162,7 @@ msgstr "El error ocurrió en una variable no protegida."
 #. translators: %s: Login screen title.
 #: wp-login.php:69
 msgid "Recovery Mode &#8212; %s"
-msgstr "Modo de recuperación $#8212; %s"
+msgstr "Modo de recuperación &#8212; %s"
 
 #. translators: Login details notification email subject. %s: Site title
 #: wp-includes/pluggable.php:1988
@@ -13232,7 +13232,7 @@ msgstr "j F Y"
 
 #: wp-includes/theme-compat/sidebar.php:93
 msgid "You have searched the %1$s blog archives for <strong>&#8216;%2$s&#8217;</strong>. If you are unable to find anything in these search results, you can try one of these links."
-msgstr "Has buscado en el archivo del blog %1$s por <strong>&#8216;%2$s&#8217;</strong>. Si no consigues encontrar nada en estos resultados de búsqueda puedes probar con uno de estos enlaces."
+msgstr "Has buscado en el archivo del blog %1$s por <strong>&#171;%2$s&#187;</strong>. Si no consigues encontrar nada en estos resultados de búsqueda puedes probar con uno de estos enlaces."
 
 #. translators: 1: blog name, 2: WordPress
 #: wp-includes/theme-compat/footer.php:26
