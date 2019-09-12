@@ -1,0 +1,17 @@
+PROCESSED on Thu, 12 Sep 2019 18:30:44 +0000
+/wp-content/plugins/woocommerce/assets/css/woocommerce.css
+/wp-content/plugins/wp-events-manager/inc/libraries/countdown/css/jquery.countdown.css
+/wp-content/plugins/wp-events-manager/inc/libraries/owl-carousel/css/owl.carousel.css
+/wp-content/plugins/wp-events-manager/inc/libraries/magnific-popup/css/magnific-popup.css
+/wp-content/plugins/wp-events-manager/assets/css/frontend/events.min.css
+/wp-content/plugins/builderpress/assets/libs/slick/slick.css
+/wp-content/plugins/learnpress-paid-membership-pro/assets/style.css
+/wp-includes/css/dashicons.min.css
+/wp-content/themes/ivy-school/style.css
+/wp-content/plugins/learnpress/assets/css/bundle.min.css
+/wp-content/plugins/learnpress/assets/css/learnpress.css
+/wp-content/themes/ivy-school/assets/css/libs/ionicons/ionicons.css
+/wp-content/themes/ivy-school/assets/css/libs/select2/core.css
+/wp-content/themes/ivy-school/assets/css/libs/bootstrap/bootstrap.css
+/wp-content/themes/ivy-school-child/style.css
+/wp-content/uploads/tc_stylesheets/ivy-school.1567015553.cssPROCESSED from http://capacitacion.local/wp-content/uploads/tc_stylesheets/ivy-school.1567015553.css
